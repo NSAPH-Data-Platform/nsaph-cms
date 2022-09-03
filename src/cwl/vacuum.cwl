@@ -1,5 +1,5 @@
 #!/usr/bin/env cwl-runner
-### Index Builder
+### Table tuner tool (running VACUUM)
 #  Copyright (c) 2021. Harvard University
 #
 #  Developed by Research Software Engineering,
