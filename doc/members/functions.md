@@ -4,7 +4,7 @@ orphan: true
 
 # Functions
 
-```{literalinclude} ../../src/sql/procedures.sql
+```{literalinclude} ../../src/sql/medicaid_procedures.sql
 ---
 language: plpgsql
 ---
