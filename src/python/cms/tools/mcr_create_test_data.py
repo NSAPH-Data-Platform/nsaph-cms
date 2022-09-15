@@ -48,22 +48,21 @@ class FTSTuple:
         self.root = root
         fts_file = fts_file
         basename = remove_ext(fts_file)
-        dat_file = basename + '.dat'
-        if not os.path.isfile(dat_file):
-            self.valid = False
+        dat_files = glob.glob(basename + '*.dat')
+        self.valid = len(dat_files) > 0
+        if not self.valid:
             return
-        self.valid = True
         relpath = os.path.relpath(basename, root)
         self.dir = os.path.dirname(relpath)
         self.fts_file = os.path.basename(fts_file)
-        self.dat_file = os.path.basename(dat_file)
+        self.dat_files = [os.path.basename(f) for f in dat_files]
         return
 
     def fts_path(self) -> str:
         return os.path.join(self.root, self.dir, self.fts_file)
 
-    def dat_path(self) -> str:
-        return os.path.join(self.root, self.dir, self.dat_file)
+    def dat_path(self, dat_file) -> str:
+        return os.path.join(self.root, self.dir, dat_file)
 
 
 def find_fts_tuples(root: str) -> List[FTSTuple]:
@@ -88,24 +87,25 @@ def select(root: str, destination: str, threshold: float):
         if not os.path.isfile(os.path.join(dest, fts.fts_file)):
             shutil.copy(fts.fts_path(), dest)
 
-        dat_dest = os.path.join(dest, fts.dat_file)
-        dat_src = fts.dat_path()
-        if os.path.isfile(dat_dest):
-            print("Skipping: {}".format(dat_src))
-            continue
-        print("{} ==> {}".format(dat_src, dest))
+        for dat_file in fts.dat_files:
+            dat_dest = os.path.join(dest, dat_file)
+            dat_src = fts.dat_path(dat_file)
+            if os.path.isfile(dat_dest):
+                print("Skipping: {}".format(dat_src))
+                continue
+            print("{} ==> {}".format(dat_src, dest))
 
-        with fopen(dat_src, "rt") as src, open(dat_dest, "wt") as output:
-            n1 = 0
-            n2 = 0
-            for line in src:
-                n1 += 1
-                if random.random() < threshold:
-                    output.write(line)
-                    n2 += 1
-                if (n1 % 1000000) == 0:
-                    print('*', end='')
-        print("{:d}/{:d}".format(n2, n1))
+            with fopen(dat_src, "rt") as src, open(dat_dest, "wt") as output:
+                n1 = 0
+                n2 = 0
+                for line in src:
+                    n1 += 1
+                    if random.random() < threshold:
+                        output.write(line)
+                        n2 += 1
+                    if (n1 % 1000000) == 0:
+                        print('*', end='')
+            print("{:d}/{:d}".format(n2, n1))
     print("All Done")
 
 
