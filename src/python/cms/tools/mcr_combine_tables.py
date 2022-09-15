@@ -96,6 +96,7 @@ class MedicareCombinedView:
             sql = "DROP VIEW IF EXISTS {}.{} CASCADE;\n".format(
                 self.schema, self.view
             )
+            sql += "CREATE SCHEMA IF NOT EXISTS {};\n".format(self.schema)
             sql += "CREATE VIEW {}.{} AS \n".format(self.schema, self.view)
             sql += "\nUNION\n".join(tt)
         self.sql = sql

@@ -1,5 +1,5 @@
 #!/usr/bin/env cwl-runner
-### Workflow to load health data from files
+### Workflow to load Medicaid data from files
 #  Copyright (c) 2021. Harvard University
 #
 #  Developed by Research Software Engineering,
@@ -28,7 +28,7 @@ requirements:
   InlineJavascriptRequirement: {}
 
 doc: |
-  This tool is a shortcut to ingest CMS raw data
+  This tool is a shortcut to ingest CMS Medicaid raw data
 
 inputs:
   registry:
@@ -75,7 +75,7 @@ steps:
     out: [log, errors]
 
   create:
-    run: load_raw.cwl
+    run: load_raw_medicaid.cwl
     doc: Run data loader to load files to the database
     in:
       depends_on: reset/log

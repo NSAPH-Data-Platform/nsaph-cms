@@ -6,7 +6,7 @@ with open("README.md", "r") as readme:
 
 setup(
     name='cms',
-    version="0.0.3.8",
+    version="0.0.3.10",
     url='https://gitlab-int.rc.fas.harvard.edu/rse/francesca_dominici/tools/cms',
     license='',
     author='Michael Bouzinier',
@@ -16,9 +16,10 @@ setup(
     long_description_content_type = "text/markdown",
     #py_modules = [''],
     package_dir={
-        "cms": "./src/python/cms"
+        "cms": "./src/python/cms",
+        "cms.sql": "./src/sql"
     },
-    packages=["cms", "cms.tools"],
+    packages=["cms", "cms.tools", "cms.sql"],
     classifiers=[
         "Programming Language :: Python :: 3",
         "License :: Harvard University :: Development",
@@ -28,6 +29,7 @@ setup(
         'nsaph_utils >= 0.0.4.2',
     ],
     package_data = {
-        '': ["**/*.yaml"]
+        '': ["**/*.yaml"],
+        "cms.sql":["*.sql"]
     }
 )

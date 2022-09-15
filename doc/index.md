@@ -36,6 +36,7 @@ and optimization of the tables for efficient queries.
 Please see the following documents for details:
 
 * Data model and processing of [Medicaid](Medicaid.md) data
+* Data model and processing of [Medicare](Medicare.md) data
 * Tips on [querying of Medicaid data](QueringMedicaid.md)
 
 ## Project Structure
@@ -93,7 +94,7 @@ files or analyzing SAS data.
 
 The following models are defined here:
 
-* [Medicaid processed data](members/medicaid_yaml.md). 
+* [Medicaid processed data](members/medicaid_yaml.md). See also [](Medicaid.md) 
     * Tables
       * `medicaid.beneficiaries` [details](Medicaid.md#beneficiaries)
       * `medicaid.enrollments` [details](Medicaid.md#enrollments)
@@ -102,7 +103,7 @@ The following models are defined here:
     * SQL Views, used internally for data processing
       * `medicaid.monthly`
       * `medicaid._eligibility`
-* [Medicare processed data](members/medicare_yaml.md)
+* [Medicare processed data](members/medicare_yaml.md). See also [](Medicare.md)
     * Tables
       * `medicare.beneficiaries` [details](Medicare.md#creating-beneficiaries-table)
       * `medicare.enrollments` [details](Medicare.md#creating-enrollments-table)

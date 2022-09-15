@@ -45,6 +45,9 @@ inputs:
   limit:
     type: string?
     doc: limit number of records processed (for debugging)
+  depends_on:
+    type: File?
+    doc: a special field used to enforce dependencies and execution order
 
 steps:
   create_ip:

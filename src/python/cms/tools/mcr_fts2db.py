@@ -31,6 +31,8 @@ import logging
 import os
 from typing import List
 
+from nsaph.loader.index_builder import IndexBuilder
+
 from cms.mcr_data_loader import MedicareDataLoader
 from cms.registry import Registry
 
@@ -40,6 +42,7 @@ from cms.fts2yaml import mcr_type
 from nsaph.loader.data_loader import DataLoader
 
 from nsaph.loader import LoaderConfig
+from nsaph.loader.vacuum import Vacuum
 
 
 class MedicareLoader:
@@ -114,6 +117,8 @@ class MedicareLoader:
             print("Dry run: " + fts_path)
         else:
             loader.run()
+            IndexBuilder(context).run()
+            Vacuum(context).run()
 
     @staticmethod
     def loader_for_csv(context: LoaderConfig, data_path: str) -> DataLoader:

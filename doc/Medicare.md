@@ -50,7 +50,7 @@ have original files, but preprocessed files with patient summary
 (called denominators) and admissions. They are in SAS 7BDAT format,
 however columns are also different for different years.
 
-### Storing in the Database
+### Storing raw data in the Database
 
 Given the difference in file structures we create a separate table
 for every file. However, to make it easier to join these tables we:
@@ -111,13 +111,15 @@ extarcted by the parser is used to:
 
 ## Combining raw files into a single view
 
+### Eventual database schema
+
 Once all raw files are ingested into the database they are combined 
 into two views:
 
 1. Patient summary (aka MBSF, aka Beneficiary summary)
 2. Inpatient Admissions (aka hospitalizations, aka medpar)
 
-### Creating Federated Patient Summary
+The figure below visualizes teh database schema. 
 
 ```{image} medicare-db.png
 ---
@@ -125,10 +127,26 @@ width: 600
 ---
 ```
 
-        
-The federated patient summary is created in two steps.
-The division into two steps is purely because of technical reasons
+The tables above are defined in
+[Medicare data model definition](members/medicare_yaml.md).
+                                                
+### CWL workflows
+
+The 
+[full pipeline](pipeline/medicare) consists of two steps:
+
+1. Creating [beneficiary federated summary and enrollments table](pipeline/medicare_beneficiaries)
+2. Creating [inpatient admissions table](pipeline/medicare_admissions)
+  
+
+### Creating Federated Patient Summary
+
+The federated patient summary view is created in two steps, though the division 
+into steps is purely technical. The reasons are
 given some limitations of readability in SQL.
+                                               
+These steps are part of
+[](pipeline/medicare_beneficiaries)
 
 
 #### First step: Initial in-database data conditioning
@@ -177,6 +195,9 @@ based on the
 [Medicare data model definition](members/medicare_yaml.md).
 
 ### Creating Beneficiaries table
+               
+This is also part of 
+[](pipeline/medicare_beneficiaries)
 
 See also [creating Medicaid Beneficiaries table](Medicaid.md#beneficiaries)
 
@@ -209,12 +230,18 @@ The following columns are added:
   beneficiary. The value of this column is NULL for consistent records
 * `dod_earliest`: the earliest DOD found in the records for this 
   beneficiary. The value of this column is NULL for consistent records
+* Beneficiary id HLL hash (`bene` column), to be used for 
+  `approximate count distinct` queries. [See more](UsingHLL.md) 
+  
 
 This topic is discussed in more details in the 
 [Medicaid documentation](Medicaid.md#deduplication-and-data-cleansing)
 
 
 ### Creating Enrollments table
+
+This is also part of 
+[](pipeline/medicare_beneficiaries)
 
 #### Enrollments overview
 
@@ -324,8 +351,13 @@ The following columns are created for Enrollments:
   (in most cases, zip code)
 * `fips3_valdiated`: A boolean column indicating that the value
   of county code is consistent with the values of state code and zip code.
+* Beneficiary id HLL hash (`bene` column), to be used for 
+  `approximate count distinct` queries. [See more](UsingHLL.md) 
 
 ### Creating Federated Admissions view
+         
+This step is part of 
+[](pipeline/medicare_admissions)
 
 This step technically combines all `cms.medpar*` and `cms.mcr_ip_*`
 tables into a single view using `CREATE VIEW` SQL statement.
@@ -353,6 +385,33 @@ It also cleanses and conditions data from the following columns:
 
 ### Creating Inpatient Admissions table
 
+This step is also part of 
+[](pipeline/medicare_admissions)
+
 Table with all inpatient admissions billed to Medicare with 
 admission and discharge dates and ICD codes.
 
+During this step the following major operations are performed:
+
+* Added the following columns:
+  * Admission year, extracted from admission date
+  * Added [HLL hashes](UsingHLL.md) for:
+    * Beneficiary id (`bene` column)
+    * Primary diagnosis at admission  (`pd_hll_hash`)
+    * All diagnoses, used for admission (`icd_hll`)
+* Performed validation of admission data. Records that failed
+  validation are excluded from the resulting `Admissions` table but are stored
+  in a special `medicare_audit.admissions` table, together with teh reason
+  for validation failure. We distinguish three reasons for validation failure:
+  * `Primary key`: this indicates missing data, for example:
+    * Missing beneficiary id
+    * Missing admission or discharge date
+    * Missing US State, where the admission happened
+  * `Foreign key`: means that the beneficiary referred in the admission
+    record was not eligible for Medicare in the given year
+  * `Duplicate`: a duplicate record was found. Only one record out of 
+    several duplicates is stored in the `admissions` table, others are
+    copied to `medicare_audit.admissions` table. 
+
+See more information about handling records that have failed validation in:
+[Data Modeling](../../core-platform/doc/Datamodels.md#invalid-record)
