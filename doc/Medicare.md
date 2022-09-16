@@ -19,6 +19,10 @@ local:
 ---
 ```
 
+## Processing pipeline
+
+See [](pipeline/medicare) for teh pipeline code
+
 ## Ingesting Raw Files
 
 ### Overview

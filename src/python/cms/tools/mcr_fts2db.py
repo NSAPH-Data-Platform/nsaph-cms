@@ -4,6 +4,14 @@ Command line utility to load raw Medicare data into the database.
 Used for 2011 and later years. Looks for FTS files, parses them to generate
 database model and extract
 metadata required to read DAT files. Then loads data into the database.
+
+This module looks for FTS files, parses them, then looks for corresponding
+DAT files. It copies FTS files to destination directory and selects a few
+random records from DAT files.
+
+Please note, that if the destination to be used with Medicare
+ingestion pipeline, the full path to resulting FTS and DAT files must include
+a directory named with the year, e.g. my_data/medicare/2018/*.fts
 """
 
 
@@ -94,7 +102,14 @@ class MedicareLoader:
     def handle(self, fts_path: str):
         basedir, fname = os.path.split(fts_path)
         _, ydir = os.path.split(basedir)
-        year = int(ydir)
+        try:
+            year = int(ydir)
+        except:
+            raise ValueError(
+                "Immediate parent directory '{}' of {} was expected to be named"
+                + " as 4 digit year (YYYY), e.g. 2011 or 2018"
+                .format(ydir, fts_path)
+            )
         f, ext = os.path.splitext(fts_path)
         ttype = mcr_type(fname)
         ctxt = CMSSchema(None,

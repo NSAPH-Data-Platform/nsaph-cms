@@ -31,7 +31,21 @@ doc: |
   This workflow processes raw Medicare data. We assume that the data
   for each year is in a separate set of SAS DAT files accompanied by FTS.
   For each year we expect at least
-  two tables: patient summary and inpatient admissions. 
+  two tables: patient summary and inpatient admissions.
+
+  > NB: Input files must be organized within teh dicrectory given in
+  the `input` parameter in a certain way. Immediate parent folder for
+  each file should be named as the year of the data it contains. Example:
+
+    data/
+      a/
+        b/
+          2011/
+          2013/
+        d/
+          2017/
+
+  See [](../Medicare) for data processing details.
 
 inputs:
   database:
@@ -43,9 +57,11 @@ inputs:
   input:
     type: Directory
     doc: |
-      A path to directory, containing unpacked CMS
+      A path to directory, containing folders with unpacked CMS
       files. The tool will recursively look for data files
-      according to provided pattern
+      according to provided pattern. Immediate parent folder for
+      each file should be named as the year of the data it contains, e.g.
+      a/b/c/2017/mbsf_abcd_xyzacdfrtwe_request12345.fts
 
 steps:
   initdb:
