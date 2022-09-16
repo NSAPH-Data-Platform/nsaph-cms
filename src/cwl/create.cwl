@@ -68,7 +68,9 @@ inputs:
       prefix: --limit
 
   depends_on:
-    type: File?
+    type:
+      - File?
+      - File[]
     doc: a special field used to enforce dependencies and execution order
 
 arguments:

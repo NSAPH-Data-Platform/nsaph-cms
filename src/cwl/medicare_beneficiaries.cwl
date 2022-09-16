@@ -114,14 +114,14 @@ steps:
       connection_name: connection_name
       domain:
         valueFrom: "medicare"
-      depends_on: create_ps/log
+      depends_on: [create__ps_view/log, create_bene_table/vacuum_log]
     out: [ log, errors ]
 
   create_enrlm_table:
     run: matview.cwl
     doc: Creates `Enrollments` Table from the view
     in:
-      depends_on: create_bene_table/vacuum_log
+      depends_on: create_enrlm_view/log
       table:
         valueFrom: "enrollments"
       domain:
