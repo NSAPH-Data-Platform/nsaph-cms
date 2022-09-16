@@ -24,7 +24,6 @@ class: CommandLineTool
 baseCommand: [python, -m, nsaph.loader.data_loader]
 requirements:
   InlineJavascriptRequirement: {}
-  MultipleInputFeatureRequirement: {}
 
 doc: |
   This tool executes DDL to drop and recreate

@@ -26,6 +26,7 @@ requirements:
   SubworkflowFeatureRequirement: {}
   StepInputExpressionRequirement: {}
   InlineJavascriptRequirement: {}
+  MultipleInputFeatureRequirement: {}
 
 doc: |
   This workflow processes raw Medicare beneficiaries summary data.
