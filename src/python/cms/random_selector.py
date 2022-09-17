@@ -1,6 +1,8 @@
 """
-This modules selects random lines from the the data and
-outputs the selected lines
+This modules selects random lines from the the data from
+CSV files and outputs the selected lines.
+
+See also `Random selector for CMS data <mcr_create_test_data.html>`_
 
 """
 

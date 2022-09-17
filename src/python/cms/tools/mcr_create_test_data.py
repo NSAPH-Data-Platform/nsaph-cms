@@ -5,6 +5,8 @@ randomly selected subset of the data for testing purposes.
 
 It does not remove PII!!!
 
+See also `Random selector for CSV files <random_selector.html>`_
+
 """
 
 #  Copyright (c) 2022. Harvard University

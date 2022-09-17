@@ -15,6 +15,8 @@
     [create_schema_config](members/create_schema_config.rst) for options)
 * [random_selector](members/random_selector.rst) Selects random lines
   from a CSV-like file
+* [random_selector](members/mcr_create_test_data) Selects random lines
+  from a set of CMS files described by an [FTS file](../../../fts)
 * [medicare data loader](members/mcr_data_loader.rst)  Subclass of generic 
     [Data Loader](../../core-platform/doc/members/data_loader.rst) 
     aware of the raw Medicare CMS
@@ -23,6 +25,8 @@
 
 ## Package cms.tools 
 
+* [CMS Test data generator](members/mcr_create_test_data) Selects random lines
+  from a set of CMS files described by an [FTS file](../../../fts)
 * [mcr_combine_tables](members/mcr_combine_tables.rst) Command-line
     tool to combine disparate tables with raw medicare CMS data
     into a single consolidated view. 
