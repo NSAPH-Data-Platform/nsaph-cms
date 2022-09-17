@@ -1,5 +1,5 @@
 #!/usr/bin/env cwl-runner
-### Medicaid Table/View Initializer
+### Table/View Initializer
 #  Copyright (c) 2021. Harvard University
 #
 #  Developed by Research Software Engineering,
@@ -27,7 +27,7 @@ requirements:
 
 doc: |
   This tool executes DDL to drop and recreate
-  creates a table, a view or a materialized view in the database.
+  a table, a view or a materialized view in the database.
   It is assumed it is run for Medicaid domain
 
 
