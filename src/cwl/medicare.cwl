@@ -37,13 +37,13 @@ doc: |
   the `input` parameter in a certain way. Immediate parent folder for
   each file should be named as the year of the data it contains. Example:
 
-    data/
-      a/
-        b/
-          2011/
-          2013/
-        d/
-          2017/
+      data/
+        a/
+          b/
+            2011/
+            2013/
+          d/
+            2017/
 
   See [](../Medicare) for data processing details.
 
