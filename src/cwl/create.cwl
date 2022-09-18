@@ -28,7 +28,8 @@ requirements:
 doc: |
   This tool executes DDL to drop and recreate
   a table, a view or a materialized view in the database.
-  It is assumed it is run for Medicaid domain
+  By default, it is assumed it is run for Medicaid domain,
+  parameter `domain` must be defined if using a different domain
 
 
 inputs:
