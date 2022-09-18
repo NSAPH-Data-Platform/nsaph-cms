@@ -27,7 +27,7 @@ requirements:
 
 doc: |
   This tool ensures that PgPL/SQL functions are updated to the latest
-  version inside teh database. It also loads mapping between Zip codes,
+  version inside the database. It also loads mapping between Zip codes,
   SSA codes and FIPS codes
 
 inputs:

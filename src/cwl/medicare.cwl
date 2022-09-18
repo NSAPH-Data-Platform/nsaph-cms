@@ -33,7 +33,7 @@ doc: |
   For each year we expect at least
   two tables: patient summary and inpatient admissions.
 
-  > NB: Input files must be organized within teh dicrectory given in
+  > NB: Input files must be organized within the dicrectory given in
   the `input` parameter in a certain way. Immediate parent folder for
   each file should be named as the year of the data it contains. Example:
 

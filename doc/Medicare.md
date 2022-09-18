@@ -21,7 +21,7 @@ local:
 
 ## Processing pipeline
 
-See [](pipeline/medicare) for teh pipeline code
+See [](pipeline/medicare) for the pipeline code
 
 ## Ingesting Raw Files
 
@@ -123,7 +123,7 @@ into two views:
 1. Patient summary (aka MBSF, aka Beneficiary summary)
 2. Inpatient Admissions (aka hospitalizations, aka medpar)
 
-The figure below visualizes teh database schema. 
+The figure below visualizes the database schema. 
 
 ```{image} medicare-db.png
 ---
@@ -405,7 +405,7 @@ During this step the following major operations are performed:
     * All diagnoses, used for admission (`icd_hll`)
 * Performed validation of admission data. Records that failed
   validation are excluded from the resulting `Admissions` table but are stored
-  in a special `medicare_audit.admissions` table, together with teh reason
+  in a special `medicare_audit.admissions` table, together with the reason
   for validation failure. We distinguish three reasons for validation failure:
   * `Primary key`: this indicates missing data, for example:
     * Missing beneficiary id
