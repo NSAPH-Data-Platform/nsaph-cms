@@ -39,6 +39,7 @@ import logging
 import os
 from typing import List
 
+from nsaph import init_logging
 from nsaph.loader.index_builder import IndexBuilder
 
 from cms.mcr_data_loader import MedicareDataLoader
@@ -92,12 +93,22 @@ class MedicareLoader:
                 files.append(d)
             else:
                 files.extend(glob.glob(os.path.join(d, pattern), recursive=True))
+        if len(files) == 0:
+            self.handle_empty()
         for f in files:
             try:
                 self.handle(f)
             except Exception as x:
                 logging.exception("Error handling {}. Ignoring.".format(str(f)))
         return
+
+    def handle_empty(self):
+        init_logging()
+        logging.info("No files to process")
+        if not os.path.exists(self.context.registry):
+            with open(self.context.registry, "a") as r:
+                r.write("# Empty\n")
+        return 
 
     def handle(self, fts_path: str):
         basedir, fname = os.path.split(fts_path)
