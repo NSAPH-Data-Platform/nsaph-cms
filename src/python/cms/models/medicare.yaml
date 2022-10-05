@@ -53,17 +53,27 @@ medicare:
             type: date
             description: Date of birth
             cast:
-              "character varying": "to_date({column_name}, 'YYYYMMDD')"
+              "character varying": "public.parse_date({column_name})"
               numeric: "to_date(to_char({column_name}, '00000000'), 'YYYYMMDD')"
             source:
               - dob
               - bene_dob
               - bene_birth_dt
+        - age:
+            type: INT
+            description: Age on January 1 of a given year, if provided
+            optional: true
+            source: age
+        - yob:
+            type: INT
+            description: Year, claculated from age
+            optional: true
+            source: "(year - age)"
         - dod:
             type: date
             description: Date of beneficiary death, if available
             cast:
-              "character varying": "(CASE WHEN {column_name} = '00000000' THEN NULL ELSE to_date({column_name}, 'YYYYMMDD') END)"
+              "character varying": "(CASE WHEN {column_name} = '00000000' THEN NULL ELSE public.parse_date({column_name}) END)"
               numeric: "(CASE WHEN {column_name} < 19000000 THEN NULL ELSE to_date(to_char({column_name}, '00000000'), 'YYYYMMDD') END)"
             source:
               - death_dt
@@ -80,11 +90,17 @@ medicare:
               - ssa_county
         - sex:
             reference: https://resdac.org/cms-data/variables/sex-beneficiary-0
+            type: VARCHAR
+            cast:
+              '*': "{column_name}::VARCHAR"
             source:
               - sex
               - bene_sex_ident_cd
         - race:
             reference: https://resdac.org/cms-data/variables/beneficiary-race-code-ffs
+            type: VARCHAR
+            cast:
+              '*': "{column_name}::VARCHAR"
             source:
               - bene_race_cd
               - race
@@ -307,7 +323,10 @@ medicare:
                 WHEN year THEN TRUE
                 ELSE FALSE
               END
-
+        - file:
+            source: "string_agg(distinct FILE, ',')"
+        - record:
+            source: "string_agg(distinct RECORD::VARCHAR, ',')"
     beneficiaries:
       description: |
         Cleaned up and unified Medicare beneficiaries table,

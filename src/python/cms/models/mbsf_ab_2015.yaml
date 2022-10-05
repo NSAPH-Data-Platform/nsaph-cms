@@ -1,0 +1,176 @@
+cms:
+  header: true
+  index: explicit
+  quoting: QUOTE_MINIMAL
+  reference: ''
+  schema: cms
+  tables:
+    mbsf_ab_2015:
+      columns:
+        - Col001:
+            source: 0
+            type: VARCHAR
+        - zip:
+            type: INT
+        - year:
+            type: INT
+        - qid:
+            type: VARCHAR
+        - dodflag:
+            type: VARCHAR
+        - bene_dod:
+            type: VARCHAR
+        - sex:
+            type: INT
+        - race:
+            type: INT
+        - age:
+            type: INT
+        - hmo_mo:
+            type: VARCHAR
+        - hmoind:
+            type: VARCHAR
+        - statecode:
+            type: VARCHAR
+        - latitude:
+            type: NUMERIC(10,6)
+        - longitude:
+            type: NUMERIC(11,6)
+        - dual:
+            type: VARCHAR
+        - death:
+            type: INT
+        - dead:
+            type: VARCHAR
+        - entry_age:
+            type: INT
+        - entry_year:
+            type: INT
+        - entry_age_break:
+            type: INT
+        - followup_year:
+            type: INT
+        - followup_year_plus_one:
+            type: INT
+        - pm25_ensemble:
+            type: NUMERIC(17,14)
+        - pm25_no_interp:
+            type: VARCHAR
+        - pm25_nn:
+            type: VARCHAR
+        - ozone:
+            type: VARCHAR
+        - ozone_no_interp:
+            type: VARCHAR
+        - zcta:
+            type: INT
+        - poverty:
+            type: NUMERIC(18,15)
+        - popdensity:
+            type: NUMERIC(10,4)
+        - medianhousevalue:
+            type: NUMERIC
+        - pct_blk:
+            type: NUMERIC(20,17)
+        - medhouseholdincome:
+            type: NUMERIC
+        - pct_owner_occ:
+            type: NUMERIC(18,15)
+        - hispanic:
+            type: NUMERIC(18,15)
+        - education:
+            type: NUMERIC(18,15)
+        - population:
+            type: INT
+        - zcta_no_interp:
+            type: INT
+        - poverty_no_interp:
+            type: NUMERIC(18,15)
+        - popdensity_no_interp:
+            type: NUMERIC(10,4)
+        - medianhousevalue_no_interp:
+            type: NUMERIC
+        - pct_blk_no_interp:
+            type: NUMERIC(20,17)
+        - medhouseholdincome_no_interp:
+            type: NUMERIC
+        - pct_owner_occ_no_interp:
+            type: NUMERIC(18,15)
+        - hispanic_no_interp:
+            type: NUMERIC(18,15)
+        - education_no_interp:
+            type: NUMERIC(18,15)
+        - population_no_interp:
+            type: INT
+        - smoke_rate:
+            type: NUMERIC(18,15)
+        - mean_bmi:
+            type: NUMERIC(17,13)
+        - smoke_rate_no_interp:
+            type: VARCHAR
+        - mean_bmi_no_interp:
+            type: VARCHAR
+        - amb_visit_pct:
+            type: VARCHAR
+        - a1c_exm_pct:
+            type: VARCHAR
+        - amb_visit_pct_no_interp:
+            type: VARCHAR
+        - a1c_exm_pct_no_interp:
+            type: VARCHAR
+        - tmmx:
+            type: VARCHAR
+        - rmax:
+            type: VARCHAR
+        - pr:
+            type: VARCHAR
+        - cluster_cat:
+            type: VARCHAR
+        - fips_no_interp:
+            type: INT
+        - fips:
+            type: INT
+        - summer_tmmx:
+            type: VARCHAR
+        - summer_rmax:
+            type: VARCHAR
+        - winter_tmmx:
+            type: VARCHAR
+        - winter_rmax:
+            type: VARCHAR
+        - FILE:
+              description: RESDAC original file name
+              index:
+                required_before_loading_data: true
+              source:
+                type: file
+              type: VARCHAR(128)
+        - RECORD:
+              description: Record number in the file
+              type: BIGSERIAL
+        - bene_id:
+            source:
+              code: GENERATED ALWAYS AS (qid) STORED
+              type: generated
+            type: VARCHAR
+        - STATE:
+            description: SSA standard state code of a beneficiarys residence.
+            index: true
+            source:
+              code: GENERATED ALWAYS AS (statecode) STORED
+              type: generated
+            type: VARCHAR(2)
+        - dob:
+            source:
+              code: GENERATED ALWAYS AS (NULL) STORED
+              type: generated
+            type: DATE
+      primary_key:
+        - FILE
+        - RECORD
+      indices:
+        primary:
+          columns:
+            - BENE_ID
+            - STATE
+            - YEAR

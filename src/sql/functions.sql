@@ -39,9 +39,11 @@ CREATE OR REPLACE FUNCTION public.parse_date (
 AS $body$
 DECLARE ystr varchar; mstr varchar; daystr varchar; s varchar;
 BEGIN
-    IF LENGTH(dstr) = 8 THEN
+    IF LENGTH(dstr) = 9 THEN
+        RETURN to_date(dstr, 'DDMONYYYY');
+    ELSEIF LENGTH(dstr) = 8 THEN
         RETURN to_date(dstr, 'YYYYMMDD');
-    ELSEIF LENGTH(dstr) > 8 THEN
+    ELSEIF LENGTH(dstr) > 9 THEN
         raise EXCEPTION 'Invalid date, len > 8 %', dstr;
     ELSEIF LENGTH(dstr) < 6 THEN
         raise EXCEPTION 'Invalid date, len < 6 %', dstr;
