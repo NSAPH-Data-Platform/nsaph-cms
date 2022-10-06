@@ -136,10 +136,7 @@ class MedicareCombinedView:
         cc = []
         for column in columns:
             target, src = column
-            if src is None:
-                cc.append("NULL AS " + target)
-            else:
-                cc.append("{} AS {}".format(src, target))
+            cc.append("{} AS {}".format(src, target))
         sql = sql.format(",\n\t".join(cc), schema, table)
         return sql
 
@@ -169,8 +166,14 @@ class MedicareCombinedView:
             source_column = self.get_column(cursor, table, src, ctype)
             # if "clean" in c:
             #     source_column = c["clean"].format(n=source_column)
-            if (not opt) and (source_column is None):
-                raise ValueError("{}.{}".format(table, n))
+            if source_column is None:
+                if opt:
+                    if "type" in c:
+                        source_column = "NULL::" + c["type"]
+                    else:
+                        source_column = "NULL"
+                else:
+                    raise ValueError("{}.{}".format(table, n))
             columns.append((n, source_column))
         return columns
 

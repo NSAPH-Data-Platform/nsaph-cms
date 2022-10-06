@@ -109,6 +109,7 @@ medicare:
             reference: https://resdac.org/cms-data/variables/ndi-date-deathmbsf
             optional: true
             source:  ndi_death_dt
+            type: DATE
         - race_rti:
             description: Research Triangle Institute (RTI) Race Code
             reference: https://resdac.org/cms-data/variables/research-triangle-institute-rti-race-code
