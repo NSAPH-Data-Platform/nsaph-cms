@@ -209,7 +209,7 @@ medicare:
     _ps:
       description: internal intermediate view adding some data conversions
       create:
-        type: view
+        type: materialized view
         select: |
           *,
           CASE WHEN ssa3 is NOT NULL THEN
@@ -229,6 +229,13 @@ medicare:
           CASE WHEN year > 2010 THEN (SELECT string_agg(distinct fips3::varchar, ',') from public.ssa as s where ps.ssa3 = s.ssa3 and ps.year = s.year and ps.fips2 = s.fips2)
               ELSE (SELECT string_agg(distinct fips3::varchar, ',') from public.ssa as s where ps.ssa3 = s.ssa3 and 2003 = s.year and ps.fips2 = s.fips2) END AS fips3_list
         from: ps
+      indices:
+        ps_to_enrl_idx:
+          columns:
+            - bene_id
+            - year
+            - state
+
     _beneficiaries:
       description: internal intermediate view adding some data conversions
       create:
@@ -241,6 +248,8 @@ medicare:
         - dob:
             source: "MIN(dob)"
             identifier: true
+        - yob:
+            source: "MIN(yob)"
         - dod:
             source: "MAX(dod)"
         - race:
@@ -259,6 +268,11 @@ medicare:
             source: |
               CASE
                 WHEN MAX(dob) <> MIN(dob) THEN  MAX(dob)
+              END
+        - yob_latest:
+            source: |
+              CASE
+                WHEN MAX(yob) <> MIN(yob) THEN  MAX(yob)
               END
         - dod_earliest:
             source: |
@@ -280,6 +294,10 @@ medicare:
         - bene_id
         - year
         - state
+        - age:
+            source: MAX(age)
+        - age_min:
+            source: MIN(age)
         - state_iso:
             source: "('US-' || state) "
         - fips2:
@@ -312,7 +330,7 @@ medicare:
             source: |
               (
                 SELECT COUNT(distinct state)
-                FROM medicare.ps AS ps2
+                FROM medicare._ps AS ps2
                 WHERE
                   _ps.bene_id = ps2.bene_id
                   AND _ps.year = ps2.year
@@ -359,12 +377,13 @@ medicare:
         enrollments:
           description: |
             Cleaned up and unified Medicare beneficiaries enrollments table,
-            by satte and year. This table is indexed and optimized
+            by state and year. This table is indexed and optimized
             for efficient queries
           create:
             type: table
             select: "*"
             from: _enrollments
+            populate: true
           columns:
             - bene:
                 type: HLL_HASHVAL

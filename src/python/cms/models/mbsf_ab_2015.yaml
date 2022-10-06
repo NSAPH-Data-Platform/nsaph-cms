@@ -153,13 +153,24 @@ cms:
               code: GENERATED ALWAYS AS (qid) STORED
               type: generated
             type: VARCHAR
-        - STATE:
-            description: SSA standard state code of a beneficiarys residence.
+        - state:
+            description: |
+              SSA standard state code of a beneficiarys residence.
+              We need this for comaptibility with other years
             index: true
             source:
-              code: GENERATED ALWAYS AS (statecode) STORED
+              code: GENERATED ALWAYS AS (public.state2ssa2(statecode)) STORED
               type: generated
             type: VARCHAR(2)
+        - ssa_county:
+            description: |
+              SSA standard county code of a beneficiarys residence.
+              We need this for comaptibility with other years
+            index: true
+            source:
+              code: GENERATED ALWAYS AS (public.fips2ssa3(fips, 2015)) STORED
+              type: generated
+            type: VARCHAR(5)
         - dob:
             source:
               code: GENERATED ALWAYS AS (NULL) STORED

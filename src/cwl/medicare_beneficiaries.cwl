@@ -61,8 +61,8 @@ steps:
     out:  [ log, errors ]
 
   create__ps_view:
-    run: create.cwl
-    doc: Create _ps view from ps 
+    run: matview.cwl
+    doc: Create _ps materialized view from ps
     in:
       table:
         valueFrom: "_ps"
@@ -71,7 +71,13 @@ steps:
       domain:
         valueFrom: "medicare"
       depends_on: create_ps/log
-    out: [ log, errors ]
+    out:
+      - create_log
+      - index_log
+      - vacuum_log
+      - create_err
+      - index_err
+      - vacuum_err
 
   create_bene_view:
     run: create.cwl
@@ -115,7 +121,7 @@ steps:
       connection_name: connection_name
       domain:
         valueFrom: "medicare"
-      depends_on: [create__ps_view/log, create_bene_table/vacuum_log]
+      depends_on: [create__ps_view/vacuum_log, create_bene_table/vacuum_log]
     out: [ log, errors ]
 
   create_enrlm_table:
@@ -146,10 +152,23 @@ outputs:
     outputSource: create_ps/errors
   ps2_create_log:
     type: File
-    outputSource: create__ps_view/log
+    outputSource: create__ps_view/create_log
   ps2_create_err:
     type: File
-    outputSource: create__ps_view/errors
+    outputSource: create__ps_view/create_err
+  ps2_index_log:
+    type: File
+    outputSource: create__ps_view/index_log
+  ps2_vacuum_log:
+    type: File
+    outputSource: create__ps_view/vacuum_log
+  ps2_index_err:
+    type: File
+    outputSource: create__ps_view/index_err
+  ps2_vacuum_err:
+    type: File
+    outputSource: create__ps_view/vacuum_err
+
 
   # bene_view
   bene_view_log:
