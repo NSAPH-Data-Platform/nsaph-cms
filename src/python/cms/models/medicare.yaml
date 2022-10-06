@@ -125,8 +125,6 @@ medicare:
         from:
           - cms.medpar_*
           - cms.mcr_ip_*
-        exclude:
-          - medpar_2015
       columns:
         - bene_id
         - file
