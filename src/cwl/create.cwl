@@ -63,6 +63,14 @@ inputs:
     type: string?
     inputBinding:
       prefix: --action
+  registry:
+    type: string?
+    inputBinding:
+      prefix: --registry
+  input_data:
+    type: File?
+    inputBinding:
+      prefix: --data
   limit:
     type: string?
     inputBinding:
