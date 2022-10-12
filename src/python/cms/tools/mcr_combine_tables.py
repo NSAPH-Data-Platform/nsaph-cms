@@ -26,6 +26,8 @@ It takes care of different types and format of the most common columns,
 such as: year, state, DO[B/D], zip codes, state and county codes.
 
 The actual schema is defined in ../models/medicare.yaml
+
+This utility uses extended syntax compared with the general data modelling
 """
 
 import logging

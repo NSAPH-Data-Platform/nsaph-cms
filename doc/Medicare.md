@@ -132,7 +132,8 @@ width: 600
 ```
 
 The tables above are defined in
-[Medicare data model definition](members/medicare_yaml.md).
+[Medicare data model definition](members/medicare_yaml.md). This file
+uses [](DataModellingExtensions.md).
                                                 
 ### CWL workflows
 
@@ -148,6 +149,9 @@ The
 The federated patient summary view is created in two steps, though the division 
 into steps is purely technical. The reasons are
 given some limitations of readability in SQL.
+
+This step uses data modelling extensions described in
+[](DataModellingExtensions.md).
                                                
 These steps are part of
 [](pipeline/medicare_beneficiaries)
