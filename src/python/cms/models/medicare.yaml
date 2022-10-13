@@ -115,6 +115,31 @@ medicare:
             reference: https://resdac.org/cms-data/variables/research-triangle-institute-rti-race-code
             optional: true
             source: rti_race_cd
+        - hmo_indicators:
+            type: CHAR(1)[]
+            optional: false
+            description: Array of indicators if the beneficiary was enrolled in HMO during a given month
+            reference: https://resdac.org/cms-data/variables/hmo-indicator
+            m: ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12']
+            source:
+              - hmoind
+              - hmoind$m
+              - hmoind12
+              - bene_hmo_ind_$m
+            cast:
+              'character varying': string_to_array({column_name}, NULL)
+        - hmo_cvg_count:
+            type: INT
+            optional: false
+            description: Number of months during a given year, the beneficiary received their Part A and Part B benefits through a managed care plan
+            reference: https://requests.resdac.org/cms-data/variables/hmo-coverage-count
+            source:
+              - hmo_mo
+              - hmocovg
+              - bene_hmo_cvrage_tot_mons
+            cast:
+              '*': "CASE WHEN {column_name} IS NULL THEN 0 ELSE {column_name}::INT END"
+
     ip:
       description: |
         Inpatient Adminissions view. Combines multiple inpatient admissions
@@ -296,7 +321,10 @@ medicare:
         - age:
             source: MAX(age)
         - age_min:
-            source: MIN(age)
+            source: |
+              CASE
+                WHEN MIN(age) <> MAX(age) THEN MIN(age)
+              END
         - state_iso:
             source: "('US-' || state) "
         - fips2:
@@ -325,6 +353,10 @@ medicare:
             source: "MAX(zip)"
         - zips:
             source: "string_agg(distinct zip::varchar, ',')"
+        - hmo_indicators:
+            source: "MAX(hmo_indicators)"
+        - hmo_cvg_count:
+            source: "MAX(hmo_cvg_count)"
         - state_count:
             source: |
               (

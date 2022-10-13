@@ -33,7 +33,7 @@ This utility uses extended syntax compared with the general data modelling
 import logging
 import os
 from pathlib import Path
-from typing import List, Tuple, Optional
+from typing import List, Tuple, Optional, Dict
 
 import yaml
 
@@ -165,7 +165,19 @@ class MedicareCombinedView:
                 ctype = (c["type"], c["cast"])
             else:
                 ctype = None
-            source_column = self.get_column(cursor, table, src, ctype)
+            macros = dict()
+            for candidate in src:
+                if '$' in candidate:
+                    var = candidate[candidate.find('$') + 1]
+                    if var not in c:
+                        raise ValueError(
+                            "Macro {} is used but is not defined for column {}"
+                            " and candidate {}".format(
+                                var, n, candidate
+                            )
+                        )
+                    macros[var] = c[var]
+            source_column = self.get_column(cursor, table, src, ctype, macros)
             # if "clean" in c:
             #     source_column = c["clean"].format(n=source_column)
             if source_column is None:
@@ -179,9 +191,31 @@ class MedicareCombinedView:
             columns.append((n, source_column))
         return columns
 
-    @staticmethod
-    def get_column(cursor, table: str,
-                   candidates: List[str], ctype: Tuple) -> Optional[str]:
+    @classmethod
+    def get_column(cls, cursor, table: str,
+                   candidates: List[str],
+                   ctype: Tuple,
+                   macros: Dict) -> Optional[str]:
+        cols = []
+        simple_candidates = [c for c in candidates if '$' not in c]
+        ext_candidates = [c for c in candidates if '$' in c]
+        for candidate in ext_candidates:
+            expr = cls.find_column2arr(cursor, table, candidate, macros)
+            if expr:
+                cols.append(expr)
+        if not cols:
+            cols = cls.get_simple_column(cursor, table, simple_candidates, ctype)
+        if len(cols) > 1:
+            raise ValueError(table)
+        if not cols:
+            return None
+        return cols[0]
+
+    @classmethod
+    def get_simple_column(cls, cursor, table: str,
+                       candidates: List[str],
+                       ctype: Tuple):
+        cols = []
         sql = """
         SELECT column_name, data_type
         FROM information_schema.columns
@@ -192,7 +226,6 @@ class MedicareCombinedView:
         sql = sql.format(" OR ".join(cc), table)
         logging.debug(sql)
         cursor.execute(sql)
-        cols = []
         if ctype is not None:
             casts = ctype[1]
             target_type = ctype[0]
@@ -215,11 +248,41 @@ class MedicareCombinedView:
                 cols.append(cast.format(column_name=c[0]))
             else:
                 cols.append(c[0])
-        if len(cols) > 1:
-            raise ValueError(table)
-        if not cols:
+        return cols
+
+    @classmethod
+    def find_column2arr(cls, cursor, table: str, candidate: str, macros: Dict):
+        cc = [candidate]
+        for var in macros:
+            subst: List[str] = macros[var]
+            ccc = []
+            for c in cc:
+                expansion = [
+                    c.replace("${}".format(var), v)
+                    for v in subst
+                ]
+                ccc.extend(expansion)
+            cc = ccc
+        lst = ["'{}'".format(c) for c in cc]
+        condition = "column_name IN ({})".format(', '.join(lst))
+        sql = """
+        SELECT column_name
+        FROM information_schema.columns
+        WHERE ({})
+        AND table_name = '{}'
+        """.format(condition, table)
+        logging.debug(sql)
+        cursor.execute(sql)
+        source_columns = [c[0] for c in cursor]
+        if not source_columns:
             return None
-        return cols[0]
+        if len(source_columns) != len(cc):
+            logging.warning(
+                "Not all members [{:d}] were found for column {} in table {}"
+                .format(len(source_columns), candidate, table)
+            )
+            return None
+        return "ARRAY[{}]".format(','.join(cc))
 
 
 if __name__ == '__main__':
