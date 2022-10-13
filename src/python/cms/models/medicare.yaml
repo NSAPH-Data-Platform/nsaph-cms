@@ -116,7 +116,7 @@ medicare:
             optional: true
             source: rti_race_cd
         - hmo_indicators:
-            type: CHAR(1)[]
+            type: CHAR(1)[12]
             optional: false
             description: Array of indicators if the beneficiary was enrolled in HMO during a given month
             reference: https://resdac.org/cms-data/variables/hmo-indicator
