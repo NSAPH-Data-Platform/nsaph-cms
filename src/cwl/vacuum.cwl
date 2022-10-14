@@ -32,7 +32,9 @@ doc: |
 inputs:
   #$import: db.yaml
   registry:
-    type: File?
+    type:
+      - File?
+      - string?
     inputBinding:
       prefix: --registry
     doc: |

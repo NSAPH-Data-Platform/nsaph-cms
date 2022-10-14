@@ -68,6 +68,8 @@ steps:
       depends_on: create/log
       table:
         valueFrom: "mbsf_ab_2015"
+      registry:
+        valueFrom: "mbsf_ab_2015.yaml"
       domain:
         valueFrom: "cms"
       incremental:
@@ -84,6 +86,8 @@ steps:
       depends_on: index/log
       table:
         valueFrom: "mbsf_ab_2015"
+      registry:
+        valueFrom: "mbsf_ab_2015.yaml"
       domain:
         valueFrom: "cms"
       database: database
