@@ -51,7 +51,7 @@ steps:
       table:
         valueFrom: "mbsf_ab_2015"
       domain:
-        valueFrom: "medicare"
+        valueFrom: "cms"
       registry:
         valueFrom: "mbsf_ab_2015.yaml"
       database: database
@@ -67,7 +67,7 @@ steps:
       table:
         valueFrom: "mbsf_ab_2015"
       domain:
-        valueFrom: "medicare"
+        valueFrom: "cms"
       incremental:
         valueFrom: $(true)
       database: database
@@ -83,7 +83,7 @@ steps:
       table:
         valueFrom: "mbsf_ab_2015"
       domain:
-        valueFrom: "medicare"
+        valueFrom: "cms"
       database: database
       connection_name: connection_name
     out: [ log, errors ]
