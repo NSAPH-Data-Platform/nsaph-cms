@@ -25,6 +25,7 @@ class: Workflow
 requirements:
   SubworkflowFeatureRequirement: {}
   StepInputExpressionRequirement: {}
+  InlineJavascriptRequirement: {}
 
 doc: |
   This tool is a shortcut to create a materialized view and build
