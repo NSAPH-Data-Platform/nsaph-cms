@@ -39,7 +39,7 @@ inputs:
     type: string
     doc: The name of the section in the database.ini file
   input:
-    type: File
+    type: File?
   depends_on:
     type: File?
     doc: a special field used to enforce dependencies and execution order
@@ -58,6 +58,7 @@ steps:
       database: database
       input_data: input
       connection_name: connection_name
+    when: $(inputs.input_data != null)
     out: [ log, errors ]
 
   index:
