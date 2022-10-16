@@ -280,6 +280,9 @@ medicare:
             reference: "https://resdac.org/cms-data/variables/raceethnicity-msis"
             source: "string_agg(distinct race, ',')"
             identifier: true
+        - race_rti:
+            reference: "https://resdac.org/cms-data/variables/research-triangle-institute-rti-race-code"
+            source: "string_agg(distinct race_rti, ',')"
         - sex:
             source: "string_agg(distinct sex, ',')"
             identifier: true

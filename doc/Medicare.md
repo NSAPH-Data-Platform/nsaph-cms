@@ -220,6 +220,7 @@ discrepancies in the data related to:
 * dob
 * dod
 * race
+* race_rti
 * sex
 
 If there is any discrepancy for a given `bene_id`, then:
@@ -227,6 +228,7 @@ If there is any discrepancy for a given `bene_id`, then:
 * The earliest _**DOB**_ is selected as `dob`
 * The latest _**DOD**_ (date of death) is selected  as `dod`
 * A comma-separated string containing all race codes is used for `race`
+* A comma-separated string containing all race codes is used for `race_rti`
 * comma-separated string containing all sex codes is used for `sex`
 
 The following columns are added:
