@@ -169,19 +169,26 @@ It also cleanses and conditions data from the following columns:
 * `year` 
   * If it is a string in original file, it is converted to integer
   * If it is two-digit, it is converted to 4 digit
+* `dob`: converted to SQL `DATE` type, from either character or
+  SAS numeric form
+* `dod` (date of death): converted to SQL `DATE` type,
+  from either character or SAS numeric form
+* `age` as recorded in the raw data. It is the beneficiary's age on the last day of the prior year
+* `sex` 
+* `race`
+* `rti_race` Research Triangle Institute race code
+* `hmo_indicators` Monthly Medicare Advantage (MA) enrollment indicator
+* `hmo_cvg_count` Number of months the beneficiary was enrolled
+* `yob` year of birth calculated with the age variable (year - age)
 * `state`: added a column with text state id
+* `ssa2`: Social Security Administration (SSA) two digit code for state
+* `ssa3`: Social Security Administration (SSA) three digit code for county
 * `fips2`: added a column with two digit state FIPS code
 * `zip`: if original file uses 9-digit zip code, it is split
   into two separate columns, 5 digit `zip` and 4-digit `zip4`.
   The value is also converted to integer value.
 * `zip4`: added, when available - the last four digits of 9-digit
   zip code
-* `dob`: converted to SQL `DATE` type, from either character or
-  SAS numeric form
-* `dod` (date of death): converted to SQL `DATE` type,
-  from either character or SAS numeric form
- 
-
 
 The following 
 [CWL tool](pipeline/medicare_combine_tables)
