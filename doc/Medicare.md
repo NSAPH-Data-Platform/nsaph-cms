@@ -337,28 +337,30 @@ The following columns are created for Enrollments:
 * `ssa2`: SSA state code
 * `ssa3`: SSA county code
 * `ssa2_list`: list of all SSA county codes 
-* state_iso: ISO code of the state, used for mapping
-* residence_county: one of the "latest" residence 
+* `state_iso`: ISO code of the state, used for mapping
+* `residence_county`: one of the "latest" residence 
   counties where 
   the beneficiary was registered, latest in 
   alphabetical order
-* residence_counties: comma separated list of all 
+* `residence_counties`: comma separated list of all 
   "latest" residence counties, where a beneficiary was
   registered during the year
-* fips5: 5 digit FIPS code of the `residence_county`
-* zip: one of the "latest" zip codes where 
+* `fips5`: 5 digit FIPS code of the `residence_county`
+* `zip`: one of the "latest" zip codes where 
   the beneficiary was registered, latest in 
   numerical order
-* zips: comma separated list of all 
+* `zips`: comma separated list of all 
   "latest" zip codes, where a beneficiary was
   registered during the year
-* state_count: number of states, where the beneficiary
+* `state_count`: number of states, where the beneficiary
   was enrolled in medicaid during the year. Note,
   this is also the number of records for this beneficiary and this year
   in the Enrollments` table.
-* died: a boolean flag indicating that the beneficiary has 
+* `died`: a boolean flag indicating that the beneficiary has 
   died during this year while being registered
   for medicaid in this state.
+* `hmo_indicators`: the maximum value of all the monthly hmo indicators
+* `hmo_cvg_count`: the number of months the beneficiary was enrolled in a Medicare Advantage (MA) 
 * `fips3_is_approximated`: A boolean column, indicating whether the value 
   was taken from original record as is or approximated. 
   If true, it means that there was no valid county code in the original
