@@ -12,8 +12,10 @@ cms:
             type: VARCHAR
         - zip:
             type: INT
+            index: true
         - year:
             type: INT
+            index: true
         - qid:
             type: VARCHAR
         - dodflag:
@@ -22,22 +24,29 @@ cms:
             type: VARCHAR
         - sex:
             type: INT
+            index: true
         - race:
             type: INT
+            index: true
         - age:
             type: INT
+            index: true
         - hmo_mo:
             type: VARCHAR
+            index: true
         - hmoind:
             type: VARCHAR
+            index: true
         - statecode:
             type: VARCHAR
+            index: true
         - latitude:
             type: NUMERIC(10,6)
         - longitude:
             type: NUMERIC(11,6)
         - dual:
             type: VARCHAR
+            index: true
         - death:
             type: INT
         - dead:
@@ -153,6 +162,7 @@ cms:
               code: GENERATED ALWAYS AS (qid) STORED
               type: generated
             type: VARCHAR
+            index: true
         - state:
             description: |
               SSA standard state code of a beneficiarys residence.
@@ -176,6 +186,7 @@ cms:
               code: GENERATED ALWAYS AS (NULL) STORED
               type: generated
             type: DATE
+            index: true
       primary_key:
         - FILE
         - RECORD

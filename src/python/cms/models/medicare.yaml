@@ -63,12 +63,18 @@ medicare:
             type: INT
             description: Age on January 1 of a given year, if provided
             optional: true
-            source: age
+            source:
+              - age
+              - bene_age_at_beg_ref_yr
         - yob:
             type: INT
             description: Year, claculated from age
             optional: true
-            source: "(year - age)"
+            source:
+              - age
+              - bene_age_at_beg_ref_yr
+            cast:
+              '*':  "(year::INT - {column_name}::INT)"
         - dod:
             type: date
             description: Date of beneficiary death, if available

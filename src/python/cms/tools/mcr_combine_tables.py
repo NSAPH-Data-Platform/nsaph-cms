@@ -206,7 +206,12 @@ class MedicareCombinedView:
         if not cols:
             cols = cls.get_simple_column(cursor, table, simple_candidates, ctype)
         if len(cols) > 1:
-            raise ValueError(table)
+            raise ValueError(
+                "Multiple options for table {}: {}".format(
+                    table,
+                    ', '.join(cols)
+                )
+            )
         if not cols:
             return None
         return cols[0]
@@ -221,6 +226,7 @@ class MedicareCombinedView:
         FROM information_schema.columns
         WHERE ({})
         AND table_name = '{}'
+        AND table_schema = 'cms'
         """
         cc = ["column_name = '{}'".format(c) for c in candidates]
         sql = sql.format(" OR ".join(cc), table)
