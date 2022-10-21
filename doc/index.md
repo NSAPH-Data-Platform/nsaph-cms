@@ -48,12 +48,7 @@ Top level directories are:
 
 Doc directory contains documentation.
 
-Src directory contains software source code. 
-See details in [Software Sources](#software-sources) section.
-
-### Software Sources
-
-The directories under sources are:
+Src directory contains software source code. The directories under sources are:
 
     - cwl
     - python

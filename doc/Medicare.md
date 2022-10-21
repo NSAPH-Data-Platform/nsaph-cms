@@ -169,19 +169,26 @@ It also cleanses and conditions data from the following columns:
 * `year` 
   * If it is a string in original file, it is converted to integer
   * If it is two-digit, it is converted to 4 digit
+* `dob`: converted to SQL `DATE` type, from either character or
+  SAS numeric form
+* `dod` (date of death): converted to SQL `DATE` type,
+  from either character or SAS numeric form
+* `age` as recorded in the raw data. It is the beneficiary's age on the last day of the prior year
+* `sex` 
+* `race`
+* `rti_race` Research Triangle Institute race code
+* `hmo_indicators` Monthly Medicare Advantage (MA) enrollment indicator
+* `hmo_cvg_count` Number of months the beneficiary was enrolled
+* `yob` year of birth calculated with the age variable (year - age)
 * `state`: added a column with text state id
+* `ssa2`: Social Security Administration (SSA) two digit code for state
+* `ssa3`: Social Security Administration (SSA) three digit code for county
 * `fips2`: added a column with two digit state FIPS code
 * `zip`: if original file uses 9-digit zip code, it is split
   into two separate columns, 5 digit `zip` and 4-digit `zip4`.
   The value is also converted to integer value.
 * `zip4`: added, when available - the last four digits of 9-digit
   zip code
-* `dob`: converted to SQL `DATE` type, from either character or
-  SAS numeric form
-* `dod` (date of death): converted to SQL `DATE` type,
-  from either character or SAS numeric form
- 
-
 
 The following 
 [CWL tool](pipeline/medicare_combine_tables)
@@ -332,28 +339,30 @@ The following columns are created for Enrollments:
 * `ssa2`: SSA state code
 * `ssa3`: SSA county code
 * `ssa2_list`: list of all SSA county codes 
-* state_iso: ISO code of the state, used for mapping
-* residence_county: one of the "latest" residence 
+* `state_iso`: ISO code of the state, used for mapping
+* `residence_county`: one of the "latest" residence 
   counties where 
   the beneficiary was registered, latest in 
   alphabetical order
-* residence_counties: comma separated list of all 
+* `residence_counties`: comma separated list of all 
   "latest" residence counties, where a beneficiary was
   registered during the year
-* fips5: 5 digit FIPS code of the `residence_county`
-* zip: one of the "latest" zip codes where 
+* `fips5`: 5 digit FIPS code of the `residence_county`
+* `zip`: one of the "latest" zip codes where 
   the beneficiary was registered, latest in 
   numerical order
-* zips: comma separated list of all 
+* `zips`: comma separated list of all 
   "latest" zip codes, where a beneficiary was
   registered during the year
-* state_count: number of states, where the beneficiary
+* `state_count`: number of states, where the beneficiary
   was enrolled in medicaid during the year. Note,
   this is also the number of records for this beneficiary and this year
   in the Enrollments` table.
-* died: a boolean flag indicating that the beneficiary has 
+* `died`: a boolean flag indicating that the beneficiary has 
   died during this year while being registered
   for medicaid in this state.
+* `hmo_indicators`: the maximum value of all the monthly hmo indicators
+* `hmo_cvg_count`: the number of months the beneficiary was enrolled in a Medicare Advantage (MA) 
 * `fips3_is_approximated`: A boolean column, indicating whether the value 
   was taken from original record as is or approximated. 
   If true, it means that there was no valid county code in the original
