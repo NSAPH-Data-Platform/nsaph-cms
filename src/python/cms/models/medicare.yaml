@@ -161,6 +161,7 @@ medicare:
         - file
         - record
         - year:
+            type: INT
             source: '(CASE WHEN "year"::int < 20 THEN (2000 + "year"::int) WHEN (20 < "year"::int AND "year"::int < 100) THEN (1900 + "year"::int) WHEN "year" IS NULL THEN 2000 ELSE "year"::int END)'
         - state:
             source: '(SELECT state_id FROM public.us_states as s WHERE s.ssa2 = "state")'
@@ -335,6 +336,7 @@ medicare:
                 WHEN MIN(age) <> MAX(age) THEN MIN(age)
               END
         - state_iso:
+            type: "char(5)"
             source: "('US-' || state) "
         - fips2:
             source: MAX(fips2)
@@ -450,6 +452,10 @@ medicare:
               columns:
                 - state
                 - year
+            sy_iso_idx:
+              columns:
+                - state_iso
+                - year
             fips_idx:
               columns:
                 - fips2
@@ -525,6 +531,13 @@ medicare:
                 - diagnoses:
                     type: "VARCHAR(12)[10]"
                     source: None
+                - state_iso:
+                    type: "char(5)"
+                    source: "('US-' || state) "
+                    index:
+                      include:
+                        - bene
+                        - pd_hll_hash
                 - bene:
                     type: HLL_HASHVAL
                     description: |
@@ -560,6 +573,12 @@ medicare:
                   columns:
                     - state
                     - year
+                adm_ys_iso_idx:
+                  columns:
+                    - state_iso
+                    - year
+                  include:
+                    - bene
                 adm_ysdz_idx:
                   columns:
                     - state
@@ -567,5 +586,157 @@ medicare:
                     - zip
                     - primary_diagnosis
 
+  ## QC Tables
+    qc_enrl_bene:
+      description: |
+        Joined data for beneficiaries and enrollments
+      create:
+        type:  view
+        select: '*'
+        from: enrollments natural join beneficiaries
+      columns:
+        - consistent_dob:
+            type: VARCHAR(12)
+            source: |
+              (CASE
+                WHEN dob IS NULL THEN 'MISSING'
+                WHEN dob_latest IS NOT NULL THEN 'AMBIGUOUS'
+                ELSE 'CONSISTENT'
+              END)
+        - consistent_dod:
+            type: VARCHAR(12)
+            source: |
+              (CASE
+                WHEN dod IS NULL THEN 'NONE'
+                WHEN dod_earliest IS NOT NULL THEN 'AMBIGUOUS'
+                ELSE 'CONSISTENT'
+              END)
+        - consistent_sex:
+            type: VARCHAR(12)
+            source: |
+              (CASE
+                WHEN sex LIKE '%,%' THEN 'AMBIGUOUS'
+                ELSE 'CONSISTENT'
+              END)
+        - consistent_race:
+            type: VARCHAR(12)
+            source: |
+              (CASE
+                WHEN race LIKE '%,%' THEN 'AMBIGUOUS'
+                ELSE 'CONSISTENT'
+              END)
+    qc_enrollments:
+      description: |
+        Aggregate data for beneficiaries and enrollments
+      create:
+        type: materialized view
+        from: qc_enrl_bene
+        group by:
+          - year
+          - state
+          - zip
+          - fips3
+          - consistent_dob
+          - consistent_dod
+          - consistent_sex
+          - consistent_race
+          - fips3_is_approximated
+          - fips3_valdiated
+      columns:
+        - year
+        - state
+        - zip
+        - fips3
+        - consistent_dob
+        - consistent_dod
+        - consistent_sex
+        - consistent_race
+        - fips3_is_approximated
+        - fips3_valdiated
+        - state_iso:
+            type: CHAR(5)
+            source: MAX(state_iso)
+        - NumRecords:
+            type: BIGINT
+            source: COUNT(*)
+            index: false
+        - NumDistinctBeneficaries:
+            type: BIGINT
+            source: "(#(hll_add_agg(bene)))::BIGINT"
+            index: false
+        - bene_hll:
+            source: "hll_add_agg(bene)"
+            index: false
 
+    qc_adm_union:
+      description: |
+        Union of data from admissions table with the records
+        discarded because of validation issues
+      create:
+        type:  view
+        from: admissions
+        select: |
+           reason,
+              year,
+              state,
+              state_iso,
+              admission_year,
+              diagnoses,
+              zip,
+              admission_date,
+              discharge_date,
+              adm_day_of_week,
+              primary_diagnosis,
+              bene_id,
+              bene,
+              pd_hll_hash,
+              icd_hll
+           FROM medicare_audit.admissions
+           UNION ALL 
+           SELECT 'OK'::VARCHAR AS reason,
+              year,
+              state,
+              state_iso,
+              admission_year,
+              diagnoses,
+              zip,
+              admission_date,
+              discharge_date,
+              adm_day_of_week,
+              primary_diagnosis,
+              bene_id,
+              bene,
+              pd_hll_hash,
+              icd_hll
+
+    qc_admissions:
+      description: |
+        Aggregate data for admissions, beneficiaries and enrollments
+      create:
+        type: materialized view
+        from: qc_adm_union
+        group by:
+          - year
+          - state
+          - zip
+          - reason
+      columns:
+        - year
+        - state
+        - zip
+        - reason
+        - state_iso:
+            type: CHAR(5)
+            source: MAX(state_iso)
+        - NumRecords:
+            type: BIGINT
+            source: COUNT(*)
+            index: false
+        - NumDistinctBeneficaries:
+            type: BIGINT
+            source: "(#(hll_add_agg(bene)))::BIGINT"
+            index: false
+        - bene_hll:
+            source: "hll_add_agg(bene)"
+            index: false
 

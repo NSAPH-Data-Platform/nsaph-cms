@@ -434,3 +434,9 @@ During this step the following major operations are performed:
 
 See more information about handling records that have failed validation in:
 [Data Modeling](../../core-platform/doc/Datamodels.md#invalid-record)
+
+## Create QC Tables
+
+QC tables are created by
+[Medicare QC Pipeline](pipeline/medicare_qc)
+
