@@ -38,6 +38,10 @@ Please see the following documents for details:
 * Data model and processing of [Medicaid](Medicaid.md) data
 * Data model and processing of [Medicare](Medicare.md) data
 * Tips on [querying of Medicaid data](QueringMedicaid.md)
+                                                                 
+Medicare processing now includes a 
+[pipeline to automatically create QC Tables](Medicare.md#creating-qc-tables).
+These tables are used by Apache Superset dashboard that visualizes QC results. 
 
 ## Project Structure
 

@@ -91,7 +91,7 @@ steps:
 
   create_admissions_qc_table:
     run: matview.cwl
-    doc: Creates a table with aggregate data for beneficiaries and enrollments
+    doc: Creates a table with aggregate data for inpatient admissions
     in:
       depends_on: create_adm_qc_view/log
       table:

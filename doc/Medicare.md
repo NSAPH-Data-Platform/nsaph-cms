@@ -23,6 +23,9 @@ local:
 
 See [](pipeline/medicare) for the pipeline code
 
+See [Medicare data model definition](members/medicare_yaml.md) for formal
+data model definition.
+
 ## Ingesting Raw Files
 
 ### Overview
@@ -435,8 +438,194 @@ During this step the following major operations are performed:
 See more information about handling records that have failed validation in:
 [Data Modeling](../../core-platform/doc/Datamodels.md#invalid-record)
 
-## Create QC Tables
+## Creating QC Tables
+                                   
+### Medicare QC approach
 
-QC tables are created by
+QC tables (materialized views to be precise) are created by
 [Medicare QC Pipeline](pipeline/medicare_qc)
 
+Two tables are created:
+
+* Enrollments QC
+* Admissions QC
+
+These are aggregate tables, defined in 
+[Medicare data model definition](members/medicare_yaml.md) 
+(qc_enrollments and qc_admissions).
+
+In these tables we define dimensions and measures, including count measures 
+and percent measures.
+
+### Enrollments QC Table
+                            
+####  Enrollments QC Table Definition
+
+Enrollment QC is roughly defined by the following SQL:
+
+```sql
+SELECT 
+    year,
+    state,
+    zip,
+    fips3,
+    CASE
+        WHEN ( 
+                beneficiaries.dob IS NULL) 
+        THEN 'MISSING'::TEXT
+        WHEN ( 
+                beneficiaries.dob_latest IS NOT NULL) 
+        THEN 'AMBIGUOUS':: TEXT
+        ELSE 'CONSISTENT'::TEXT
+    END AS consistent_dob,
+    CASE
+        WHEN ( 
+                beneficiaries.dod IS NULL) 
+        THEN 'NONE'::TEXT
+        WHEN ( 
+                beneficiaries.dod_earliest IS NOT NULL) 
+        THEN 'AMBIGUOUS':: TEXT
+        ELSE 'CONSISTENT'::TEXT
+    END AS consistent_dod,
+    CASE
+        WHEN ( 
+                beneficiaries.sex ~~ '%,%'::TEXT) 
+        THEN 'AMBIGUOUS':: TEXT
+        ELSE 'CONSISTENT'::TEXT
+    END AS consistent_sex,
+    CASE
+        WHEN ( 
+                beneficiaries.race ~~ '%,%'::TEXT) 
+        THEN 'AMBIGUOUS':: TEXT
+        ELSE 'CONSISTENT'::TEXT
+    END AS consistent_race
+    fips3_is_approximated,
+    fips3_valdiated,
+    state_iso,
+    COUNT(*)                        AS numrecords,
+    ((# hll_add_agg(bene)))::bigint AS numdistinctbeneficaries,
+    hll_add_agg(bene)               AS bene_hll
+FROM 
+    medicare.enrollments natural join medicare.beneficiaries
+GROUP BY 
+    year, 
+    state, 
+    zip, 
+    fips3, 
+    consistent_dob, 
+    consistent_dod, 
+    consistent_sex, 
+    consistent_race, 
+    fips3_is_approximated, 
+    fips3_valdiated;
+```
+
+####  Enrollments QC Table Dimensions 
+
+Therefore, the following QC dimensions are defined:
+
+* year, 
+* state, 
+* zip, 
+* fips3, 
+* consistent_dob, 
+* consistent_dod, 
+* consistent_sex, 
+* consistent_race, 
+* fips3_is_approximated, 
+* fips3_valdiated
+
+
+####  Enrollments QC Table Measures
+
+In Apache Superset, the following metrics are defined for this table:
+
+* Number of consistent beneficiaries:
+  ```sql
+  (#(hll_union_agg(bene_hll) FILTER (
+          WHERE consistent_dob = 'CONSISTENT'
+          AND consistent_dod <> 'AMBIGUOUS'
+          AND consistent_race = 'CONSISTENT'
+          AND consistent_sex = 'CONSISTENT'
+          ))
+          ) * 100.0 / (#(hll_union_agg(bene_hll)))
+  ```
+* Number of distinct beneficiaries
+  ```sql
+  (#(hll_union_agg(bene_hll)))::INT
+  ```
+* Number of enrollment records
+  ```sql
+  SUM(numrecords)
+  ```                                     
+
+### Admissions QC Table
+
+####  Admissions QC Table Definition
+
+Enrollment QC is roughly defined by the following SQL:
+
+```sql
+SELECT 
+    year,
+    state,
+    zip,
+    reason,
+    state_iso,
+    COUNT(*)                        AS numrecords,
+    ((# hll_add_agg(bene)))::bigint AS numdistinctbeneficaries,
+    hll_add_agg(bene)               AS bene_hll
+FROM 
+    medicare.admissions UNION ALL medicare_audit.admissions
+GROUP BY 
+    year, 
+    state, 
+    zip, 
+    reason;
+```
+
+####  Admissions QC Table Dimensions 
+
+Therefore, the following QC dimensions are defined:
+
+* year, 
+* state, 
+* zip, 
+* reason (reason is either literal 'OK' or a reason why a 
+  record failed validation)
+
+####  Admissions QC Table Measures
+ 
+In Apache Superset, the following metrics are defined for this table:
+ 
+Count metrics:
+
+* Number of admission records
+    ```sql  
+    SUM(numrecords)
+    ```
+* Number of distinct beneficiaries
+    ```sql
+    (#(hll_union_agg(bene_hll)))::INT
+    ```
+        
+Percent metrics:
+
+* Percent of valid records (passed validation)
+    ```sql
+    (SUM(numrecords) FILTER (WHERE reason = 'OK'))*100.0/SUM(numrecords)
+    ```
+* Percent of admission records, for which corresponding enrollment data 
+  was not found (failed validation)
+    ```sql
+    (SUM(numrecords) FILTER (WHERE reason = 'FOREIGN KEY'))*100.0/SUM(numrecords)
+    ```
+* Percent of duplicate records (failed validation, one apparent 
+  admission recorded more than once)
+    ```sql
+    (SUM(numrecords) FILTER (WHERE reason = 'DUPLICATE'))*100.0/SUM(numrecords)
+    ```
+* Percent of valid records with missing data (failed validation)
+    ```sql
+    (SUM(numrecords) FILTER (WHERE reason = 'PRIMARY KEY'))*100.0/SUM(numrecords)
+    ```
