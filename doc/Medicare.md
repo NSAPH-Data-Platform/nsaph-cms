@@ -20,6 +20,56 @@ local:
 ```
 
 ## Processing pipeline
+                                      
+### Medicare Pipeline Steps
+
+Current pipeline consists of 5 steps, each represented as a sub-workflow:
+
+1. Ingest raw data
+2. Process beneficiaries and their enrollment in Medicare
+3. Process Admissions
+4. Create QC Tables
+5. Grant `SELECT` privileges (i.e., read access) to all newly created tables
+   (this step is actually a command line tool, not a workflow)
+                                   
+### Ingestion of raw data
+
+Ingestion of raw data is incremental, i.e. tables that are already in 
+the database
+will not be dropped (deleted). However, any table with the name found
+in input path will be replaced. Please note, that every raw record
+is identified by the tuple consisting of the original file name and
+the line number in that file.
+                                   
+```note
+If no raw data is given or `--input` parameters points
+to a non-existent or empty directory, teh pipeline will skip ingestion
+step and will process the raw data that is already in the database. 
+```
+                                                             
+Ingestion as a part of the data pipeline is only implemented for
+data in the format as it comes from ResDac. Metadata for ingestion
+is taken from [FTS](../../fts) files that accompany ResDac deliverables. 
+
+```important
+In case of Medicare data in posession of NSAPH organization, we 
+only have original ResDac data for years 2011-2014 and 2016-2018. 
+Therefore, the pipeline is unable to ingest teh data for other years
+(1999-2010 and 2015).
+```
+See [](#files-for-1999-to-2010) for more information.
+
+See [](#ingesting-raw-files) for processing details
+
+### Processing Data in the Database
+                                               
+During in-database processing all tables, views and materialized views 
+are completely replaced. Old tables are dropped and new ones are created
+from scratch.
+
+See [](#combining-raw-files-into-a-single-view) for processing details.
+                      
+### Medicare Pipeline References
 
 See [](pipeline/medicare) for the pipeline code
 
@@ -28,7 +78,7 @@ data model definition.
 
 ## Ingesting Raw Files
 
-### Overview
+### Overview of Ingesting Raw Medicare Files 
                                                                    
 There are two types of tables:
 
@@ -105,7 +155,7 @@ See the code for handling these files:
 
 ### Files for Years 2011 and later
 
-These files are original files from Resdac. They come in Fixed Width Format
+These files are original files from ResDac. They come in Fixed Width Format
 (FWF). For each file the structure is described in File Transfer 
 Summary (FTS) file. Unfortunately these files are intended for reading by 
 a human and is difficult to parse automatically. A 
