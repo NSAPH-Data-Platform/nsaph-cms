@@ -79,7 +79,7 @@ data model definition.
 
 ## Ingesting Raw Files
 
-[Pipeline]((pipeline/load_raw_medicare))
+[Pipeline](pipeline/load_raw_medicare)
 
 ### Overview of Ingesting Raw Medicare Files 
                                                                    
@@ -171,7 +171,7 @@ extarcted by the parser is used to:
 
 ## Combining raw files into a single view
 
-[Pipeline]((pipeline/medicare_beneficiaries))
+[Pipeline](pipeline/medicare_beneficiaries)
 
 ### Eventual database schema
 
