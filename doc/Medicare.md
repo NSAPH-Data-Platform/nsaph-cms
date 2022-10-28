@@ -25,11 +25,12 @@ local:
 
 Current pipeline consists of 5 steps, each represented as a sub-workflow:
 
-1. Ingest raw data
-2. Process beneficiaries and their enrollment in Medicare
-3. Process Admissions
-4. Create QC Tables
-5. Grant `SELECT` privileges (i.e., read access) to all newly created tables
+1. [Ingest raw data](members/load_raw_medicare)
+2. [Process beneficiaries and their enrollment in Medicare](members/medicare_beneficiaries)
+3. [Process Admissions](members/medicare_admissions)
+4. [Create QC Tables](members/medicare_qc)
+5. [Grant `SELECT`](members/grant_read_access) 
+   privileges (i.e., read access) to all newly created tables
    (this step is actually a command line tool, not a workflow)
                                    
 ### Ingestion of raw data
@@ -41,9 +42,9 @@ in input path will be replaced. Please note, that every raw record
 is identified by the tuple consisting of the original file name and
 the line number in that file.
                                    
-```note
+```{note}
 If no raw data is given or `--input` parameters points
-to a non-existent or empty directory, teh pipeline will skip ingestion
+to a non-existent or empty directory, the pipeline will skip ingestion
 step and will process the raw data that is already in the database. 
 ```
                                                              
@@ -51,10 +52,10 @@ Ingestion as a part of the data pipeline is only implemented for
 data in the format as it comes from ResDac. Metadata for ingestion
 is taken from [FTS](../../fts) files that accompany ResDac deliverables. 
 
-```important
+```{important}
 In case of Medicare data in posession of NSAPH organization, we 
 only have original ResDac data for years 2011-2014 and 2016-2018. 
-Therefore, the pipeline is unable to ingest teh data for other years
+Therefore, the pipeline is unable to ingest the data for other years
 (1999-2010 and 2015).
 ```
 See [](#files-for-1999-to-2010) for more information.
@@ -77,6 +78,8 @@ See [Medicare data model definition](members/medicare_yaml.md) for formal
 data model definition.
 
 ## Ingesting Raw Files
+
+[Pipeline]((members/load_raw_medicare))
 
 ### Overview of Ingesting Raw Medicare Files 
                                                                    
@@ -167,6 +170,8 @@ extarcted by the parser is used to:
 * Generate metadata for the FWF Reader
 
 ## Combining raw files into a single view
+
+[Pipeline]((members/medicare_beneficiaries))
 
 ### Eventual database schema
 
@@ -489,7 +494,9 @@ See more information about handling records that have failed validation in:
 [Data Modeling](../../core-platform/doc/Datamodels.md#invalid-record)
 
 ## Creating QC Tables
-                                   
+                             
+[Pipeline](members/medicare_qc)
+      
 ### Medicare QC approach
 
 QC tables (materialized views to be precise) are created by
