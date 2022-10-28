@@ -25,11 +25,11 @@ local:
 
 Current pipeline consists of 5 steps, each represented as a sub-workflow:
 
-1. [Ingest raw data](members/load_raw_medicare)
-2. [Process beneficiaries and their enrollment in Medicare](members/medicare_beneficiaries)
-3. [Process Admissions](members/medicare_admissions)
-4. [Create QC Tables](members/medicare_qc)
-5. [Grant `SELECT`](members/grant_read_access) 
+1. [Ingest raw data](pipeline/load_raw_medicare)
+2. [Process beneficiaries and their enrollment in Medicare](pipeline/medicare_beneficiaries)
+3. [Process Admissions](pipeline/medicare_admissions)
+4. [Create QC Tables](pipeline/medicare_qc)
+5. [Grant `SELECT`](pipeline/grant_read_access) 
    privileges (i.e., read access) to all newly created tables
    (this step is actually a command line tool, not a workflow)
                                    
@@ -79,7 +79,7 @@ data model definition.
 
 ## Ingesting Raw Files
 
-[Pipeline]((members/load_raw_medicare))
+[Pipeline]((pipeline/load_raw_medicare))
 
 ### Overview of Ingesting Raw Medicare Files 
                                                                    
@@ -171,7 +171,7 @@ extarcted by the parser is used to:
 
 ## Combining raw files into a single view
 
-[Pipeline]((members/medicare_beneficiaries))
+[Pipeline]((pipeline/medicare_beneficiaries))
 
 ### Eventual database schema
 
@@ -495,7 +495,7 @@ See more information about handling records that have failed validation in:
 
 ## Creating QC Tables
                              
-[Pipeline](members/medicare_qc)
+[Pipeline](pipeline/medicare_qc)
       
 ### Medicare QC approach
 

@@ -1,0 +1,9 @@
+{
+    "job": {
+        "database": {
+          	"class": "File",
+      		"path": "/opt/airflow/project/database.ini"
+         },
+        "connection_name": "nsaph2"
+    }
+}
