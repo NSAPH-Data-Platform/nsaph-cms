@@ -163,7 +163,7 @@ steps:
       - admission697_vacuum_err
 
   grant:
-    run: grant_read_access.cwl
+    run: alter_database.cwl
     doc: |
       Grants read access to the members of NSAPH group for newly created
       or updated tables

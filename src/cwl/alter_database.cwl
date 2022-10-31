@@ -1,4 +1,4 @@
-### Workflow to grant read (SELECT) privilege to all users in NSAPH admin role
+### Utility to grant read (SELECT) privilege to all users in NSAPH admin role
 #  Copyright (c) 2022. Harvard University
 #
 #  Developed by Research Software Engineering,
@@ -19,45 +19,43 @@
 #
 
 cwlVersion: v1.2
-class: Workflow
+class: CommandLineTool
+baseCommand: [python, -m, nsaph.util.psql]
+requirements:
+  InlineJavascriptRequirement: {}
+
 
 doc: |
-  This workflow executes an SQL statement in the database to grant
+  This tool executes an SQL statement in the database to grant
   read priviligies to NSAPH users (memebrs of group nsaph_admin)
-  This is a wrapper around the tool to be called from Airflow DAG.
 
 inputs:
   database:
     type: File
     doc: Path to database connection file, usually database.ini
+    inputBinding:
+      prefix: --db
   connection_name:
     type: string
     doc: The name of the section in the database.ini file
+    inputBinding:
+      prefix: --connection
+  depends_on:
+    type: File?
+    doc: a special field used to enforce dependencies and execution order
   sql:
     type: string[]
     default:
-      - "call public.grant_select('nsaph_admin');"
-
-steps:
-  grant:
-    run: alter_database.cwl
-    doc: |
-      Grants read access to the members of NSAPH group for newly created
-      or updated tables
-    in:
-      database: database
-      connection_name: connection_name
-      sql: sql
-    out:
-      - log
-      - err
-
+      - "call public.grant_access();"
+    inputBinding:
+      position: 3
 
 outputs:
-  grant_log:
-    type: File
-    outputSource: grant/log
-  grant_err:
-    type: File
-    outputSource: grant/err
+  log:
+    type: stdout
+  err:
+    type: stderr
+
+stderr: "grant.err"
+stdout: "grant.log"
 
