@@ -145,6 +145,62 @@ medicare:
               - bene_hmo_cvrage_tot_mons
             cast:
               '*': "CASE WHEN {column_name} IS NULL THEN 0 ELSE {column_name}::INT END"
+    pelg:
+      description: |
+        Patient Summary view for teh purpose of finding patients eligible for
+        medicare because of disabilities
+      create:
+        type: materialized view
+        from:
+          - cms.mbsf_ab*
+          - cms.mcr_bene_*
+        exclude:
+            - mbsf_ab_2015
+      columns:
+        - bene_id
+        - file
+        - record
+        - year:
+            source: '(CASE WHEN "year"::int < 20 THEN (2000 + "year"::int) WHEN (20 < "year"::int AND "year"::int < 100) THEN (1900 + "year"::int) WHEN "year" IS NULL THEN 2000 ELSE "year"::int END)'
+        - state:
+            source: '(SELECT state_id FROM public.us_states as s WHERE s.ssa2 = "state")'
+        - sex:
+            reference: https://resdac.org/cms-data/variables/sex-beneficiary-0
+            type: VARCHAR
+            cast:
+              '*': "{column_name}::VARCHAR"
+            source:
+              - sex
+              - bene_sex_ident_cd
+        - race:
+            reference: https://resdac.org/cms-data/variables/beneficiary-race-code-ffs
+            type: VARCHAR
+            cast:
+              '*': "{column_name}::VARCHAR"
+            source:
+              - bene_race_cd
+              - race
+        - orec:
+            type: INT
+            source:
+               - orec
+               - orig_ent
+               - bene_entlmt_rsn_orig
+      indices:
+        pelg_yo_idx:
+          columns:
+            - year
+            - orec
+        pelg_so_idx:
+          columns:
+            - state
+            - orec
+        pelg_yso_idx:
+          columns:
+            - year
+            - state
+            - orec
+
 
     ip:
       description: |

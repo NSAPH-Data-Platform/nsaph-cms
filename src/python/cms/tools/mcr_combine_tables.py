@@ -49,7 +49,7 @@ from nsaph.loader.common import DBTableConfig
 class MedicareCombinedView:
     ps = "ps"
     ip = "ip"
-    supported_tables = [ps, ip]
+    supported_tables = [ps, ip, "pelg"]
 
     def __init__(self, context: DBTableConfig = None):
         if not context:
@@ -95,11 +95,12 @@ class MedicareCombinedView:
             cursor = cnxn.cursor()
             tables = self.get_tables(cursor)
             tt = [self.table_sql(cursor, t) for t in tables]
-            sql = "DROP VIEW IF EXISTS {}.{} CASCADE;\n".format(
-                self.schema, self.view
+            view = self.table["create"].get("type", "VIEW")
+            sql = "DROP {} IF EXISTS {}.{} CASCADE;\n".format(
+                view, self.schema, self.view
             )
             sql += "CREATE SCHEMA IF NOT EXISTS {};\n".format(self.schema)
-            sql += "CREATE VIEW {}.{} AS \n".format(self.schema, self.view)
+            sql += "CREATE {} {}.{} AS \n".format(view, self.schema, self.view)
             sql += "\nUNION\n".join(tt)
         self.sql = sql
 
