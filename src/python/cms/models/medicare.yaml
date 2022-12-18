@@ -284,6 +284,13 @@ medicare:
               - admsn_day_cd
               - admsnday
 
+        - dschrgcd:
+            type: CHAR(1)
+            source:
+              - dschrgcd
+              - bene_dschrg_stus_cd
+              - medpar_bene_dschrg_stus_cd
+
         - diag[$n=1:25]:
             type: varchar
             optional: true
@@ -550,6 +557,7 @@ medicare:
                   admission_date,
                   discharge_date,
                   adm_day_of_week,
+                  dschrgcd,
                   btrim(diag1) As primary_diagnosis,
                   array_remove(ARRAY[
                   btrim(btrim(diag1)),
