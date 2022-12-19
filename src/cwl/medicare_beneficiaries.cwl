@@ -89,7 +89,7 @@ steps:
       connection_name: connection_name
       domain:
         valueFrom: "medicare"
-      depends_on: create_ps/log
+      depends_on: create__ps_view/vacuum_log
     out: [ log, errors ]
 
   create_bene_table:

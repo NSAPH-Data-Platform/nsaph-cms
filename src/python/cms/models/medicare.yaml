@@ -66,15 +66,8 @@ medicare:
             source:
               - age
               - bene_age_at_beg_ref_yr
-        - yob:
-            type: INT
-            description: Year, claculated from age
-            optional: true
-            source:
-              - age
-              - bene_age_at_beg_ref_yr
             cast:
-              '*':  "(year::INT - {column_name}::INT)"
+              '*': "{column_name}::INT"
         - dod:
             type: date
             description: Date of beneficiary death, if available
@@ -145,61 +138,15 @@ medicare:
               - bene_hmo_cvrage_tot_mons
             cast:
               '*': "CASE WHEN {column_name} IS NULL THEN 0 ELSE {column_name}::INT END"
-    pelg:
-      description: |
-        Patient Summary view for teh purpose of finding patients eligible for
-        medicare because of disabilities
-      create:
-        type: materialized view
-        from:
-          - cms.mbsf_ab*
-          - cms.mcr_bene_*
-        exclude:
-            - mbsf_ab_2015
-      columns:
-        - bene_id
-        - file
-        - record
-        - year:
-            source: '(CASE WHEN "year"::int < 20 THEN (2000 + "year"::int) WHEN (20 < "year"::int AND "year"::int < 100) THEN (1900 + "year"::int) WHEN "year" IS NULL THEN 2000 ELSE "year"::int END)'
-        - state:
-            source: '(SELECT state_id FROM public.us_states as s WHERE s.ssa2 = "state")'
-        - sex:
-            reference: https://resdac.org/cms-data/variables/sex-beneficiary-0
-            type: VARCHAR
-            cast:
-              '*': "{column_name}::VARCHAR"
-            source:
-              - sex
-              - bene_sex_ident_cd
-        - race:
-            reference: https://resdac.org/cms-data/variables/beneficiary-race-code-ffs
-            type: VARCHAR
-            cast:
-              '*': "{column_name}::VARCHAR"
-            source:
-              - bene_race_cd
-              - race
         - orec:
             type: INT
+            optional: true # no data for 2015
             source:
                - orec
                - orig_ent
                - bene_entlmt_rsn_orig
-      indices:
-        pelg_yo_idx:
-          columns:
-            - year
-            - orec
-        pelg_so_idx:
-          columns:
-            - state
-            - orec
-        pelg_yso_idx:
-          columns:
-            - year
-            - state
-            - orec
+            cast:
+              '*': "{column_name}::INT"
 
 
     ip:
@@ -321,7 +268,8 @@ medicare:
               (SELECT NOT public.is_zip_to_fips_exact(year, zip))
           END AS fips3_is_approximated,
           CASE WHEN year > 2010 THEN (SELECT string_agg(distinct fips3::varchar, ',') from public.ssa as s where ps.ssa3 = s.ssa3 and ps.year = s.year and ps.fips2 = s.fips2)
-              ELSE (SELECT string_agg(distinct fips3::varchar, ',') from public.ssa as s where ps.ssa3 = s.ssa3 and 2003 = s.year and ps.fips2 = s.fips2) END AS fips3_list
+              ELSE (SELECT string_agg(distinct fips3::varchar, ',') from public.ssa as s where ps.ssa3 = s.ssa3 and 2003 = s.year and ps.fips2 = s.fips2) END AS fips3_list,
+          CASE WHEN age is not NULL THEN (year - age) ELSE NULL END as yob
         from: ps
       indices:
         ps_to_enrl_idx:
@@ -329,12 +277,25 @@ medicare:
             - bene_id
             - year
             - state
+        pelg_yo_idx:
+          columns:
+            - year
+            - orec
+        pelg_so_idx:
+          columns:
+            - state
+            - orec
+        pelg_yso_idx:
+          columns:
+            - year
+            - state
+            - orec
 
     _beneficiaries:
       description: internal intermediate view adding some data conversions
       create:
         type: view
-        from: medicare.ps
+        from: medicare._ps
         group by:
           - bene_id
       columns:
@@ -398,6 +359,8 @@ medicare:
               CASE
                 WHEN MIN(age) <> MAX(age) THEN MIN(age)
               END
+        - orec:
+            source: MAX(orec)
         - state_iso:
             type: "char(5)"
             source: "('US-' || state) "
