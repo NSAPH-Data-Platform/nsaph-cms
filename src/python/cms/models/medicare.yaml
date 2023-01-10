@@ -562,7 +562,9 @@ medicare:
                     source: None
                 - state_iso:
                     type: "char(5)"
-                    source: "('US-' || state) "
+                    source:
+                      type: generated
+                      code: "GENERATED ALWAYS AS ('US-' || state)  STORED"
                     index:
                       include:
                         - bene
