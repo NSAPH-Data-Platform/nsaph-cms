@@ -49,7 +49,7 @@ from nsaph.loader.common import DBTableConfig
 class MedicareCombinedView:
     ps = "ps"
     ip = "ip"
-    supported_tables = [ps, ip, "pelg"]
+    supported_tables = [ps, ip, "mbsf_d"]
 
     def __init__(self, context: DBTableConfig = None):
         if not context:

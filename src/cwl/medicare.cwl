@@ -96,6 +96,12 @@ steps:
       connection_name: connection_name
       depends_on: load_raw_data/registry
     out:
+      - d_create_log
+      - d_index_log
+      - d_vacuum_log
+      - d_create_err
+      - d_index_err
+      - d_vacuum_err
       - ps_create_log
       - ps_create_err
       - ps2_create_log
@@ -193,6 +199,25 @@ outputs:
     registry:
       type: File
       outputSource: load_raw_data/registry
+
+    d_create_log:
+      type: File
+      outputSource: enrollments/d_create_log
+    d_create_err:
+      type: File
+      outputSource: enrollments/d_create_err
+    d_index_log:
+      type: File
+      outputSource: enrollments/d_index_log
+    d_index_err:
+      type: File
+      outputSource: enrollments/d_index_err
+    d_vacuum_log:
+      type: File
+      outputSource: enrollments/d_vacuum_log
+    d_vacuum_err:
+      type: File
+      outputSource: enrollments/d_vacuum_err
 
     ps_create_log:
       type: File

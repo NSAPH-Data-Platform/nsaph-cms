@@ -48,6 +48,45 @@ inputs:
     doc: a special field used to enforce dependencies and execution order
 
 steps:
+  create_d:
+    run: medicare_combine_tables.cwl
+    doc: >
+      Combines patient summaries from disparate summary tables
+      (one table per year) into a single view
+    in:
+      database: database
+      connection_name: connection_name
+      table:
+        valueFrom: "mbsf_d"
+    out:  [ log, errors ]
+
+  index_d:
+    run: index.cwl
+    doc: Build indices
+    in:
+      depends_on: create_d/log
+      domain:
+        valueFrom: "medicare"
+      table:
+        valueFrom: "mbsf_d"
+      database: database
+      connection_name: connection_name
+
+    out: [ log, errors ]
+
+  vacuum_d:
+    run: vacuum.cwl
+    doc: Vacuum the view
+    in:
+      depends_on: index_d/log
+      domain:
+        valueFrom: "medicare"
+      table:
+        valueFrom: "mbsf_d"
+      database: database
+      connection_name: connection_name
+    out: [ log, errors ]
+
   create_ps:
     run: medicare_combine_tables.cwl
     doc: >
@@ -121,7 +160,10 @@ steps:
       connection_name: connection_name
       domain:
         valueFrom: "medicare"
-      depends_on: [create__ps_view/vacuum_log, create_bene_table/vacuum_log]
+      depends_on:
+      - create__ps_view/vacuum_log
+      - create_bene_table/vacuum_log
+      - index_d/log
     out: [ log, errors ]
 
   create_enrlm_table:
@@ -144,6 +186,26 @@ steps:
       - vacuum_err
 
 outputs:
+  d_create_log:
+    type: File
+    outputSource: create_d/log
+  d_index_log:
+    type: File
+    outputSource: index_d/log
+  d_vacuum_log:
+    type: File
+    outputSource: vacuum_d/log
+
+  d_create_err:
+    type: File
+    outputSource: create_d/errors
+  d_index_err:
+    type: File
+    outputSource: index_d/errors
+  d_vacuum_err:
+    type: File
+    outputSource: vacuum_d/errors
+
   ps_create_log:
     type: File
     outputSource: create_ps/log

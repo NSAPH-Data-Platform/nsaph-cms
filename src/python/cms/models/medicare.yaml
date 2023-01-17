@@ -7,6 +7,37 @@ medicare:
   schema.audit: "medicare_audit"
   description: "Data model for Medicare"
   tables:
+    mbsf_d:
+      description: |
+        Data from mbsf_d* files that is used to create beneficiary and
+        enrollment tables
+      create:
+        type: materialized view
+        from:
+          - cms.mbsf_*d*
+      columns:
+        - bene_id
+        - year
+        - dual_mo:
+            type: INT
+            cast:
+              '*':  '{column_name}::INT'
+        - dual_indicators:
+            type: CHAR(1)[12]
+            optional: true
+            m: ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12']
+            source:
+              - dual_$m
+            cast:
+              'character varying': string_to_array({column_name}, NULL)
+        - file
+        - record
+      indices:
+        d_sy_idx:
+          columns:
+            - year
+            - bene_id
+
     ps:
       description: |
         Patient Summary view. Combines multiple patient summary (aka MBSF)
@@ -138,6 +169,36 @@ medicare:
               - bene_hmo_cvrage_tot_mons
             cast:
               '*': "CASE WHEN {column_name} IS NULL THEN 0 ELSE {column_name}::INT END"
+        - buyin_indicators:
+            type: CHAR(1)[12]
+            optional: true
+            description: |
+              Array of indicators if the beneficiary’s state of residence paid his/her monthly
+              premium for Part B coverage (and Part A if necessary). State Medicaid programs
+              can pay those premiums for certain dual eligibles; this action is called
+              “buying in” and so this variable is the “buy-in code.”
+            reference: https://resdac.org/cms-data/variables/medicare-entitlementbuy-indicator
+            m: ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12']
+            source:
+              - medicare_buy_in
+              - buyin$m
+              - buyin12
+              - bene_mdcr_entlmt_buyin_ind_$m
+            cast:
+              'character varying': string_to_array({column_name}, NULL)
+        - buyin_cvg_count:
+            type: INT
+            optional: false
+            description: Number of months during a given year, during the year when the beneficiary premium was paid by the state. 
+            reference: https://resdac.org/cms-data/variables/state-buy-coverage-count
+            source:
+              - buyin_mo
+              - buycovg
+              - state_buy_in_mo
+              - dual
+            cast:
+              '*': "CASE WHEN {column_name} IS NULL THEN 0 WHEN year = 2015 AND {column_name} = '1' THEN 12 ELSE {column_name}::INT END"
+
         - orec:
             type: INT
             optional: true # no data for 2015
@@ -147,7 +208,14 @@ medicare:
                - bene_entlmt_rsn_orig
             cast:
               '*': "{column_name}::INT"
-
+        - curec:
+            type: INT
+            optional: true
+            source:
+               - cur_ent
+               - bene_entlmt_rsn_curr
+            cast:
+              '*': "{column_name}::INT"
 
     ip:
       description: |
@@ -317,6 +385,8 @@ medicare:
         - sex:
             source: "string_agg(distinct sex, ',')"
             identifier: true
+        - orec:
+            source: MAX(orec)
         - duplicates:
             source: >
               COUNT(distinct {identifiers}) +
@@ -361,6 +431,8 @@ medicare:
               END
         - orec:
             source: MAX(orec)
+        - curec:
+            source: MAX(curec)
         - state_iso:
             type: "char(5)"
             source: "('US-' || state) "
@@ -394,6 +466,14 @@ medicare:
             source: "MAX(hmo_indicators)"
         - hmo_cvg_count:
             source: "MAX(hmo_cvg_count)"
+        - buyin_indicators:
+            source: "MAX(buyin_indicators)"
+        - buyin_cvg_count:
+            source: "MAX(buyin_cvg_count)"
+        - dual_indicators:
+            source: "(SELECT MAX(dual_indicators) FROM medicare.mbsf_d AS d WHERE medicare._ps.year = d.year and medicare._ps.bene_id = d.bene_id)"
+        - dual_cvg_count:
+            source: "(SELECT MAX(dual_mo) FROM medicare.mbsf_d AS d WHERE medicare._ps.year = d.year and medicare._ps.bene_id = d.bene_id)"
         - state_count:
             source: |
               (
@@ -453,6 +533,21 @@ medicare:
             from: _enrollments
             populate: true
           columns:
+            - hmo:
+                type: boolean
+                source:
+                  type: generated
+                  code: "GENERATED ALWAYS AS (CASE WHEN hmo_cvg_count > 0 THEN TRUE ELSE FALSE END) STORED"
+            - buyin:
+                type: boolean
+                source:
+                  type: generated
+                  code: "GENERATED ALWAYS AS (CASE WHEN buyin_cvg_count > 0 THEN TRUE ELSE FALSE END) STORED"
+            - dual:
+                type: boolean
+                source:
+                  type: generated
+                  code: "GENERATED ALWAYS AS (CASE WHEN dual_cvg_count > 0 THEN TRUE ELSE FALSE END) STORED"
             - bene:
                 type: HLL_HASHVAL
                 description: |
@@ -667,6 +762,11 @@ medicare:
           - state
           - zip
           - fips3
+          - orec
+          - curec
+          - hmo
+          - dual
+          - buyin
           - consistent_dob
           - consistent_dod
           - consistent_sex
@@ -678,6 +778,11 @@ medicare:
         - state
         - zip
         - fips3
+        - orec
+        - curec
+        - hmo
+        - dual
+        - buyin
         - consistent_dob
         - consistent_dod
         - consistent_sex
