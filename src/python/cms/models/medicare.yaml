@@ -473,7 +473,13 @@ medicare:
         - dual_indicators:
             source: "(SELECT MAX(dual_indicators) FROM medicare.mbsf_d AS d WHERE medicare._ps.year = d.year and medicare._ps.bene_id = d.bene_id)"
         - dual_cvg_count:
-            source: "(SELECT MAX(dual_mo) FROM medicare.mbsf_d AS d WHERE medicare._ps.year = d.year and medicare._ps.bene_id = d.bene_id)"
+            source: |
+              (CASE
+                 WHEN EXISTS (SELECT * FROM medicare.mbsf_d AS d WHERE medicare._ps.year = d.year and medicare._ps.bene_id = d.bene_id)
+                 THEN
+                     COALESCE((SELECT MAX(dual_mo) FROM medicare.mbsf_d AS d WHERE medicare._ps.year = d.year and medicare._ps.bene_id = d.bene_id), 0)
+                 ELSE NULL
+              END)
         - state_count:
             source: |
               (
@@ -537,17 +543,17 @@ medicare:
                 type: boolean
                 source:
                   type: generated
-                  code: "GENERATED ALWAYS AS (CASE WHEN hmo_cvg_count > 0 THEN TRUE ELSE FALSE END) STORED"
+                  code: "GENERATED ALWAYS AS (CASE WHEN hmo_cvg_count IS NULL THEN NULL WHEN hmo_cvg_count > 0 THEN TRUE ELSE FALSE END) STORED"
             - buyin:
                 type: boolean
                 source:
                   type: generated
-                  code: "GENERATED ALWAYS AS (CASE WHEN buyin_cvg_count > 0 THEN TRUE ELSE FALSE END) STORED"
+                  code: "GENERATED ALWAYS AS (CASE WHEN buyin_cvg_count IS NULL THEN NULL WHEN buyin_cvg_count > 0 THEN TRUE ELSE FALSE END) STORED"
             - dual:
                 type: boolean
                 source:
                   type: generated
-                  code: "GENERATED ALWAYS AS (CASE WHEN dual_cvg_count > 0 THEN TRUE ELSE FALSE END) STORED"
+                  code: "GENERATED ALWAYS AS (CASE WHEN dual_cvg_count IS NULL THEN NULL WHEN dual_cvg_count > 0 THEN TRUE ELSE FALSE END) STORED"
             - bene:
                 type: HLL_HASHVAL
                 description: |
@@ -757,7 +763,7 @@ medicare:
       create:
         type: materialized view
         from: qc_enrl_bene
-        group by:
+        nullable group by:
           - year
           - state
           - zip
@@ -851,7 +857,7 @@ medicare:
       create:
         type: materialized view
         from: qc_adm_union
-        group by:
+        nullable group by:
           - year
           - state
           - zip
