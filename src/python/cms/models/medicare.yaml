@@ -195,6 +195,7 @@ medicare:
               - buyin_mo
               - buycovg
               - state_buy_in_mo
+              - bene_state_buyin_tot_mons
               - dual
             cast:
               '*': "CASE WHEN {column_name} IS NULL THEN 0 WHEN year = 2015 AND {column_name} = '1' THEN 12 ELSE {column_name}::INT END"
