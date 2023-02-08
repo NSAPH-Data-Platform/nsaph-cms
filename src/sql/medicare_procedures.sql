@@ -49,4 +49,17 @@ BEGIN
 END;
 $$;
 
+CREATE TABLE IF NOT EXISTS cms.bid_to_bene_id (
+    BID VARCHAR(9),
+    BENE_ID VARCHAR(15),
+    PRIMARY KEY (BID)
+);
 
+CREATE UNIQUE INDEX IF NOT EXISTS bene_id_to_bid_idx
+    on cms.bid_to_bene_id (BENE_ID);
+
+COPY cms.bid_to_bene_id
+FROM
+    PROGRAM 'awk -F'','' ''{print $2","$3}'' /data/incoming/rce/ci3_d_medicare/crosswalks/bid_bene_xwlk_2007.csv'
+WITH csv  HEADER
+;
