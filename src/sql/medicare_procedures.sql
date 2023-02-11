@@ -49,7 +49,8 @@ BEGIN
 END;
 $$;
 
-CREATE TABLE IF NOT EXISTS cms.bid_to_bene_id (
+DROP TABLE IF EXISTS cms.bid_to_bene_id;
+CREATE TABLE cms.bid_to_bene_id (
     BID VARCHAR(9),
     BENE_ID VARCHAR(15),
     PRIMARY KEY (BID)
@@ -57,6 +58,57 @@ CREATE TABLE IF NOT EXISTS cms.bid_to_bene_id (
 
 CREATE UNIQUE INDEX IF NOT EXISTS bene_id_to_bid_idx
     on cms.bid_to_bene_id (BENE_ID);
+
+DROP TABLE IF EXISTS cms.bid_to_bene_id_dirty;
+CREATE TABLE  cms.bid_to_bene_id_dirty (
+    BID VARCHAR(9),
+    BENE_ID VARCHAR(15),
+    REASON VARCHAR(16)
+);
+
+CREATE INDEX IF NOT EXISTS dirty_bid_idx
+    on cms.bid_to_bene_id_dirty (BID);
+
+CREATE OR REPLACE FUNCTION "cms"."validate_xwalk" ()  RETURNS trigger
+  VOLATILE
+AS $body$
+    DECLARE
+        t_bene_id VARCHAR;
+    BEGIN
+        IF (NEW.BID IS NULL) THEN
+            INSERT INTO cms.bid_to_bene_id_dirty (BID, BENE_ID, REASON)
+            VALUES (NEW.BID, NEW.BENE_ID, 'NULL BID');
+            RETURN NULL;
+        END IF;
+        IF EXISTS (
+                SELECT FROM cms.bid_to_bene_id as t
+                WHERE NEW.BID = t.BID
+            ) THEN
+            INSERT INTO cms.bid_to_bene_id_dirty (BID, BENE_ID, REASON)
+            VALUES (NEW.BID, NEW.BENE_ID, 'DUPLICATE BID');
+            SELECT t.bene_id FROM cms.bid_to_bene_id as t
+                WHERE NEW.BID = t.BID
+                INTO t_bene_id;
+            INSERT INTO cms.bid_to_bene_id_dirty (BID, BENE_ID, REASON)
+            VALUES (NEW.BID, t_BENE_ID, 'DUPLICATE BID');
+            DELETE FROM cms.bid_to_bene_id WHERE BID = NEW.BID;
+            RETURN NULL;
+        END IF;
+        IF EXISTS (
+                SELECT FROM cms.bid_to_bene_id_dirty as t
+                WHERE NEW.BID = t.BID
+            ) THEN
+            INSERT INTO cms.bid_to_bene_id_dirty (BID, BENE_ID, REASON)
+            VALUES (NEW.BID, NEW.BENE_ID, 'DUPLICATE BID');
+        END IF;
+        RETURN NEW;
+    END;
+$body$ LANGUAGE plpgsql;
+
+CREATE TRIGGER "cms_xwalk_validation"
+  BEFORE INSERT ON cms.bid_to_bene_id
+  FOR EACH ROW
+EXECUTE FUNCTION cms.validate_xwalk();
 
 COPY cms.bid_to_bene_id
 FROM
