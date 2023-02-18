@@ -29,6 +29,7 @@ from nsaph.util.init_core_db import parse_args, init_core, get_sql_dir, execute
 def init_cms(args):
     sdir = get_sql_dir(__file__)
     execute(args, os.path.join(sdir, "functions.sql"))
+    execute(args, os.path.join(sdir, "medicare_procedures.sql"))
 
 
 if __name__ == '__main__':

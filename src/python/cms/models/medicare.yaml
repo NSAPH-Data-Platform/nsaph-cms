@@ -376,6 +376,13 @@ medicare:
             source: "MIN(yob)"
         - dod:
             source: "MAX(dod)"
+        - first_enrollment_year:
+            source: "MIN(year)"
+        - last_enrollment_year:
+            source: "MAX(year)"
+        - all_enrollment_years:
+            type: INT[]
+            source: "ARRAY_AGG(year ORDER BY year)"
         - race:
             reference: "https://resdac.org/cms-data/variables/raceethnicity-msis"
             source: "string_agg(distinct race, ',')"

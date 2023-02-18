@@ -17,101 +17,77 @@
 --  limitations under the License.
 --
 
-CREATE OR REPLACE PROCEDURE medicare.populate_enrollments()
+CREATE OR REPLACE FUNCTION cms.map_bene (
+    intbid VARCHAR
+)  RETURNS VARCHAR(15)
+    IMMUTABLE
+AS $body$
+DECLARE
+    new_bene_id VARCHAR;
+BEGIN
+    SELECT bene_id FROM cms.bid_to_bene_id WHERE bid = intbid INTO new_bene_id;
+    IF new_bene_id IS NOT NULL THEN
+        RETURN new_bene_id;
+    END IF;
+    RETURN intbid;
+END;
+$body$ LANGUAGE plpgsql;
+
+
+CREATE OR REPLACE PROCEDURE cms.map_old_bene(
+    y INT
+)
 LANGUAGE plpgsql
 AS $$
 DECLARE
-    cur_bene_id VARCHAR;
-    nn INT;
-    msg VARCHAR;
-    bene_cursor CURSOR FOR
-        SELECT bene_id
-        FROM medicare.beneficiaries AS b
-        WHERE NOT EXISTS (
-            SELECT * FROM medicare.enrollments AS e
-            WHERE b.bene_id = e.bene_id
-        )
-    ;
+    pstable VARCHAR;
+    iptable VARCHAR;
+    pscol VARCHAR;
+    ipcol VARCHAR;
+    sql    VARCHAR;
+    t VARCHAR;
+    c VARCHAR;
 BEGIN
-    nn := 0;
-    FOR bene_rec in bene_cursor LOOP
-        cur_bene_id := bene_rec.bene_id;
-        INSERT INTO medicare.enrollments
-            SELECT * FROM medicare._enrollments AS _e
-            WHERE _e.bene_id = cur_bene_id
-        ;
-        COMMIT;
-        nn := nn + 1;
-        msg := format('nn = %s; bene_id = %L', nn, cur_bene_id);
-        --RAISE NOTICE msg;
-        PERFORM pg_notify('medicare_enrollments_notifications', msg);
+    pstable := format('mcr_bene_%s', y);
+    iptable := format('mcr_ip_%s', y);
+    IF y < 2003 THEN
+        pscol := 'intbid';
+        ipcol := pscol;
+    ELSIF y < 2006 THEN
+        pscol := 'bid_5333_1';
+        ipcol := pscol;
+    ELSE
+        pscol := 'bid_5333_3';
+        ipcol := 'bid_5333_5';
+    END IF;
+
+    FOREACH t IN ARRAY ARRAY [pstable, iptable] LOOP
+        IF t = pstable THEN
+            c := pscol;
+        ELSE
+            c := ipcol;
+        END IF;
+        EXECUTE format('ALTER TABLE cms.%I DROP COLUMN bene_id CASCADE;', t);
+        sql := format('ALTER TABLE cms.%I ' ||
+               'ADD COLUMN bene_id VARCHAR(15) ' ||
+               'GENERATED ALWAYS AS (cms.map_bene(%I)) STORED;',
+                t, c
+            );
+        EXECUTE sql;
     END LOOP;
 END;
 $$;
 
-DROP TABLE IF EXISTS cms.bid_to_bene_id;
-CREATE TABLE cms.bid_to_bene_id (
-    BID VARCHAR(9),
-    BENE_ID VARCHAR(15),
-    PRIMARY KEY (BID)
-);
+CREATE OR REPLACE PROCEDURE cms.map_all_old_bene()
+LANGUAGE plpgsql
+AS $$
+DECLARE
+    y INT;
+BEGIN
+    FOR y IN 1999..2006 LOOP
+        CALL cms.map_old_bene(y);
+        COMMIT;
+    END LOOP;
+END;
+$$;
 
-CREATE UNIQUE INDEX IF NOT EXISTS bene_id_to_bid_idx
-    on cms.bid_to_bene_id (BENE_ID);
-
-DROP TABLE IF EXISTS cms.bid_to_bene_id_dirty;
-CREATE TABLE  cms.bid_to_bene_id_dirty (
-    BID VARCHAR(9),
-    BENE_ID VARCHAR(15),
-    REASON VARCHAR(16)
-);
-
-CREATE INDEX IF NOT EXISTS dirty_bid_idx
-    on cms.bid_to_bene_id_dirty (BID);
-
-CREATE OR REPLACE FUNCTION "cms"."validate_xwalk" ()  RETURNS trigger
-  VOLATILE
-AS $body$
-    DECLARE
-        t_bene_id VARCHAR;
-    BEGIN
-        IF (NEW.BID IS NULL) THEN
-            INSERT INTO cms.bid_to_bene_id_dirty (BID, BENE_ID, REASON)
-            VALUES (NEW.BID, NEW.BENE_ID, 'NULL BID');
-            RETURN NULL;
-        END IF;
-        IF EXISTS (
-                SELECT FROM cms.bid_to_bene_id as t
-                WHERE NEW.BID = t.BID
-            ) THEN
-            INSERT INTO cms.bid_to_bene_id_dirty (BID, BENE_ID, REASON)
-            VALUES (NEW.BID, NEW.BENE_ID, 'DUPLICATE BID');
-            SELECT t.bene_id FROM cms.bid_to_bene_id as t
-                WHERE NEW.BID = t.BID
-                INTO t_bene_id;
-            INSERT INTO cms.bid_to_bene_id_dirty (BID, BENE_ID, REASON)
-            VALUES (NEW.BID, t_BENE_ID, 'DUPLICATE BID');
-            DELETE FROM cms.bid_to_bene_id WHERE BID = NEW.BID;
-            RETURN NULL;
-        END IF;
-        IF EXISTS (
-                SELECT FROM cms.bid_to_bene_id_dirty as t
-                WHERE NEW.BID = t.BID
-            ) THEN
-            INSERT INTO cms.bid_to_bene_id_dirty (BID, BENE_ID, REASON)
-            VALUES (NEW.BID, NEW.BENE_ID, 'DUPLICATE BID');
-        END IF;
-        RETURN NEW;
-    END;
-$body$ LANGUAGE plpgsql;
-
-CREATE TRIGGER "cms_xwalk_validation"
-  BEFORE INSERT ON cms.bid_to_bene_id
-  FOR EACH ROW
-EXECUTE FUNCTION cms.validate_xwalk();
-
-COPY cms.bid_to_bene_id
-FROM
-    PROGRAM 'awk -F'','' ''{print $2","$3}'' /data/incoming/rce/ci3_d_medicare/crosswalks/bid_bene_xwlk_2007.csv'
-WITH csv  HEADER
-;
