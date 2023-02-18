@@ -277,6 +277,7 @@ class MedicareCombinedView:
         FROM information_schema.columns
         WHERE ({})
         AND table_name = '{}'
+        AND table_schema = 'cms'
         """.format(condition, table)
         logging.debug(sql)
         cursor.execute(sql)
