@@ -395,11 +395,17 @@ medicare:
             identifier: true
         - orec:
             source: MAX(orec)
-        - duplicates:
+        - discrepancies:
             source: >
-              COUNT(distinct {identifiers}) +
-              CASE (COUNT(DISTINCT dod) FILTER (WHERE dod is not null)) WHEN 0 THEN 0 ELSE COUNT(DISTINCT dod) FILTER (WHERE dod is not null) - 1 END
-            description: "number of duplicate records for the beneficiary"
+              (
+                COUNT(distinct {identifiers}) - 1 +
+                CASE
+                  (COUNT(DISTINCT dod) FILTER (WHERE dod is not null))
+                  WHEN 0 THEN 0
+                  ELSE COUNT(DISTINCT dod) FILTER (WHERE dod is not null) - 1
+                END
+              )
+            description: "Number of possible discrepancies for the beneficiary, .i.e., records that use alternative DOB, race, ethnicity or DOD"
         - dob_latest:
             source: |
               CASE
@@ -534,7 +540,7 @@ medicare:
           columns:
             - race
             - sex
-            - duplicates
+            - discrepancies
       children:
         enrollments:
           description: |
