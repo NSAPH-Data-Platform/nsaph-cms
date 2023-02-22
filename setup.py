@@ -6,7 +6,7 @@ with open("README.md", "r") as readme:
 
 setup(
     name='cms',
-    version="0.0.4.2",
+    version="0.0.4.3",
     url='https://gitlab-int.rc.fas.harvard.edu/rse/francesca_dominici/tools/cms',
     license='',
     author='Michael Bouzinier',
@@ -25,7 +25,7 @@ setup(
         "License :: Harvard University :: Development",
         "Operating System :: OS Independent"],
     install_requires=[
-        'nsaph>=0.0.3.15',
+        'nsaph>=0.0.3.16',
         'nsaph_utils >= 0.0.5.18',
     ],
     package_data = {

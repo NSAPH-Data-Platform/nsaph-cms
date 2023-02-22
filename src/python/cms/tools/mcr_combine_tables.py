@@ -42,6 +42,7 @@ from nsaph.data_model.domain import Domain
 from nsaph.data_model.utils import split
 
 from nsaph.db import Connection
+from nsaph.loader import DBActivityMonitor
 
 from nsaph.loader.common import DBTableConfig
 
@@ -70,6 +71,7 @@ class MedicareCombinedView:
         self.table = content["medicare"]["tables"][self.view]
         self.schema = content["medicare"]["schema"]
         self.sql = ""
+        self.monitor = DBActivityMonitor(context)
 
     def print_sql(self):
         if not self.sql:
@@ -85,7 +87,9 @@ class MedicareCombinedView:
         with Connection(self.context.db,
                         self.context.connection) as cnxn:
             with cnxn.cursor() as cursor:
-                cursor.execute(self.sql)
+                pid = Connection.get_pid(cnxn)
+                self.monitor.execute(lambda: cursor.execute(self.sql),
+                                     lambda: self.monitor.log_activity(pid))
             cnxn.commit()
         print("All Done")
 
