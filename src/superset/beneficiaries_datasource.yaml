@@ -1,0 +1,102 @@
+- cache_timeout: 86400
+  columns:
+  - column_name: Consistency
+    expression: "CASE WHEN \n    dod_earliest is not NULL\n    OR dob_latest is not\
+      \ NULL\n    OR sex LIKE '%,%'\n    OR race LIKE '%,%'\n    THEN 'Ambiguous'\
+      \ \n  WHEN  dob is NULL THEN 'Missing DOB'\n  ELSE 'Consistent' END"
+    extra: '{}'
+  - column_name: AmbiguousDOB
+    expression: 'CASE WHEN dob_latest is not NULL THEN ''Ambiguous DOB'' end '
+    extra: '{}'
+  - column_name: AmbiguousDOD
+    expression: 'CASE WHEN dod_earliest is not NULL THEN ''Ambiguous DOD'' end '
+    extra: '{}'
+  - column_name: AmbiguousSex
+    expression: CASE WHEN sex LIKE '%,%' THEN 'Ambiguous Sex'  End
+    extra: '{}'
+  - column_name: MissingDOB
+    expression: 'CASE WHEN DOB is NULL THEN ''Missing DOB'' end '
+    extra: '{}'
+  - column_name: AmbiguousRace
+    expression: CASE WHEN race LIKE '%,%' THEN 'Ambiguous Race' End
+    extra: '{}'
+  - column_name: enrollment_period
+    expression: last_enrollment_year - first_enrollment_year + 1
+    extra: '{}'
+  - column_name: num_enrollment_years
+    expression: CARDINALITY(ARRAY (SELECT DISTINCT UNNEST(all_enrollment_years)))
+    extra: '{}'
+  - column_name: yob1
+    expression: EXTRACT (YEAR FROM dob)
+    extra: '{}'
+  - column_name: dob_latest
+    extra: '{}'
+    is_dttm: true
+    type: DATE
+  - column_name: dod_earliest
+    extra: '{}'
+    is_dttm: true
+    type: DATE
+  - column_name: dob
+    extra: '{}'
+    is_dttm: true
+    type: DATE
+  - column_name: dod
+    extra: '{}'
+    is_dttm: true
+    type: DATE
+  - column_name: last_enrollment_year
+    extra: '{}'
+    is_dttm: true
+    type: INTEGER
+  - column_name: first_enrollment_year
+    extra: '{}'
+    is_dttm: true
+    type: INTEGER
+  - column_name: bene_id
+    extra: '{}'
+    type: VARCHAR
+  - column_name: discrepancies
+    extra: '{}'
+    type: BIGINT
+  - column_name: all_enrollment_years
+    extra: '{}'
+    type: INTEGER[]
+  - column_name: number_of_gap_years
+    extra: '{}'
+    type: INTEGER
+  - column_name: yob_latest
+    extra: '{}'
+    type: INTEGER
+  - column_name: yob
+    extra: '{}'
+    type: INTEGER
+  - column_name: orec
+    extra: '{}'
+    type: INTEGER
+  - column_name: race_rti
+    extra: '{}'
+    type: TEXT
+  - column_name: race
+    extra: '{}'
+    type: TEXT
+  - column_name: sex
+    extra: '{}'
+    type: TEXT
+  - column_name: bene
+    extra: '{}'
+    type: UNKNOWN
+  main_dttm_col: dob
+  metrics:
+  - expression: COUNT(*)
+    extra: '{"warning_markdown":""}'
+    metric_name: count
+    metric_type: count
+    verbose_name: COUNT(*)
+  - expression: (#(hll_add_agg(bene)))::INT
+    extra: '{"warning_markdown":""}'
+    metric_name: approximate_count
+    verbose_name: ''
+  schema: medicare
+  sql: ''
+  table_name: beneficiaries

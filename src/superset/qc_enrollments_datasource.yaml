@@ -1,0 +1,63 @@
+- columns:
+  - column_name: fips3_is_approximated
+    extra: '{}'
+    type: BOOLEAN
+  - column_name: fips3_valdiated
+    extra: '{}'
+    type: BOOLEAN
+  - column_name: fips3
+    extra: '{}'
+    type: TEXT
+  - column_name: state
+    extra: '{}'
+    type: VARCHAR
+  - column_name: numdistinctbeneficaries
+    extra: '{}'
+    type: BIGINT
+  - column_name: numrecords
+    extra: '{}'
+    type: BIGINT
+  - column_name: year
+    extra: '{}'
+    type: INTEGER
+  - column_name: zip
+    extra: '{}'
+    type: INTEGER
+  - column_name: consistent_race
+    extra: '{}'
+    type: TEXT
+  - column_name: state_iso
+    extra: '{}'
+    type: TEXT
+  - column_name: consistent_dob
+    extra: '{}'
+    type: TEXT
+  - column_name: consistent_dod
+    extra: '{}'
+    type: TEXT
+  - column_name: consistent_sex
+    extra: '{}'
+    type: TEXT
+  - column_name: bene_hll
+    extra: '{}'
+    type: UNKNOWN
+  metrics:
+  - expression: "(#(hll_union_agg(bene_hll) FILTER (\n        WHERE consistent_dob\
+      \ = 'CONSISTENT'\n        AND consistent_dod <> 'AMBIGUOUS'\n        AND consistent_race\
+      \ = 'CONSISTENT'\n        AND consistent_sex = 'CONSISTENT'\n        ))\n  \
+      \      ) * 100.0 / (#(hll_union_agg(bene_hll)))"
+    extra: '{}'
+    metric_name: consistent beneficiaries
+    verbose_name: ''
+  - expression: SUM(numrecords)
+    extra: '{"warning_markdown":""}'
+    metric_name: count
+    metric_type: count
+    verbose_name: Number of enrollment records
+  - expression: (#(hll_union_agg(bene_hll)))::INT
+    extra: '{"warning_markdown":""}'
+    metric_name: bene cardinality
+    verbose_name: Number of distinct beneficiaries
+  schema: medicare
+  sql: ''
+  table_name: qc_enrollments

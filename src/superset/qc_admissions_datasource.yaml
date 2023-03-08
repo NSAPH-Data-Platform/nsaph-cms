@@ -1,0 +1,54 @@
+- columns:
+  - column_name: reason
+    extra: '{}'
+    type: VARCHAR
+  - column_name: state
+    extra: '{}'
+    type: VARCHAR
+  - column_name: numdistinctbeneficaries
+    extra: '{}'
+    type: BIGINT
+  - column_name: numrecords
+    extra: '{}'
+    type: BIGINT
+  - column_name: year
+    extra: '{}'
+    type: INTEGER
+  - column_name: zip
+    extra: '{}'
+    type: INTEGER
+  - column_name: state_iso
+    extra: '{}'
+    type: UNKNOWN
+  - column_name: bene_hll
+    extra: '{}'
+    type: UNKNOWN
+  metrics:
+  - expression: (SUM(numrecords) FILTER (WHERE reason = 'DUPLICATE'))*100.0/SUM(numrecords)
+    extra: '{"warning_markdown":""}'
+    metric_name: '% duplicate admission  records'
+    verbose_name: ''
+  - expression: (SUM(numrecords) FILTER (WHERE reason = 'PRIMARY KEY'))*100.0/SUM(numrecords)
+    extra: '{"warning_markdown":""}'
+    metric_name: '% missing data'
+    verbose_name: ''
+  - expression: (SUM(numrecords) FILTER (WHERE reason = 'FOREIGN KEY'))*100.0/SUM(numrecords)
+    extra: '{"warning_markdown":""}'
+    metric_name: '% no enrollemnt'
+    verbose_name: ''
+  - expression: (SUM(numrecords) FILTER (WHERE reason = 'OK'))*100.0/SUM(numrecords)
+    extra: '{"warning_markdown":""}'
+    metric_name: '% valid records'
+    verbose_name: ''
+  - expression: SUM(numrecords)
+    extra: '{"warning_markdown":""}'
+    metric_name: count
+    metric_type: count
+    verbose_name: Number of records
+  - expression: (#(hll_union_agg(bene_hll)))::INT
+    extra: '{}'
+    metric_name: Bene cardinality
+    verbose_name: Number of beneficiaries
+  schema: medicare
+  sql: ''
+  table_name: qc_admissions

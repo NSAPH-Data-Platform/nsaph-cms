@@ -1,0 +1,625 @@
+{
+    "dashboards": [
+        {
+            "__Dashboard__": {
+                "css": "",
+                "dashboard_title": "Data Volume",
+                "description": null,
+                "json_metadata": "{\"show_native_filters\": true, \"color_scheme\": \"\", \"refresh_frequency\": 0, \"expanded_slices\": {}, \"label_colors\": {}, \"timed_refresh_immune_slices\": [], \"default_filters\": \"{}\", \"chart_configuration\": {}, \"remote_id\": 3}",
+                "position_json": "{\"CHART-Uq_C0K_0FW\":{\"children\":[],\"id\":\"CHART-Uq_C0K_0FW\",\"meta\":{\"chartId\":13,\"height\":50,\"sliceName\":\"Index Sizes\",\"uuid\":\"36f68d0a-3761-4ec6-ae9b-c61b3a9b2cd6\",\"width\":4},\"parents\":[\"ROOT_ID\",\"GRID_ID\",\"ROW-oJKlzI_fDa\"],\"type\":\"CHART\"},\"CHART-hebsPWz5TQ\":{\"children\":[],\"id\":\"CHART-hebsPWz5TQ\",\"meta\":{\"chartId\":12,\"height\":50,\"sliceName\":\"Total Volume\",\"uuid\":\"79e5957f-b11d-41d5-aa59-2fb0cdfe7cbc\",\"width\":4},\"parents\":[\"ROOT_ID\",\"GRID_ID\",\"ROW-oJKlzI_fDa\"],\"type\":\"CHART\"},\"CHART-kHA6DWOQZP\":{\"children\":[],\"id\":\"CHART-kHA6DWOQZP\",\"meta\":{\"chartId\":11,\"height\":50,\"sliceName\":\"Medicaid Data\",\"uuid\":\"9d79d681-a636-42f2-8e26-03e512b9b82c\",\"width\":4},\"parents\":[\"ROOT_ID\",\"GRID_ID\",\"ROW-XZDMSwD7UO\"],\"type\":\"CHART\"},\"CHART-o6i-fniT4N\":{\"children\":[],\"id\":\"CHART-o6i-fniT4N\",\"meta\":{\"chartId\":10,\"height\":50,\"sliceName\":\"Size by Domain\",\"uuid\":\"c4a684a1-6c18-450e-894e-8d6740dbc66b\",\"width\":4},\"parents\":[\"ROOT_ID\",\"GRID_ID\",\"ROW-XZDMSwD7UO\"],\"type\":\"CHART\"},\"DASHBOARD_VERSION_KEY\":\"v2\",\"GRID_ID\":{\"children\":[\"ROW-XZDMSwD7UO\",\"ROW-oJKlzI_fDa\"],\"id\":\"GRID_ID\",\"parents\":[\"ROOT_ID\"],\"type\":\"GRID\"},\"HEADER_ID\":{\"id\":\"HEADER_ID\",\"meta\":{\"text\":\"Data Volume\"},\"type\":\"HEADER\"},\"ROOT_ID\":{\"children\":[\"GRID_ID\"],\"id\":\"ROOT_ID\",\"type\":\"ROOT\"},\"ROW-XZDMSwD7UO\":{\"children\":[\"CHART-o6i-fniT4N\",\"CHART-kHA6DWOQZP\"],\"id\":\"ROW-XZDMSwD7UO\",\"meta\":{\"0\":\"ROOT_ID\",\"background\":\"BACKGROUND_TRANSPARENT\"},\"parents\":[\"ROOT_ID\",\"GRID_ID\"],\"type\":\"ROW\"},\"ROW-oJKlzI_fDa\":{\"children\":[\"CHART-Uq_C0K_0FW\",\"CHART-hebsPWz5TQ\"],\"id\":\"ROW-oJKlzI_fDa\",\"meta\":{\"0\":\"ROOT_ID\",\"background\":\"BACKGROUND_TRANSPARENT\"},\"parents\":[\"ROOT_ID\",\"GRID_ID\"],\"type\":\"ROW\"}}",
+                "slices": [
+                    {
+                        "__Slice__": {
+                            "cache_timeout": null,
+                            "datasource_name": "information_schema.tables",
+                            "datasource_type": "table",
+                            "id": 10,
+                            "params": "{\"adhoc_filters\": [], \"color_scheme\": \"supersetColors\", \"datasource\": \"6__table\", \"date_format\": \"smart_date\", \"extra_form_data\": {}, \"groupby\": [\"table_schema\"], \"innerRadius\": 30, \"label_type\": \"key\", \"labels_outside\": true, \"legendOrientation\": \"top\", \"legendType\": \"scroll\", \"metric\": \"TotalSize()\", \"number_format\": \"SMART_NUMBER\", \"outerRadius\": 70, \"row_limit\": 10000, \"show_labels\": true, \"show_labels_threshold\": 5, \"slice_id\": 10, \"sort_by_metric\": true, \"time_range\": \"No filter\", \"time_range_endpoints\": [\"inclusive\", \"exclusive\"], \"url_params\": {}, \"viz_type\": \"pie\", \"remote_id\": 10, \"datasource_name\": \"tables\", \"schema\": \"information_schema\", \"database_name\": \"NSAPH2\"}",
+                            "query_context": "{\"datasource\":{\"id\":6,\"type\":\"table\"},\"force\":false,\"queries\":[{\"time_range\":\"No filter\",\"filters\":[],\"extras\":{\"time_range_endpoints\":[\"inclusive\",\"exclusive\"],\"having\":\"\",\"having_druid\":[],\"where\":\"\"},\"applied_time_extras\":{},\"columns\":[\"table_schema\"],\"metrics\":[\"TotalSize()\"],\"orderby\":[[\"TotalSize()\",false]],\"annotation_layers\":[],\"row_limit\":10000,\"timeseries_limit\":0,\"order_desc\":true,\"url_params\":{},\"custom_params\":{},\"custom_form_data\":{}}],\"result_format\":\"json\",\"result_type\":\"full\"}",
+                            "slice_name": "Size by Domain",
+                            "viz_type": "pie"
+                        }
+                    },
+                    {
+                        "__Slice__": {
+                            "cache_timeout": null,
+                            "datasource_name": "information_schema.tables",
+                            "datasource_type": "table",
+                            "id": 11,
+                            "params": "{\"adhoc_filters\": [{\"clause\": \"WHERE\", \"comparator\": \"medicaid\", \"expressionType\": \"SIMPLE\", \"filterOptionName\": \"filter_cjawv8ofky_v5m2l53eodf\", \"isExtra\": false, \"isNew\": false, \"operator\": \"==\", \"operatorId\": \"EQUALS\", \"sqlExpression\": null, \"subject\": \"table_schema\"}], \"color_scheme\": \"supersetColors\", \"datasource\": \"6__table\", \"date_format\": \"smart_date\", \"extra_form_data\": {}, \"groupby\": [\"table_name\"], \"innerRadius\": 30, \"label_type\": \"key\", \"labels_outside\": true, \"legendOrientation\": \"top\", \"legendType\": \"scroll\", \"metric\": \"TotalSize()\", \"number_format\": \"SMART_NUMBER\", \"outerRadius\": 70, \"row_limit\": 10000, \"show_labels\": true, \"show_labels_threshold\": 5, \"slice_id\": 11, \"sort_by_metric\": true, \"time_range\": \"No filter\", \"time_range_endpoints\": [\"inclusive\", \"exclusive\"], \"url_params\": {}, \"viz_type\": \"pie\", \"remote_id\": 11, \"datasource_name\": \"tables\", \"schema\": \"information_schema\", \"database_name\": \"NSAPH2\"}",
+                            "query_context": "{\"datasource\":{\"id\":6,\"type\":\"table\"},\"force\":false,\"queries\":[{\"time_range\":\"No filter\",\"filters\":[{\"col\":\"table_schema\",\"op\":\"==\",\"val\":\"medicaid\"}],\"extras\":{\"time_range_endpoints\":[\"inclusive\",\"exclusive\"],\"having\":\"\",\"having_druid\":[],\"where\":\"\"},\"applied_time_extras\":{},\"columns\":[\"table_name\"],\"metrics\":[\"TotalSize()\"],\"orderby\":[[\"TotalSize()\",false]],\"annotation_layers\":[],\"row_limit\":10000,\"timeseries_limit\":0,\"order_desc\":true,\"url_params\":{},\"custom_params\":{},\"custom_form_data\":{}}],\"result_format\":\"json\",\"result_type\":\"full\"}",
+                            "slice_name": "Medicaid Data",
+                            "viz_type": "pie"
+                        }
+                    },
+                    {
+                        "__Slice__": {
+                            "cache_timeout": null,
+                            "datasource_name": "information_schema.tables",
+                            "datasource_type": "table",
+                            "id": 12,
+                            "params": "{\"adhoc_filters\": [{\"clause\": \"WHERE\", \"comparator\": \"1000000\", \"expressionType\": \"SIMPLE\", \"filterOptionName\": \"filter_52hcpctnbw4_3rid28jglxt\", \"isExtra\": false, \"isNew\": false, \"operator\": \">\", \"operatorId\": \"GREATER_THAN\", \"sqlExpression\": null, \"subject\": \"TotalSize\"}], \"bar_stacked\": true, \"bottom_margin\": \"auto\", \"color_scheme\": \"supersetColors\", \"columns\": [\"table_name\"], \"datasource\": \"6__table\", \"extra_form_data\": {}, \"groupby\": [\"table_schema\"], \"metrics\": [\"TotalSize()\"], \"order_desc\": true, \"row_limit\": 10000, \"show_bar_value\": true, \"show_controls\": true, \"show_legend\": false, \"slice_id\": 12, \"time_range\": \"No filter\", \"time_range_endpoints\": [\"inclusive\", \"exclusive\"], \"url_params\": {}, \"viz_type\": \"dist_bar\", \"x_ticks_layout\": \"auto\", \"y_axis_bounds\": [null, null], \"y_axis_format\": \"SMART_NUMBER\", \"remote_id\": 12, \"datasource_name\": \"tables\", \"schema\": \"information_schema\", \"database_name\": \"NSAPH2\"}",
+                            "query_context": "{\"datasource\":{\"id\":6,\"type\":\"table\"},\"force\":false,\"queries\":[{\"time_range\":\"No filter\",\"filters\":[{\"col\":\"TotalSize\",\"op\":\">\",\"val\":\"1000000\"}],\"extras\":{\"time_range_endpoints\":[\"inclusive\",\"exclusive\"],\"having\":\"\",\"having_druid\":[],\"where\":\"\"},\"applied_time_extras\":{},\"columns\":[\"table_schema\",\"table_name\"],\"metrics\":[\"TotalSize()\"],\"annotation_layers\":[],\"row_limit\":10000,\"timeseries_limit\":0,\"order_desc\":true,\"url_params\":{},\"custom_params\":{},\"custom_form_data\":{}}],\"result_format\":\"json\",\"result_type\":\"full\"}",
+                            "slice_name": "Total Volume",
+                            "viz_type": "dist_bar"
+                        }
+                    },
+                    {
+                        "__Slice__": {
+                            "cache_timeout": null,
+                            "datasource_name": "information_schema.tables",
+                            "datasource_type": "table",
+                            "id": 13,
+                            "params": "{\"adhoc_filters\": [{\"clause\": \"WHERE\", \"comparator\": [\"cms\", \"medicaid\"], \"expressionType\": \"SIMPLE\", \"filterOptionName\": \"filter_r3kjmrltzs_jwdpvarvvp\", \"isExtra\": false, \"isNew\": false, \"operator\": \"IN\", \"operatorId\": \"IN\", \"sqlExpression\": null, \"subject\": \"table_schema\"}, {\"clause\": \"WHERE\", \"comparator\": \"100000\", \"expressionType\": \"SIMPLE\", \"filterOptionName\": \"filter_17ahx8b58pk_pmzbvmm1ehh\", \"isExtra\": false, \"isNew\": false, \"operator\": \">\", \"operatorId\": \"GREATER_THAN\", \"sqlExpression\": null, \"subject\": \"TotalSize\"}], \"bottom_margin\": \"auto\", \"color_scheme\": \"supersetColors\", \"columns\": [], \"datasource\": \"6__table\", \"extra_form_data\": {}, \"groupby\": [\"table_name\"], \"metrics\": [{\"aggregate\": \"SUM\", \"column\": {\"certification_details\": null, \"certified_by\": null, \"column_name\": \"DataSize\", \"description\": null, \"expression\": \"pg_relation_size(table_schema || '.' || table_name)\", \"filterable\": true, \"groupby\": true, \"id\": 70, \"is_certified\": false, \"is_dttm\": false, \"python_date_format\": null, \"type\": null, \"type_generic\": null, \"verbose_name\": null, \"warning_markdown\": null}, \"expressionType\": \"SIMPLE\", \"hasCustomLabel\": false, \"isNew\": false, \"label\": \"\", \"optionName\": \"metric_lm7xwq7hv8_ygk8yu7lboo\", \"sqlExpression\": null}, {\"aggregate\": \"SUM\", \"column\": {\"certification_details\": null, \"certified_by\": null, \"column_name\": \"IndexSize\", \"description\": null, \"expression\": \"pg_total_relation_size(table_schema || '.' || table_name) - pg_relation_size(table_schema || '.' || table_name)\", \"filterable\": true, \"groupby\": true, \"id\": 69, \"is_certified\": false, \"is_dttm\": false, \"python_date_format\": null, \"type\": null, \"type_generic\": null, \"verbose_name\": null, \"warning_markdown\": null}, \"expressionType\": \"SIMPLE\", \"hasCustomLabel\": false, \"isNew\": false, \"label\": \"SUM(IndexSize)\", \"optionName\": \"metric_z9am26dl10n_pt0m4krkxs\", \"sqlExpression\": null}], \"order_desc\": true, \"row_limit\": 10000, \"slice_id\": 13, \"time_range\": \"No filter\", \"time_range_endpoints\": [\"inclusive\", \"exclusive\"], \"url_params\": {}, \"viz_type\": \"dist_bar\", \"x_ticks_layout\": \"auto\", \"y_axis_bounds\": [null, null], \"y_axis_format\": \"SMART_NUMBER\", \"remote_id\": 13, \"datasource_name\": \"tables\", \"schema\": \"information_schema\", \"database_name\": \"NSAPH2\"}",
+                            "query_context": "{\"datasource\":{\"id\":6,\"type\":\"table\"},\"force\":false,\"queries\":[{\"time_range\":\"No filter\",\"filters\":[{\"col\":\"table_schema\",\"op\":\"IN\",\"val\":[\"cms\",\"medicaid\"]},{\"col\":\"TotalSize\",\"op\":\">\",\"val\":\"100000\"}],\"extras\":{\"time_range_endpoints\":[\"inclusive\",\"exclusive\"],\"having\":\"\",\"having_druid\":[],\"where\":\"\"},\"applied_time_extras\":{},\"columns\":[\"table_name\"],\"metrics\":[{\"aggregate\":\"SUM\",\"column\":{\"certification_details\":null,\"certified_by\":null,\"column_name\":\"DataSize\",\"description\":null,\"expression\":\"pg_relation_size(table_schema || '.' || table_name)\",\"filterable\":true,\"groupby\":true,\"id\":70,\"is_certified\":false,\"is_dttm\":false,\"python_date_format\":null,\"type\":null,\"type_generic\":null,\"verbose_name\":null,\"warning_markdown\":null},\"expressionType\":\"SIMPLE\",\"hasCustomLabel\":false,\"isNew\":false,\"label\":\"\",\"optionName\":\"metric_lm7xwq7hv8_ygk8yu7lboo\",\"sqlExpression\":null},{\"aggregate\":\"SUM\",\"column\":{\"certification_details\":null,\"certified_by\":null,\"column_name\":\"IndexSize\",\"description\":null,\"expression\":\"pg_total_relation_size(table_schema || '.' || table_name) - pg_relation_size(table_schema || '.' || table_name)\",\"filterable\":true,\"groupby\":true,\"id\":69,\"is_certified\":false,\"is_dttm\":false,\"python_date_format\":null,\"type\":null,\"type_generic\":null,\"verbose_name\":null,\"warning_markdown\":null},\"expressionType\":\"SIMPLE\",\"hasCustomLabel\":false,\"isNew\":false,\"label\":\"SUM(IndexSize)\",\"optionName\":\"metric_z9am26dl10n_pt0m4krkxs\",\"sqlExpression\":null}],\"annotation_layers\":[],\"row_limit\":10000,\"timeseries_limit\":0,\"order_desc\":true,\"url_params\":{},\"custom_params\":{},\"custom_form_data\":{}}],\"result_format\":\"json\",\"result_type\":\"full\"}",
+                            "slice_name": "Index Sizes",
+                            "viz_type": "dist_bar"
+                        }
+                    }
+                ],
+                "slug": null
+            }
+        }
+    ],
+    "datasources": [
+        {
+            "__SqlaTable__": {
+                "cache_timeout": null,
+                "columns": [
+                    {
+                        "__TableColumn__": {
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2022-02-04T01:12:22"
+                            },
+                            "column_name": "table_catalog",
+                            "created_by_fk": 1,
+                            "created_on": {
+                                "__datetime__": "2022-02-04T01:11:07"
+                            },
+                            "description": null,
+                            "expression": null,
+                            "extra": "{}",
+                            "filterable": true,
+                            "groupby": true,
+                            "id": 55,
+                            "is_active": true,
+                            "is_dttm": false,
+                            "python_date_format": null,
+                            "table_id": 6,
+                            "type": "VARCHAR",
+                            "uuid": "c2486c69-3434-4094-9f85-117fcf8242d5",
+                            "verbose_name": null
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2022-02-04T01:12:22"
+                            },
+                            "column_name": "table_schema",
+                            "created_by_fk": 1,
+                            "created_on": {
+                                "__datetime__": "2022-02-04T01:11:07"
+                            },
+                            "description": null,
+                            "expression": null,
+                            "extra": "{}",
+                            "filterable": true,
+                            "groupby": true,
+                            "id": 56,
+                            "is_active": true,
+                            "is_dttm": false,
+                            "python_date_format": null,
+                            "table_id": 6,
+                            "type": "VARCHAR",
+                            "uuid": "09f5225e-d750-4899-b5ae-0a69ab8208d9",
+                            "verbose_name": null
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2022-02-04T01:12:22"
+                            },
+                            "column_name": "table_name",
+                            "created_by_fk": 1,
+                            "created_on": {
+                                "__datetime__": "2022-02-04T01:11:07"
+                            },
+                            "description": null,
+                            "expression": null,
+                            "extra": "{}",
+                            "filterable": true,
+                            "groupby": true,
+                            "id": 57,
+                            "is_active": true,
+                            "is_dttm": false,
+                            "python_date_format": null,
+                            "table_id": 6,
+                            "type": "VARCHAR",
+                            "uuid": "ec44f8bb-e667-468b-9863-ef59065eef7e",
+                            "verbose_name": null
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2022-02-04T01:12:22"
+                            },
+                            "column_name": "table_type",
+                            "created_by_fk": 1,
+                            "created_on": {
+                                "__datetime__": "2022-02-04T01:11:07"
+                            },
+                            "description": null,
+                            "expression": null,
+                            "extra": "{}",
+                            "filterable": true,
+                            "groupby": true,
+                            "id": 58,
+                            "is_active": true,
+                            "is_dttm": false,
+                            "python_date_format": null,
+                            "table_id": 6,
+                            "type": "VARCHAR",
+                            "uuid": "3fbb2b21-d6df-4889-b4c0-9303e55a0ae6",
+                            "verbose_name": null
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2022-02-04T01:12:22"
+                            },
+                            "column_name": "self_referencing_column_name",
+                            "created_by_fk": 1,
+                            "created_on": {
+                                "__datetime__": "2022-02-04T01:11:07"
+                            },
+                            "description": null,
+                            "expression": null,
+                            "extra": "{}",
+                            "filterable": true,
+                            "groupby": true,
+                            "id": 59,
+                            "is_active": true,
+                            "is_dttm": false,
+                            "python_date_format": null,
+                            "table_id": 6,
+                            "type": "VARCHAR",
+                            "uuid": "0c41d0d5-633c-45a6-bc09-390425eb5931",
+                            "verbose_name": null
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2022-02-04T01:12:22"
+                            },
+                            "column_name": "reference_generation",
+                            "created_by_fk": 1,
+                            "created_on": {
+                                "__datetime__": "2022-02-04T01:11:07"
+                            },
+                            "description": null,
+                            "expression": null,
+                            "extra": "{}",
+                            "filterable": true,
+                            "groupby": true,
+                            "id": 60,
+                            "is_active": true,
+                            "is_dttm": false,
+                            "python_date_format": null,
+                            "table_id": 6,
+                            "type": "VARCHAR",
+                            "uuid": "ae4a1b0a-2186-4dff-a12a-c7c3b698cf3c",
+                            "verbose_name": null
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2022-02-04T01:12:22"
+                            },
+                            "column_name": "user_defined_type_catalog",
+                            "created_by_fk": 1,
+                            "created_on": {
+                                "__datetime__": "2022-02-04T01:11:07"
+                            },
+                            "description": null,
+                            "expression": null,
+                            "extra": "{}",
+                            "filterable": true,
+                            "groupby": true,
+                            "id": 61,
+                            "is_active": true,
+                            "is_dttm": false,
+                            "python_date_format": null,
+                            "table_id": 6,
+                            "type": "VARCHAR",
+                            "uuid": "be765b90-86d3-4c6e-abd1-54ed1989f389",
+                            "verbose_name": null
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2022-02-04T01:12:22"
+                            },
+                            "column_name": "user_defined_type_schema",
+                            "created_by_fk": 1,
+                            "created_on": {
+                                "__datetime__": "2022-02-04T01:11:07"
+                            },
+                            "description": null,
+                            "expression": null,
+                            "extra": "{}",
+                            "filterable": true,
+                            "groupby": true,
+                            "id": 62,
+                            "is_active": true,
+                            "is_dttm": false,
+                            "python_date_format": null,
+                            "table_id": 6,
+                            "type": "VARCHAR",
+                            "uuid": "07ef3beb-752c-48e7-8b41-e2e75c2db121",
+                            "verbose_name": null
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2022-02-04T01:12:22"
+                            },
+                            "column_name": "user_defined_type_name",
+                            "created_by_fk": 1,
+                            "created_on": {
+                                "__datetime__": "2022-02-04T01:11:07"
+                            },
+                            "description": null,
+                            "expression": null,
+                            "extra": "{}",
+                            "filterable": true,
+                            "groupby": true,
+                            "id": 63,
+                            "is_active": true,
+                            "is_dttm": false,
+                            "python_date_format": null,
+                            "table_id": 6,
+                            "type": "VARCHAR",
+                            "uuid": "e7cda78e-b6e6-4e44-9838-a4b5da8bbebe",
+                            "verbose_name": null
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2022-02-04T01:12:22"
+                            },
+                            "column_name": "is_insertable_into",
+                            "created_by_fk": 1,
+                            "created_on": {
+                                "__datetime__": "2022-02-04T01:11:07"
+                            },
+                            "description": null,
+                            "expression": null,
+                            "extra": "{}",
+                            "filterable": true,
+                            "groupby": true,
+                            "id": 64,
+                            "is_active": true,
+                            "is_dttm": false,
+                            "python_date_format": null,
+                            "table_id": 6,
+                            "type": "VARCHAR",
+                            "uuid": "fd6919f3-fab6-4aaa-8f99-df9d5d92e7a4",
+                            "verbose_name": null
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2022-02-04T01:12:22"
+                            },
+                            "column_name": "is_typed",
+                            "created_by_fk": 1,
+                            "created_on": {
+                                "__datetime__": "2022-02-04T01:11:07"
+                            },
+                            "description": null,
+                            "expression": null,
+                            "extra": "{}",
+                            "filterable": true,
+                            "groupby": true,
+                            "id": 65,
+                            "is_active": true,
+                            "is_dttm": false,
+                            "python_date_format": null,
+                            "table_id": 6,
+                            "type": "VARCHAR",
+                            "uuid": "c8b286cb-7510-4402-b6e6-b6df20cf283c",
+                            "verbose_name": null
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2022-02-04T01:12:22"
+                            },
+                            "column_name": "commit_action",
+                            "created_by_fk": 1,
+                            "created_on": {
+                                "__datetime__": "2022-02-04T01:11:07"
+                            },
+                            "description": null,
+                            "expression": null,
+                            "extra": "{}",
+                            "filterable": true,
+                            "groupby": true,
+                            "id": 66,
+                            "is_active": true,
+                            "is_dttm": false,
+                            "python_date_format": null,
+                            "table_id": 6,
+                            "type": "VARCHAR",
+                            "uuid": "ed514d89-a6a5-4dd0-9d37-c31c3cd447a3",
+                            "verbose_name": null
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2022-02-04T05:53:26"
+                            },
+                            "column_name": "IndexSize",
+                            "created_by_fk": 1,
+                            "created_on": {
+                                "__datetime__": "2022-02-04T05:53:26"
+                            },
+                            "description": null,
+                            "expression": "pg_total_relation_size(table_schema || '.' || table_name) - pg_relation_size(table_schema || '.' || table_name)",
+                            "extra": "{}",
+                            "filterable": true,
+                            "groupby": true,
+                            "id": 69,
+                            "is_active": true,
+                            "is_dttm": false,
+                            "python_date_format": null,
+                            "table_id": 6,
+                            "type": null,
+                            "uuid": "ffb329d5-4540-4547-83ea-bd0dcea1c604",
+                            "verbose_name": null
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2022-02-04T05:53:26"
+                            },
+                            "column_name": "DataSize",
+                            "created_by_fk": 1,
+                            "created_on": {
+                                "__datetime__": "2022-02-04T05:53:26"
+                            },
+                            "description": null,
+                            "expression": "pg_relation_size(table_schema || '.' || table_name)",
+                            "extra": "{}",
+                            "filterable": true,
+                            "groupby": true,
+                            "id": 70,
+                            "is_active": true,
+                            "is_dttm": false,
+                            "python_date_format": null,
+                            "table_id": 6,
+                            "type": null,
+                            "uuid": "812528d0-da78-4e57-9f8a-9cd729f6ca9e",
+                            "verbose_name": null
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2022-02-04T05:53:26"
+                            },
+                            "column_name": "TotalSize",
+                            "created_by_fk": 1,
+                            "created_on": {
+                                "__datetime__": "2022-02-04T05:53:26"
+                            },
+                            "description": null,
+                            "expression": "pg_total_relation_size(table_schema || '.' || table_name)",
+                            "extra": "{}",
+                            "filterable": true,
+                            "groupby": true,
+                            "id": 71,
+                            "is_active": true,
+                            "is_dttm": false,
+                            "python_date_format": null,
+                            "table_id": 6,
+                            "type": null,
+                            "uuid": "85dae312-a8ee-4e41-9623-637479187f45",
+                            "verbose_name": null
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2022-03-10T07:13:22"
+                            },
+                            "column_name": "TotalRecords",
+                            "created_by_fk": 1,
+                            "created_on": {
+                                "__datetime__": "2022-03-10T07:01:48"
+                            },
+                            "description": null,
+                            "expression": "public.count_rows(table_schema::VARCHAR, table_name::VARCHAR)",
+                            "extra": "{}",
+                            "filterable": true,
+                            "groupby": true,
+                            "id": 72,
+                            "is_active": true,
+                            "is_dttm": false,
+                            "python_date_format": null,
+                            "table_id": 6,
+                            "type": null,
+                            "uuid": "51ab0637-75d5-4c6f-b841-bf979f9c371f",
+                            "verbose_name": null
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2022-03-11T04:29:42"
+                            },
+                            "column_name": "Year",
+                            "created_by_fk": 1,
+                            "created_on": {
+                                "__datetime__": "2022-03-11T04:29:42"
+                            },
+                            "description": null,
+                            "expression": "public.get_year(table_schema::VARCHAR, table_name::VARCHAR)",
+                            "extra": "{}",
+                            "filterable": true,
+                            "groupby": true,
+                            "id": 73,
+                            "is_active": true,
+                            "is_dttm": false,
+                            "python_date_format": null,
+                            "table_id": 6,
+                            "type": null,
+                            "uuid": "ddee44d1-8d61-49a6-9a08-2ee01a49e2c8",
+                            "verbose_name": null
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "changed_by_fk": 3,
+                            "changed_on": {
+                                "__datetime__": "2022-04-29T21:10:09"
+                            },
+                            "column_name": "EstimatedRecords",
+                            "created_by_fk": 3,
+                            "created_on": {
+                                "__datetime__": "2022-04-29T21:02:18"
+                            },
+                            "description": null,
+                            "expression": "(SELECT reltuples::bigint FROM pg_class WHERE oid = (table_schema || '.' || table_name)::regclass)",
+                            "extra": "{}",
+                            "filterable": true,
+                            "groupby": true,
+                            "id": 74,
+                            "is_active": true,
+                            "is_dttm": false,
+                            "python_date_format": null,
+                            "table_id": 6,
+                            "type": null,
+                            "uuid": "23a174b1-8116-48a3-950f-d06b0f27d146",
+                            "verbose_name": null
+                        }
+                    }
+                ],
+                "database_id": 1,
+                "default_endpoint": null,
+                "description": null,
+                "extra": null,
+                "fetch_values_predicate": null,
+                "filter_select_enabled": false,
+                "main_dttm_col": null,
+                "metrics": [
+                    {
+                        "__SqlMetric__": {
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2022-03-10T07:06:08"
+                            },
+                            "created_by_fk": 1,
+                            "created_on": {
+                                "__datetime__": "2022-02-04T01:11:07"
+                            },
+                            "d3format": null,
+                            "description": null,
+                            "expression": "COUNT(*)",
+                            "extra": "{\"warning_markdown\":\"\"}",
+                            "id": 11,
+                            "metric_name": "count",
+                            "metric_type": "count",
+                            "table_id": 6,
+                            "uuid": "917065de-22d0-4937-a6cf-01f7caa81101",
+                            "verbose_name": "COUNT(*)",
+                            "warning_text": null
+                        }
+                    },
+                    {
+                        "__SqlMetric__": {
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2022-03-10T07:06:08"
+                            },
+                            "created_by_fk": 1,
+                            "created_on": {
+                                "__datetime__": "2022-02-04T05:36:09"
+                            },
+                            "d3format": null,
+                            "description": null,
+                            "expression": "SUM(pg_total_relation_size(table_schema || '.' || table_name))",
+                            "extra": "{\"warning_markdown\":\"\"}",
+                            "id": 12,
+                            "metric_name": "TotalSize()",
+                            "metric_type": null,
+                            "table_id": 6,
+                            "uuid": "e1b71aeb-fb2e-4db8-9013-a55dd60bf180",
+                            "verbose_name": "",
+                            "warning_text": null
+                        }
+                    },
+                    {
+                        "__SqlMetric__": {
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2022-03-10T07:06:08"
+                            },
+                            "created_by_fk": 1,
+                            "created_on": {
+                                "__datetime__": "2022-02-04T05:36:09"
+                            },
+                            "d3format": null,
+                            "description": null,
+                            "expression": "SUM(pg_relation_size(table_schema || '.' || table_name))",
+                            "extra": "{\"warning_markdown\":\"\"}",
+                            "id": 13,
+                            "metric_name": "Size()",
+                            "metric_type": null,
+                            "table_id": 6,
+                            "uuid": "9d815515-b6cd-4be5-b02d-216278ff49c0",
+                            "verbose_name": "Size",
+                            "warning_text": null
+                        }
+                    }
+                ],
+                "offset": 0,
+                "params": "{\"remote_id\": 6, \"database_name\": \"NSAPH2\"}",
+                "schema": "information_schema",
+                "sql": "",
+                "table_name": "tables",
+                "template_params": null
+            }
+        }
+    ]
+}

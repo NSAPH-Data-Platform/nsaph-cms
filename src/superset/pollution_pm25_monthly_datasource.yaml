@@ -1,0 +1,47 @@
+- columns:
+  - column_name: MonthYear
+    expression: to_date(year||month, 'YYYYMM')
+    extra: '{}'
+    is_dttm: true
+  - column_name: epa_pm25
+    extra: '{}'
+    type: NUMERIC
+  - column_name: rm_pm25
+    extra: '{}'
+    type: NUMERIC
+  - column_name: fips2
+    extra: '{}'
+    type: VARCHAR
+  - column_name: fips3
+    extra: '{}'
+    type: VARCHAR
+  - column_name: fips5
+    extra: '{}'
+    type: TEXT
+  - column_name: state_iso
+    extra: '{}'
+    type: VARCHAR
+  - column_name: year
+    extra: '{}'
+    type: VARCHAR
+  - column_name: state
+    extra: '{}'
+    type: VARCHAR
+  - column_name: month
+    extra: '{}'
+    type: VARCHAR
+  - column_name: state_name
+    extra: '{}'
+    type: TEXT
+  - column_name: county_name
+    extra: '{}'
+    type: TEXT
+  metrics:
+  - expression: COUNT(*)
+    extra: '{"warning_markdown":""}'
+    metric_name: count
+    metric_type: count
+    verbose_name: COUNT(*)
+  schema: pollution
+  sql: ''
+  table_name: pm25_monthly

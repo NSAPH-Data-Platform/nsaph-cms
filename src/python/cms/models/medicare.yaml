@@ -382,7 +382,7 @@ medicare:
             source: "MAX(year)"
         - all_enrollment_years:
             type: INT[]
-            source: "ARRAY_AGG(year ORDER BY year)"
+            source: "ARRAY_AGG(DISTINCT year ORDER BY year)"
         - race:
             reference: "https://resdac.org/cms-data/variables/raceethnicity-msis"
             source: "string_agg(distinct race, ',')"
@@ -522,6 +522,11 @@ medicare:
         select: "*"
         from: _beneficiaries
       columns:
+        - number_of_gap_years:
+            type: INT
+            source:
+              type: generated
+              code: "GENERATED ALWAYS AS (last_enrollment_year - first_enrollment_year + 1 - CARDINALITY(all_enrollment_years)) STORED"
         - bene:
             type: HLL_HASHVAL
             description: |

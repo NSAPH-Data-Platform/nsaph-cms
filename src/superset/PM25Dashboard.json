@@ -1,0 +1,447 @@
+{
+    "dashboards": [
+        {
+            "__Dashboard__": {
+                "css": "",
+                "dashboard_title": "PM25",
+                "description": null,
+                "json_metadata": "{\"show_native_filters\": true, \"color_scheme\": \"\", \"refresh_frequency\": 0, \"expanded_slices\": {}, \"label_colors\": {}, \"timed_refresh_immune_slices\": [], \"default_filters\": \"{}\", \"chart_configuration\": {}, \"filter_scopes\": {\"25\": {\"month\": {\"scope\": [\"ROOT_ID\"], \"immune\": []}, \"year\": {\"scope\": [\"ROOT_ID\"], \"immune\": []}, \"state_name\": {\"scope\": [\"ROOT_ID\"], \"immune\": []}, \"county_name\": {\"scope\": [\"ROOT_ID\"], \"immune\": []}}}, \"remote_id\": 6}",
+                "position_json": "{\"CHART-8hMDqfC_cA\":{\"children\":[],\"id\":\"CHART-8hMDqfC_cA\",\"meta\":{\"chartId\":17,\"height\":50,\"sliceName\":\"PM25 RM to EPA\",\"uuid\":\"efca3c3c-c7a7-4ce3-bf02-66797442f6de\",\"width\":4},\"parents\":[\"ROOT_ID\",\"GRID_ID\",\"ROW-LY4vsfnFS\"],\"type\":\"CHART\"},\"CHART-LUR798CSSz\":{\"children\":[],\"id\":\"CHART-LUR798CSSz\",\"meta\":{\"chartId\":19,\"height\":50,\"sliceName\":\"PM25 trend\",\"uuid\":\"f949847c-433f-4006-9c9b-d2054d4a9d4a\",\"width\":4},\"parents\":[\"ROOT_ID\",\"GRID_ID\",\"ROW-etJv3H1Iu\"],\"type\":\"CHART\"},\"CHART-gOvAUV5EOv\":{\"children\":[],\"id\":\"CHART-gOvAUV5EOv\",\"meta\":{\"chartId\":24,\"height\":50,\"sliceName\":\"EPA PM25 by State\",\"uuid\":\"65bd8e30-30db-4cb3-9b8e-8e2a38003254\",\"width\":4},\"parents\":[\"ROOT_ID\",\"GRID_ID\",\"ROW-LY4vsfnFS\"],\"type\":\"CHART\"},\"CHART-gUOKgQEVFX\":{\"children\":[],\"id\":\"CHART-gUOKgQEVFX\",\"meta\":{\"chartId\":25,\"height\":50,\"sliceName\":\"PM25 Filters\",\"uuid\":\"3aeb198b-c189-4d37-b508-8e454d563dd2\",\"width\":4},\"parents\":[\"ROOT_ID\",\"GRID_ID\",\"ROW-etJv3H1Iu\"],\"type\":\"CHART\"},\"CHART-gfjR-zyLX-\":{\"children\":[],\"id\":\"CHART-gfjR-zyLX-\",\"meta\":{\"chartId\":18,\"height\":50,\"sliceName\":\"RM PM25 by State\",\"uuid\":\"248e98d7-a7ed-4d75-b8c6-cca62f384c22\",\"width\":4},\"parents\":[\"ROOT_ID\",\"GRID_ID\",\"ROW-LY4vsfnFS\"],\"type\":\"CHART\"},\"CHART-ko5XFajfky\":{\"children\":[],\"id\":\"CHART-ko5XFajfky\",\"meta\":{\"chartId\":20,\"height\":50,\"sliceName\":\"PM25 seasonal\",\"uuid\":\"150c2cff-d070-4d97-8230-d5caa58722e3\",\"width\":4},\"parents\":[\"ROOT_ID\",\"GRID_ID\",\"ROW-etJv3H1Iu\"],\"type\":\"CHART\"},\"DASHBOARD_VERSION_KEY\":\"v2\",\"GRID_ID\":{\"children\":[\"ROW-LY4vsfnFS\",\"ROW-etJv3H1Iu\"],\"id\":\"GRID_ID\",\"parents\":[\"ROOT_ID\"],\"type\":\"GRID\"},\"HEADER_ID\":{\"id\":\"HEADER_ID\",\"meta\":{\"text\":\"PM25\"},\"type\":\"HEADER\"},\"ROOT_ID\":{\"children\":[\"GRID_ID\"],\"id\":\"ROOT_ID\",\"type\":\"ROOT\"},\"ROW-LY4vsfnFS\":{\"children\":[\"CHART-8hMDqfC_cA\",\"CHART-gfjR-zyLX-\",\"CHART-gOvAUV5EOv\"],\"id\":\"ROW-LY4vsfnFS\",\"meta\":{\"0\":\"ROOT_ID\",\"background\":\"BACKGROUND_TRANSPARENT\"},\"parents\":[\"ROOT_ID\",\"GRID_ID\"],\"type\":\"ROW\"},\"ROW-etJv3H1Iu\":{\"children\":[\"CHART-LUR798CSSz\",\"CHART-ko5XFajfky\",\"CHART-gUOKgQEVFX\"],\"id\":\"ROW-etJv3H1Iu\",\"meta\":{\"background\":\"BACKGROUND_TRANSPARENT\"},\"parents\":[\"ROOT_ID\",\"GRID_ID\"],\"type\":\"ROW\"}}",
+                "slices": [
+                    {
+                        "__Slice__": {
+                            "cache_timeout": null,
+                            "datasource_name": "pollution.pm25_monthly",
+                            "datasource_type": "table",
+                            "id": 17,
+                            "params": "{\"adhoc_filters\": [], \"bottom_margin\": \"auto\", \"color_scheme\": \"supersetColors\", \"datasource\": \"12__table\", \"entity\": \"fips5\", \"extra_form_data\": {}, \"left_margin\": \"auto\", \"max_bubble_size\": \"5\", \"series\": \"year\", \"size\": \"count\", \"slice_id\": 17, \"time_range\": \"No filter\", \"time_range_endpoints\": [\"inclusive\", \"exclusive\"], \"url_params\": {}, \"viz_type\": \"bubble\", \"x\": {\"aggregate\": \"AVG\", \"column\": {\"certification_details\": null, \"certified_by\": null, \"column_name\": \"epa_pm25\", \"description\": null, \"expression\": null, \"filterable\": true, \"groupby\": true, \"id\": 128, \"is_certified\": false, \"is_dttm\": false, \"python_date_format\": null, \"type\": \"NUMERIC\", \"type_generic\": 0, \"verbose_name\": null, \"warning_markdown\": null}, \"expressionType\": \"SIMPLE\", \"hasCustomLabel\": false, \"isNew\": false, \"label\": \"AVG(epa_pm25)\", \"optionName\": \"metric_1iyxodlm4mx_mgky77ek1q\", \"sqlExpression\": null}, \"x_axis_format\": \"SMART_NUMBER\", \"x_axis_showminmax\": true, \"x_ticks_layout\": \"auto\", \"y\": {\"aggregate\": \"AVG\", \"column\": {\"certification_details\": null, \"certified_by\": null, \"column_name\": \"rm_pm25\", \"description\": null, \"expression\": null, \"filterable\": true, \"groupby\": true, \"id\": 129, \"is_certified\": false, \"is_dttm\": false, \"python_date_format\": null, \"type\": \"NUMERIC\", \"type_generic\": 0, \"verbose_name\": null, \"warning_markdown\": null}, \"expressionType\": \"SIMPLE\", \"hasCustomLabel\": false, \"isNew\": false, \"label\": \"AVG(rm_pm25)\", \"optionName\": \"metric_gv5b27v5ajj_e6lsocha6id\", \"sqlExpression\": null}, \"y_axis_bounds\": [null, null], \"y_axis_format\": \"SMART_NUMBER\", \"y_axis_showminmax\": true, \"remote_id\": 17, \"datasource_name\": \"pm25_monthly\", \"schema\": \"pollution\", \"database_name\": \"NSAPH2\"}",
+                            "query_context": "{\"datasource\":{\"id\":12,\"type\":\"table\"},\"force\":false,\"queries\":[{\"time_range\":\"No filter\",\"filters\":[],\"extras\":{\"time_range_endpoints\":[\"inclusive\",\"exclusive\"],\"having\":\"\",\"having_druid\":[],\"where\":\"\"},\"applied_time_extras\":{},\"columns\":[\"year\"],\"metrics\":[{\"aggregate\":\"AVG\",\"column\":{\"certification_details\":null,\"certified_by\":null,\"column_name\":\"epa_pm25\",\"description\":null,\"expression\":null,\"filterable\":true,\"groupby\":true,\"id\":128,\"is_certified\":false,\"is_dttm\":false,\"python_date_format\":null,\"type\":\"NUMERIC\",\"type_generic\":0,\"verbose_name\":null,\"warning_markdown\":null},\"expressionType\":\"SIMPLE\",\"hasCustomLabel\":false,\"isNew\":false,\"label\":\"AVG(epa_pm25)\",\"optionName\":\"metric_1iyxodlm4mx_mgky77ek1q\",\"sqlExpression\":null},{\"aggregate\":\"AVG\",\"column\":{\"certification_details\":null,\"certified_by\":null,\"column_name\":\"rm_pm25\",\"description\":null,\"expression\":null,\"filterable\":true,\"groupby\":true,\"id\":129,\"is_certified\":false,\"is_dttm\":false,\"python_date_format\":null,\"type\":\"NUMERIC\",\"type_generic\":0,\"verbose_name\":null,\"warning_markdown\":null},\"expressionType\":\"SIMPLE\",\"hasCustomLabel\":false,\"isNew\":false,\"label\":\"AVG(rm_pm25)\",\"optionName\":\"metric_gv5b27v5ajj_e6lsocha6id\",\"sqlExpression\":null},\"count\"],\"annotation_layers\":[],\"timeseries_limit\":0,\"order_desc\":true,\"url_params\":{},\"custom_params\":{},\"custom_form_data\":{}}],\"result_format\":\"json\",\"result_type\":\"full\"}",
+                            "slice_name": "PM25 RM to EPA",
+                            "viz_type": "bubble"
+                        }
+                    },
+                    {
+                        "__Slice__": {
+                            "cache_timeout": null,
+                            "datasource_name": "pollution.pm25_monthly",
+                            "datasource_type": "table",
+                            "id": 18,
+                            "params": "{\"adhoc_filters\": [], \"datasource\": \"12__table\", \"entity\": \"state_iso\", \"extra_form_data\": {}, \"granularity_sqla\": \"MonthYear\", \"linear_color_scheme\": \"superset_seq_1\", \"metric\": {\"aggregate\": \"AVG\", \"column\": {\"certification_details\": null, \"certified_by\": null, \"column_name\": \"rm_pm25\", \"description\": null, \"expression\": null, \"filterable\": true, \"groupby\": true, \"id\": 129, \"is_certified\": false, \"is_dttm\": false, \"python_date_format\": null, \"type\": \"NUMERIC\", \"type_generic\": 0, \"verbose_name\": null, \"warning_markdown\": null}, \"expressionType\": \"SIMPLE\", \"hasCustomLabel\": false, \"isNew\": false, \"label\": \"AVG(rm_pm25)\", \"optionName\": \"metric_0yerqkhdllb_xp13x6016fp\", \"sqlExpression\": null}, \"number_format\": \"SMART_NUMBER\", \"select_country\": \"usa\", \"slice_id\": 18, \"time_range\": \"No filter\", \"time_range_endpoints\": [\"inclusive\", \"exclusive\"], \"url_params\": {}, \"viz_type\": \"country_map\", \"remote_id\": 18, \"datasource_name\": \"pm25_monthly\", \"schema\": \"pollution\", \"database_name\": \"NSAPH2\"}",
+                            "query_context": "{\"datasource\":{\"id\":12,\"type\":\"table\"},\"force\":false,\"queries\":[{\"time_range\":\"No filter\",\"granularity\":\"MonthYear\",\"filters\":[],\"extras\":{\"time_range_endpoints\":[\"inclusive\",\"exclusive\"],\"having\":\"\",\"having_druid\":[],\"where\":\"\"},\"applied_time_extras\":{},\"columns\":[],\"metrics\":[{\"aggregate\":\"AVG\",\"column\":{\"certification_details\":null,\"certified_by\":null,\"column_name\":\"rm_pm25\",\"description\":null,\"expression\":null,\"filterable\":true,\"groupby\":true,\"id\":129,\"is_certified\":false,\"is_dttm\":false,\"python_date_format\":null,\"type\":\"NUMERIC\",\"type_generic\":0,\"verbose_name\":null,\"warning_markdown\":null},\"expressionType\":\"SIMPLE\",\"hasCustomLabel\":false,\"isNew\":false,\"label\":\"AVG(rm_pm25)\",\"optionName\":\"metric_0yerqkhdllb_xp13x6016fp\",\"sqlExpression\":null}],\"annotation_layers\":[],\"timeseries_limit\":0,\"order_desc\":true,\"url_params\":{},\"custom_params\":{},\"custom_form_data\":{}}],\"result_format\":\"json\",\"result_type\":\"full\"}",
+                            "slice_name": "RM PM25 by State",
+                            "viz_type": "country_map"
+                        }
+                    },
+                    {
+                        "__Slice__": {
+                            "cache_timeout": null,
+                            "datasource_name": "pollution.pm25_monthly",
+                            "datasource_type": "table",
+                            "id": 19,
+                            "params": "{\"adhoc_filters\": [], \"annotation_layers\": [], \"color_scheme\": \"supersetColors\", \"comparison_type\": \"values\", \"datasource\": \"12__table\", \"extra_form_data\": {}, \"forecastInterval\": 0.8, \"forecastPeriods\": 10, \"granularity_sqla\": \"MonthYear\", \"groupby\": [\"state\"], \"legendOrientation\": \"top\", \"legendType\": \"scroll\", \"markerSize\": 6, \"metrics\": [{\"aggregate\": \"AVG\", \"column\": {\"certification_details\": null, \"certified_by\": null, \"column_name\": \"rm_pm25\", \"description\": null, \"expression\": null, \"filterable\": true, \"groupby\": true, \"id\": 129, \"is_certified\": false, \"is_dttm\": false, \"python_date_format\": null, \"type\": \"NUMERIC\", \"type_generic\": 0, \"verbose_name\": null, \"warning_markdown\": null}, \"expressionType\": \"SIMPLE\", \"hasCustomLabel\": false, \"isNew\": false, \"label\": \"AVG(rm_pm25)\", \"optionName\": \"metric_pla305z2x9_5wijvapz073\", \"sqlExpression\": null}], \"only_total\": true, \"opacity\": 0.2, \"order_desc\": false, \"rich_tooltip\": true, \"row_limit\": 10000, \"seriesType\": \"line\", \"slice_id\": 19, \"time_grain_sqla\": \"P1Y\", \"time_range\": \"No filter\", \"time_range_endpoints\": [\"inclusive\", \"exclusive\"], \"tooltipTimeFormat\": \"smart_date\", \"truncateYAxis\": true, \"url_params\": {}, \"viz_type\": \"echarts_timeseries\", \"x_axis_time_format\": \"smart_date\", \"x_axis_title_margin\": 15, \"y_axis_bounds\": [null, null], \"y_axis_format\": \"SMART_NUMBER\", \"y_axis_title_margin\": 15, \"y_axis_title_position\": \"Left\", \"remote_id\": 19, \"datasource_name\": \"pm25_monthly\", \"schema\": \"pollution\", \"database_name\": \"NSAPH2\"}",
+                            "query_context": "{\"datasource\":{\"id\":12,\"type\":\"table\"},\"force\":false,\"queries\":[{\"time_range\":\"No filter\",\"granularity\":\"MonthYear\",\"filters\":[],\"extras\":{\"time_grain_sqla\":\"P1Y\",\"time_range_endpoints\":[\"inclusive\",\"exclusive\"],\"having\":\"\",\"having_druid\":[],\"where\":\"\"},\"applied_time_extras\":{},\"columns\":[\"state\"],\"metrics\":[{\"aggregate\":\"AVG\",\"column\":{\"certification_details\":null,\"certified_by\":null,\"column_name\":\"rm_pm25\",\"description\":null,\"expression\":null,\"filterable\":true,\"groupby\":true,\"id\":129,\"is_certified\":false,\"is_dttm\":false,\"python_date_format\":null,\"type\":\"NUMERIC\",\"type_generic\":0,\"verbose_name\":null,\"warning_markdown\":null},\"expressionType\":\"SIMPLE\",\"hasCustomLabel\":false,\"isNew\":false,\"label\":\"AVG(rm_pm25)\",\"optionName\":\"metric_pla305z2x9_5wijvapz073\",\"sqlExpression\":null}],\"orderby\":[[{\"aggregate\":\"AVG\",\"column\":{\"certification_details\":null,\"certified_by\":null,\"column_name\":\"rm_pm25\",\"description\":null,\"expression\":null,\"filterable\":true,\"groupby\":true,\"id\":129,\"is_certified\":false,\"is_dttm\":false,\"python_date_format\":null,\"type\":\"NUMERIC\",\"type_generic\":0,\"verbose_name\":null,\"warning_markdown\":null},\"expressionType\":\"SIMPLE\",\"hasCustomLabel\":false,\"isNew\":false,\"label\":\"AVG(rm_pm25)\",\"optionName\":\"metric_pla305z2x9_5wijvapz073\",\"sqlExpression\":null},true]],\"annotation_layers\":[],\"row_limit\":10000,\"timeseries_limit\":0,\"order_desc\":false,\"url_params\":{},\"custom_params\":{},\"custom_form_data\":{},\"is_timeseries\":true,\"time_offsets\":[],\"post_processing\":[null,null,null,{\"operation\":\"pivot\",\"options\":{\"index\":[\"__timestamp\"],\"columns\":[\"state\"],\"aggregates\":{\"AVG(rm_pm25)\":{\"operator\":\"mean\"}},\"drop_missing_columns\":false}},null,null,null]}],\"result_format\":\"json\",\"result_type\":\"full\"}",
+                            "slice_name": "PM25 trend",
+                            "viz_type": "echarts_timeseries"
+                        }
+                    },
+                    {
+                        "__Slice__": {
+                            "cache_timeout": null,
+                            "datasource_name": "pollution.pm25_monthly",
+                            "datasource_type": "table",
+                            "id": 20,
+                            "params": "{\"adhoc_filters\": [], \"annotation_layers\": [], \"color_scheme\": \"supersetColors\", \"comparison_type\": \"values\", \"datasource\": \"12__table\", \"extra_form_data\": {}, \"forecastInterval\": 0.8, \"forecastPeriods\": 10, \"granularity_sqla\": \"MonthYear\", \"groupby\": [\"state\"], \"legendOrientation\": \"top\", \"legendType\": \"scroll\", \"markerSize\": 6, \"metrics\": [{\"aggregate\": \"AVG\", \"column\": {\"certification_details\": null, \"certified_by\": null, \"column_name\": \"rm_pm25\", \"description\": null, \"expression\": null, \"filterable\": true, \"groupby\": true, \"id\": 129, \"is_certified\": false, \"is_dttm\": false, \"python_date_format\": null, \"type\": \"NUMERIC\", \"type_generic\": 0, \"verbose_name\": null, \"warning_markdown\": null}, \"expressionType\": \"SIMPLE\", \"hasCustomLabel\": false, \"isNew\": false, \"label\": \"AVG(rm_pm25)\", \"optionName\": \"metric_pla305z2x9_5wijvapz073\", \"sqlExpression\": null}], \"only_total\": true, \"opacity\": 0.2, \"order_desc\": false, \"rich_tooltip\": true, \"row_limit\": 10000, \"seriesType\": \"line\", \"slice_id\": 20, \"time_grain_sqla\": \"P1M\", \"time_range\": \"No filter\", \"time_range_endpoints\": [\"inclusive\", \"exclusive\"], \"tooltipTimeFormat\": \"smart_date\", \"truncateYAxis\": true, \"url_params\": {}, \"viz_type\": \"echarts_timeseries\", \"x_axis_time_format\": \"smart_date\", \"x_axis_title_margin\": 15, \"y_axis_bounds\": [null, null], \"y_axis_format\": \"SMART_NUMBER\", \"y_axis_title_margin\": 15, \"y_axis_title_position\": \"Left\", \"remote_id\": 20, \"datasource_name\": \"pm25_monthly\", \"schema\": \"pollution\", \"database_name\": \"NSAPH2\"}",
+                            "query_context": "{\"datasource\":{\"id\":12,\"type\":\"table\"},\"force\":false,\"queries\":[{\"time_range\":\"No filter\",\"granularity\":\"MonthYear\",\"filters\":[],\"extras\":{\"time_grain_sqla\":\"P1M\",\"time_range_endpoints\":[\"inclusive\",\"exclusive\"],\"having\":\"\",\"having_druid\":[],\"where\":\"\"},\"applied_time_extras\":{},\"columns\":[\"state\"],\"metrics\":[{\"aggregate\":\"AVG\",\"column\":{\"certification_details\":null,\"certified_by\":null,\"column_name\":\"rm_pm25\",\"description\":null,\"expression\":null,\"filterable\":true,\"groupby\":true,\"id\":129,\"is_certified\":false,\"is_dttm\":false,\"python_date_format\":null,\"type\":\"NUMERIC\",\"type_generic\":0,\"verbose_name\":null,\"warning_markdown\":null},\"expressionType\":\"SIMPLE\",\"hasCustomLabel\":false,\"isNew\":false,\"label\":\"AVG(rm_pm25)\",\"optionName\":\"metric_pla305z2x9_5wijvapz073\",\"sqlExpression\":null}],\"orderby\":[[{\"aggregate\":\"AVG\",\"column\":{\"certification_details\":null,\"certified_by\":null,\"column_name\":\"rm_pm25\",\"description\":null,\"expression\":null,\"filterable\":true,\"groupby\":true,\"id\":129,\"is_certified\":false,\"is_dttm\":false,\"python_date_format\":null,\"type\":\"NUMERIC\",\"type_generic\":0,\"verbose_name\":null,\"warning_markdown\":null},\"expressionType\":\"SIMPLE\",\"hasCustomLabel\":false,\"isNew\":false,\"label\":\"AVG(rm_pm25)\",\"optionName\":\"metric_pla305z2x9_5wijvapz073\",\"sqlExpression\":null},true]],\"annotation_layers\":[],\"row_limit\":10000,\"timeseries_limit\":0,\"order_desc\":false,\"url_params\":{},\"custom_params\":{},\"custom_form_data\":{},\"is_timeseries\":true,\"time_offsets\":[],\"post_processing\":[null,null,null,{\"operation\":\"pivot\",\"options\":{\"index\":[\"__timestamp\"],\"columns\":[\"state\"],\"aggregates\":{\"AVG(rm_pm25)\":{\"operator\":\"mean\"}},\"drop_missing_columns\":false}},null,null,null]}],\"result_format\":\"json\",\"result_type\":\"full\"}",
+                            "slice_name": "PM25 seasonal",
+                            "viz_type": "echarts_timeseries"
+                        }
+                    },
+                    {
+                        "__Slice__": {
+                            "cache_timeout": null,
+                            "datasource_name": "pollution.pm25_monthly",
+                            "datasource_type": "table",
+                            "id": 24,
+                            "params": "{\"adhoc_filters\": [], \"datasource\": \"12__table\", \"entity\": \"state_iso\", \"extra_form_data\": {}, \"granularity_sqla\": \"MonthYear\", \"linear_color_scheme\": \"superset_seq_1\", \"metric\": {\"aggregate\": \"AVG\", \"column\": {\"certification_details\": null, \"certified_by\": null, \"column_name\": \"epa_pm25\", \"description\": null, \"expression\": null, \"filterable\": true, \"groupby\": true, \"id\": 128, \"is_certified\": false, \"is_dttm\": false, \"python_date_format\": null, \"type\": \"NUMERIC\", \"type_generic\": 0, \"verbose_name\": null, \"warning_markdown\": null}, \"expressionType\": \"SIMPLE\", \"hasCustomLabel\": false, \"isNew\": false, \"label\": \"AVG(epa_pm25)\", \"optionName\": \"metric_0yerqkhdllb_xp13x6016fp\", \"sqlExpression\": null}, \"number_format\": \"SMART_NUMBER\", \"select_country\": \"usa\", \"slice_id\": 24, \"time_range\": \"No filter\", \"time_range_endpoints\": [\"inclusive\", \"exclusive\"], \"url_params\": {}, \"viz_type\": \"country_map\", \"remote_id\": 24, \"datasource_name\": \"pm25_monthly\", \"schema\": \"pollution\", \"database_name\": \"NSAPH2\"}",
+                            "query_context": "{\"datasource\":{\"id\":12,\"type\":\"table\"},\"force\":false,\"queries\":[{\"time_range\":\"No filter\",\"granularity\":\"MonthYear\",\"filters\":[],\"extras\":{\"time_range_endpoints\":[\"inclusive\",\"exclusive\"],\"having\":\"\",\"having_druid\":[],\"where\":\"\"},\"applied_time_extras\":{},\"columns\":[],\"metrics\":[{\"expressionType\":\"SIMPLE\",\"column\":{\"id\":128,\"column_name\":\"epa_pm25\",\"verbose_name\":null,\"description\":null,\"expression\":null,\"filterable\":true,\"groupby\":true,\"is_dttm\":false,\"type\":\"NUMERIC\",\"type_generic\":0,\"python_date_format\":null,\"is_certified\":false,\"certified_by\":null,\"certification_details\":null,\"warning_markdown\":null},\"aggregate\":\"AVG\",\"sqlExpression\":null,\"isNew\":false,\"hasCustomLabel\":false,\"label\":\"AVG(epa_pm25)\",\"optionName\":\"metric_0yerqkhdllb_xp13x6016fp\"}],\"annotation_layers\":[],\"timeseries_limit\":0,\"order_desc\":true,\"url_params\":{},\"custom_params\":{},\"custom_form_data\":{}}],\"result_format\":\"json\",\"result_type\":\"full\"}",
+                            "slice_name": "EPA PM25 by State",
+                            "viz_type": "country_map"
+                        }
+                    },
+                    {
+                        "__Slice__": {
+                            "cache_timeout": null,
+                            "datasource_name": "pollution.pm25_monthly",
+                            "datasource_type": "table",
+                            "id": 25,
+                            "params": "{\"adhoc_filters\": [], \"datasource\": \"12__table\", \"date_filter\": false, \"extra_form_data\": {}, \"filter_configs\": [{\"asc\": true, \"clearable\": true, \"column\": \"month\", \"key\": \"rkQrd4oqB\", \"multiple\": true, \"searchAllOptions\": false}, {\"asc\": false, \"clearable\": true, \"column\": \"year\", \"key\": \"CQPxBwEaz\", \"multiple\": true, \"searchAllOptions\": false}, {\"asc\": true, \"clearable\": true, \"column\": \"state_name\", \"key\": \"Zq9l18jJd\", \"multiple\": true, \"searchAllOptions\": false}, {\"asc\": true, \"clearable\": true, \"column\": \"county_name\", \"key\": \"nhVKW4dow\", \"multiple\": true, \"searchAllOptions\": false}], \"granularity_sqla\": \"MonthYear\", \"instant_filtering\": true, \"slice_id\": 25, \"time_grain_sqla\": \"P1D\", \"time_range\": \"No filter\", \"time_range_endpoints\": [\"inclusive\", \"exclusive\"], \"url_params\": {}, \"viz_type\": \"filter_box\", \"remote_id\": 25, \"datasource_name\": \"pm25_monthly\", \"schema\": \"pollution\", \"database_name\": \"NSAPH2\"}",
+                            "query_context": "{\"datasource\":{\"id\":12,\"type\":\"table\"},\"force\":false,\"queries\":[{\"time_range\":\"No filter\",\"granularity\":\"MonthYear\",\"filters\":[],\"extras\":{\"time_grain_sqla\":\"P1D\",\"time_range_endpoints\":[\"inclusive\",\"exclusive\"],\"having\":\"\",\"having_druid\":[],\"where\":\"\"},\"applied_time_extras\":{},\"columns\":[],\"metrics\":[],\"annotation_layers\":[],\"timeseries_limit\":0,\"order_desc\":true,\"url_params\":{},\"custom_params\":{},\"custom_form_data\":{}}],\"result_format\":\"json\",\"result_type\":\"full\"}",
+                            "slice_name": "PM25 Filters",
+                            "viz_type": "filter_box"
+                        }
+                    }
+                ],
+                "slug": null
+            }
+        }
+    ],
+    "datasources": [
+        {
+            "__SqlaTable__": {
+                "cache_timeout": null,
+                "columns": [
+                    {
+                        "__TableColumn__": {
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2022-09-13T05:56:08"
+                            },
+                            "column_name": "year",
+                            "created_by_fk": 1,
+                            "created_on": {
+                                "__datetime__": "2022-09-13T02:31:44"
+                            },
+                            "description": null,
+                            "expression": null,
+                            "extra": "{}",
+                            "filterable": true,
+                            "groupby": true,
+                            "id": 119,
+                            "is_active": true,
+                            "is_dttm": false,
+                            "python_date_format": null,
+                            "table_id": 12,
+                            "type": "VARCHAR",
+                            "uuid": "6ce51c8c-8e88-400a-b27a-402aa5245062",
+                            "verbose_name": null
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2022-09-13T05:56:08"
+                            },
+                            "column_name": "month",
+                            "created_by_fk": 1,
+                            "created_on": {
+                                "__datetime__": "2022-09-13T02:31:44"
+                            },
+                            "description": null,
+                            "expression": null,
+                            "extra": "{}",
+                            "filterable": true,
+                            "groupby": true,
+                            "id": 120,
+                            "is_active": true,
+                            "is_dttm": false,
+                            "python_date_format": null,
+                            "table_id": 12,
+                            "type": "VARCHAR",
+                            "uuid": "5477a490-b3d1-4d50-95bf-c85ba4d5fa09",
+                            "verbose_name": null
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2022-09-13T05:56:08"
+                            },
+                            "column_name": "fips5",
+                            "created_by_fk": 1,
+                            "created_on": {
+                                "__datetime__": "2022-09-13T02:31:44"
+                            },
+                            "description": null,
+                            "expression": null,
+                            "extra": "{}",
+                            "filterable": true,
+                            "groupby": true,
+                            "id": 121,
+                            "is_active": true,
+                            "is_dttm": false,
+                            "python_date_format": null,
+                            "table_id": 12,
+                            "type": "TEXT",
+                            "uuid": "8d4212d4-ed79-4e8b-8c99-18a81cd963ad",
+                            "verbose_name": null
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2022-09-13T05:56:08"
+                            },
+                            "column_name": "fips2",
+                            "created_by_fk": 1,
+                            "created_on": {
+                                "__datetime__": "2022-09-13T02:31:44"
+                            },
+                            "description": null,
+                            "expression": null,
+                            "extra": "{}",
+                            "filterable": true,
+                            "groupby": true,
+                            "id": 122,
+                            "is_active": true,
+                            "is_dttm": false,
+                            "python_date_format": null,
+                            "table_id": 12,
+                            "type": "VARCHAR",
+                            "uuid": "5d293565-6af6-4c89-8587-824aefbcb836",
+                            "verbose_name": null
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2022-09-13T05:56:08"
+                            },
+                            "column_name": "fips3",
+                            "created_by_fk": 1,
+                            "created_on": {
+                                "__datetime__": "2022-09-13T02:31:44"
+                            },
+                            "description": null,
+                            "expression": null,
+                            "extra": "{}",
+                            "filterable": true,
+                            "groupby": true,
+                            "id": 123,
+                            "is_active": true,
+                            "is_dttm": false,
+                            "python_date_format": null,
+                            "table_id": 12,
+                            "type": "VARCHAR",
+                            "uuid": "5922c190-16ef-4abb-831d-a134db865943",
+                            "verbose_name": null
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2022-09-13T05:56:08"
+                            },
+                            "column_name": "state",
+                            "created_by_fk": 1,
+                            "created_on": {
+                                "__datetime__": "2022-09-13T02:31:44"
+                            },
+                            "description": null,
+                            "expression": null,
+                            "extra": "{}",
+                            "filterable": true,
+                            "groupby": true,
+                            "id": 124,
+                            "is_active": true,
+                            "is_dttm": false,
+                            "python_date_format": null,
+                            "table_id": 12,
+                            "type": "VARCHAR",
+                            "uuid": "d6719d34-70f9-43fe-8412-89e63ae92645",
+                            "verbose_name": null
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2022-09-13T05:56:08"
+                            },
+                            "column_name": "state_name",
+                            "created_by_fk": 1,
+                            "created_on": {
+                                "__datetime__": "2022-09-13T02:31:44"
+                            },
+                            "description": null,
+                            "expression": null,
+                            "extra": "{}",
+                            "filterable": true,
+                            "groupby": true,
+                            "id": 125,
+                            "is_active": true,
+                            "is_dttm": false,
+                            "python_date_format": null,
+                            "table_id": 12,
+                            "type": "TEXT",
+                            "uuid": "1fcdb2d1-9fa4-4c62-85c9-20166a622c57",
+                            "verbose_name": null
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2022-09-13T05:56:08"
+                            },
+                            "column_name": "county_name",
+                            "created_by_fk": 1,
+                            "created_on": {
+                                "__datetime__": "2022-09-13T02:31:44"
+                            },
+                            "description": null,
+                            "expression": null,
+                            "extra": "{}",
+                            "filterable": true,
+                            "groupby": true,
+                            "id": 126,
+                            "is_active": true,
+                            "is_dttm": false,
+                            "python_date_format": null,
+                            "table_id": 12,
+                            "type": "TEXT",
+                            "uuid": "912de62b-821d-42d0-a08d-f1df8850006b",
+                            "verbose_name": null
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2022-09-13T05:56:08"
+                            },
+                            "column_name": "state_iso",
+                            "created_by_fk": 1,
+                            "created_on": {
+                                "__datetime__": "2022-09-13T02:31:44"
+                            },
+                            "description": null,
+                            "expression": null,
+                            "extra": "{}",
+                            "filterable": true,
+                            "groupby": true,
+                            "id": 127,
+                            "is_active": true,
+                            "is_dttm": false,
+                            "python_date_format": null,
+                            "table_id": 12,
+                            "type": "VARCHAR",
+                            "uuid": "387444cc-4d9a-452e-8532-383a6c9a1f8b",
+                            "verbose_name": null
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2022-09-13T05:56:08"
+                            },
+                            "column_name": "epa_pm25",
+                            "created_by_fk": 1,
+                            "created_on": {
+                                "__datetime__": "2022-09-13T02:31:44"
+                            },
+                            "description": null,
+                            "expression": null,
+                            "extra": "{}",
+                            "filterable": true,
+                            "groupby": true,
+                            "id": 128,
+                            "is_active": true,
+                            "is_dttm": false,
+                            "python_date_format": null,
+                            "table_id": 12,
+                            "type": "NUMERIC",
+                            "uuid": "92c02a10-8d5c-4d0b-a1fa-157ee2b10ba5",
+                            "verbose_name": null
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2022-09-13T05:56:08"
+                            },
+                            "column_name": "rm_pm25",
+                            "created_by_fk": 1,
+                            "created_on": {
+                                "__datetime__": "2022-09-13T02:31:44"
+                            },
+                            "description": null,
+                            "expression": null,
+                            "extra": "{}",
+                            "filterable": true,
+                            "groupby": true,
+                            "id": 129,
+                            "is_active": true,
+                            "is_dttm": false,
+                            "python_date_format": null,
+                            "table_id": 12,
+                            "type": "NUMERIC",
+                            "uuid": "193e9624-5785-4010-ade2-1d5201373cd2",
+                            "verbose_name": null
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2022-09-13T05:56:08"
+                            },
+                            "column_name": "MonthYear",
+                            "created_by_fk": 1,
+                            "created_on": {
+                                "__datetime__": "2022-09-13T05:56:08"
+                            },
+                            "description": null,
+                            "expression": "to_date(year||month, 'YYYYMM')",
+                            "extra": "{}",
+                            "filterable": true,
+                            "groupby": true,
+                            "id": 130,
+                            "is_active": true,
+                            "is_dttm": true,
+                            "python_date_format": null,
+                            "table_id": 12,
+                            "type": null,
+                            "uuid": "1b96df6b-d48b-4800-bd15-aa8af9ea3d09",
+                            "verbose_name": null
+                        }
+                    }
+                ],
+                "database_id": 1,
+                "default_endpoint": null,
+                "description": null,
+                "extra": null,
+                "fetch_values_predicate": null,
+                "filter_select_enabled": false,
+                "main_dttm_col": null,
+                "metrics": [
+                    {
+                        "__SqlMetric__": {
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2022-09-13T05:56:08"
+                            },
+                            "created_by_fk": 1,
+                            "created_on": {
+                                "__datetime__": "2022-09-13T02:31:44"
+                            },
+                            "d3format": null,
+                            "description": null,
+                            "expression": "COUNT(*)",
+                            "extra": "{\"warning_markdown\":\"\"}",
+                            "id": 20,
+                            "metric_name": "count",
+                            "metric_type": "count",
+                            "table_id": 12,
+                            "uuid": "63f9bbd7-e918-4aea-badb-65a03ed592e4",
+                            "verbose_name": "COUNT(*)",
+                            "warning_text": null
+                        }
+                    }
+                ],
+                "offset": 0,
+                "params": "{\"remote_id\": 12, \"database_name\": \"NSAPH2\"}",
+                "schema": "pollution",
+                "sql": "",
+                "table_name": "pm25_monthly",
+                "template_params": null
+            }
+        }
+    ]
+}

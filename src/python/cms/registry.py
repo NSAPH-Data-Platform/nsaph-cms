@@ -44,8 +44,8 @@ class Registry:
 
     def __init__(self, context: CMSSchema = None):
         if not context:
-            init_logging()
             context = CMSSchema(__doc__).instantiate()
+            init_logging(name="Introspect-" + context.input)
         self.context = context
         self.registry = None
         self.name = "cms"

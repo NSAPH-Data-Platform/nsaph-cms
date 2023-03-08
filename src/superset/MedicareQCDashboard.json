@@ -5,8 +5,8 @@
                 "css": "",
                 "dashboard_title": "Medicare QC",
                 "description": null,
-                "json_metadata": "{\"show_native_filters\": true, \"color_scheme\": \"\", \"refresh_frequency\": 0, \"expanded_slices\": {}, \"label_colors\": {}, \"timed_refresh_immune_slices\": [], \"default_filters\": \"{}\", \"filter_scopes\": {\"39\": {\"year\": {\"scope\": [\"ROOT_ID\"], \"immune\": []}, \"state\": {\"scope\": [\"ROOT_ID\"], \"immune\": []}}}, \"chart_configuration\": {}, \"remote_id\": 7}",
-                "position_json": "{\"CHART--85YP3yq5G\":{\"children\":[],\"id\":\"CHART--85YP3yq5G\",\"meta\":{\"chartId\":39,\"height\":50,\"sliceName\":\"Filter\",\"uuid\":\"dc1dea0a-8c2e-4c73-b2e8-cc01d85c0019\",\"width\":4},\"parents\":[\"ROOT_ID\",\"TABS-_9fZMgfrAE\",\"TAB-CugV7phZ-\",\"ROW-okJh9cw8x\"],\"type\":\"CHART\"},\"CHART-2pBRH25LC9\":{\"children\":[],\"id\":\"CHART-2pBRH25LC9\",\"meta\":{\"chartId\":42,\"height\":50,\"sliceName\":\"Enrollments Consistency By State\",\"uuid\":\"cfd2ab83-dce4-40c5-ac98-09be152722ab\",\"width\":4},\"parents\":[\"ROOT_ID\",\"TABS-_9fZMgfrAE\",\"TAB-2rjSz67V2x\",\"ROW-Zvw2cr8pb\"],\"type\":\"CHART\"},\"CHART-6PupamuPTJ\":{\"children\":[],\"id\":\"CHART-6PupamuPTJ\",\"meta\":{\"chartId\":35,\"height\":50,\"sliceName\":\"Admissions with Missing data by State\",\"uuid\":\"bf5a2295-2fea-403d-ac9b-b93d240eb985\",\"width\":4},\"parents\":[\"ROOT_ID\",\"TABS-_9fZMgfrAE\",\"TAB-oZ-e6kSyR\",\"ROW--WHY7FqNd\"],\"type\":\"CHART\"},\"CHART-EcoMh8YBjG\":{\"children\":[],\"id\":\"CHART-EcoMh8YBjG\",\"meta\":{\"chartId\":29,\"height\":50,\"sliceName\":\"Enrollments By State\",\"uuid\":\"79b8a777-a399-4bac-925a-1bd2b1f410c9\",\"width\":4},\"parents\":[\"ROOT_ID\",\"TABS-_9fZMgfrAE\",\"TAB-2rjSz67V2x\",\"ROW-jLocNRvYRL\"],\"type\":\"CHART\"},\"CHART-JXQ2bY0vn1\":{\"children\":[],\"id\":\"CHART-JXQ2bY0vn1\",\"meta\":{\"chartId\":34,\"height\":50,\"sliceName\":\"Duplicate Admissions by State\",\"uuid\":\"e428c4f5-ae13-4b36-989e-277d042d72a7\",\"width\":4},\"parents\":[\"ROOT_ID\",\"TABS-_9fZMgfrAE\",\"TAB-oZ-e6kSyR\",\"ROW--WHY7FqNd\"],\"type\":\"CHART\"},\"CHART-JkO0tdjj-x\":{\"children\":[],\"id\":\"CHART-JkO0tdjj-x\",\"meta\":{\"chartId\":26,\"height\":50,\"sliceName\":\"Bene Discrepancies\",\"uuid\":\"f492c800-cfdb-4dd1-a724-d60caf05694f\",\"width\":4},\"parents\":[\"ROOT_ID\",\"TABS-_9fZMgfrAE\",\"TAB-2rjSz67V2x\",\"ROW-jLocNRvYRL\"],\"type\":\"CHART\"},\"CHART-LgmCa19WTO\":{\"children\":[],\"id\":\"CHART-LgmCa19WTO\",\"meta\":{\"chartId\":32,\"height\":50,\"sliceName\":\"Admissions by State\",\"uuid\":\"786b5572-f751-4cad-a6f7-f6838cdb03d4\",\"width\":4},\"parents\":[\"ROOT_ID\",\"TABS-_9fZMgfrAE\",\"TAB-HnVNnQUmQ\",\"ROW-ydetEl7y1\"],\"type\":\"CHART\"},\"CHART-QwXqyL5qws\":{\"children\":[],\"id\":\"CHART-QwXqyL5qws\",\"meta\":{\"chartId\":33,\"height\":50,\"sliceName\":\"Admissions QC by State\",\"uuid\":\"8e072054-7be6-4826-8a00-588e61ee86cd\",\"width\":4},\"parents\":[\"ROOT_ID\",\"TABS-_9fZMgfrAE\",\"TAB-HnVNnQUmQ\",\"ROW-iSvPYzZIR\"],\"type\":\"CHART\"},\"CHART-TLBzfNJ7bcH\":{\"children\":[],\"id\":\"CHART-TLBzfNJ7bcH\",\"meta\":{\"chartId\":30,\"height\":50,\"sliceName\":\"Enrollments By Year\",\"uuid\":\"75647844-22b2-42c2-902c-adfcf8faf702\",\"width\":12},\"parents\":[\"ROOT_ID\",\"TABS-_9fZMgfrAE\",\"TAB-2rjSz67V2x\",\"ROW-73VWwPzOu\"],\"type\":\"CHART\"},\"CHART-VwvWa0hsTA\":{\"children\":[],\"id\":\"CHART-VwvWa0hsTA\",\"meta\":{\"chartId\":31,\"height\":50,\"sliceName\":\"Admissions by Year\",\"uuid\":\"4359989f-9386-4c4f-b71a-762f7ee9dab2\",\"width\":8},\"parents\":[\"ROOT_ID\",\"TABS-_9fZMgfrAE\",\"TAB-HnVNnQUmQ\",\"ROW-ydetEl7y1\"],\"type\":\"CHART\"},\"CHART-XgcXHIGOTA\":{\"children\":[],\"id\":\"CHART-XgcXHIGOTA\",\"meta\":{\"chartId\":37,\"height\":50,\"sliceName\":\"Admissions QC by Year\",\"uuid\":\"43f735ba-9e5b-44dc-9461-e776650ba64e\",\"width\":8},\"parents\":[\"ROOT_ID\",\"TABS-_9fZMgfrAE\",\"TAB-HnVNnQUmQ\",\"ROW-iSvPYzZIR\"],\"type\":\"CHART\"},\"CHART-aVqDcyvGM3\":{\"children\":[],\"id\":\"CHART-aVqDcyvGM3\",\"meta\":{\"chartId\":41,\"height\":50,\"sliceName\":\"Beneficiaries, admitted by Year\",\"uuid\":\"73b40ac6-916c-4253-9459-f4d92f610451\",\"width\":8},\"parents\":[\"ROOT_ID\",\"TABS-_9fZMgfrAE\",\"TAB-HnVNnQUmQ\",\"ROW-WttcAffgp\"],\"type\":\"CHART\"},\"CHART-bW230pom8K\":{\"children\":[],\"id\":\"CHART-bW230pom8K\",\"meta\":{\"chartId\":43,\"height\":50,\"sliceName\":\"Enrollments Consistency By Year\",\"uuid\":\"49ac60ab-0ddd-4bc0-bc5c-124fa958591a\",\"width\":8},\"parents\":[\"ROOT_ID\",\"TABS-_9fZMgfrAE\",\"TAB-2rjSz67V2x\",\"ROW-Zvw2cr8pb\"],\"type\":\"CHART\"},\"CHART-eGuVKl3RL-\":{\"children\":[],\"id\":\"CHART-eGuVKl3RL-\",\"meta\":{\"chartId\":40,\"height\":50,\"sliceName\":\"Beneficiaries/Admissions by State\",\"uuid\":\"db84b4a0-776c-4726-9028-79bf4bba6bce\",\"width\":4},\"parents\":[\"ROOT_ID\",\"TABS-_9fZMgfrAE\",\"TAB-HnVNnQUmQ\",\"ROW-WttcAffgp\"],\"type\":\"CHART\"},\"CHART-i4ZwtX2jCH\":{\"children\":[],\"id\":\"CHART-i4ZwtX2jCH\",\"meta\":{\"chartId\":36,\"height\":50,\"sliceName\":\"Admissions with no enrollment by State\",\"uuid\":\"adf2351c-e438-497c-84ff-2a6259e79be8\",\"width\":4},\"parents\":[\"ROOT_ID\",\"TABS-_9fZMgfrAE\",\"TAB-oZ-e6kSyR\",\"ROW--WHY7FqNd\"],\"type\":\"CHART\"},\"CHART-l0uwWEzz3D\":{\"children\":[],\"id\":\"CHART-l0uwWEzz3D\",\"meta\":{\"chartId\":28,\"height\":50,\"sliceName\":\"Consistency of beneficiaries data\",\"uuid\":\"53d98e77-f184-4b47-8ae8-8e3de2e981dd\",\"width\":4},\"parents\":[\"ROOT_ID\",\"TABS-_9fZMgfrAE\",\"TAB-2rjSz67V2x\",\"ROW-jLocNRvYRL\"],\"type\":\"CHART\"},\"CHART-ujiLK26eoME\":{\"children\":[],\"id\":\"CHART-ujiLK26eoME\",\"meta\":{\"chartId\":38,\"height\":50,\"sliceName\":\"Admissions Issues by Year\",\"uuid\":\"b9213c31-67b4-4168-9f8c-c85ca03abfc7\",\"width\":12},\"parents\":[\"ROOT_ID\",\"TABS-_9fZMgfrAE\",\"TAB-oZ-e6kSyR\",\"ROW-cJSLaYE9H\"],\"type\":\"CHART\"},\"CHART-wH1U9EwSS-\":{\"children\":[],\"id\":\"CHART-wH1U9EwSS-\",\"meta\":{\"chartId\":27,\"height\":50,\"sliceName\":\"Bene by YOB\",\"uuid\":\"68602458-9a56-481a-8b7e-711613632a49\",\"width\":12},\"parents\":[\"ROOT_ID\",\"TABS-_9fZMgfrAE\",\"TAB-2rjSz67V2x\",\"ROW-bPKcfhYTfS\"],\"type\":\"CHART\"},\"DASHBOARD_VERSION_KEY\":\"v2\",\"GRID_ID\":{\"children\":[],\"id\":\"GRID_ID\",\"parents\":[\"ROOT_ID\"],\"type\":\"GRID\"},\"HEADER_ID\":{\"id\":\"HEADER_ID\",\"meta\":{\"text\":\"Medicare QC\"},\"type\":\"HEADER\"},\"ROOT_ID\":{\"children\":[\"TABS-_9fZMgfrAE\"],\"id\":\"ROOT_ID\",\"type\":\"ROOT\"},\"ROW--WHY7FqNd\":{\"children\":[\"CHART-i4ZwtX2jCH\",\"CHART-JXQ2bY0vn1\",\"CHART-6PupamuPTJ\"],\"id\":\"ROW--WHY7FqNd\",\"meta\":{\"background\":\"BACKGROUND_TRANSPARENT\"},\"parents\":[\"ROOT_ID\",\"TABS-_9fZMgfrAE\",\"TAB-oZ-e6kSyR\"],\"type\":\"ROW\"},\"ROW-73VWwPzOu\":{\"children\":[\"CHART-TLBzfNJ7bcH\"],\"id\":\"ROW-73VWwPzOu\",\"meta\":{\"background\":\"BACKGROUND_TRANSPARENT\"},\"parents\":[\"ROOT_ID\",\"TABS-_9fZMgfrAE\",\"TAB-2rjSz67V2x\"],\"type\":\"ROW\"},\"ROW-WttcAffgp\":{\"children\":[\"CHART-aVqDcyvGM3\",\"CHART-eGuVKl3RL-\"],\"id\":\"ROW-WttcAffgp\",\"meta\":{\"background\":\"BACKGROUND_TRANSPARENT\"},\"parents\":[\"ROOT_ID\",\"TABS-_9fZMgfrAE\",\"TAB-HnVNnQUmQ\"],\"type\":\"ROW\"},\"ROW-Zvw2cr8pb\":{\"children\":[\"CHART-bW230pom8K\",\"CHART-2pBRH25LC9\"],\"id\":\"ROW-Zvw2cr8pb\",\"meta\":{\"background\":\"BACKGROUND_TRANSPARENT\"},\"parents\":[\"ROOT_ID\",\"TABS-_9fZMgfrAE\",\"TAB-2rjSz67V2x\"],\"type\":\"ROW\"},\"ROW-bPKcfhYTfS\":{\"children\":[\"CHART-wH1U9EwSS-\"],\"id\":\"ROW-bPKcfhYTfS\",\"meta\":{\"0\":\"ROOT_ID\",\"1\":\"TABS-_9fZMgfrAE\",\"background\":\"BACKGROUND_TRANSPARENT\"},\"parents\":[\"ROOT_ID\",\"TABS-_9fZMgfrAE\",\"TAB-2rjSz67V2x\"],\"type\":\"ROW\"},\"ROW-cJSLaYE9H\":{\"children\":[\"CHART-ujiLK26eoME\"],\"id\":\"ROW-cJSLaYE9H\",\"meta\":{\"background\":\"BACKGROUND_TRANSPARENT\"},\"parents\":[\"ROOT_ID\",\"TABS-_9fZMgfrAE\",\"TAB-oZ-e6kSyR\"],\"type\":\"ROW\"},\"ROW-iSvPYzZIR\":{\"children\":[\"CHART-XgcXHIGOTA\",\"CHART-QwXqyL5qws\"],\"id\":\"ROW-iSvPYzZIR\",\"meta\":{\"background\":\"BACKGROUND_TRANSPARENT\"},\"parents\":[\"ROOT_ID\",\"TABS-_9fZMgfrAE\",\"TAB-HnVNnQUmQ\"],\"type\":\"ROW\"},\"ROW-jLocNRvYRL\":{\"children\":[\"CHART-EcoMh8YBjG\",\"CHART-l0uwWEzz3D\",\"CHART-JkO0tdjj-x\"],\"id\":\"ROW-jLocNRvYRL\",\"meta\":{\"0\":\"ROOT_ID\",\"background\":\"BACKGROUND_TRANSPARENT\"},\"parents\":[\"ROOT_ID\",\"TABS-_9fZMgfrAE\",\"TAB-2rjSz67V2x\"],\"type\":\"ROW\"},\"ROW-okJh9cw8x\":{\"children\":[\"CHART--85YP3yq5G\"],\"id\":\"ROW-okJh9cw8x\",\"meta\":{\"background\":\"BACKGROUND_TRANSPARENT\"},\"parents\":[\"ROOT_ID\",\"TABS-_9fZMgfrAE\",\"TAB-CugV7phZ-\"],\"type\":\"ROW\"},\"ROW-ydetEl7y1\":{\"children\":[\"CHART-VwvWa0hsTA\",\"CHART-LgmCa19WTO\"],\"id\":\"ROW-ydetEl7y1\",\"meta\":{\"background\":\"BACKGROUND_TRANSPARENT\"},\"parents\":[\"ROOT_ID\",\"TABS-_9fZMgfrAE\",\"TAB-HnVNnQUmQ\"],\"type\":\"ROW\"},\"TAB-2rjSz67V2x\":{\"children\":[\"ROW-73VWwPzOu\",\"ROW-Zvw2cr8pb\",\"ROW-jLocNRvYRL\",\"ROW-bPKcfhYTfS\"],\"id\":\"TAB-2rjSz67V2x\",\"meta\":{\"defaultText\":\"Tab title\",\"placeholder\":\"Tab title\",\"text\":\"Enrollments\"},\"parents\":[\"ROOT_ID\",\"TABS-_9fZMgfrAE\"],\"type\":\"TAB\"},\"TAB-CugV7phZ-\":{\"children\":[\"ROW-okJh9cw8x\"],\"id\":\"TAB-CugV7phZ-\",\"meta\":{\"defaultText\":\"Tab title\",\"placeholder\":\"Tab title\",\"text\":\"Filter\"},\"parents\":[\"ROOT_ID\",\"TABS-_9fZMgfrAE\"],\"type\":\"TAB\"},\"TAB-HnVNnQUmQ\":{\"children\":[\"ROW-ydetEl7y1\",\"ROW-WttcAffgp\",\"ROW-iSvPYzZIR\"],\"id\":\"TAB-HnVNnQUmQ\",\"meta\":{\"defaultText\":\"Tab title\",\"placeholder\":\"Tab title\",\"text\":\"Admissions\"},\"parents\":[\"ROOT_ID\",\"TABS-_9fZMgfrAE\"],\"type\":\"TAB\"},\"TAB-oZ-e6kSyR\":{\"children\":[\"ROW-cJSLaYE9H\",\"ROW--WHY7FqNd\"],\"id\":\"TAB-oZ-e6kSyR\",\"meta\":{\"defaultText\":\"Tab title\",\"placeholder\":\"Tab title\",\"text\":\"Admissions Issue\"},\"parents\":[\"ROOT_ID\",\"TABS-_9fZMgfrAE\"],\"type\":\"TAB\"},\"TABS-_9fZMgfrAE\":{\"children\":[\"TAB-2rjSz67V2x\",\"TAB-HnVNnQUmQ\",\"TAB-oZ-e6kSyR\",\"TAB-CugV7phZ-\"],\"id\":\"TABS-_9fZMgfrAE\",\"meta\":{},\"parents\":[\"ROOT_ID\"],\"type\":\"TABS\"}}",
+                "json_metadata": "{\"show_native_filters\": true, \"color_scheme\": \"\", \"refresh_frequency\": 0, \"expanded_slices\": {}, \"label_colors\": {}, \"timed_refresh_immune_slices\": [], \"default_filters\": \"{}\", \"filter_scopes\": {\"39\": {\"year\": {\"scope\": [\"ROOT_ID\"], \"immune\": []}, \"state_iso\": {\"scope\": [\"ROOT_ID\"], \"immune\": []}}}, \"chart_configuration\": {}, \"remote_id\": 7}",
+                "position_json": "{\"CHART--85YP3yq5G\":{\"children\":[],\"id\":\"CHART--85YP3yq5G\",\"meta\":{\"chartId\":39,\"height\":50,\"sliceName\":\"Filter\",\"uuid\":\"dc1dea0a-8c2e-4c73-b2e8-cc01d85c0019\",\"width\":4},\"parents\":[\"ROOT_ID\",\"TABS-_9fZMgfrAE\",\"TAB-CugV7phZ-\",\"ROW-okJh9cw8x\"],\"type\":\"CHART\"},\"CHART-2pBRH25LC9\":{\"children\":[],\"id\":\"CHART-2pBRH25LC9\",\"meta\":{\"chartId\":42,\"height\":50,\"sliceName\":\"Enrollments Consistency By State\",\"uuid\":\"cfd2ab83-dce4-40c5-ac98-09be152722ab\",\"width\":4},\"parents\":[\"ROOT_ID\",\"TABS-_9fZMgfrAE\",\"TAB-2rjSz67V2x\",\"ROW-Zvw2cr8pb\"],\"type\":\"CHART\"},\"CHART-6PupamuPTJ\":{\"children\":[],\"id\":\"CHART-6PupamuPTJ\",\"meta\":{\"chartId\":35,\"height\":50,\"sliceName\":\"Admissions with Missing data by State\",\"uuid\":\"bf5a2295-2fea-403d-ac9b-b93d240eb985\",\"width\":4},\"parents\":[\"ROOT_ID\",\"TABS-_9fZMgfrAE\",\"TAB-oZ-e6kSyR\",\"ROW--WHY7FqNd\"],\"type\":\"CHART\"},\"CHART-Abp6BJJqtF\":{\"children\":[],\"id\":\"CHART-Abp6BJJqtF\",\"meta\":{\"chartId\":45,\"height\":50,\"sliceName\":\"BeneficiaryGapYearsByOREC\",\"uuid\":\"6cf1d8d2-0967-48ef-89a4-c81d3011bed4\",\"width\":4},\"parents\":[\"ROOT_ID\",\"TABS-_9fZMgfrAE\",\"TAB-2rjSz67V2x\",\"ROW-y-azLz9QE\"],\"type\":\"CHART\"},\"CHART-EcoMh8YBjG\":{\"children\":[],\"id\":\"CHART-EcoMh8YBjG\",\"meta\":{\"chartId\":29,\"height\":50,\"sliceName\":\"Enrollments By State\",\"uuid\":\"79b8a777-a399-4bac-925a-1bd2b1f410c9\",\"width\":4},\"parents\":[\"ROOT_ID\",\"TABS-_9fZMgfrAE\",\"TAB-2rjSz67V2x\",\"ROW-jLocNRvYRL\"],\"type\":\"CHART\"},\"CHART-JXQ2bY0vn1\":{\"children\":[],\"id\":\"CHART-JXQ2bY0vn1\",\"meta\":{\"chartId\":34,\"height\":50,\"sliceName\":\"Duplicate Admissions by State\",\"uuid\":\"e428c4f5-ae13-4b36-989e-277d042d72a7\",\"width\":4},\"parents\":[\"ROOT_ID\",\"TABS-_9fZMgfrAE\",\"TAB-oZ-e6kSyR\",\"ROW--WHY7FqNd\"],\"type\":\"CHART\"},\"CHART-JkO0tdjj-x\":{\"children\":[],\"id\":\"CHART-JkO0tdjj-x\",\"meta\":{\"chartId\":26,\"height\":50,\"sliceName\":\"Bene Discrepancies\",\"uuid\":\"f492c800-cfdb-4dd1-a724-d60caf05694f\",\"width\":4},\"parents\":[\"ROOT_ID\",\"TABS-_9fZMgfrAE\",\"TAB-2rjSz67V2x\",\"ROW-jLocNRvYRL\"],\"type\":\"CHART\"},\"CHART-LgmCa19WTO\":{\"children\":[],\"id\":\"CHART-LgmCa19WTO\",\"meta\":{\"chartId\":32,\"height\":50,\"sliceName\":\"Admissions by State\",\"uuid\":\"786b5572-f751-4cad-a6f7-f6838cdb03d4\",\"width\":4},\"parents\":[\"ROOT_ID\",\"TABS-_9fZMgfrAE\",\"TAB-HnVNnQUmQ\",\"ROW-ydetEl7y1\"],\"type\":\"CHART\"},\"CHART-QwXqyL5qws\":{\"children\":[],\"id\":\"CHART-QwXqyL5qws\",\"meta\":{\"chartId\":33,\"height\":50,\"sliceName\":\"Admissions QC by State\",\"uuid\":\"8e072054-7be6-4826-8a00-588e61ee86cd\",\"width\":4},\"parents\":[\"ROOT_ID\",\"TABS-_9fZMgfrAE\",\"TAB-HnVNnQUmQ\",\"ROW-iSvPYzZIR\"],\"type\":\"CHART\"},\"CHART-TLBzfNJ7bcH\":{\"children\":[],\"id\":\"CHART-TLBzfNJ7bcH\",\"meta\":{\"chartId\":30,\"height\":50,\"sliceName\":\"Enrollments By Year\",\"uuid\":\"75647844-22b2-42c2-902c-adfcf8faf702\",\"width\":12},\"parents\":[\"ROOT_ID\",\"TABS-_9fZMgfrAE\",\"TAB-2rjSz67V2x\",\"ROW-73VWwPzOu\"],\"type\":\"CHART\"},\"CHART-VwvWa0hsTA\":{\"children\":[],\"id\":\"CHART-VwvWa0hsTA\",\"meta\":{\"chartId\":31,\"height\":50,\"sliceName\":\"Admissions by Year\",\"uuid\":\"4359989f-9386-4c4f-b71a-762f7ee9dab2\",\"width\":8},\"parents\":[\"ROOT_ID\",\"TABS-_9fZMgfrAE\",\"TAB-HnVNnQUmQ\",\"ROW-ydetEl7y1\"],\"type\":\"CHART\"},\"CHART-XgcXHIGOTA\":{\"children\":[],\"id\":\"CHART-XgcXHIGOTA\",\"meta\":{\"chartId\":37,\"height\":50,\"sliceName\":\"Admissions QC by Year\",\"uuid\":\"43f735ba-9e5b-44dc-9461-e776650ba64e\",\"width\":8},\"parents\":[\"ROOT_ID\",\"TABS-_9fZMgfrAE\",\"TAB-HnVNnQUmQ\",\"ROW-iSvPYzZIR\"],\"type\":\"CHART\"},\"CHART-ZwAnaHru-H\":{\"children\":[],\"id\":\"CHART-ZwAnaHru-H\",\"meta\":{\"chartId\":44,\"height\":50,\"sliceName\":\"BeneficiaryGapYears\",\"uuid\":\"4718cdb0-8340-422f-b5d2-cc3e7ecb56a1\",\"width\":4},\"parents\":[\"ROOT_ID\",\"TABS-_9fZMgfrAE\",\"TAB-2rjSz67V2x\",\"ROW-y-azLz9QE\"],\"type\":\"CHART\"},\"CHART-aVqDcyvGM3\":{\"children\":[],\"id\":\"CHART-aVqDcyvGM3\",\"meta\":{\"chartId\":41,\"height\":50,\"sliceName\":\"Beneficiaries, admitted by Year\",\"uuid\":\"73b40ac6-916c-4253-9459-f4d92f610451\",\"width\":8},\"parents\":[\"ROOT_ID\",\"TABS-_9fZMgfrAE\",\"TAB-HnVNnQUmQ\",\"ROW-WttcAffgp\"],\"type\":\"CHART\"},\"CHART-bW230pom8K\":{\"children\":[],\"id\":\"CHART-bW230pom8K\",\"meta\":{\"chartId\":43,\"height\":50,\"sliceName\":\"Enrollments Consistency By Year\",\"uuid\":\"49ac60ab-0ddd-4bc0-bc5c-124fa958591a\",\"width\":8},\"parents\":[\"ROOT_ID\",\"TABS-_9fZMgfrAE\",\"TAB-2rjSz67V2x\",\"ROW-Zvw2cr8pb\"],\"type\":\"CHART\"},\"CHART-eGuVKl3RL-\":{\"children\":[],\"id\":\"CHART-eGuVKl3RL-\",\"meta\":{\"chartId\":40,\"height\":50,\"sliceName\":\"Beneficiaries/Admissions by State\",\"uuid\":\"db84b4a0-776c-4726-9028-79bf4bba6bce\",\"width\":4},\"parents\":[\"ROOT_ID\",\"TABS-_9fZMgfrAE\",\"TAB-HnVNnQUmQ\",\"ROW-WttcAffgp\"],\"type\":\"CHART\"},\"CHART-i4ZwtX2jCH\":{\"children\":[],\"id\":\"CHART-i4ZwtX2jCH\",\"meta\":{\"chartId\":36,\"height\":50,\"sliceName\":\"Admissions with no enrollment by State\",\"uuid\":\"adf2351c-e438-497c-84ff-2a6259e79be8\",\"width\":4},\"parents\":[\"ROOT_ID\",\"TABS-_9fZMgfrAE\",\"TAB-oZ-e6kSyR\",\"ROW--WHY7FqNd\"],\"type\":\"CHART\"},\"CHART-l0uwWEzz3D\":{\"children\":[],\"id\":\"CHART-l0uwWEzz3D\",\"meta\":{\"chartId\":28,\"height\":50,\"sliceName\":\"Consistency of beneficiaries data\",\"uuid\":\"53d98e77-f184-4b47-8ae8-8e3de2e981dd\",\"width\":4},\"parents\":[\"ROOT_ID\",\"TABS-_9fZMgfrAE\",\"TAB-2rjSz67V2x\",\"ROW-jLocNRvYRL\"],\"type\":\"CHART\"},\"CHART-ujiLK26eoME\":{\"children\":[],\"id\":\"CHART-ujiLK26eoME\",\"meta\":{\"chartId\":38,\"height\":50,\"sliceName\":\"Admissions Issues by Year\",\"uuid\":\"b9213c31-67b4-4168-9f8c-c85ca03abfc7\",\"width\":12},\"parents\":[\"ROOT_ID\",\"TABS-_9fZMgfrAE\",\"TAB-oZ-e6kSyR\",\"ROW-cJSLaYE9H\"],\"type\":\"CHART\"},\"CHART-wH1U9EwSS-\":{\"children\":[],\"id\":\"CHART-wH1U9EwSS-\",\"meta\":{\"chartId\":27,\"height\":50,\"sliceName\":\"Bene by YOB\",\"uuid\":\"68602458-9a56-481a-8b7e-711613632a49\",\"width\":12},\"parents\":[\"ROOT_ID\",\"TABS-_9fZMgfrAE\",\"TAB-2rjSz67V2x\",\"ROW-bPKcfhYTfS\"],\"type\":\"CHART\"},\"DASHBOARD_VERSION_KEY\":\"v2\",\"GRID_ID\":{\"children\":[],\"id\":\"GRID_ID\",\"parents\":[\"ROOT_ID\"],\"type\":\"GRID\"},\"HEADER_ID\":{\"id\":\"HEADER_ID\",\"meta\":{\"text\":\"Medicare QC\"},\"type\":\"HEADER\"},\"ROOT_ID\":{\"children\":[\"TABS-_9fZMgfrAE\"],\"id\":\"ROOT_ID\",\"type\":\"ROOT\"},\"ROW--WHY7FqNd\":{\"children\":[\"CHART-i4ZwtX2jCH\",\"CHART-JXQ2bY0vn1\",\"CHART-6PupamuPTJ\"],\"id\":\"ROW--WHY7FqNd\",\"meta\":{\"background\":\"BACKGROUND_TRANSPARENT\"},\"parents\":[\"ROOT_ID\",\"TABS-_9fZMgfrAE\",\"TAB-oZ-e6kSyR\"],\"type\":\"ROW\"},\"ROW-73VWwPzOu\":{\"children\":[\"CHART-TLBzfNJ7bcH\"],\"id\":\"ROW-73VWwPzOu\",\"meta\":{\"background\":\"BACKGROUND_TRANSPARENT\"},\"parents\":[\"ROOT_ID\",\"TABS-_9fZMgfrAE\",\"TAB-2rjSz67V2x\"],\"type\":\"ROW\"},\"ROW-WttcAffgp\":{\"children\":[\"CHART-aVqDcyvGM3\",\"CHART-eGuVKl3RL-\"],\"id\":\"ROW-WttcAffgp\",\"meta\":{\"background\":\"BACKGROUND_TRANSPARENT\"},\"parents\":[\"ROOT_ID\",\"TABS-_9fZMgfrAE\",\"TAB-HnVNnQUmQ\"],\"type\":\"ROW\"},\"ROW-Zvw2cr8pb\":{\"children\":[\"CHART-bW230pom8K\",\"CHART-2pBRH25LC9\"],\"id\":\"ROW-Zvw2cr8pb\",\"meta\":{\"background\":\"BACKGROUND_TRANSPARENT\"},\"parents\":[\"ROOT_ID\",\"TABS-_9fZMgfrAE\",\"TAB-2rjSz67V2x\"],\"type\":\"ROW\"},\"ROW-bPKcfhYTfS\":{\"children\":[\"CHART-wH1U9EwSS-\"],\"id\":\"ROW-bPKcfhYTfS\",\"meta\":{\"0\":\"ROOT_ID\",\"1\":\"TABS-_9fZMgfrAE\",\"background\":\"BACKGROUND_TRANSPARENT\"},\"parents\":[\"ROOT_ID\",\"TABS-_9fZMgfrAE\",\"TAB-2rjSz67V2x\"],\"type\":\"ROW\"},\"ROW-cJSLaYE9H\":{\"children\":[\"CHART-ujiLK26eoME\"],\"id\":\"ROW-cJSLaYE9H\",\"meta\":{\"background\":\"BACKGROUND_TRANSPARENT\"},\"parents\":[\"ROOT_ID\",\"TABS-_9fZMgfrAE\",\"TAB-oZ-e6kSyR\"],\"type\":\"ROW\"},\"ROW-iSvPYzZIR\":{\"children\":[\"CHART-XgcXHIGOTA\",\"CHART-QwXqyL5qws\"],\"id\":\"ROW-iSvPYzZIR\",\"meta\":{\"background\":\"BACKGROUND_TRANSPARENT\"},\"parents\":[\"ROOT_ID\",\"TABS-_9fZMgfrAE\",\"TAB-HnVNnQUmQ\"],\"type\":\"ROW\"},\"ROW-jLocNRvYRL\":{\"children\":[\"CHART-EcoMh8YBjG\",\"CHART-l0uwWEzz3D\",\"CHART-JkO0tdjj-x\"],\"id\":\"ROW-jLocNRvYRL\",\"meta\":{\"0\":\"ROOT_ID\",\"background\":\"BACKGROUND_TRANSPARENT\"},\"parents\":[\"ROOT_ID\",\"TABS-_9fZMgfrAE\",\"TAB-2rjSz67V2x\"],\"type\":\"ROW\"},\"ROW-okJh9cw8x\":{\"children\":[\"CHART--85YP3yq5G\"],\"id\":\"ROW-okJh9cw8x\",\"meta\":{\"background\":\"BACKGROUND_TRANSPARENT\"},\"parents\":[\"ROOT_ID\",\"TABS-_9fZMgfrAE\",\"TAB-CugV7phZ-\"],\"type\":\"ROW\"},\"ROW-y-azLz9QE\":{\"children\":[\"CHART-ZwAnaHru-H\",\"CHART-Abp6BJJqtF\"],\"id\":\"ROW-y-azLz9QE\",\"meta\":{\"0\":\"ROOT_ID\",\"1\":\"TABS-_9fZMgfrAE\",\"background\":\"BACKGROUND_TRANSPARENT\"},\"parents\":[\"ROOT_ID\",\"TABS-_9fZMgfrAE\",\"TAB-2rjSz67V2x\"],\"type\":\"ROW\"},\"ROW-ydetEl7y1\":{\"children\":[\"CHART-VwvWa0hsTA\",\"CHART-LgmCa19WTO\"],\"id\":\"ROW-ydetEl7y1\",\"meta\":{\"background\":\"BACKGROUND_TRANSPARENT\"},\"parents\":[\"ROOT_ID\",\"TABS-_9fZMgfrAE\",\"TAB-HnVNnQUmQ\"],\"type\":\"ROW\"},\"TAB-2rjSz67V2x\":{\"children\":[\"ROW-73VWwPzOu\",\"ROW-Zvw2cr8pb\",\"ROW-jLocNRvYRL\",\"ROW-bPKcfhYTfS\",\"ROW-y-azLz9QE\"],\"id\":\"TAB-2rjSz67V2x\",\"meta\":{\"defaultText\":\"Tab title\",\"placeholder\":\"Tab title\",\"text\":\"Enrollments\"},\"parents\":[\"ROOT_ID\",\"TABS-_9fZMgfrAE\"],\"type\":\"TAB\"},\"TAB-CugV7phZ-\":{\"children\":[\"ROW-okJh9cw8x\"],\"id\":\"TAB-CugV7phZ-\",\"meta\":{\"defaultText\":\"Tab title\",\"placeholder\":\"Tab title\",\"text\":\"Filter\"},\"parents\":[\"ROOT_ID\",\"TABS-_9fZMgfrAE\"],\"type\":\"TAB\"},\"TAB-HnVNnQUmQ\":{\"children\":[\"ROW-ydetEl7y1\",\"ROW-WttcAffgp\",\"ROW-iSvPYzZIR\"],\"id\":\"TAB-HnVNnQUmQ\",\"meta\":{\"defaultText\":\"Tab title\",\"placeholder\":\"Tab title\",\"text\":\"Admissions\"},\"parents\":[\"ROOT_ID\",\"TABS-_9fZMgfrAE\"],\"type\":\"TAB\"},\"TAB-oZ-e6kSyR\":{\"children\":[\"ROW-cJSLaYE9H\",\"ROW--WHY7FqNd\"],\"id\":\"TAB-oZ-e6kSyR\",\"meta\":{\"defaultText\":\"Tab title\",\"placeholder\":\"Tab title\",\"text\":\"Admissions Issue\"},\"parents\":[\"ROOT_ID\",\"TABS-_9fZMgfrAE\"],\"type\":\"TAB\"},\"TABS-_9fZMgfrAE\":{\"children\":[\"TAB-2rjSz67V2x\",\"TAB-HnVNnQUmQ\",\"TAB-oZ-e6kSyR\",\"TAB-CugV7phZ-\"],\"id\":\"TABS-_9fZMgfrAE\",\"meta\":{},\"parents\":[\"ROOT_ID\"],\"type\":\"TABS\"}}",
                 "slices": [
                     {
                         "__Slice__": {
@@ -26,8 +26,8 @@
                             "datasource_name": "medicare.beneficiaries",
                             "datasource_type": "table",
                             "id": 27,
-                            "params": "{\"adhoc_filters\": [], \"bottom_margin\": \"auto\", \"color_scheme\": \"supersetColors\", \"columns\": [], \"contribution\": false, \"datasource\": \"14__table\", \"extra_form_data\": {}, \"granularity_sqla\": \"dob\", \"groupby\": [\"yob\"], \"metrics\": [\"approximate_count\"], \"order_bars\": true, \"order_desc\": false, \"row_limit\": 10000, \"show_bar_value\": false, \"slice_id\": 27, \"time_range\": \"No filter\", \"time_range_endpoints\": [\"inclusive\", \"exclusive\"], \"url_params\": {}, \"viz_type\": \"dist_bar\", \"x_ticks_layout\": \"auto\", \"y_axis_bounds\": [null, null], \"y_axis_format\": \"SMART_NUMBER\", \"remote_id\": 27, \"datasource_name\": \"beneficiaries\", \"schema\": \"medicare\", \"database_name\": \"NSAPH2\"}",
-                            "query_context": "{\"datasource\":{\"id\":14,\"type\":\"table\"},\"force\":false,\"queries\":[{\"time_range\":\"No filter\",\"granularity\":\"dob\",\"filters\":[],\"extras\":{\"time_range_endpoints\":[\"inclusive\",\"exclusive\"],\"having\":\"\",\"having_druid\":[],\"where\":\"\"},\"applied_time_extras\":{},\"columns\":[\"yob\"],\"metrics\":[\"approximate_count\"],\"annotation_layers\":[],\"row_limit\":10000,\"timeseries_limit\":0,\"order_desc\":false,\"url_params\":{},\"custom_params\":{},\"custom_form_data\":{}}],\"result_format\":\"json\",\"result_type\":\"full\"}",
+                            "params": "{\"adhoc_filters\": [], \"bottom_margin\": \"auto\", \"color_scheme\": \"supersetColors\", \"columns\": [], \"contribution\": false, \"datasource\": \"14__table\", \"extra_form_data\": {}, \"granularity_sqla\": \"dob\", \"groupby\": [\"yob1\"], \"metrics\": [\"approximate_count\"], \"order_bars\": true, \"order_desc\": false, \"row_limit\": 10000, \"show_bar_value\": false, \"slice_id\": 27, \"time_range\": \"No filter\", \"time_range_endpoints\": [\"inclusive\", \"exclusive\"], \"url_params\": {}, \"viz_type\": \"dist_bar\", \"x_ticks_layout\": \"auto\", \"y_axis_bounds\": [null, null], \"y_axis_format\": \"SMART_NUMBER\", \"remote_id\": 27, \"datasource_name\": \"beneficiaries\", \"schema\": \"medicare\", \"database_name\": \"NSAPH2\"}",
+                            "query_context": "{\"datasource\":{\"id\":14,\"type\":\"table\"},\"force\":false,\"queries\":[{\"time_range\":\"No filter\",\"granularity\":\"dob\",\"filters\":[],\"extras\":{\"time_range_endpoints\":[\"inclusive\",\"exclusive\"],\"having\":\"\",\"having_druid\":[],\"where\":\"\"},\"applied_time_extras\":{},\"columns\":[\"yob1\"],\"metrics\":[\"approximate_count\"],\"annotation_layers\":[],\"row_limit\":10000,\"timeseries_limit\":0,\"order_desc\":false,\"url_params\":{},\"custom_params\":{},\"custom_form_data\":{}}],\"result_format\":\"json\",\"result_type\":\"full\"}",
                             "slice_name": "Bene by YOB",
                             "viz_type": "dist_bar"
                         }
@@ -167,11 +167,11 @@
                     {
                         "__Slice__": {
                             "cache_timeout": null,
-                            "datasource_name": "medicare_qc.admission_qc1",
+                            "datasource_name": "medicare.qc_admissions",
                             "datasource_type": "table",
                             "id": 39,
-                            "params": "{\"adhoc_filters\": [], \"datasource\": \"18__table\", \"date_filter\": false, \"extra_form_data\": {}, \"filter_configs\": [{\"asc\": true, \"clearable\": true, \"column\": \"year\", \"key\": \"yYI3GzVxE\", \"multiple\": true, \"searchAllOptions\": false}, {\"asc\": true, \"clearable\": true, \"column\": \"state\", \"key\": \"hMwRqVj0s\", \"multiple\": true, \"searchAllOptions\": false}], \"instant_filtering\": true, \"time_grain_sqla\": \"P1D\", \"time_range\": \"No filter\", \"time_range_endpoints\": [\"inclusive\", \"exclusive\"], \"url_params\": {}, \"viz_type\": \"filter_box\", \"remote_id\": 39, \"datasource_name\": \"admission_qc1\", \"schema\": \"medicare_qc\", \"database_name\": \"NSAPH2\"}",
-                            "query_context": "{\"datasource\":{\"id\":18,\"type\":\"table\"},\"force\":false,\"queries\":[{\"time_range\":\"No filter\",\"filters\":[],\"extras\":{\"time_grain_sqla\":\"P1D\",\"time_range_endpoints\":[\"inclusive\",\"exclusive\"],\"having\":\"\",\"having_druid\":[],\"where\":\"\"},\"applied_time_extras\":{},\"columns\":[],\"metrics\":[],\"annotation_layers\":[],\"timeseries_limit\":0,\"order_desc\":true,\"url_params\":{},\"custom_params\":{},\"custom_form_data\":{}}],\"result_format\":\"json\",\"result_type\":\"full\"}",
+                            "params": "{\"adhoc_filters\": [], \"datasource\": \"19__table\", \"date_filter\": false, \"extra_form_data\": {}, \"filter_configs\": [{\"asc\": true, \"clearable\": true, \"column\": \"year\", \"key\": \"yYI3GzVxE\", \"multiple\": true, \"searchAllOptions\": false}, {\"asc\": true, \"clearable\": true, \"column\": \"state_iso\", \"key\": \"hMwRqVj0s\", \"label\": \"state\", \"multiple\": true, \"searchAllOptions\": false}], \"granularity_sqla\": null, \"instant_filtering\": true, \"slice_id\": 39, \"time_grain_sqla\": \"P1D\", \"time_range\": \"No filter\", \"time_range_endpoints\": [\"inclusive\", \"exclusive\"], \"url_params\": {}, \"viz_type\": \"filter_box\", \"remote_id\": 39, \"datasource_name\": \"qc_admissions\", \"schema\": \"medicare\", \"database_name\": \"NSAPH2\"}",
+                            "query_context": "{\"datasource\":{\"id\":19,\"type\":\"table\"},\"force\":false,\"queries\":[{\"time_range\":\"No filter\",\"granularity\":null,\"filters\":[],\"extras\":{\"time_grain_sqla\":\"P1D\",\"time_range_endpoints\":[\"inclusive\",\"exclusive\"],\"having\":\"\",\"having_druid\":[],\"where\":\"\"},\"applied_time_extras\":{},\"columns\":[],\"metrics\":[],\"annotation_layers\":[],\"timeseries_limit\":0,\"order_desc\":true,\"url_params\":{},\"custom_params\":{},\"custom_form_data\":{}}],\"result_format\":\"json\",\"result_type\":\"full\"}",
                             "slice_name": "Filter",
                             "viz_type": "filter_box"
                         }
@@ -221,6 +221,30 @@
                             "params": "{\"adhoc_filters\": [], \"bottom_margin\": \"auto\", \"color_scheme\": \"supersetColors\", \"columns\": [], \"datasource\": \"20__table\", \"extra_form_data\": {}, \"granularity_sqla\": null, \"groupby\": [\"year\"], \"metrics\": [\"consistent beneficiaries\"], \"order_bars\": true, \"order_desc\": true, \"row_limit\": 10000, \"show_bar_value\": true, \"time_range\": \"No filter\", \"time_range_endpoints\": [\"inclusive\", \"exclusive\"], \"url_params\": {}, \"viz_type\": \"dist_bar\", \"x_ticks_layout\": \"auto\", \"y_axis_bounds\": [null, null], \"y_axis_format\": \"SMART_NUMBER\", \"remote_id\": 43, \"datasource_name\": \"qc_enrollments\", \"schema\": \"medicare\", \"database_name\": \"NSAPH2\"}",
                             "query_context": "{\"datasource\":{\"id\":20,\"type\":\"table\"},\"force\":false,\"queries\":[{\"time_range\":\"No filter\",\"granularity\":null,\"filters\":[],\"extras\":{\"time_range_endpoints\":[\"inclusive\",\"exclusive\"],\"having\":\"\",\"having_druid\":[],\"where\":\"\"},\"applied_time_extras\":{},\"columns\":[\"year\"],\"metrics\":[\"consistent beneficiaries\"],\"annotation_layers\":[],\"row_limit\":10000,\"timeseries_limit\":0,\"order_desc\":true,\"url_params\":{},\"custom_params\":{},\"custom_form_data\":{}}],\"result_format\":\"json\",\"result_type\":\"full\"}",
                             "slice_name": "Enrollments Consistency By Year",
+                            "viz_type": "dist_bar"
+                        }
+                    },
+                    {
+                        "__Slice__": {
+                            "cache_timeout": null,
+                            "datasource_name": "medicare.beneficiaries",
+                            "datasource_type": "table",
+                            "id": 44,
+                            "params": "{\"adhoc_filters\": [{\"clause\": \"WHERE\", \"comparator\": \"2015\", \"expressionType\": \"SIMPLE\", \"filterOptionName\": \"filter_7ohofln7x4_zc4vdf8uc7j\", \"isExtra\": false, \"isNew\": false, \"operator\": \"<\", \"operatorId\": \"LESS_THAN\", \"sqlExpression\": null, \"subject\": \"last_enrollment_year\"}, {\"clause\": \"WHERE\", \"comparator\": \"0\", \"expressionType\": \"SIMPLE\", \"filterOptionName\": \"filter_m9h6v1xckg9_xj92elnx2vn\", \"isExtra\": false, \"isNew\": false, \"operator\": \">\", \"operatorId\": \"GREATER_THAN\", \"sqlExpression\": null, \"subject\": \"number_of_gap_years\"}], \"bar_stacked\": true, \"bottom_margin\": \"auto\", \"color_scheme\": \"supersetColors\", \"columns\": [\"orec\"], \"datasource\": \"14__table\", \"extra_form_data\": {}, \"granularity_sqla\": \"dob\", \"groupby\": [\"number_of_gap_years\"], \"metrics\": [\"count\"], \"order_desc\": true, \"row_limit\": 10000, \"show_legend\": true, \"slice_id\": 44, \"time_range\": \"No filter\", \"time_range_endpoints\": [\"inclusive\", \"exclusive\"], \"url_params\": {}, \"viz_type\": \"dist_bar\", \"x_ticks_layout\": \"auto\", \"y_axis_bounds\": [null, null], \"y_axis_format\": \"SMART_NUMBER\", \"remote_id\": 44, \"datasource_name\": \"beneficiaries\", \"schema\": \"medicare\", \"database_name\": \"NSAPH2\"}",
+                            "query_context": "{\"datasource\":{\"id\":14,\"type\":\"table\"},\"force\":false,\"queries\":[{\"time_range\":\"No filter\",\"granularity\":\"dob\",\"filters\":[{\"col\":\"last_enrollment_year\",\"op\":\"<\",\"val\":\"2015\"},{\"col\":\"number_of_gap_years\",\"op\":\">\",\"val\":\"0\"}],\"extras\":{\"time_range_endpoints\":[\"inclusive\",\"exclusive\"],\"having\":\"\",\"having_druid\":[],\"where\":\"\"},\"applied_time_extras\":{},\"columns\":[\"number_of_gap_years\",\"orec\"],\"metrics\":[\"count\"],\"annotation_layers\":[],\"row_limit\":10000,\"timeseries_limit\":0,\"order_desc\":true,\"url_params\":{},\"custom_params\":{},\"custom_form_data\":{}}],\"result_format\":\"json\",\"result_type\":\"full\"}",
+                            "slice_name": "BeneficiaryGapYears",
+                            "viz_type": "dist_bar"
+                        }
+                    },
+                    {
+                        "__Slice__": {
+                            "cache_timeout": null,
+                            "datasource_name": "medicare.beneficiaries",
+                            "datasource_type": "table",
+                            "id": 45,
+                            "params": "{\"adhoc_filters\": [{\"clause\": \"WHERE\", \"comparator\": \"2015\", \"expressionType\": \"SIMPLE\", \"filterOptionName\": \"filter_7ohofln7x4_zc4vdf8uc7j\", \"isExtra\": false, \"isNew\": false, \"operator\": \"<\", \"operatorId\": \"LESS_THAN\", \"sqlExpression\": null, \"subject\": \"last_enrollment_year\"}, {\"clause\": \"WHERE\", \"comparator\": \"0\", \"expressionType\": \"SIMPLE\", \"filterOptionName\": \"filter_m9h6v1xckg9_xj92elnx2vn\", \"isExtra\": false, \"isNew\": false, \"operator\": \">\", \"operatorId\": \"GREATER_THAN\", \"sqlExpression\": null, \"subject\": \"number_of_gap_years\"}], \"bar_stacked\": true, \"bottom_margin\": \"auto\", \"color_scheme\": \"supersetColors\", \"columns\": [\"orec\"], \"contribution\": false, \"datasource\": \"14__table\", \"extra_form_data\": {}, \"granularity_sqla\": \"dob\", \"groupby\": [\"number_of_gap_years\"], \"metrics\": [{\"aggregate\": null, \"column\": null, \"expressionType\": \"SQL\", \"hasCustomLabel\": false, \"isNew\": false, \"label\": \"COUNT(*)::float /\\ncount_rows('medicare',...\", \"optionName\": \"metric_qjpic40f43_7wj6ap02g7n\", \"sqlExpression\": \"COUNT(*)::float /\\ncount_rows('medicare', 'beneficiaries', 'orec', orec)\"}], \"order_desc\": true, \"row_limit\": 10000, \"show_legend\": true, \"slice_id\": 45, \"time_range\": \"No filter\", \"time_range_endpoints\": [\"inclusive\", \"exclusive\"], \"url_params\": {}, \"viz_type\": \"dist_bar\", \"x_ticks_layout\": \"auto\", \"y_axis_bounds\": [null, null], \"y_axis_format\": \"SMART_NUMBER\", \"remote_id\": 45, \"datasource_name\": \"beneficiaries\", \"schema\": \"medicare\", \"database_name\": \"NSAPH2\"}",
+                            "query_context": "{\"datasource\":{\"id\":14,\"type\":\"table\"},\"force\":false,\"queries\":[{\"time_range\":\"No filter\",\"granularity\":\"dob\",\"filters\":[{\"col\":\"last_enrollment_year\",\"op\":\"<\",\"val\":\"2015\"},{\"col\":\"number_of_gap_years\",\"op\":\">\",\"val\":\"0\"}],\"extras\":{\"time_range_endpoints\":[\"inclusive\",\"exclusive\"],\"having\":\"\",\"having_druid\":[],\"where\":\"\"},\"applied_time_extras\":{},\"columns\":[\"number_of_gap_years\",\"orec\"],\"metrics\":[{\"aggregate\":null,\"column\":null,\"expressionType\":\"SQL\",\"hasCustomLabel\":false,\"isNew\":false,\"label\":\"COUNT(*)::float /\\ncount_rows('medicare',...\",\"optionName\":\"metric_qjpic40f43_7wj6ap02g7n\",\"sqlExpression\":\"COUNT(*)::float /\\ncount_rows('medicare', 'beneficiaries', 'orec', orec)\"}],\"annotation_layers\":[],\"row_limit\":10000,\"timeseries_limit\":0,\"order_desc\":true,\"url_params\":{},\"custom_params\":{},\"custom_form_data\":{}}],\"result_format\":\"json\",\"result_type\":\"full\"}",
+                            "slice_name": "BeneficiaryGapYearsByOREC",
                             "viz_type": "dist_bar"
                         }
                     }
@@ -738,32 +762,6 @@
                             "changed_on": {
                                 "__datetime__": "2022-10-20T23:48:18"
                             },
-                            "column_name": "duplicates",
-                            "created_by_fk": 1,
-                            "created_on": {
-                                "__datetime__": "2022-09-16T19:23:49"
-                            },
-                            "description": null,
-                            "expression": null,
-                            "extra": "{}",
-                            "filterable": true,
-                            "groupby": true,
-                            "id": 147,
-                            "is_active": true,
-                            "is_dttm": false,
-                            "python_date_format": null,
-                            "table_id": 14,
-                            "type": "BIGINT",
-                            "uuid": "5b96ebb5-6059-40ce-8ab5-308451a734c5",
-                            "verbose_name": null
-                        }
-                    },
-                    {
-                        "__TableColumn__": {
-                            "changed_by_fk": 1,
-                            "changed_on": {
-                                "__datetime__": "2022-10-20T23:48:18"
-                            },
                             "column_name": "dob_latest",
                             "created_by_fk": 1,
                             "created_on": {
@@ -1041,6 +1039,266 @@
                             "table_id": 14,
                             "type": null,
                             "uuid": "1d3853f6-46cc-47fb-9970-a9c6aaafb3e5",
+                            "verbose_name": null
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2023-01-10T03:38:55"
+                            },
+                            "column_name": "yob1",
+                            "created_by_fk": 1,
+                            "created_on": {
+                                "__datetime__": "2023-01-10T03:38:55"
+                            },
+                            "description": null,
+                            "expression": "EXTRACT (YEAR FROM dob)",
+                            "extra": "{}",
+                            "filterable": true,
+                            "groupby": true,
+                            "id": 263,
+                            "is_active": true,
+                            "is_dttm": false,
+                            "python_date_format": null,
+                            "table_id": 14,
+                            "type": null,
+                            "uuid": "4776c481-e091-4f2c-8d6c-d8573b94060f",
+                            "verbose_name": null
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2023-03-05T00:46:04"
+                            },
+                            "column_name": "first_enrollment_year",
+                            "created_by_fk": 1,
+                            "created_on": {
+                                "__datetime__": "2023-03-05T00:46:04"
+                            },
+                            "description": null,
+                            "expression": null,
+                            "extra": "{}",
+                            "filterable": true,
+                            "groupby": true,
+                            "id": 264,
+                            "is_active": true,
+                            "is_dttm": true,
+                            "python_date_format": null,
+                            "table_id": 14,
+                            "type": "INTEGER",
+                            "uuid": "759e22b7-81fd-45e0-8a1f-129d0d91bdf5",
+                            "verbose_name": null
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2023-03-05T00:46:04"
+                            },
+                            "column_name": "last_enrollment_year",
+                            "created_by_fk": 1,
+                            "created_on": {
+                                "__datetime__": "2023-03-05T00:46:04"
+                            },
+                            "description": null,
+                            "expression": null,
+                            "extra": "{}",
+                            "filterable": true,
+                            "groupby": true,
+                            "id": 265,
+                            "is_active": true,
+                            "is_dttm": true,
+                            "python_date_format": null,
+                            "table_id": 14,
+                            "type": "INTEGER",
+                            "uuid": "3d4bc34e-6707-4f6e-9ed0-2660e2dae218",
+                            "verbose_name": null
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2023-03-05T00:46:04"
+                            },
+                            "column_name": "all_enrollment_years",
+                            "created_by_fk": 1,
+                            "created_on": {
+                                "__datetime__": "2023-03-05T00:46:04"
+                            },
+                            "description": null,
+                            "expression": null,
+                            "extra": "{}",
+                            "filterable": true,
+                            "groupby": true,
+                            "id": 266,
+                            "is_active": true,
+                            "is_dttm": false,
+                            "python_date_format": null,
+                            "table_id": 14,
+                            "type": "INTEGER[]",
+                            "uuid": "23e3b964-aa3a-4194-a07b-50d1b82dbb02",
+                            "verbose_name": null
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2023-03-05T00:46:04"
+                            },
+                            "column_name": "race_rti",
+                            "created_by_fk": 1,
+                            "created_on": {
+                                "__datetime__": "2023-03-05T00:46:04"
+                            },
+                            "description": null,
+                            "expression": null,
+                            "extra": "{}",
+                            "filterable": true,
+                            "groupby": true,
+                            "id": 267,
+                            "is_active": true,
+                            "is_dttm": false,
+                            "python_date_format": null,
+                            "table_id": 14,
+                            "type": "TEXT",
+                            "uuid": "43325c99-c572-4315-b5c5-06bbfa2afc49",
+                            "verbose_name": null
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2023-03-05T00:46:04"
+                            },
+                            "column_name": "orec",
+                            "created_by_fk": 1,
+                            "created_on": {
+                                "__datetime__": "2023-03-05T00:46:04"
+                            },
+                            "description": null,
+                            "expression": null,
+                            "extra": "{}",
+                            "filterable": true,
+                            "groupby": true,
+                            "id": 268,
+                            "is_active": true,
+                            "is_dttm": false,
+                            "python_date_format": null,
+                            "table_id": 14,
+                            "type": "INTEGER",
+                            "uuid": "4735a746-540a-433a-a2ef-b0b8bc115f12",
+                            "verbose_name": null
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2023-03-05T00:46:04"
+                            },
+                            "column_name": "discrepancies",
+                            "created_by_fk": 1,
+                            "created_on": {
+                                "__datetime__": "2023-03-05T00:46:04"
+                            },
+                            "description": null,
+                            "expression": null,
+                            "extra": "{}",
+                            "filterable": true,
+                            "groupby": true,
+                            "id": 269,
+                            "is_active": true,
+                            "is_dttm": false,
+                            "python_date_format": null,
+                            "table_id": 14,
+                            "type": "BIGINT",
+                            "uuid": "ca845d93-a52b-4d78-b525-b51c8b2b0096",
+                            "verbose_name": null
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2023-03-05T00:46:04"
+                            },
+                            "column_name": "num_enrollment_years",
+                            "created_by_fk": 1,
+                            "created_on": {
+                                "__datetime__": "2023-03-05T00:46:04"
+                            },
+                            "description": null,
+                            "expression": "CARDINALITY(ARRAY (SELECT DISTINCT UNNEST(all_enrollment_years)))",
+                            "extra": "{}",
+                            "filterable": true,
+                            "groupby": true,
+                            "id": 270,
+                            "is_active": true,
+                            "is_dttm": false,
+                            "python_date_format": null,
+                            "table_id": 14,
+                            "type": null,
+                            "uuid": "692ac8bd-6ec3-4d7b-8727-e8d98a14f20a",
+                            "verbose_name": null
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2023-03-05T00:46:04"
+                            },
+                            "column_name": "enrollment_period",
+                            "created_by_fk": 1,
+                            "created_on": {
+                                "__datetime__": "2023-03-05T00:46:04"
+                            },
+                            "description": null,
+                            "expression": "last_enrollment_year - first_enrollment_year + 1",
+                            "extra": "{}",
+                            "filterable": true,
+                            "groupby": true,
+                            "id": 271,
+                            "is_active": true,
+                            "is_dttm": false,
+                            "python_date_format": null,
+                            "table_id": 14,
+                            "type": null,
+                            "uuid": "a38a7bd5-ec0c-4540-956c-afbf87797c9b",
+                            "verbose_name": null
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2023-03-05T03:37:53"
+                            },
+                            "column_name": "number_of_gap_years",
+                            "created_by_fk": 1,
+                            "created_on": {
+                                "__datetime__": "2023-03-05T03:37:53"
+                            },
+                            "description": null,
+                            "expression": null,
+                            "extra": "{}",
+                            "filterable": true,
+                            "groupby": true,
+                            "id": 273,
+                            "is_active": true,
+                            "is_dttm": false,
+                            "python_date_format": null,
+                            "table_id": 14,
+                            "type": "INTEGER",
+                            "uuid": "693be754-bb44-4b8e-aa8d-93160e24045e",
                             "verbose_name": null
                         }
                     }
@@ -1560,299 +1818,6 @@
                 "schema": "medicare",
                 "sql": "",
                 "table_name": "qc_enrollments",
-                "template_params": null
-            }
-        },
-        {
-            "__SqlaTable__": {
-                "cache_timeout": null,
-                "columns": [
-                    {
-                        "__TableColumn__": {
-                            "changed_by_fk": 1,
-                            "changed_on": {
-                                "__datetime__": "2022-10-21T18:04:51"
-                            },
-                            "column_name": "reason",
-                            "created_by_fk": 1,
-                            "created_on": {
-                                "__datetime__": "2022-10-21T18:02:00"
-                            },
-                            "description": null,
-                            "expression": null,
-                            "extra": "{}",
-                            "filterable": true,
-                            "groupby": true,
-                            "id": 228,
-                            "is_active": true,
-                            "is_dttm": false,
-                            "python_date_format": null,
-                            "table_id": 18,
-                            "type": "VARCHAR",
-                            "uuid": "6de6c143-4fd8-4fe9-972e-96363cf236cf",
-                            "verbose_name": null
-                        }
-                    },
-                    {
-                        "__TableColumn__": {
-                            "changed_by_fk": 1,
-                            "changed_on": {
-                                "__datetime__": "2022-10-21T18:04:51"
-                            },
-                            "column_name": "year",
-                            "created_by_fk": 1,
-                            "created_on": {
-                                "__datetime__": "2022-10-21T18:02:00"
-                            },
-                            "description": null,
-                            "expression": null,
-                            "extra": "{}",
-                            "filterable": true,
-                            "groupby": true,
-                            "id": 229,
-                            "is_active": true,
-                            "is_dttm": false,
-                            "python_date_format": null,
-                            "table_id": 18,
-                            "type": "INTEGER",
-                            "uuid": "e6482bed-122d-4772-9b10-adb101736e02",
-                            "verbose_name": null
-                        }
-                    },
-                    {
-                        "__TableColumn__": {
-                            "changed_by_fk": 1,
-                            "changed_on": {
-                                "__datetime__": "2022-10-21T18:04:51"
-                            },
-                            "column_name": "state",
-                            "created_by_fk": 1,
-                            "created_on": {
-                                "__datetime__": "2022-10-21T18:02:00"
-                            },
-                            "description": null,
-                            "expression": null,
-                            "extra": "{}",
-                            "filterable": true,
-                            "groupby": true,
-                            "id": 230,
-                            "is_active": true,
-                            "is_dttm": false,
-                            "python_date_format": null,
-                            "table_id": 18,
-                            "type": "VARCHAR",
-                            "uuid": "ca616c8a-0f22-46bc-a046-e1687534b11f",
-                            "verbose_name": null
-                        }
-                    },
-                    {
-                        "__TableColumn__": {
-                            "changed_by_fk": 1,
-                            "changed_on": {
-                                "__datetime__": "2022-10-21T18:04:51"
-                            },
-                            "column_name": "max",
-                            "created_by_fk": 1,
-                            "created_on": {
-                                "__datetime__": "2022-10-21T18:02:00"
-                            },
-                            "description": null,
-                            "expression": null,
-                            "extra": "{}",
-                            "filterable": true,
-                            "groupby": true,
-                            "id": 231,
-                            "is_active": true,
-                            "is_dttm": false,
-                            "python_date_format": null,
-                            "table_id": 18,
-                            "type": "UNKNOWN",
-                            "uuid": "4aa6bccb-275f-40c0-b259-7f9f6ce0f1dc",
-                            "verbose_name": null
-                        }
-                    },
-                    {
-                        "__TableColumn__": {
-                            "changed_by_fk": 1,
-                            "changed_on": {
-                                "__datetime__": "2022-10-21T18:04:51"
-                            },
-                            "column_name": "count",
-                            "created_by_fk": 1,
-                            "created_on": {
-                                "__datetime__": "2022-10-21T18:02:00"
-                            },
-                            "description": null,
-                            "expression": null,
-                            "extra": "{}",
-                            "filterable": true,
-                            "groupby": true,
-                            "id": 232,
-                            "is_active": true,
-                            "is_dttm": false,
-                            "python_date_format": null,
-                            "table_id": 18,
-                            "type": "BIGINT",
-                            "uuid": "e807fef4-1ec6-41cf-a3dd-b04976bd57fd",
-                            "verbose_name": null
-                        }
-                    },
-                    {
-                        "__TableColumn__": {
-                            "changed_by_fk": 1,
-                            "changed_on": {
-                                "__datetime__": "2022-10-21T18:10:04"
-                            },
-                            "column_name": "total",
-                            "created_by_fk": 1,
-                            "created_on": {
-                                "__datetime__": "2022-10-21T18:10:04"
-                            },
-                            "description": null,
-                            "expression": null,
-                            "extra": "{}",
-                            "filterable": true,
-                            "groupby": true,
-                            "id": 234,
-                            "is_active": true,
-                            "is_dttm": false,
-                            "python_date_format": null,
-                            "table_id": 18,
-                            "type": "NUMERIC",
-                            "uuid": "57896cf7-88db-4edd-bcdc-40a11eebe284",
-                            "verbose_name": null
-                        }
-                    }
-                ],
-                "database_id": 1,
-                "default_endpoint": null,
-                "description": null,
-                "extra": null,
-                "fetch_values_predicate": null,
-                "filter_select_enabled": false,
-                "main_dttm_col": null,
-                "metrics": [
-                    {
-                        "__SqlMetric__": {
-                            "changed_by_fk": 1,
-                            "changed_on": {
-                                "__datetime__": "2022-10-21T18:20:25"
-                            },
-                            "created_by_fk": 1,
-                            "created_on": {
-                                "__datetime__": "2022-10-21T18:02:00"
-                            },
-                            "d3format": null,
-                            "description": null,
-                            "expression": "SUM(\"count\")",
-                            "extra": "{\"warning_markdown\":\"\"}",
-                            "id": 31,
-                            "metric_name": "count",
-                            "metric_type": "count",
-                            "table_id": 18,
-                            "uuid": "4c7ebd54-e022-4a22-95d5-34c6f55a21b2",
-                            "verbose_name": "Number of Admissions",
-                            "warning_text": null
-                        }
-                    },
-                    {
-                        "__SqlMetric__": {
-                            "changed_by_fk": 1,
-                            "changed_on": {
-                                "__datetime__": "2022-10-21T18:31:25"
-                            },
-                            "created_by_fk": 1,
-                            "created_on": {
-                                "__datetime__": "2022-10-21T18:26:16"
-                            },
-                            "d3format": null,
-                            "description": null,
-                            "expression": "(SUM(\"count\") FILTER (WHERE reason = 'OK'))*100.0/SUM(\"count\")",
-                            "extra": "{\"warning_markdown\":\"\"}",
-                            "id": 33,
-                            "metric_name": "percent valid records",
-                            "metric_type": null,
-                            "table_id": 18,
-                            "uuid": "bae9edeb-c0f2-4c60-b71f-d9172508bfa0",
-                            "verbose_name": "",
-                            "warning_text": null
-                        }
-                    },
-                    {
-                        "__SqlMetric__": {
-                            "changed_by_fk": 1,
-                            "changed_on": {
-                                "__datetime__": "2022-10-21T18:31:25"
-                            },
-                            "created_by_fk": 1,
-                            "created_on": {
-                                "__datetime__": "2022-10-21T18:31:25"
-                            },
-                            "d3format": null,
-                            "description": null,
-                            "expression": "(SUM(\"count\") FILTER (WHERE reason = 'DUPLICATE'))*100.0/SUM(\"count\")",
-                            "extra": "{}",
-                            "id": 34,
-                            "metric_name": "Percent Duplicate Records",
-                            "metric_type": null,
-                            "table_id": 18,
-                            "uuid": "3fe0b57c-4a79-43fd-a992-87fe9bcf5a1a",
-                            "verbose_name": "",
-                            "warning_text": null
-                        }
-                    },
-                    {
-                        "__SqlMetric__": {
-                            "changed_by_fk": 1,
-                            "changed_on": {
-                                "__datetime__": "2022-10-21T18:31:25"
-                            },
-                            "created_by_fk": 1,
-                            "created_on": {
-                                "__datetime__": "2022-10-21T18:31:25"
-                            },
-                            "d3format": null,
-                            "description": null,
-                            "expression": "(SUM(\"count\") FILTER (WHERE reason = 'FOREIGN KEY'))*100.0/SUM(\"count\")",
-                            "extra": "{}",
-                            "id": 35,
-                            "metric_name": "Percent Invalid Enrollment",
-                            "metric_type": null,
-                            "table_id": 18,
-                            "uuid": "36e0adba-f6e4-4d3c-ba8b-558c7d8e4718",
-                            "verbose_name": "",
-                            "warning_text": null
-                        }
-                    },
-                    {
-                        "__SqlMetric__": {
-                            "changed_by_fk": 1,
-                            "changed_on": {
-                                "__datetime__": "2022-10-21T18:31:25"
-                            },
-                            "created_by_fk": 1,
-                            "created_on": {
-                                "__datetime__": "2022-10-21T18:31:25"
-                            },
-                            "d3format": null,
-                            "description": null,
-                            "expression": "(SUM(\"count\") FILTER (WHERE reason = 'PRIMARY KEY'))*100.0/SUM(\"count\")",
-                            "extra": "{}",
-                            "id": 36,
-                            "metric_name": "Percent missing data",
-                            "metric_type": null,
-                            "table_id": 18,
-                            "uuid": "ba206cec-17f8-452a-8540-d8dca20b7545",
-                            "verbose_name": "",
-                            "warning_text": null
-                        }
-                    }
-                ],
-                "offset": 0,
-                "params": "{\"remote_id\": 18, \"database_name\": \"NSAPH2\"}",
-                "schema": "medicare_qc",
-                "sql": "",
-                "table_name": "admission_qc1",
                 "template_params": null
             }
         }

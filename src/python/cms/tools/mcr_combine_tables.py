@@ -58,6 +58,7 @@ class MedicareCombinedView:
         self.context = context
         if not self.context.table:
             raise ValueError("'--table' is a required option")
+        init_logging(name="combine-tables-into-" + self.context.table)
         self.view = self.context.table.lower()
         if self.view not in self.supported_tables:
             raise ValueError(
@@ -298,7 +299,6 @@ class MedicareCombinedView:
 
 
 if __name__ == '__main__':
-    init_logging()
     mpst = MedicareCombinedView()
     mpst.print_sql()
     mpst.execute()
