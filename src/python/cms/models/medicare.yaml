@@ -316,6 +316,64 @@ medicare:
               - dgns_cd$n
               - dgns_$n_cd
               - dgnscd$n
+
+        # Expenditure variables
+        - los_day_cnt:
+            reference: "https://resdac.org/cms-data/variables/days-beneficiarys-stay-hospitalsnf"
+            description: The count in days of the total length of a beneficiary's stay in a hospital
+            type: INT
+            cast:
+              "*": "{column_name}::INT"
+            source:
+              - los_day_cnt
+              - loscnt
+              - medpar_los_day_cnt
+
+        - drg_price_amt:
+            reference: "https://resdac.org/cms-data/variables/drg-price-amount"
+            description: |
+              The amount (called the 'DRG price' for purposes of MEDPAR analysis) 
+              that would have been paid if no deductibles, coinsurance, primary payers, or outliers 
+              were involved (rounded to whole dollars).
+            type: NUMERIC
+            source:
+              - drg_price_amt
+              - drgprice
+              - medpar_drg_price_amt
+
+        - drg_outlier_pmt_amt:
+            reference: "https://resdac.org/cms-data/variables/drg-outlier-approved-payment-amount"
+            description: |
+              The amount of additional payment (rounded to whole dollars) approved due 
+              to an outlier situation over the DRG allowance for the stay.
+            type: NUMERIC
+            source:
+              - drg_outlier_pmt_amt
+              - outlramt
+              - medpar_drg_outlier_pmt_amt
+
+        - pass_thru_amt:
+            reference: "https://resdac.org/cms-data/variables/pass-thru-diem-amount-stay"
+            description: |
+              The total of all claim pass through per diem amounts (rounded to whole dollars) for the stay.
+            type: NUMERIC
+            source:
+              - pass_thru_amt
+              - passthru
+              - medpar_pass_thru_amt
+
+        - mdcr_pmt_amt:
+            reference: "https://resdac.org/cms-data/variables/total-medicare-payment-amount"
+            description: |
+              Amount of payment made from the Medicare trust fund for the services covered by the claim record.
+              For hospital services, this amount does not include the claim pass-through per diem payments 
+              made by Medicare.
+            type: NUMERIC
+            source:
+              - mdcr_pmt_amt
+              - pmt_amt
+              - medpar_mdcr_pmt_amt
+
     _ps:
       description: internal intermediate view adding some data conversions
       create:
@@ -668,7 +726,13 @@ medicare:
                   btrim(diag23),
                   btrim(diag24),
                   btrim(diag25)
-                  ], NULL) As diagnoses
+                  ], NULL) As diagnoses,
+                  los_day_cnt,
+                  drg_price_amt,
+                  drg_outlier_pmt_amt,
+                  pass_thru_amt,
+                  mdcr_pmt_amt 
+
                 from: ip
                 populate: false
               columns:
