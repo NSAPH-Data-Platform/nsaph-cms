@@ -4,7 +4,7 @@
 
 See [General Data Modeling](../../core-platform/doc/Datamodels.md#invalid-record)
 
-Used by [](members/mcr_combine_tables.md)
+Used by [](members/mcr_combine_tables)
 
 ## Combining multiple sources and optional columns
 
