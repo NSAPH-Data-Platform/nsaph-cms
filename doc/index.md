@@ -67,9 +67,9 @@ Each processing step of CMS data is packaged as a
 standalone tool that can be run individually. 
 Each tool is individually documented.
 The tools are combined into a workflow represented by
-[medicaid.cwl](pipeline/medicaid.rst)
+[medicaid.cwl](pipeline/medicaid)
 and 
-[medicare.cwl](pipeline/medicare.rst) files.
+[medicare.cwl](pipeline/medicare) files.
 
 ### Python 
            

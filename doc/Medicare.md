@@ -29,7 +29,7 @@ Current pipeline consists of 5 steps, each represented as a sub-workflow:
 2. [Process beneficiaries and their enrollment in Medicare](pipeline/medicare_beneficiaries)
 3. [Process Admissions](pipeline/medicare_admissions)
 4. [Create QC Tables](pipeline/medicare_qc)
-5. [Grant `SELECT`](pipeline/grant_read_access) 
+5. [Grant `SELECT`](pipeline/grant) 
    privileges (i.e., read access) to all newly created tables
    (this step is actually a command line tool, not a workflow)
                                    
@@ -50,7 +50,7 @@ step and will process the raw data that is already in the database.
                                                              
 Ingestion as a part of the data pipeline is only implemented for
 data in the format as it comes from ResDac. Metadata for ingestion
-is taken from [FTS](../../fts) files that accompany ResDac deliverables. 
+is taken from [FTS](../../../fts) files that accompany ResDac deliverables. 
 
 ```{important}
 In case of Medicare data in posession of NSAPH organization, we 

@@ -264,7 +264,7 @@ admission and discharge dates and ICD codes.
 
 ## Pipeline
 
-See [Medicaid workflow](pipeline/medicaid.rst) for details
+See [Medicaid workflow](pipeline/medicaid) for details
 
     ┌────────────────────────────────────┐
     │ Initialize and prepare the database│
