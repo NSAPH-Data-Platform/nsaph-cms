@@ -219,10 +219,17 @@ class FTSColumn:
             return PG_DATE_TYPE
         raise Exception("Unexpected column type: {}".format(t))
 
+    def get_description(self):
+        return {
+            "text": self.label,
+            "original_type": self.type,
+            "width": self.width
+        }
+
     def to_dict(self):
         return {
             "type": self.to_sql_type(),
-            "description": self.label
+            "description": self.get_description()
         }
 
     def to_fwf_column(self, pos:int) -> FWFColumn:
@@ -308,6 +315,11 @@ class MedicareFTSColumn(FTSColumn):
             self.end = self.start + self.width
         except:
             raise
+
+    def get_description(self):
+        desc = super().get_description()
+        desc["long_name"] = self.long_name
+        return desc
 
 
 class CMSFTS:
