@@ -589,7 +589,7 @@ medicare:
             type: HLL_HASHVAL
             description: |
               HLL hash (see https://en.wikipedia.org/wiki/HyperLogLog).
-              Can be sued to calculate number of beneficiaries
+              Can be used to calculate number of beneficiaries
               satisfying a certain given condition
               Use #(hll_add_agg(bene)) or hll_cardinality(hll_add_agg(bene)) aggregator
             reference: https://github.com/citusdata/postgresql-hll/blob/master/REFERENCE.md#basic-operational-functions
@@ -635,7 +635,7 @@ medicare:
                 type: HLL_HASHVAL
                 description: |
                   HLL hash (see https://en.wikipedia.org/wiki/HyperLogLog).
-                  Can be sued to calculate number of beneficiaries
+                  Can be used to calculate number of beneficiaries
                   satisfying a certain given condition
                   Use #(hll_add_agg(bene)) or hll_cardinality(hll_add_agg(bene)) aggregator
                 reference: https://github.com/citusdata/postgresql-hll/blob/master/REFERENCE.md#basic-operational-functions
@@ -757,7 +757,7 @@ medicare:
                     type: HLL_HASHVAL
                     description: |
                       HLL hash (see https://en.wikipedia.org/wiki/HyperLogLog).
-                      Can be sued to calculate number of beneficiaries
+                      Can be used to calculate number of beneficiaries
                       satisfying a certain given condition
                       Use #(hll_add_agg(bene)) or hll_cardinality(hll_add_agg(bene)) aggregator
                     reference: https://github.com/citusdata/postgresql-hll/blob/master/REFERENCE.md#basic-operational-functions
