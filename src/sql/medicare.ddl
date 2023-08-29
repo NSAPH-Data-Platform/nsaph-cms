@@ -21,6 +21,7 @@
 -- 2007 (aka BENE_ID)
 --
 
+CREATE SCHEMA IF NOT EXISTS cms;
 DROP TABLE IF EXISTS cms.bid_to_bene_id;
 CREATE TABLE cms.bid_to_bene_id (
     BID VARCHAR(9),

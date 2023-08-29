@@ -17,6 +17,7 @@
 --  limitations under the License.
 --
 
+CREATE SCHEMA IF NOT EXISTS cms;
 CREATE OR REPLACE FUNCTION cms.map_bene (
     intbid VARCHAR
 )  RETURNS VARCHAR(15)

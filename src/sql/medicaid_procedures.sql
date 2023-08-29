@@ -17,6 +17,7 @@
 --  limitations under the License.
 --
 
+CREATE SCHEMA IF NOT EXISTS cms;
 CREATE OR REPLACE PROCEDURE medicaid.create_eligibility_by_beneficiary()
 LANGUAGE plpgsql
 AS $$
