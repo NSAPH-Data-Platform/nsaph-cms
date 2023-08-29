@@ -25,8 +25,7 @@ setup(
         "License :: Harvard University :: Development",
         "Operating System :: OS Independent"],
     install_requires=[
-        'nsaph>=0.0.3.16',
-        'nsaph_utils >= 0.0.5.18',
+        'nsaph @ git+https://github.com/NSAPH-Data-Platform/nsaph-core-platform.git@develop',
     ],
     package_data = {
         '': ["**/*.yaml"],
