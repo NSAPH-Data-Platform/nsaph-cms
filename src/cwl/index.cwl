@@ -71,7 +71,7 @@ inputs:
     inputBinding:
       prefix: --force
   depends_on:
-    type: File?
+    type: Any?
     doc: a special field used to enforce dependencies and execution order
 
 
@@ -87,5 +87,5 @@ outputs:
   errors:
     type: stderr
 
-stderr: $("index_" + inputs.table + ".err")
+stderr:  $("index-" + inputs.table + ".err")
 

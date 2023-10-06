@@ -72,5 +72,5 @@ outputs:
   errors:
     type: stderr
 
-stderr: $("vacuum_" + inputs.table + ".err")
+stderr: $("vacuum-" + inputs.table + ".err")
 

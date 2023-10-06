@@ -89,7 +89,7 @@ steps:
     out: [log, model, errors]
 
   load_ps:
-    run: ingest.cwl
+    run: ingest_cms.cwl
     doc: Loads Patient Summaries
     in:
       registry: fts/model
@@ -113,7 +113,7 @@ steps:
       - vacuum_err
 
   load_ip:
-    run: ingest.cwl
+    run: ingest_cms.cwl
     doc: Loads inpatient admissions
     in:
       depends_on: load_ps/vacuum_log
@@ -221,7 +221,7 @@ steps:
       - vacuum_err
 
   load_admissions:
-    run: ingest.cwl
+    run: ingest_cms.cwl
     doc: Processes and loads inpatient admissions
     in:
       depends_on: create_eligibility/vacuum_log
