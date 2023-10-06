@@ -38,7 +38,6 @@ inputs:
       A path to the data model file
   domain:
     type: string
-    default: cms
     doc: the name of the domain
     inputBinding:
       prefix: --domain
