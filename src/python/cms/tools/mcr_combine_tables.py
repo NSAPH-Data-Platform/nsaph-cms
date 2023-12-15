@@ -77,7 +77,8 @@ class MedicareCombinedView:
     def print_sql(self):
         if not self.sql:
             self.generate_sql()
-        print(self.sql)
+        logging.info(self.sql)
+        # print(self.sql)
 
     def execute(self):
         if self.context.dryrun:
@@ -85,6 +86,7 @@ class MedicareCombinedView:
             return
         if not self.sql:
             self.generate_sql()
+            
         with Connection(self.context.db,
                         self.context.connection) as cnxn:
             with cnxn.cursor() as cursor:
