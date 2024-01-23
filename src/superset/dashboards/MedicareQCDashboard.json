@@ -1,0 +1,2810 @@
+{
+    "dashboards": [
+        {
+            "__Dashboard__": {
+                "css": "",
+                "dashboard_title": "Medicare QC (Clean)",
+                "description": null,
+                "json_metadata": "{\"show_native_filters\": true, \"color_scheme\": \"\", \"refresh_frequency\": 0, \"expanded_slices\": {}, \"label_colors\": {}, \"timed_refresh_immune_slices\": [], \"default_filters\": \"{}\", \"filter_scopes\": {\"60\": {\"year\": {\"scope\": [\"ROOT_ID\"], \"immune\": []}, \"state_iso\": {\"scope\": [\"ROOT_ID\"], \"immune\": []}}}, \"chart_configuration\": {}, \"remote_id\": 11, \"import_time\": 1703112362}",
+                "position_json": "{\"CHART--85YP3yq5G\":{\"children\":[],\"id\":\"CHART--85YP3yq5G\",\"meta\":{\"chartId\":60,\"height\":50,\"sliceName\":\"Filter\",\"uuid\":\"595f36a1-1dac-47ab-9c05-2cddd087e7f1\",\"width\":4},\"parents\":[\"ROOT_ID\",\"TABS-_9fZMgfrAE\",\"TAB-CugV7phZ-\",\"ROW-okJh9cw8x\"],\"type\":\"CHART\"},\"CHART-2vvKzW2jGm\":{\"children\":[],\"id\":\"CHART-2vvKzW2jGm\",\"meta\":{\"chartId\":71,\"height\":50,\"sliceName\":\"Discrepancies in DOB (small)\",\"uuid\":\"36b5d963-41bf-42f2-b128-df9cc954369a\",\"width\":4},\"parents\":[\"ROOT_ID\",\"TABS-_9fZMgfrAE\",\"TAB-LL9AY9kHJ\",\"ROW-kg15wfiC9\"],\"type\":\"CHART\"},\"CHART-6PupamuPTJ\":{\"children\":[],\"id\":\"CHART-6PupamuPTJ\",\"meta\":{\"chartId\":56,\"height\":50,\"sliceName\":\"Admissions with Missing data by State\",\"uuid\":\"fd76cf46-da74-4730-bc2c-3619a438e3e1\",\"width\":4},\"parents\":[\"ROOT_ID\",\"TABS-_9fZMgfrAE\",\"TAB-oZ-e6kSyR\",\"ROW--WHY7FqNd\"],\"type\":\"CHART\"},\"CHART-CDKL2ELOF7\":{\"children\":[],\"id\":\"CHART-CDKL2ELOF7\",\"meta\":{\"chartId\":72,\"height\":50,\"sliceName\":\"Discrepancies in DOB (more than 1 month)\",\"uuid\":\"5676936d-0f74-462b-8e78-59778272ea36\",\"width\":12},\"parents\":[\"ROOT_ID\",\"TABS-_9fZMgfrAE\",\"TAB-LL9AY9kHJ\",\"ROW-lJcKK3NVTd\"],\"type\":\"CHART\"},\"CHART-DoOTSsUIAR\":{\"children\":[],\"id\":\"CHART-DoOTSsUIAR\",\"meta\":{\"chartId\":66,\"height\":50,\"sliceName\":\"BeneficiaryGapYearsByOREC\",\"uuid\":\"fb0736f1-7c99-4503-b8e2-525b7e787d03\",\"width\":4},\"parents\":[\"ROOT_ID\",\"TABS-_9fZMgfrAE\",\"TAB-SMh5KxStd\",\"ROW-jHjQB7BIkU\"],\"type\":\"CHART\"},\"CHART-EcoMh8YBjG\":{\"children\":[],\"id\":\"CHART-EcoMh8YBjG\",\"meta\":{\"chartId\":50,\"height\":50,\"sliceName\":\"Enrollments By State\",\"uuid\":\"ad5b9921-620a-45a4-8bbf-b3b81ca6f71a\",\"width\":4},\"parents\":[\"ROOT_ID\",\"TABS-_9fZMgfrAE\",\"TAB-2rjSz67V2x\",\"ROW-jLocNRvYRL\"],\"type\":\"CHART\"},\"CHART-JXQ2bY0vn1\":{\"children\":[],\"id\":\"CHART-JXQ2bY0vn1\",\"meta\":{\"chartId\":55,\"height\":50,\"sliceName\":\"Duplicate Admissions by State\",\"uuid\":\"bb0bedd9-c4d5-43e3-8a71-5370606fcf4d\",\"width\":4},\"parents\":[\"ROOT_ID\",\"TABS-_9fZMgfrAE\",\"TAB-oZ-e6kSyR\",\"ROW--WHY7FqNd\"],\"type\":\"CHART\"},\"CHART-JkO0tdjj-x\":{\"children\":[],\"id\":\"CHART-JkO0tdjj-x\",\"meta\":{\"chartId\":47,\"height\":50,\"sliceName\":\"Bene Discrepancies\",\"uuid\":\"62b17208-0702-4754-9150-58b67c30c9ed\",\"width\":4},\"parents\":[\"ROOT_ID\",\"TABS-_9fZMgfrAE\",\"TAB-LL9AY9kHJ\",\"ROW-kg15wfiC9\"],\"type\":\"CHART\"},\"CHART-LgmCa19WTO\":{\"children\":[],\"id\":\"CHART-LgmCa19WTO\",\"meta\":{\"chartId\":53,\"height\":50,\"sliceName\":\"Admissions by State\",\"uuid\":\"bf6b33f3-3e52-4f19-a4c1-eda6bbfd2419\",\"width\":4},\"parents\":[\"ROOT_ID\",\"TABS-_9fZMgfrAE\",\"TAB-HnVNnQUmQ\",\"ROW-ydetEl7y1\"],\"type\":\"CHART\"},\"CHART-NRbE0dw0Nv\":{\"children\":[],\"id\":\"CHART-NRbE0dw0Nv\",\"meta\":{\"chartId\":68,\"height\":50,\"sliceName\":\"ZIP/County Consistency By Year\",\"uuid\":\"7b474c72-7d94-409e-8e76-303cc5e5020a\",\"width\":4},\"parents\":[\"ROOT_ID\",\"TABS-_9fZMgfrAE\",\"TAB-LL9AY9kHJ\",\"ROW-a2NQvKZ5A\"],\"type\":\"CHART\"},\"CHART-QwXqyL5qws\":{\"children\":[],\"id\":\"CHART-QwXqyL5qws\",\"meta\":{\"chartId\":54,\"height\":50,\"sliceName\":\"Admissions QC by State\",\"uuid\":\"30b273dd-9bba-404e-bb6c-1b33550d97c0\",\"width\":4},\"parents\":[\"ROOT_ID\",\"TABS-_9fZMgfrAE\",\"TAB-HnVNnQUmQ\",\"ROW-iSvPYzZIR\"],\"type\":\"CHART\"},\"CHART-RcJ8lOt6zM\":{\"children\":[],\"id\":\"CHART-RcJ8lOt6zM\",\"meta\":{\"chartId\":70,\"height\":50,\"sliceName\":\"Enrollments Consistency By Year (clean)\",\"uuid\":\"5ff9428d-5287-4e33-9c8f-074bc40024b1\",\"width\":4},\"parents\":[\"ROOT_ID\",\"TABS-_9fZMgfrAE\",\"TAB-LL9AY9kHJ\",\"ROW-ZLw6OHkEy\"],\"type\":\"CHART\"},\"CHART-TLBzfNJ7bcH\":{\"children\":[],\"id\":\"CHART-TLBzfNJ7bcH\",\"meta\":{\"chartId\":51,\"height\":50,\"sliceName\":\"Enrollments By Year\",\"uuid\":\"008ad567-b008-4b6b-8719-2c36b3ebdcc7\",\"width\":12},\"parents\":[\"ROOT_ID\",\"TABS-_9fZMgfrAE\",\"TAB-2rjSz67V2x\",\"ROW-73VWwPzOu\"],\"type\":\"CHART\"},\"CHART-VwvWa0hsTA\":{\"children\":[],\"id\":\"CHART-VwvWa0hsTA\",\"meta\":{\"chartId\":52,\"height\":50,\"sliceName\":\"Admissions by Year\",\"uuid\":\"153df1e6-148e-44c7-9dda-9a1db02018a0\",\"width\":8},\"parents\":[\"ROOT_ID\",\"TABS-_9fZMgfrAE\",\"TAB-HnVNnQUmQ\",\"ROW-ydetEl7y1\"],\"type\":\"CHART\"},\"CHART-XgcXHIGOTA\":{\"children\":[],\"id\":\"CHART-XgcXHIGOTA\",\"meta\":{\"chartId\":58,\"height\":50,\"sliceName\":\"Admissions QC by Year\",\"uuid\":\"cbd795b1-0833-4430-9680-d42f327ca741\",\"width\":8},\"parents\":[\"ROOT_ID\",\"TABS-_9fZMgfrAE\",\"TAB-HnVNnQUmQ\",\"ROW-iSvPYzZIR\"],\"type\":\"CHART\"},\"CHART-aVqDcyvGM3\":{\"children\":[],\"id\":\"CHART-aVqDcyvGM3\",\"meta\":{\"chartId\":62,\"height\":50,\"sliceName\":\"Beneficiaries, admitted by Year\",\"uuid\":\"1c64dae3-f865-4355-8813-24db17e0865e\",\"width\":8},\"parents\":[\"ROOT_ID\",\"TABS-_9fZMgfrAE\",\"TAB-HnVNnQUmQ\",\"ROW-WttcAffgp\"],\"type\":\"CHART\"},\"CHART-bbmUnk7Q7l\":{\"children\":[],\"id\":\"CHART-bbmUnk7Q7l\",\"meta\":{\"chartId\":67,\"height\":50,\"sliceName\":\"InvalidZIP\",\"uuid\":\"0265eda5-afb1-4475-9488-bbf3234f670d\",\"width\":4},\"parents\":[\"ROOT_ID\",\"TABS-_9fZMgfrAE\",\"TAB-LL9AY9kHJ\",\"ROW-a2NQvKZ5A\"],\"type\":\"CHART\"},\"CHART-eGuVKl3RL-\":{\"children\":[],\"id\":\"CHART-eGuVKl3RL-\",\"meta\":{\"chartId\":61,\"height\":50,\"sliceName\":\"Beneficiaries/Admissions by State\",\"uuid\":\"03ecb2ce-f3f7-49e0-8a25-5d6c5340c552\",\"width\":4},\"parents\":[\"ROOT_ID\",\"TABS-_9fZMgfrAE\",\"TAB-HnVNnQUmQ\",\"ROW-WttcAffgp\"],\"type\":\"CHART\"},\"CHART-i4ZwtX2jCH\":{\"children\":[],\"id\":\"CHART-i4ZwtX2jCH\",\"meta\":{\"chartId\":57,\"height\":50,\"sliceName\":\"Admissions with no enrollment by State\",\"uuid\":\"3eb3b55d-b312-44be-91d0-e44ba480a14d\",\"width\":4},\"parents\":[\"ROOT_ID\",\"TABS-_9fZMgfrAE\",\"TAB-oZ-e6kSyR\",\"ROW--WHY7FqNd\"],\"type\":\"CHART\"},\"CHART-l0uwWEzz3D\":{\"children\":[],\"id\":\"CHART-l0uwWEzz3D\",\"meta\":{\"chartId\":49,\"height\":50,\"sliceName\":\"Consistency of beneficiaries data\",\"uuid\":\"5f15c793-6105-4353-b6cd-096d4ce48e7d\",\"width\":4},\"parents\":[\"ROOT_ID\",\"TABS-_9fZMgfrAE\",\"TAB-LL9AY9kHJ\",\"ROW-kg15wfiC9\"],\"type\":\"CHART\"},\"CHART-nePXv9myD6\":{\"children\":[],\"id\":\"CHART-nePXv9myD6\",\"meta\":{\"chartId\":65,\"height\":50,\"sliceName\":\"BeneficiaryGapYears\",\"uuid\":\"ae6f30be-68c6-49e2-80bd-f42291f87461\",\"width\":4},\"parents\":[\"ROOT_ID\",\"TABS-_9fZMgfrAE\",\"TAB-SMh5KxStd\",\"ROW-jHjQB7BIkU\"],\"type\":\"CHART\"},\"CHART-ujiLK26eoME\":{\"children\":[],\"id\":\"CHART-ujiLK26eoME\",\"meta\":{\"chartId\":59,\"height\":50,\"sliceName\":\"Admissions Issues by Year\",\"uuid\":\"8b13b13a-31e9-488b-8d01-a53b377feec8\",\"width\":12},\"parents\":[\"ROOT_ID\",\"TABS-_9fZMgfrAE\",\"TAB-oZ-e6kSyR\",\"ROW-cJSLaYE9H\"],\"type\":\"CHART\"},\"CHART-wH1U9EwSS-\":{\"children\":[],\"id\":\"CHART-wH1U9EwSS-\",\"meta\":{\"chartId\":48,\"height\":50,\"sliceName\":\"Bene by YOB\",\"uuid\":\"028d433b-42e4-49d8-9001-87eac9e549a6\",\"width\":12},\"parents\":[\"ROOT_ID\",\"TABS-_9fZMgfrAE\",\"TAB-2rjSz67V2x\",\"ROW-bPKcfhYTfS\"],\"type\":\"CHART\"},\"CHART-xwO7_SQV9u\":{\"children\":[],\"id\":\"CHART-xwO7_SQV9u\",\"meta\":{\"chartId\":69,\"height\":50,\"sliceName\":\"Enrollments Consistency By State (Clean)\",\"uuid\":\"d3e36d12-9fbe-46b6-8acc-b17a3bca9d60\",\"width\":4},\"parents\":[\"ROOT_ID\",\"TABS-_9fZMgfrAE\",\"TAB-LL9AY9kHJ\",\"ROW-ZLw6OHkEy\"],\"type\":\"CHART\"},\"DASHBOARD_VERSION_KEY\":\"v2\",\"GRID_ID\":{\"children\":[],\"id\":\"GRID_ID\",\"parents\":[\"ROOT_ID\"],\"type\":\"GRID\"},\"HEADER_ID\":{\"id\":\"HEADER_ID\",\"meta\":{\"text\":\"Medicare QC (Clean)\"},\"type\":\"HEADER\"},\"ROOT_ID\":{\"children\":[\"TABS-_9fZMgfrAE\"],\"id\":\"ROOT_ID\",\"type\":\"ROOT\"},\"ROW--WHY7FqNd\":{\"children\":[\"CHART-i4ZwtX2jCH\",\"CHART-JXQ2bY0vn1\",\"CHART-6PupamuPTJ\"],\"id\":\"ROW--WHY7FqNd\",\"meta\":{\"background\":\"BACKGROUND_TRANSPARENT\"},\"parents\":[\"ROOT_ID\",\"TABS-_9fZMgfrAE\",\"TAB-oZ-e6kSyR\"],\"type\":\"ROW\"},\"ROW-73VWwPzOu\":{\"children\":[\"CHART-TLBzfNJ7bcH\"],\"id\":\"ROW-73VWwPzOu\",\"meta\":{\"background\":\"BACKGROUND_TRANSPARENT\"},\"parents\":[\"ROOT_ID\",\"TABS-_9fZMgfrAE\",\"TAB-2rjSz67V2x\"],\"type\":\"ROW\"},\"ROW-WttcAffgp\":{\"children\":[\"CHART-aVqDcyvGM3\",\"CHART-eGuVKl3RL-\"],\"id\":\"ROW-WttcAffgp\",\"meta\":{\"background\":\"BACKGROUND_TRANSPARENT\"},\"parents\":[\"ROOT_ID\",\"TABS-_9fZMgfrAE\",\"TAB-HnVNnQUmQ\"],\"type\":\"ROW\"},\"ROW-ZLw6OHkEy\":{\"children\":[\"CHART-xwO7_SQV9u\",\"CHART-RcJ8lOt6zM\"],\"id\":\"ROW-ZLw6OHkEy\",\"meta\":{\"background\":\"BACKGROUND_TRANSPARENT\"},\"parents\":[\"ROOT_ID\",\"TABS-_9fZMgfrAE\",\"TAB-LL9AY9kHJ\"],\"type\":\"ROW\"},\"ROW-a2NQvKZ5A\":{\"children\":[\"CHART-bbmUnk7Q7l\",\"CHART-NRbE0dw0Nv\"],\"id\":\"ROW-a2NQvKZ5A\",\"meta\":{\"background\":\"BACKGROUND_TRANSPARENT\"},\"parents\":[\"ROOT_ID\",\"TABS-_9fZMgfrAE\",\"TAB-LL9AY9kHJ\"],\"type\":\"ROW\"},\"ROW-bPKcfhYTfS\":{\"children\":[\"CHART-wH1U9EwSS-\"],\"id\":\"ROW-bPKcfhYTfS\",\"meta\":{\"0\":\"ROOT_ID\",\"1\":\"TABS-_9fZMgfrAE\",\"background\":\"BACKGROUND_TRANSPARENT\"},\"parents\":[\"ROOT_ID\",\"TABS-_9fZMgfrAE\",\"TAB-2rjSz67V2x\"],\"type\":\"ROW\"},\"ROW-cJSLaYE9H\":{\"children\":[\"CHART-ujiLK26eoME\"],\"id\":\"ROW-cJSLaYE9H\",\"meta\":{\"background\":\"BACKGROUND_TRANSPARENT\"},\"parents\":[\"ROOT_ID\",\"TABS-_9fZMgfrAE\",\"TAB-oZ-e6kSyR\"],\"type\":\"ROW\"},\"ROW-iSvPYzZIR\":{\"children\":[\"CHART-XgcXHIGOTA\",\"CHART-QwXqyL5qws\"],\"id\":\"ROW-iSvPYzZIR\",\"meta\":{\"background\":\"BACKGROUND_TRANSPARENT\"},\"parents\":[\"ROOT_ID\",\"TABS-_9fZMgfrAE\",\"TAB-HnVNnQUmQ\"],\"type\":\"ROW\"},\"ROW-jHjQB7BIkU\":{\"children\":[\"CHART-nePXv9myD6\",\"CHART-DoOTSsUIAR\"],\"id\":\"ROW-jHjQB7BIkU\",\"meta\":{\"background\":\"BACKGROUND_TRANSPARENT\"},\"parents\":[\"ROOT_ID\",\"TABS-_9fZMgfrAE\",\"TAB-SMh5KxStd\"],\"type\":\"ROW\"},\"ROW-jLocNRvYRL\":{\"children\":[\"CHART-EcoMh8YBjG\"],\"id\":\"ROW-jLocNRvYRL\",\"meta\":{\"0\":\"ROOT_ID\",\"background\":\"BACKGROUND_TRANSPARENT\"},\"parents\":[\"ROOT_ID\",\"TABS-_9fZMgfrAE\",\"TAB-2rjSz67V2x\"],\"type\":\"ROW\"},\"ROW-kg15wfiC9\":{\"children\":[\"CHART-l0uwWEzz3D\",\"CHART-JkO0tdjj-x\",\"CHART-2vvKzW2jGm\"],\"id\":\"ROW-kg15wfiC9\",\"meta\":{\"background\":\"BACKGROUND_TRANSPARENT\"},\"parents\":[\"ROOT_ID\",\"TABS-_9fZMgfrAE\",\"TAB-LL9AY9kHJ\"],\"type\":\"ROW\"},\"ROW-lJcKK3NVTd\":{\"children\":[\"CHART-CDKL2ELOF7\"],\"id\":\"ROW-lJcKK3NVTd\",\"meta\":{\"background\":\"BACKGROUND_TRANSPARENT\"},\"parents\":[\"ROOT_ID\",\"TABS-_9fZMgfrAE\",\"TAB-LL9AY9kHJ\"],\"type\":\"ROW\"},\"ROW-okJh9cw8x\":{\"children\":[\"CHART--85YP3yq5G\"],\"id\":\"ROW-okJh9cw8x\",\"meta\":{\"background\":\"BACKGROUND_TRANSPARENT\"},\"parents\":[\"ROOT_ID\",\"TABS-_9fZMgfrAE\",\"TAB-CugV7phZ-\"],\"type\":\"ROW\"},\"ROW-ydetEl7y1\":{\"children\":[\"CHART-VwvWa0hsTA\",\"CHART-LgmCa19WTO\"],\"id\":\"ROW-ydetEl7y1\",\"meta\":{\"background\":\"BACKGROUND_TRANSPARENT\"},\"parents\":[\"ROOT_ID\",\"TABS-_9fZMgfrAE\",\"TAB-HnVNnQUmQ\"],\"type\":\"ROW\"},\"TAB-2rjSz67V2x\":{\"children\":[\"ROW-73VWwPzOu\",\"ROW-jLocNRvYRL\",\"ROW-bPKcfhYTfS\"],\"id\":\"TAB-2rjSz67V2x\",\"meta\":{\"defaultText\":\"Tab title\",\"placeholder\":\"Tab title\",\"text\":\"Enrollments Volume\"},\"parents\":[\"ROOT_ID\",\"TABS-_9fZMgfrAE\"],\"type\":\"TAB\"},\"TAB-CugV7phZ-\":{\"children\":[\"ROW-okJh9cw8x\"],\"id\":\"TAB-CugV7phZ-\",\"meta\":{\"defaultText\":\"Tab title\",\"placeholder\":\"Tab title\",\"text\":\"Filter\"},\"parents\":[\"ROOT_ID\",\"TABS-_9fZMgfrAE\"],\"type\":\"TAB\"},\"TAB-HnVNnQUmQ\":{\"children\":[\"ROW-ydetEl7y1\",\"ROW-WttcAffgp\",\"ROW-iSvPYzZIR\"],\"id\":\"TAB-HnVNnQUmQ\",\"meta\":{\"defaultText\":\"Tab title\",\"placeholder\":\"Tab title\",\"text\":\"Admissions\"},\"parents\":[\"ROOT_ID\",\"TABS-_9fZMgfrAE\"],\"type\":\"TAB\"},\"TAB-LL9AY9kHJ\":{\"children\":[\"ROW-kg15wfiC9\",\"ROW-lJcKK3NVTd\",\"ROW-ZLw6OHkEy\",\"ROW-a2NQvKZ5A\"],\"id\":\"TAB-LL9AY9kHJ\",\"meta\":{\"defaultText\":\"Tab title\",\"placeholder\":\"Tab title\",\"text\":\"Enrollments Consistency\"},\"parents\":[\"ROOT_ID\",\"TABS-_9fZMgfrAE\"],\"type\":\"TAB\"},\"TAB-SMh5KxStd\":{\"children\":[\"ROW-jHjQB7BIkU\"],\"id\":\"TAB-SMh5KxStd\",\"meta\":{\"defaultText\":\"Tab title\",\"placeholder\":\"Tab title\",\"text\":\"Gap Years\"},\"parents\":[\"ROOT_ID\",\"TABS-_9fZMgfrAE\"],\"type\":\"TAB\"},\"TAB-oZ-e6kSyR\":{\"children\":[\"ROW-cJSLaYE9H\",\"ROW--WHY7FqNd\"],\"id\":\"TAB-oZ-e6kSyR\",\"meta\":{\"defaultText\":\"Tab title\",\"placeholder\":\"Tab title\",\"text\":\"Admissions Issue\"},\"parents\":[\"ROOT_ID\",\"TABS-_9fZMgfrAE\"],\"type\":\"TAB\"},\"TABS-_9fZMgfrAE\":{\"children\":[\"TAB-2rjSz67V2x\",\"TAB-LL9AY9kHJ\",\"TAB-HnVNnQUmQ\",\"TAB-oZ-e6kSyR\",\"TAB-CugV7phZ-\",\"TAB-SMh5KxStd\"],\"id\":\"TABS-_9fZMgfrAE\",\"meta\":{},\"parents\":[\"ROOT_ID\"],\"type\":\"TABS\"}}",
+                "slices": [
+                    {
+                        "__Slice__": {
+                            "cache_timeout": null,
+                            "datasource_name": "medicare.qc_admissions",
+                            "datasource_type": "table",
+                            "id": 55,
+                            "params": "{\"adhoc_filters\": [], \"datasource\": \"19__table\", \"entity\": \"state_iso\", \"extra_form_data\": {}, \"granularity_sqla\": null, \"linear_color_scheme\": \"superset_seq_1\", \"metric\": \"% duplicate admission  records\", \"number_format\": \"SMART_NUMBER\", \"select_country\": \"usa\", \"slice_id\": 34, \"time_range\": \"No filter\", \"time_range_endpoints\": [\"inclusive\", \"exclusive\"], \"url_params\": {}, \"viz_type\": \"country_map\", \"remote_id\": 55, \"datasource_name\": \"qc_admissions\", \"schema\": \"medicare\", \"database_name\": \"DORIEH\", \"import_time\": 1703112362}",
+                            "query_context": "{\"datasource\":{\"id\":19,\"type\":\"table\"},\"force\":false,\"queries\":[{\"time_range\":\"No filter\",\"granularity\":null,\"filters\":[],\"extras\":{\"time_range_endpoints\":[\"inclusive\",\"exclusive\"],\"having\":\"\",\"having_druid\":[],\"where\":\"\"},\"applied_time_extras\":{},\"columns\":[],\"metrics\":[\"% duplicate admission  records\"],\"annotation_layers\":[],\"timeseries_limit\":0,\"order_desc\":true,\"url_params\":{},\"custom_params\":{},\"custom_form_data\":{}}],\"result_format\":\"json\",\"result_type\":\"full\"}",
+                            "slice_name": "Duplicate Admissions by State",
+                            "viz_type": "country_map"
+                        }
+                    },
+                    {
+                        "__Slice__": {
+                            "cache_timeout": null,
+                            "datasource_name": "medicare.beneficiaries",
+                            "datasource_type": "table",
+                            "id": 48,
+                            "params": "{\"adhoc_filters\": [], \"bottom_margin\": \"auto\", \"color_scheme\": \"supersetColors\", \"columns\": [], \"contribution\": false, \"datasource\": \"14__table\", \"extra_form_data\": {}, \"granularity_sqla\": \"dob\", \"groupby\": [\"yob1\"], \"metrics\": [\"approximate_count\"], \"order_bars\": true, \"order_desc\": false, \"row_limit\": 10000, \"show_bar_value\": false, \"slice_id\": 27, \"time_range\": \"No filter\", \"time_range_endpoints\": [\"inclusive\", \"exclusive\"], \"url_params\": {}, \"viz_type\": \"dist_bar\", \"x_ticks_layout\": \"auto\", \"y_axis_bounds\": [null, null], \"y_axis_format\": \"SMART_NUMBER\", \"remote_id\": 48, \"datasource_name\": \"beneficiaries\", \"schema\": \"medicare\", \"database_name\": \"DORIEH\", \"import_time\": 1703112362}",
+                            "query_context": "{\"datasource\":{\"id\":14,\"type\":\"table\"},\"force\":false,\"queries\":[{\"time_range\":\"No filter\",\"granularity\":\"dob\",\"filters\":[],\"extras\":{\"time_range_endpoints\":[\"inclusive\",\"exclusive\"],\"having\":\"\",\"having_druid\":[],\"where\":\"\"},\"applied_time_extras\":{},\"columns\":[\"yob1\"],\"metrics\":[\"approximate_count\"],\"annotation_layers\":[],\"row_limit\":10000,\"timeseries_limit\":0,\"order_desc\":false,\"url_params\":{},\"custom_params\":{},\"custom_form_data\":{}}],\"result_format\":\"json\",\"result_type\":\"full\"}",
+                            "slice_name": "Bene by YOB",
+                            "viz_type": "dist_bar"
+                        }
+                    },
+                    {
+                        "__Slice__": {
+                            "cache_timeout": null,
+                            "datasource_name": "medicare.beneficiaries",
+                            "datasource_type": "table",
+                            "id": 47,
+                            "params": "{\"adhoc_filters\": [{\"clause\": \"WHERE\", \"comparator\": \"Ambiguous\", \"expressionType\": \"SIMPLE\", \"filterOptionName\": \"filter_7487oq8esb5_v1qomwm35t\", \"isExtra\": false, \"isNew\": false, \"operator\": \"==\", \"operatorId\": \"EQUALS\", \"sqlExpression\": null, \"subject\": \"Consistency\"}], \"color_scheme\": \"supersetColors\", \"datasource\": \"14__table\", \"date_format\": \"smart_date\", \"extra_form_data\": {}, \"granularity_sqla\": \"dob\", \"groupby\": [\"AmbiguousRace\", \"AmbiguousSex\", \"AmbiguousDOB\", \"AmbiguousDOD\"], \"innerRadius\": 30, \"label_type\": \"key_value_percent\", \"labels_outside\": true, \"legendOrientation\": \"top\", \"legendType\": \"scroll\", \"metric\": \"approximate_count\", \"number_format\": \"SMART_NUMBER\", \"outerRadius\": 69, \"row_limit\": 10000, \"show_labels\": true, \"show_labels_threshold\": \"0\", \"show_legend\": false, \"slice_id\": 26, \"sort_by_metric\": true, \"time_range\": \"No filter\", \"time_range_endpoints\": [\"inclusive\", \"exclusive\"], \"url_params\": {}, \"viz_type\": \"pie\", \"remote_id\": 47, \"datasource_name\": \"beneficiaries\", \"schema\": \"medicare\", \"database_name\": \"DORIEH\", \"import_time\": 1703112362}",
+                            "query_context": "{\"datasource\":{\"id\":14,\"type\":\"table\"},\"force\":false,\"queries\":[{\"time_range\":\"No filter\",\"granularity\":\"dob\",\"filters\":[{\"col\":\"Consistency\",\"op\":\"==\",\"val\":\"Ambiguous\"}],\"extras\":{\"time_range_endpoints\":[\"inclusive\",\"exclusive\"],\"having\":\"\",\"having_druid\":[],\"where\":\"\"},\"applied_time_extras\":{},\"columns\":[\"AmbiguousRace\",\"AmbiguousSex\",\"AmbiguousDOB\",\"AmbiguousDOD\"],\"metrics\":[\"approximate_count\"],\"orderby\":[[\"approximate_count\",false]],\"annotation_layers\":[],\"row_limit\":10000,\"timeseries_limit\":0,\"order_desc\":true,\"url_params\":{},\"custom_params\":{},\"custom_form_data\":{}}],\"result_format\":\"json\",\"result_type\":\"full\"}",
+                            "slice_name": "Bene Discrepancies",
+                            "viz_type": "pie"
+                        }
+                    },
+                    {
+                        "__Slice__": {
+                            "cache_timeout": null,
+                            "datasource_name": "medicare.beneficiaries",
+                            "datasource_type": "table",
+                            "id": 49,
+                            "params": "{\"adhoc_filters\": [], \"color_scheme\": \"supersetColors\", \"datasource\": \"14__table\", \"date_format\": \"smart_date\", \"extra_form_data\": {}, \"granularity_sqla\": \"dob\", \"groupby\": [\"Consistency\"], \"innerRadius\": 30, \"label_type\": \"key_value_percent\", \"labels_outside\": true, \"legendOrientation\": \"top\", \"legendType\": \"scroll\", \"metric\": \"approximate_count\", \"number_format\": \"SMART_NUMBER\", \"outerRadius\": 40, \"row_limit\": 10000, \"show_labels\": true, \"show_labels_threshold\": \"0\", \"show_legend\": true, \"slice_id\": 28, \"sort_by_metric\": true, \"time_range\": \"No filter\", \"time_range_endpoints\": [\"inclusive\", \"exclusive\"], \"url_params\": {}, \"viz_type\": \"pie\", \"remote_id\": 49, \"datasource_name\": \"beneficiaries\", \"schema\": \"medicare\", \"database_name\": \"DORIEH\", \"import_time\": 1703112362}",
+                            "query_context": "{\"datasource\":{\"id\":14,\"type\":\"table\"},\"force\":false,\"queries\":[{\"time_range\":\"No filter\",\"granularity\":\"dob\",\"filters\":[],\"extras\":{\"time_range_endpoints\":[\"inclusive\",\"exclusive\"],\"having\":\"\",\"having_druid\":[],\"where\":\"\"},\"applied_time_extras\":{},\"columns\":[\"Consistency\"],\"metrics\":[\"approximate_count\"],\"orderby\":[[\"approximate_count\",false]],\"annotation_layers\":[],\"row_limit\":10000,\"timeseries_limit\":0,\"order_desc\":true,\"url_params\":{},\"custom_params\":{},\"custom_form_data\":{}}],\"result_format\":\"json\",\"result_type\":\"full\"}",
+                            "slice_name": "Consistency of beneficiaries data",
+                            "viz_type": "pie"
+                        }
+                    },
+                    {
+                        "__Slice__": {
+                            "cache_timeout": null,
+                            "datasource_name": "medicare.qc_enrollments",
+                            "datasource_type": "table",
+                            "id": 50,
+                            "params": "{\"adhoc_filters\": [], \"datasource\": \"20__table\", \"entity\": \"state_iso\", \"extra_form_data\": {}, \"granularity_sqla\": null, \"linear_color_scheme\": \"superset_seq_1\", \"metric\": \"count\", \"number_format\": \"SMART_NUMBER\", \"select_country\": \"usa\", \"slice_id\": 29, \"time_range\": \"No filter\", \"time_range_endpoints\": [\"inclusive\", \"exclusive\"], \"url_params\": {}, \"viz_type\": \"country_map\", \"remote_id\": 50, \"datasource_name\": \"qc_enrollments\", \"schema\": \"medicare\", \"database_name\": \"DORIEH\", \"import_time\": 1703112362}",
+                            "query_context": "{\"datasource\":{\"id\":20,\"type\":\"table\"},\"force\":false,\"queries\":[{\"time_range\":\"No filter\",\"granularity\":null,\"filters\":[],\"extras\":{\"time_range_endpoints\":[\"inclusive\",\"exclusive\"],\"having\":\"\",\"having_druid\":[],\"where\":\"\"},\"applied_time_extras\":{},\"columns\":[],\"metrics\":[\"count\"],\"annotation_layers\":[],\"timeseries_limit\":0,\"order_desc\":true,\"url_params\":{},\"custom_params\":{},\"custom_form_data\":{}}],\"result_format\":\"json\",\"result_type\":\"full\"}",
+                            "slice_name": "Enrollments By State",
+                            "viz_type": "country_map"
+                        }
+                    },
+                    {
+                        "__Slice__": {
+                            "cache_timeout": null,
+                            "datasource_name": "medicare.qc_enrollments",
+                            "datasource_type": "table",
+                            "id": 51,
+                            "params": "{\"adhoc_filters\": [], \"bottom_margin\": \"auto\", \"color_scheme\": \"supersetColors\", \"columns\": [], \"datasource\": \"20__table\", \"extra_form_data\": {}, \"granularity_sqla\": null, \"groupby\": [\"year\"], \"metrics\": [\"count\", \"bene cardinality\"], \"order_bars\": true, \"order_desc\": true, \"row_limit\": 10000, \"show_bar_value\": true, \"slice_id\": 30, \"time_range\": \"No filter\", \"time_range_endpoints\": [\"inclusive\", \"exclusive\"], \"url_params\": {}, \"viz_type\": \"dist_bar\", \"x_ticks_layout\": \"auto\", \"y_axis_bounds\": [null, null], \"y_axis_format\": \"SMART_NUMBER\", \"remote_id\": 51, \"datasource_name\": \"qc_enrollments\", \"schema\": \"medicare\", \"database_name\": \"DORIEH\", \"import_time\": 1703112362}",
+                            "query_context": "{\"datasource\":{\"id\":20,\"type\":\"table\"},\"force\":false,\"queries\":[{\"time_range\":\"No filter\",\"granularity\":null,\"filters\":[],\"extras\":{\"time_range_endpoints\":[\"inclusive\",\"exclusive\"],\"having\":\"\",\"having_druid\":[],\"where\":\"\"},\"applied_time_extras\":{},\"columns\":[\"year\"],\"metrics\":[\"count\",\"bene cardinality\"],\"annotation_layers\":[],\"row_limit\":10000,\"timeseries_limit\":0,\"order_desc\":true,\"url_params\":{},\"custom_params\":{},\"custom_form_data\":{}}],\"result_format\":\"json\",\"result_type\":\"full\"}",
+                            "slice_name": "Enrollments By Year",
+                            "viz_type": "dist_bar"
+                        }
+                    },
+                    {
+                        "__Slice__": {
+                            "cache_timeout": null,
+                            "datasource_name": "medicare.qc_admissions",
+                            "datasource_type": "table",
+                            "id": 52,
+                            "params": "{\"adhoc_filters\": [], \"bottom_margin\": \"auto\", \"color_scheme\": \"supersetColors\", \"columns\": [], \"datasource\": \"19__table\", \"extra_form_data\": {}, \"granularity_sqla\": null, \"groupby\": [\"year\"], \"metrics\": [\"count\"], \"order_bars\": true, \"order_desc\": true, \"row_limit\": 10000, \"show_bar_value\": true, \"slice_id\": 31, \"time_range\": \"No filter\", \"time_range_endpoints\": [\"inclusive\", \"exclusive\"], \"url_params\": {}, \"viz_type\": \"dist_bar\", \"x_ticks_layout\": \"auto\", \"y_axis_bounds\": [null, null], \"y_axis_format\": \"SMART_NUMBER\", \"remote_id\": 52, \"datasource_name\": \"qc_admissions\", \"schema\": \"medicare\", \"database_name\": \"DORIEH\", \"import_time\": 1703112362}",
+                            "query_context": "{\"datasource\":{\"id\":19,\"type\":\"table\"},\"force\":false,\"queries\":[{\"time_range\":\"No filter\",\"granularity\":null,\"filters\":[],\"extras\":{\"time_range_endpoints\":[\"inclusive\",\"exclusive\"],\"having\":\"\",\"having_druid\":[],\"where\":\"\"},\"applied_time_extras\":{},\"columns\":[\"year\"],\"metrics\":[\"count\"],\"annotation_layers\":[],\"row_limit\":10000,\"timeseries_limit\":0,\"order_desc\":true,\"url_params\":{},\"custom_params\":{},\"custom_form_data\":{}}],\"result_format\":\"json\",\"result_type\":\"full\"}",
+                            "slice_name": "Admissions by Year",
+                            "viz_type": "dist_bar"
+                        }
+                    },
+                    {
+                        "__Slice__": {
+                            "cache_timeout": null,
+                            "datasource_name": "medicare.qc_admissions",
+                            "datasource_type": "table",
+                            "id": 53,
+                            "params": "{\"adhoc_filters\": [{\"clause\": \"WHERE\", \"comparator\": null, \"expressionType\": \"SIMPLE\", \"filterOptionName\": \"filter_m885mbxxtc_6yfeoh4xt9u\", \"isExtra\": false, \"isNew\": false, \"operator\": \"IS NOT NULL\", \"operatorId\": \"IS_NOT_NULL\", \"sqlExpression\": null, \"subject\": \"state_iso\"}], \"datasource\": \"19__table\", \"entity\": \"state_iso\", \"extra_form_data\": {}, \"granularity_sqla\": null, \"linear_color_scheme\": \"superset_seq_1\", \"metric\": \"count\", \"number_format\": \"SMART_NUMBER\", \"select_country\": \"usa\", \"slice_id\": 32, \"time_range\": \"No filter\", \"time_range_endpoints\": [\"inclusive\", \"exclusive\"], \"url_params\": {}, \"viz_type\": \"country_map\", \"remote_id\": 53, \"datasource_name\": \"qc_admissions\", \"schema\": \"medicare\", \"database_name\": \"DORIEH\", \"import_time\": 1703112362}",
+                            "query_context": "{\"datasource\":{\"id\":19,\"type\":\"table\"},\"force\":false,\"queries\":[{\"time_range\":\"No filter\",\"granularity\":null,\"filters\":[{\"col\":\"state_iso\",\"op\":\"IS NOT NULL\"}],\"extras\":{\"time_range_endpoints\":[\"inclusive\",\"exclusive\"],\"having\":\"\",\"having_druid\":[],\"where\":\"\"},\"applied_time_extras\":{},\"columns\":[],\"metrics\":[\"count\"],\"annotation_layers\":[],\"timeseries_limit\":0,\"order_desc\":true,\"url_params\":{},\"custom_params\":{},\"custom_form_data\":{}}],\"result_format\":\"json\",\"result_type\":\"full\"}",
+                            "slice_name": "Admissions by State",
+                            "viz_type": "country_map"
+                        }
+                    },
+                    {
+                        "__Slice__": {
+                            "cache_timeout": null,
+                            "datasource_name": "medicare.qc_admissions",
+                            "datasource_type": "table",
+                            "id": 54,
+                            "params": "{\"adhoc_filters\": [], \"datasource\": \"31__table\", \"entity\": \"state_iso\", \"extra_form_data\": {}, \"granularity_sqla\": null, \"linear_color_scheme\": \"superset_seq_1\", \"metric\": \"valid_records\", \"number_format\": \"SMART_NUMBER\", \"select_country\": \"usa\", \"slice_id\": 54, \"time_range\": \"No filter\", \"time_range_endpoints\": [\"inclusive\", \"exclusive\"], \"url_params\": {}, \"viz_type\": \"country_map\", \"remote_id\": 54, \"datasource_name\": \"qc_admissions\", \"schema\": \"medicare\", \"database_name\": \"DORIEH\"}",
+                            "query_context": "{\"datasource\":{\"id\":31,\"type\":\"table\"},\"force\":false,\"queries\":[{\"time_range\":\"No filter\",\"granularity\":null,\"filters\":[],\"extras\":{\"time_range_endpoints\":[\"inclusive\",\"exclusive\"],\"having\":\"\",\"having_druid\":[],\"where\":\"\"},\"applied_time_extras\":{},\"columns\":[],\"metrics\":[\"valid_records\"],\"annotation_layers\":[],\"timeseries_limit\":0,\"order_desc\":true,\"url_params\":{},\"custom_params\":{},\"custom_form_data\":{}}],\"result_format\":\"json\",\"result_type\":\"full\"}",
+                            "slice_name": "Admissions QC by State",
+                            "viz_type": "country_map"
+                        }
+                    },
+                    {
+                        "__Slice__": {
+                            "cache_timeout": null,
+                            "datasource_name": "medicare.qc_admissions",
+                            "datasource_type": "table",
+                            "id": 56,
+                            "params": "{\"adhoc_filters\": [{\"clause\": \"WHERE\", \"comparator\": null, \"expressionType\": \"SIMPLE\", \"filterOptionName\": \"filter_m8zxq1pxlj_z5n0yyv171\", \"isExtra\": false, \"isNew\": false, \"operator\": \"IS NOT NULL\", \"operatorId\": \"IS_NOT_NULL\", \"sqlExpression\": null, \"subject\": \"state_iso\"}], \"datasource\": \"19__table\", \"entity\": \"state_iso\", \"extra_form_data\": {}, \"granularity_sqla\": null, \"linear_color_scheme\": \"superset_seq_1\", \"metric\": \"% missing data\", \"number_format\": \"SMART_NUMBER\", \"select_country\": \"usa\", \"slice_id\": 35, \"time_range\": \"No filter\", \"time_range_endpoints\": [\"inclusive\", \"exclusive\"], \"url_params\": {}, \"viz_type\": \"country_map\", \"remote_id\": 56, \"datasource_name\": \"qc_admissions\", \"schema\": \"medicare\", \"database_name\": \"DORIEH\", \"import_time\": 1703112362}",
+                            "query_context": "{\"datasource\":{\"id\":19,\"type\":\"table\"},\"force\":false,\"queries\":[{\"time_range\":\"No filter\",\"granularity\":null,\"filters\":[{\"col\":\"state_iso\",\"op\":\"IS NOT NULL\"}],\"extras\":{\"time_range_endpoints\":[\"inclusive\",\"exclusive\"],\"having\":\"\",\"having_druid\":[],\"where\":\"\"},\"applied_time_extras\":{},\"columns\":[],\"metrics\":[\"% missing data\"],\"annotation_layers\":[],\"timeseries_limit\":0,\"order_desc\":true,\"url_params\":{},\"custom_params\":{},\"custom_form_data\":{}}],\"result_format\":\"json\",\"result_type\":\"full\"}",
+                            "slice_name": "Admissions with Missing data by State",
+                            "viz_type": "country_map"
+                        }
+                    },
+                    {
+                        "__Slice__": {
+                            "cache_timeout": null,
+                            "datasource_name": "medicare.qc_admissions",
+                            "datasource_type": "table",
+                            "id": 57,
+                            "params": "{\"adhoc_filters\": [], \"datasource\": \"19__table\", \"entity\": \"state_iso\", \"extra_form_data\": {}, \"granularity_sqla\": null, \"linear_color_scheme\": \"superset_seq_1\", \"metric\": \"% no enrollemnt\", \"number_format\": \"SMART_NUMBER\", \"select_country\": \"usa\", \"slice_id\": 36, \"time_range\": \"No filter\", \"time_range_endpoints\": [\"inclusive\", \"exclusive\"], \"url_params\": {}, \"viz_type\": \"country_map\", \"remote_id\": 57, \"datasource_name\": \"qc_admissions\", \"schema\": \"medicare\", \"database_name\": \"DORIEH\", \"import_time\": 1703112362}",
+                            "query_context": "{\"datasource\":{\"id\":19,\"type\":\"table\"},\"force\":false,\"queries\":[{\"time_range\":\"No filter\",\"granularity\":null,\"filters\":[],\"extras\":{\"time_range_endpoints\":[\"inclusive\",\"exclusive\"],\"having\":\"\",\"having_druid\":[],\"where\":\"\"},\"applied_time_extras\":{},\"columns\":[],\"metrics\":[\"% no enrollemnt\"],\"annotation_layers\":[],\"timeseries_limit\":0,\"order_desc\":true,\"url_params\":{},\"custom_params\":{},\"custom_form_data\":{}}],\"result_format\":\"json\",\"result_type\":\"full\"}",
+                            "slice_name": "Admissions with no enrollment by State",
+                            "viz_type": "country_map"
+                        }
+                    },
+                    {
+                        "__Slice__": {
+                            "cache_timeout": null,
+                            "datasource_name": "medicare.qc_admissions",
+                            "datasource_type": "table",
+                            "id": 58,
+                            "params": "{\"adhoc_filters\": [], \"bottom_margin\": \"auto\", \"color_scheme\": \"supersetColors\", \"columns\": [], \"datasource\": \"31__table\", \"extra_form_data\": {}, \"granularity_sqla\": null, \"groupby\": [\"year\"], \"metrics\": [\"invalid_records\"], \"order_bars\": true, \"order_desc\": false, \"row_limit\": 10000, \"show_bar_value\": true, \"slice_id\": 58, \"time_range\": \"No filter\", \"time_range_endpoints\": [\"inclusive\", \"exclusive\"], \"url_params\": {}, \"viz_type\": \"dist_bar\", \"x_ticks_layout\": \"auto\", \"y_axis_bounds\": [null, null], \"y_axis_format\": \"SMART_NUMBER\", \"remote_id\": 58, \"datasource_name\": \"qc_admissions\", \"schema\": \"medicare\", \"database_name\": \"DORIEH\"}",
+                            "query_context": "{\"datasource\":{\"id\":31,\"type\":\"table\"},\"force\":false,\"queries\":[{\"time_range\":\"No filter\",\"granularity\":null,\"filters\":[],\"extras\":{\"time_range_endpoints\":[\"inclusive\",\"exclusive\"],\"having\":\"\",\"having_druid\":[],\"where\":\"\"},\"applied_time_extras\":{},\"columns\":[\"year\"],\"metrics\":[\"invalid_records\"],\"annotation_layers\":[],\"row_limit\":10000,\"timeseries_limit\":0,\"order_desc\":false,\"url_params\":{},\"custom_params\":{},\"custom_form_data\":{}}],\"result_format\":\"json\",\"result_type\":\"full\"}",
+                            "slice_name": "Admissions QC by Year",
+                            "viz_type": "dist_bar"
+                        }
+                    },
+                    {
+                        "__Slice__": {
+                            "cache_timeout": null,
+                            "datasource_name": "medicare.qc_admissions",
+                            "datasource_type": "table",
+                            "id": 59,
+                            "params": "{\"adhoc_filters\": [], \"bottom_margin\": \"auto\", \"color_scheme\": \"supersetColors\", \"columns\": [], \"datasource\": \"19__table\", \"extra_form_data\": {}, \"granularity_sqla\": null, \"groupby\": [\"year\"], \"metrics\": [\"% duplicate admission  records\", \"% no enrollemnt\", \"% missing data\"], \"order_bars\": true, \"order_desc\": false, \"row_limit\": 10000, \"show_bar_value\": true, \"slice_id\": 38, \"time_range\": \"No filter\", \"time_range_endpoints\": [\"inclusive\", \"exclusive\"], \"url_params\": {}, \"viz_type\": \"dist_bar\", \"x_ticks_layout\": \"auto\", \"y_axis_bounds\": [null, null], \"y_axis_format\": \"SMART_NUMBER\", \"remote_id\": 59, \"datasource_name\": \"qc_admissions\", \"schema\": \"medicare\", \"database_name\": \"DORIEH\", \"import_time\": 1703112362}",
+                            "query_context": "{\"datasource\":{\"id\":19,\"type\":\"table\"},\"force\":false,\"queries\":[{\"time_range\":\"No filter\",\"granularity\":null,\"filters\":[],\"extras\":{\"time_range_endpoints\":[\"inclusive\",\"exclusive\"],\"having\":\"\",\"having_druid\":[],\"where\":\"\"},\"applied_time_extras\":{},\"columns\":[\"year\"],\"metrics\":[\"% duplicate admission  records\",\"% no enrollemnt\",\"% missing data\"],\"annotation_layers\":[],\"row_limit\":10000,\"timeseries_limit\":0,\"order_desc\":false,\"url_params\":{},\"custom_params\":{},\"custom_form_data\":{}}],\"result_format\":\"json\",\"result_type\":\"full\"}",
+                            "slice_name": "Admissions Issues by Year",
+                            "viz_type": "dist_bar"
+                        }
+                    },
+                    {
+                        "__Slice__": {
+                            "cache_timeout": null,
+                            "datasource_name": "medicare.qc_admissions",
+                            "datasource_type": "table",
+                            "id": 60,
+                            "params": "{\"adhoc_filters\": [], \"datasource\": \"19__table\", \"date_filter\": false, \"extra_form_data\": {}, \"filter_configs\": [{\"asc\": true, \"clearable\": true, \"column\": \"year\", \"key\": \"yYI3GzVxE\", \"multiple\": true, \"searchAllOptions\": false}, {\"asc\": true, \"clearable\": true, \"column\": \"state_iso\", \"key\": \"hMwRqVj0s\", \"label\": \"state\", \"multiple\": true, \"searchAllOptions\": false}], \"granularity_sqla\": null, \"instant_filtering\": true, \"slice_id\": 39, \"time_grain_sqla\": \"P1D\", \"time_range\": \"No filter\", \"time_range_endpoints\": [\"inclusive\", \"exclusive\"], \"url_params\": {}, \"viz_type\": \"filter_box\", \"remote_id\": 60, \"datasource_name\": \"qc_admissions\", \"schema\": \"medicare\", \"database_name\": \"DORIEH\", \"import_time\": 1703112362}",
+                            "query_context": "{\"datasource\":{\"id\":19,\"type\":\"table\"},\"force\":false,\"queries\":[{\"time_range\":\"No filter\",\"granularity\":null,\"filters\":[],\"extras\":{\"time_grain_sqla\":\"P1D\",\"time_range_endpoints\":[\"inclusive\",\"exclusive\"],\"having\":\"\",\"having_druid\":[],\"where\":\"\"},\"applied_time_extras\":{},\"columns\":[],\"metrics\":[],\"annotation_layers\":[],\"timeseries_limit\":0,\"order_desc\":true,\"url_params\":{},\"custom_params\":{},\"custom_form_data\":{}}],\"result_format\":\"json\",\"result_type\":\"full\"}",
+                            "slice_name": "Filter",
+                            "viz_type": "filter_box"
+                        }
+                    },
+                    {
+                        "__Slice__": {
+                            "cache_timeout": null,
+                            "datasource_name": "medicare.qc_admissions",
+                            "datasource_type": "table",
+                            "id": 61,
+                            "params": "{\"adhoc_filters\": [{\"clause\": \"WHERE\", \"comparator\": null, \"expressionType\": \"SIMPLE\", \"filterOptionName\": \"filter_m885mbxxtc_6yfeoh4xt9u\", \"isExtra\": false, \"isNew\": false, \"operator\": \"IS NOT NULL\", \"operatorId\": \"IS_NOT_NULL\", \"sqlExpression\": null, \"subject\": \"state_iso\"}], \"datasource\": \"19__table\", \"entity\": \"state_iso\", \"extra_form_data\": {}, \"granularity_sqla\": null, \"linear_color_scheme\": \"superset_seq_1\", \"metric\": \"count\", \"number_format\": \"SMART_NUMBER\", \"select_country\": \"usa\", \"time_range\": \"No filter\", \"time_range_endpoints\": [\"inclusive\", \"exclusive\"], \"url_params\": {}, \"viz_type\": \"country_map\", \"remote_id\": 61, \"datasource_name\": \"qc_admissions\", \"schema\": \"medicare\", \"database_name\": \"DORIEH\", \"import_time\": 1703112362}",
+                            "query_context": "{\"datasource\":{\"id\":19,\"type\":\"table\"},\"force\":false,\"queries\":[{\"time_range\":\"No filter\",\"granularity\":null,\"filters\":[{\"col\":\"state_iso\",\"op\":\"IS NOT NULL\"}],\"extras\":{\"time_range_endpoints\":[\"inclusive\",\"exclusive\"],\"having\":\"\",\"having_druid\":[],\"where\":\"\"},\"applied_time_extras\":{},\"columns\":[],\"metrics\":[\"count\"],\"annotation_layers\":[],\"timeseries_limit\":0,\"order_desc\":true,\"url_params\":{},\"custom_params\":{},\"custom_form_data\":{}}],\"result_format\":\"json\",\"result_type\":\"full\"}",
+                            "slice_name": "Beneficiaries/Admissions by State",
+                            "viz_type": "country_map"
+                        }
+                    },
+                    {
+                        "__Slice__": {
+                            "cache_timeout": null,
+                            "datasource_name": "medicare.qc_admissions",
+                            "datasource_type": "table",
+                            "id": 62,
+                            "params": "{\"adhoc_filters\": [], \"bottom_margin\": \"auto\", \"color_scheme\": \"supersetColors\", \"columns\": [], \"datasource\": \"19__table\", \"extra_form_data\": {}, \"granularity_sqla\": null, \"groupby\": [\"year\"], \"metrics\": [\"Bene cardinality\"], \"order_bars\": true, \"order_desc\": true, \"row_limit\": 10000, \"show_bar_value\": true, \"slice_id\": 41, \"time_range\": \"No filter\", \"time_range_endpoints\": [\"inclusive\", \"exclusive\"], \"url_params\": {}, \"viz_type\": \"dist_bar\", \"x_ticks_layout\": \"auto\", \"y_axis_bounds\": [null, null], \"y_axis_format\": \"SMART_NUMBER\", \"remote_id\": 62, \"datasource_name\": \"qc_admissions\", \"schema\": \"medicare\", \"database_name\": \"DORIEH\", \"import_time\": 1703112362}",
+                            "query_context": "{\"datasource\":{\"id\":19,\"type\":\"table\"},\"force\":false,\"queries\":[{\"time_range\":\"No filter\",\"granularity\":null,\"filters\":[],\"extras\":{\"time_range_endpoints\":[\"inclusive\",\"exclusive\"],\"having\":\"\",\"having_druid\":[],\"where\":\"\"},\"applied_time_extras\":{},\"columns\":[\"year\"],\"metrics\":[\"Bene cardinality\"],\"annotation_layers\":[],\"row_limit\":10000,\"timeseries_limit\":0,\"order_desc\":true,\"url_params\":{},\"custom_params\":{},\"custom_form_data\":{}}],\"result_format\":\"json\",\"result_type\":\"full\"}",
+                            "slice_name": "Beneficiaries, admitted by Year",
+                            "viz_type": "dist_bar"
+                        }
+                    },
+                    {
+                        "__Slice__": {
+                            "cache_timeout": null,
+                            "datasource_name": "medicare.beneficiaries",
+                            "datasource_type": "table",
+                            "id": 65,
+                            "params": "{\"adhoc_filters\": [{\"clause\": \"WHERE\", \"comparator\": \"2015\", \"expressionType\": \"SIMPLE\", \"filterOptionName\": \"filter_7ohofln7x4_zc4vdf8uc7j\", \"isExtra\": false, \"isNew\": false, \"operator\": \"<\", \"operatorId\": \"LESS_THAN\", \"sqlExpression\": null, \"subject\": \"last_enrollment_year\"}, {\"clause\": \"WHERE\", \"comparator\": \"0\", \"expressionType\": \"SIMPLE\", \"filterOptionName\": \"filter_m9h6v1xckg9_xj92elnx2vn\", \"isExtra\": false, \"isNew\": false, \"operator\": \">\", \"operatorId\": \"GREATER_THAN\", \"sqlExpression\": null, \"subject\": \"number_of_gap_years\"}], \"bar_stacked\": true, \"bottom_margin\": \"auto\", \"color_scheme\": \"supersetColors\", \"columns\": [\"orec\"], \"datasource\": \"14__table\", \"extra_form_data\": {}, \"granularity_sqla\": \"dob\", \"groupby\": [\"number_of_gap_years\"], \"metrics\": [\"count\"], \"order_desc\": true, \"row_limit\": 10000, \"show_legend\": true, \"slice_id\": 44, \"time_range\": \"No filter\", \"time_range_endpoints\": [\"inclusive\", \"exclusive\"], \"url_params\": {}, \"viz_type\": \"dist_bar\", \"x_ticks_layout\": \"auto\", \"y_axis_bounds\": [null, null], \"y_axis_format\": \"SMART_NUMBER\", \"remote_id\": 65, \"datasource_name\": \"beneficiaries\", \"schema\": \"medicare\", \"database_name\": \"DORIEH\", \"import_time\": 1703112362}",
+                            "query_context": "{\"datasource\":{\"id\":14,\"type\":\"table\"},\"force\":false,\"queries\":[{\"time_range\":\"No filter\",\"granularity\":\"dob\",\"filters\":[{\"col\":\"last_enrollment_year\",\"op\":\"<\",\"val\":\"2015\"},{\"col\":\"number_of_gap_years\",\"op\":\">\",\"val\":\"0\"}],\"extras\":{\"time_range_endpoints\":[\"inclusive\",\"exclusive\"],\"having\":\"\",\"having_druid\":[],\"where\":\"\"},\"applied_time_extras\":{},\"columns\":[\"number_of_gap_years\",\"orec\"],\"metrics\":[\"count\"],\"annotation_layers\":[],\"row_limit\":10000,\"timeseries_limit\":0,\"order_desc\":true,\"url_params\":{},\"custom_params\":{},\"custom_form_data\":{}}],\"result_format\":\"json\",\"result_type\":\"full\"}",
+                            "slice_name": "BeneficiaryGapYears",
+                            "viz_type": "dist_bar"
+                        }
+                    },
+                    {
+                        "__Slice__": {
+                            "cache_timeout": null,
+                            "datasource_name": "medicare.beneficiaries",
+                            "datasource_type": "table",
+                            "id": 66,
+                            "params": "{\"adhoc_filters\": [{\"clause\": \"WHERE\", \"comparator\": \"2015\", \"expressionType\": \"SIMPLE\", \"filterOptionName\": \"filter_7ohofln7x4_zc4vdf8uc7j\", \"isExtra\": false, \"isNew\": false, \"operator\": \"<\", \"operatorId\": \"LESS_THAN\", \"sqlExpression\": null, \"subject\": \"last_enrollment_year\"}, {\"clause\": \"WHERE\", \"comparator\": \"0\", \"expressionType\": \"SIMPLE\", \"filterOptionName\": \"filter_m9h6v1xckg9_xj92elnx2vn\", \"isExtra\": false, \"isNew\": false, \"operator\": \">\", \"operatorId\": \"GREATER_THAN\", \"sqlExpression\": null, \"subject\": \"number_of_gap_years\"}], \"bar_stacked\": true, \"bottom_margin\": \"auto\", \"color_scheme\": \"supersetColors\", \"columns\": [\"orec\"], \"contribution\": false, \"datasource\": \"14__table\", \"extra_form_data\": {}, \"granularity_sqla\": \"dob\", \"groupby\": [\"number_of_gap_years\"], \"metrics\": [{\"aggregate\": null, \"column\": null, \"expressionType\": \"SQL\", \"hasCustomLabel\": false, \"isNew\": false, \"label\": \"COUNT(*)::float /\\ncount_rows('medicare',...\", \"optionName\": \"metric_qjpic40f43_7wj6ap02g7n\", \"sqlExpression\": \"COUNT(*)::float /\\ncount_rows('medicare', 'beneficiaries', 'orec', orec)\"}], \"order_desc\": true, \"row_limit\": 10000, \"show_legend\": true, \"slice_id\": 45, \"time_range\": \"No filter\", \"time_range_endpoints\": [\"inclusive\", \"exclusive\"], \"url_params\": {}, \"viz_type\": \"dist_bar\", \"x_ticks_layout\": \"auto\", \"y_axis_bounds\": [null, null], \"y_axis_format\": \"SMART_NUMBER\", \"remote_id\": 66, \"datasource_name\": \"beneficiaries\", \"schema\": \"medicare\", \"database_name\": \"DORIEH\", \"import_time\": 1703112362}",
+                            "query_context": "{\"datasource\":{\"id\":14,\"type\":\"table\"},\"force\":false,\"queries\":[{\"time_range\":\"No filter\",\"granularity\":\"dob\",\"filters\":[{\"col\":\"last_enrollment_year\",\"op\":\"<\",\"val\":\"2015\"},{\"col\":\"number_of_gap_years\",\"op\":\">\",\"val\":\"0\"}],\"extras\":{\"time_range_endpoints\":[\"inclusive\",\"exclusive\"],\"having\":\"\",\"having_druid\":[],\"where\":\"\"},\"applied_time_extras\":{},\"columns\":[\"number_of_gap_years\",\"orec\"],\"metrics\":[{\"aggregate\":null,\"column\":null,\"expressionType\":\"SQL\",\"hasCustomLabel\":false,\"isNew\":false,\"label\":\"COUNT(*)::float /\\ncount_rows('medicare',...\",\"optionName\":\"metric_qjpic40f43_7wj6ap02g7n\",\"sqlExpression\":\"COUNT(*)::float /\\ncount_rows('medicare', 'beneficiaries', 'orec', orec)\"}],\"annotation_layers\":[],\"row_limit\":10000,\"timeseries_limit\":0,\"order_desc\":true,\"url_params\":{},\"custom_params\":{},\"custom_form_data\":{}}],\"result_format\":\"json\",\"result_type\":\"full\"}",
+                            "slice_name": "BeneficiaryGapYearsByOREC",
+                            "viz_type": "dist_bar"
+                        }
+                    },
+                    {
+                        "__Slice__": {
+                            "cache_timeout": null,
+                            "datasource_name": "medicare.enrollments",
+                            "datasource_type": "table",
+                            "id": 67,
+                            "params": "{\"adhoc_filters\": [{\"clause\": \"WHERE\", \"comparator\": false, \"expressionType\": \"SIMPLE\", \"filterOptionName\": \"filter_cyjo6hl8v1p_w4f4owvp7o\", \"isExtra\": false, \"isNew\": false, \"operator\": \"==\", \"operatorId\": \"IS_FALSE\", \"sqlExpression\": null, \"subject\": \"fips3_valdiated\"}], \"bottom_margin\": \"auto\", \"color_scheme\": \"supersetColors\", \"columns\": [], \"datasource\": \"26__table\", \"extra_form_data\": {}, \"groupby\": [\"year\"], \"metrics\": [{\"aggregate\": null, \"column\": null, \"expressionType\": \"SQL\", \"hasCustomLabel\": false, \"isNew\": false, \"label\": \"COUNT(*)\", \"optionName\": \"metric_hfbgbbkrt0a_h00sza1ujm6\", \"sqlExpression\": \"COUNT(*)\"}], \"order_desc\": false, \"row_limit\": 10000, \"time_range\": \"No filter\", \"time_range_endpoints\": [\"inclusive\", \"exclusive\"], \"url_params\": {}, \"viz_type\": \"dist_bar\", \"x_ticks_layout\": \"auto\", \"y_axis_bounds\": [null, null], \"y_axis_format\": \"SMART_NUMBER\", \"remote_id\": 67, \"datasource_name\": \"enrollments\", \"schema\": \"medicare\", \"database_name\": \"DORIEH\"}",
+                            "query_context": "{\"datasource\":{\"id\":26,\"type\":\"table\"},\"force\":false,\"queries\":[{\"time_range\":\"No filter\",\"filters\":[{\"col\":\"fips3_valdiated\",\"op\":\"==\",\"val\":false}],\"extras\":{\"time_range_endpoints\":[\"inclusive\",\"exclusive\"],\"having\":\"\",\"having_druid\":[],\"where\":\"\"},\"applied_time_extras\":{},\"columns\":[\"year\"],\"metrics\":[{\"expressionType\":\"SQL\",\"sqlExpression\":\"COUNT(*)\",\"column\":null,\"aggregate\":null,\"isNew\":false,\"hasCustomLabel\":false,\"label\":\"COUNT(*)\",\"optionName\":\"metric_hfbgbbkrt0a_h00sza1ujm6\"}],\"annotation_layers\":[],\"row_limit\":10000,\"timeseries_limit\":0,\"order_desc\":false,\"url_params\":{},\"custom_params\":{},\"custom_form_data\":{}}],\"result_format\":\"json\",\"result_type\":\"full\"}",
+                            "slice_name": "InvalidZIP",
+                            "viz_type": "dist_bar"
+                        }
+                    },
+                    {
+                        "__Slice__": {
+                            "cache_timeout": null,
+                            "datasource_name": "medicare.qc_enrollments",
+                            "datasource_type": "table",
+                            "id": 68,
+                            "params": "{\"adhoc_filters\": [], \"bottom_margin\": \"auto\", \"color_scheme\": \"supersetColors\", \"columns\": [], \"datasource\": \"25__table\", \"extra_form_data\": {}, \"granularity_sqla\": null, \"groupby\": [\"year\"], \"metrics\": [\"inconsistent_zip\"], \"order_bars\": true, \"order_desc\": true, \"row_limit\": 10000, \"show_bar_value\": true, \"slice_id\": 68, \"time_range\": \"No filter\", \"time_range_endpoints\": [\"inclusive\", \"exclusive\"], \"url_params\": {}, \"viz_type\": \"dist_bar\", \"x_ticks_layout\": \"auto\", \"y_axis_bounds\": [null, null], \"y_axis_format\": \"SMART_NUMBER\", \"remote_id\": 68, \"datasource_name\": \"qc_enrollments\", \"schema\": \"medicare\", \"database_name\": \"DORIEH\"}",
+                            "query_context": "{\"datasource\":{\"id\":25,\"type\":\"table\"},\"force\":false,\"queries\":[{\"time_range\":\"No filter\",\"granularity\":null,\"filters\":[],\"extras\":{\"time_range_endpoints\":[\"inclusive\",\"exclusive\"],\"having\":\"\",\"having_druid\":[],\"where\":\"\"},\"applied_time_extras\":{},\"columns\":[\"year\"],\"metrics\":[\"inconsistent_zip\"],\"annotation_layers\":[],\"row_limit\":10000,\"timeseries_limit\":0,\"order_desc\":true,\"url_params\":{},\"custom_params\":{},\"custom_form_data\":{}}],\"result_format\":\"json\",\"result_type\":\"full\"}",
+                            "slice_name": "ZIP/County Consistency By Year",
+                            "viz_type": "dist_bar"
+                        }
+                    },
+                    {
+                        "__Slice__": {
+                            "cache_timeout": null,
+                            "datasource_name": "medicare.qc_enrollments",
+                            "datasource_type": "table",
+                            "id": 69,
+                            "params": "{\"adhoc_filters\": [], \"datasource\": \"25__table\", \"entity\": \"state_iso\", \"extra_form_data\": {}, \"granularity_sqla\": null, \"linear_color_scheme\": \"superset_seq_1\", \"metric\": \"inconsistent_beneficiaries\", \"number_format\": \"SMART_NUMBER\", \"select_country\": \"usa\", \"time_range\": \"No filter\", \"time_range_endpoints\": [\"inclusive\", \"exclusive\"], \"url_params\": {}, \"viz_type\": \"country_map\", \"remote_id\": 69, \"datasource_name\": \"qc_enrollments\", \"schema\": \"medicare\", \"database_name\": \"DORIEH\"}",
+                            "query_context": "{\"datasource\":{\"id\":25,\"type\":\"table\"},\"force\":false,\"queries\":[{\"time_range\":\"No filter\",\"granularity\":null,\"filters\":[],\"extras\":{\"time_range_endpoints\":[\"inclusive\",\"exclusive\"],\"having\":\"\",\"having_druid\":[],\"where\":\"\"},\"applied_time_extras\":{},\"columns\":[],\"metrics\":[\"inconsistent_beneficiaries\"],\"annotation_layers\":[],\"timeseries_limit\":0,\"order_desc\":true,\"url_params\":{},\"custom_params\":{},\"custom_form_data\":{}}],\"result_format\":\"json\",\"result_type\":\"full\"}",
+                            "slice_name": "Enrollments Consistency By State (Clean)",
+                            "viz_type": "country_map"
+                        }
+                    },
+                    {
+                        "__Slice__": {
+                            "cache_timeout": null,
+                            "datasource_name": "medicare.qc_enrollments",
+                            "datasource_type": "table",
+                            "id": 70,
+                            "params": "{\"adhoc_filters\": [], \"bottom_margin\": \"auto\", \"color_scheme\": \"supersetColors\", \"columns\": [], \"datasource\": \"25__table\", \"extra_form_data\": {}, \"granularity_sqla\": null, \"groupby\": [\"year\"], \"metrics\": [\"inconsistent_beneficiaries\"], \"order_bars\": true, \"order_desc\": true, \"row_limit\": 10000, \"show_bar_value\": true, \"time_range\": \"No filter\", \"time_range_endpoints\": [\"inclusive\", \"exclusive\"], \"url_params\": {}, \"viz_type\": \"dist_bar\", \"x_ticks_layout\": \"auto\", \"y_axis_bounds\": [null, null], \"y_axis_format\": \"SMART_NUMBER\", \"remote_id\": 70, \"datasource_name\": \"qc_enrollments\", \"schema\": \"medicare\", \"database_name\": \"DORIEH\"}",
+                            "query_context": "{\"datasource\":{\"id\":25,\"type\":\"table\"},\"force\":false,\"queries\":[{\"time_range\":\"No filter\",\"granularity\":null,\"filters\":[],\"extras\":{\"time_range_endpoints\":[\"inclusive\",\"exclusive\"],\"having\":\"\",\"having_druid\":[],\"where\":\"\"},\"applied_time_extras\":{},\"columns\":[\"year\"],\"metrics\":[\"inconsistent_beneficiaries\"],\"annotation_layers\":[],\"row_limit\":10000,\"timeseries_limit\":0,\"order_desc\":true,\"url_params\":{},\"custom_params\":{},\"custom_form_data\":{}}],\"result_format\":\"json\",\"result_type\":\"full\"}",
+                            "slice_name": "Enrollments Consistency By Year (clean)",
+                            "viz_type": "dist_bar"
+                        }
+                    },
+                    {
+                        "__Slice__": {
+                            "cache_timeout": null,
+                            "datasource_name": "medicare.beneficiaries",
+                            "datasource_type": "table",
+                            "id": 71,
+                            "params": "{\"adhoc_filters\": [{\"clause\": \"WHERE\", \"comparator\": null, \"expressionType\": \"SIMPLE\", \"filterOptionName\": \"filter_lfkgt6k9o6q_nn4caeuyx3k\", \"isExtra\": false, \"isNew\": false, \"operator\": \"IS NOT NULL\", \"operatorId\": \"IS_NOT_NULL\", \"sqlExpression\": null, \"subject\": \"dob_latest\"}, {\"clause\": \"WHERE\", \"comparator\": \"65\", \"expressionType\": \"SIMPLE\", \"filterOptionName\": \"filter_ko3xb5ufwrl_10982tjoefqf\", \"isExtra\": false, \"isNew\": false, \"operator\": \"<\", \"operatorId\": \"LESS_THAN\", \"sqlExpression\": null, \"subject\": \"dob_diff_days\"}], \"bottom_margin\": \"auto\", \"color_scheme\": \"supersetColors\", \"columns\": [], \"datasource\": \"24__table\", \"extra_form_data\": {}, \"granularity_sqla\": \"dob\", \"groupby\": [\"dob_diff_days\"], \"metrics\": [\"count\"], \"order_bars\": true, \"order_desc\": false, \"row_limit\": 10000, \"show_bar_value\": false, \"show_controls\": true, \"slice_id\": 71, \"time_range\": \"No filter\", \"time_range_endpoints\": [\"inclusive\", \"exclusive\"], \"url_params\": {}, \"viz_type\": \"dist_bar\", \"x_ticks_layout\": \"auto\", \"y_axis_bounds\": [null, null], \"y_axis_format\": \"SMART_NUMBER\", \"remote_id\": 71, \"datasource_name\": \"beneficiaries\", \"schema\": \"medicare\", \"database_name\": \"DORIEH\"}",
+                            "query_context": "{\"datasource\":{\"id\":24,\"type\":\"table\"},\"force\":false,\"queries\":[{\"time_range\":\"No filter\",\"granularity\":\"dob\",\"filters\":[{\"col\":\"dob_latest\",\"op\":\"IS NOT NULL\"},{\"col\":\"dob_diff_days\",\"op\":\"<\",\"val\":\"65\"}],\"extras\":{\"time_range_endpoints\":[\"inclusive\",\"exclusive\"],\"having\":\"\",\"having_druid\":[],\"where\":\"\"},\"applied_time_extras\":{},\"columns\":[\"dob_diff_days\"],\"metrics\":[\"count\"],\"annotation_layers\":[],\"row_limit\":10000,\"timeseries_limit\":0,\"order_desc\":false,\"url_params\":{},\"custom_params\":{},\"custom_form_data\":{}}],\"result_format\":\"json\",\"result_type\":\"full\"}",
+                            "slice_name": "Discrepancies in DOB (up to two months)",
+                            "viz_type": "dist_bar"
+                        }
+                    },
+                    {
+                        "__Slice__": {
+                            "cache_timeout": null,
+                            "datasource_name": "medicare.beneficiaries",
+                            "datasource_type": "table",
+                            "id": 72,
+                            "params": "{\"adhoc_filters\": [{\"clause\": \"WHERE\", \"comparator\": null, \"expressionType\": \"SIMPLE\", \"filterOptionName\": \"filter_lfkgt6k9o6q_nn4caeuyx3k\", \"isExtra\": false, \"isNew\": false, \"operator\": \"IS NOT NULL\", \"operatorId\": \"IS_NOT_NULL\", \"sqlExpression\": null, \"subject\": \"dob_latest\"}, {\"clause\": \"WHERE\", \"comparator\": \"35\", \"expressionType\": \"SIMPLE\", \"filterOptionName\": \"filter_9u4b5cumgob_qdce78l40qj\", \"isExtra\": false, \"isNew\": false, \"operator\": \">\", \"operatorId\": \"GREATER_THAN\", \"sqlExpression\": null, \"subject\": \"dob_diff_days\"}], \"bottom_margin\": \"auto\", \"color_scheme\": \"supersetColors\", \"columns\": [], \"datasource\": \"24__table\", \"extra_form_data\": {}, \"granularity_sqla\": \"dob\", \"groupby\": [\"dob_diff_in_decades\"], \"metrics\": [\"count\"], \"order_bars\": true, \"order_desc\": false, \"row_limit\": 10000, \"show_bar_value\": false, \"show_controls\": true, \"slice_id\": 72, \"time_range\": \"No filter\", \"time_range_endpoints\": [\"inclusive\", \"exclusive\"], \"url_params\": {}, \"viz_type\": \"dist_bar\", \"x_ticks_layout\": \"auto\", \"y_axis_bounds\": [null, null], \"y_axis_format\": \"SMART_NUMBER\", \"remote_id\": 72, \"datasource_name\": \"beneficiaries\", \"schema\": \"medicare\", \"database_name\": \"DORIEH\"}",
+                            "query_context": "{\"datasource\":{\"id\":24,\"type\":\"table\"},\"force\":false,\"queries\":[{\"time_range\":\"No filter\",\"granularity\":\"dob\",\"filters\":[{\"col\":\"dob_latest\",\"op\":\"IS NOT NULL\"},{\"col\":\"dob_diff_days\",\"op\":\">\",\"val\":\"35\"}],\"extras\":{\"time_range_endpoints\":[\"inclusive\",\"exclusive\"],\"having\":\"\",\"having_druid\":[],\"where\":\"\"},\"applied_time_extras\":{},\"columns\":[\"dob_diff_in_decades\"],\"metrics\":[\"count\"],\"annotation_layers\":[],\"row_limit\":10000,\"timeseries_limit\":0,\"order_desc\":false,\"url_params\":{},\"custom_params\":{},\"custom_form_data\":{}}],\"result_format\":\"json\",\"result_type\":\"full\"}",
+                            "slice_name": "Discrepancies in DOB (more than 1 month)",
+                            "viz_type": "dist_bar"
+                        }
+                    }
+                ],
+                "slug": null
+            }
+        }
+    ],
+    "datasources": [
+        {
+            "__SqlaTable__": {
+                "cache_timeout": null,
+                "columns": [
+                    {
+                        "__TableColumn__": {
+                            "changed_by_fk": null,
+                            "changed_on": {
+                                "__datetime__": "2023-12-20T04:58:46"
+                            },
+                            "column_name": "fips3_is_approximated",
+                            "created_by_fk": null,
+                            "created_on": {
+                                "__datetime__": "2023-12-20T04:58:46"
+                            },
+                            "description": null,
+                            "expression": null,
+                            "extra": "{}",
+                            "filterable": true,
+                            "groupby": true,
+                            "id": 304,
+                            "is_active": true,
+                            "is_dttm": false,
+                            "python_date_format": null,
+                            "table_id": 25,
+                            "type": "BOOLEAN",
+                            "uuid": "6993bf60-c2fa-44cf-b0de-0d6399b5d4c3",
+                            "verbose_name": null
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "changed_by_fk": null,
+                            "changed_on": {
+                                "__datetime__": "2023-12-20T04:58:46"
+                            },
+                            "column_name": "fips3_valdiated",
+                            "created_by_fk": null,
+                            "created_on": {
+                                "__datetime__": "2023-12-20T04:58:46"
+                            },
+                            "description": null,
+                            "expression": null,
+                            "extra": "{}",
+                            "filterable": true,
+                            "groupby": true,
+                            "id": 305,
+                            "is_active": true,
+                            "is_dttm": false,
+                            "python_date_format": null,
+                            "table_id": 25,
+                            "type": "BOOLEAN",
+                            "uuid": "1a3d2638-17a5-464f-bb21-27838fe23435",
+                            "verbose_name": null
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "changed_by_fk": null,
+                            "changed_on": {
+                                "__datetime__": "2023-12-20T04:58:46"
+                            },
+                            "column_name": "fips3",
+                            "created_by_fk": null,
+                            "created_on": {
+                                "__datetime__": "2023-12-20T04:58:46"
+                            },
+                            "description": null,
+                            "expression": null,
+                            "extra": "{}",
+                            "filterable": true,
+                            "groupby": true,
+                            "id": 306,
+                            "is_active": true,
+                            "is_dttm": false,
+                            "python_date_format": null,
+                            "table_id": 25,
+                            "type": "TEXT",
+                            "uuid": "165c7c02-eba1-4c6b-9f78-f9db4c5b31b2",
+                            "verbose_name": null
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "changed_by_fk": null,
+                            "changed_on": {
+                                "__datetime__": "2023-12-20T04:58:46"
+                            },
+                            "column_name": "state",
+                            "created_by_fk": null,
+                            "created_on": {
+                                "__datetime__": "2023-12-20T04:58:46"
+                            },
+                            "description": null,
+                            "expression": null,
+                            "extra": "{}",
+                            "filterable": true,
+                            "groupby": true,
+                            "id": 307,
+                            "is_active": true,
+                            "is_dttm": false,
+                            "python_date_format": null,
+                            "table_id": 25,
+                            "type": "VARCHAR",
+                            "uuid": "8bd91f3f-0102-456d-a934-61df6fb124b4",
+                            "verbose_name": null
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "changed_by_fk": null,
+                            "changed_on": {
+                                "__datetime__": "2023-12-20T04:58:46"
+                            },
+                            "column_name": "numdistinctbeneficaries",
+                            "created_by_fk": null,
+                            "created_on": {
+                                "__datetime__": "2023-12-20T04:58:46"
+                            },
+                            "description": null,
+                            "expression": null,
+                            "extra": "{}",
+                            "filterable": true,
+                            "groupby": true,
+                            "id": 308,
+                            "is_active": true,
+                            "is_dttm": false,
+                            "python_date_format": null,
+                            "table_id": 25,
+                            "type": "BIGINT",
+                            "uuid": "16d07a50-14da-4d2f-b357-29487afcfcec",
+                            "verbose_name": null
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "changed_by_fk": null,
+                            "changed_on": {
+                                "__datetime__": "2023-12-20T04:58:46"
+                            },
+                            "column_name": "numrecords",
+                            "created_by_fk": null,
+                            "created_on": {
+                                "__datetime__": "2023-12-20T04:58:46"
+                            },
+                            "description": null,
+                            "expression": null,
+                            "extra": "{}",
+                            "filterable": true,
+                            "groupby": true,
+                            "id": 309,
+                            "is_active": true,
+                            "is_dttm": false,
+                            "python_date_format": null,
+                            "table_id": 25,
+                            "type": "BIGINT",
+                            "uuid": "7b47f331-c1b2-4229-9bca-4897ddc89811",
+                            "verbose_name": null
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "changed_by_fk": null,
+                            "changed_on": {
+                                "__datetime__": "2023-12-20T04:58:46"
+                            },
+                            "column_name": "year",
+                            "created_by_fk": null,
+                            "created_on": {
+                                "__datetime__": "2023-12-20T04:58:46"
+                            },
+                            "description": null,
+                            "expression": null,
+                            "extra": "{}",
+                            "filterable": true,
+                            "groupby": true,
+                            "id": 310,
+                            "is_active": true,
+                            "is_dttm": false,
+                            "python_date_format": null,
+                            "table_id": 25,
+                            "type": "INTEGER",
+                            "uuid": "3ca5cef8-3aa5-4a01-ae85-c3fe5ee295d8",
+                            "verbose_name": null
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "changed_by_fk": null,
+                            "changed_on": {
+                                "__datetime__": "2023-12-20T04:58:46"
+                            },
+                            "column_name": "zip",
+                            "created_by_fk": null,
+                            "created_on": {
+                                "__datetime__": "2023-12-20T04:58:46"
+                            },
+                            "description": null,
+                            "expression": null,
+                            "extra": "{}",
+                            "filterable": true,
+                            "groupby": true,
+                            "id": 311,
+                            "is_active": true,
+                            "is_dttm": false,
+                            "python_date_format": null,
+                            "table_id": 25,
+                            "type": "INTEGER",
+                            "uuid": "cc38e502-4fa3-43d2-8111-301ea1e7f1af",
+                            "verbose_name": null
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "changed_by_fk": null,
+                            "changed_on": {
+                                "__datetime__": "2023-12-20T04:58:46"
+                            },
+                            "column_name": "consistent_race",
+                            "created_by_fk": null,
+                            "created_on": {
+                                "__datetime__": "2023-12-20T04:58:46"
+                            },
+                            "description": null,
+                            "expression": null,
+                            "extra": "{}",
+                            "filterable": true,
+                            "groupby": true,
+                            "id": 312,
+                            "is_active": true,
+                            "is_dttm": false,
+                            "python_date_format": null,
+                            "table_id": 25,
+                            "type": "TEXT",
+                            "uuid": "0c71cd84-1639-4db3-92f1-ae38695fc1dc",
+                            "verbose_name": null
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "changed_by_fk": null,
+                            "changed_on": {
+                                "__datetime__": "2023-12-20T04:58:46"
+                            },
+                            "column_name": "state_iso",
+                            "created_by_fk": null,
+                            "created_on": {
+                                "__datetime__": "2023-12-20T04:58:46"
+                            },
+                            "description": null,
+                            "expression": null,
+                            "extra": "{}",
+                            "filterable": true,
+                            "groupby": true,
+                            "id": 313,
+                            "is_active": true,
+                            "is_dttm": false,
+                            "python_date_format": null,
+                            "table_id": 25,
+                            "type": "TEXT",
+                            "uuid": "a4270746-e382-4f42-b977-993f25022725",
+                            "verbose_name": null
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "changed_by_fk": null,
+                            "changed_on": {
+                                "__datetime__": "2023-12-20T04:58:46"
+                            },
+                            "column_name": "consistent_dob",
+                            "created_by_fk": null,
+                            "created_on": {
+                                "__datetime__": "2023-12-20T04:58:46"
+                            },
+                            "description": null,
+                            "expression": null,
+                            "extra": "{}",
+                            "filterable": true,
+                            "groupby": true,
+                            "id": 314,
+                            "is_active": true,
+                            "is_dttm": false,
+                            "python_date_format": null,
+                            "table_id": 25,
+                            "type": "TEXT",
+                            "uuid": "b82360b0-1e65-4912-b47d-950cb79bd4d7",
+                            "verbose_name": null
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "changed_by_fk": null,
+                            "changed_on": {
+                                "__datetime__": "2023-12-20T04:58:46"
+                            },
+                            "column_name": "consistent_dod",
+                            "created_by_fk": null,
+                            "created_on": {
+                                "__datetime__": "2023-12-20T04:58:46"
+                            },
+                            "description": null,
+                            "expression": null,
+                            "extra": "{}",
+                            "filterable": true,
+                            "groupby": true,
+                            "id": 315,
+                            "is_active": true,
+                            "is_dttm": false,
+                            "python_date_format": null,
+                            "table_id": 25,
+                            "type": "TEXT",
+                            "uuid": "efe26460-b662-4508-9c48-9efc298d395f",
+                            "verbose_name": null
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "changed_by_fk": null,
+                            "changed_on": {
+                                "__datetime__": "2023-12-20T04:58:46"
+                            },
+                            "column_name": "consistent_sex",
+                            "created_by_fk": null,
+                            "created_on": {
+                                "__datetime__": "2023-12-20T04:58:46"
+                            },
+                            "description": null,
+                            "expression": null,
+                            "extra": "{}",
+                            "filterable": true,
+                            "groupby": true,
+                            "id": 316,
+                            "is_active": true,
+                            "is_dttm": false,
+                            "python_date_format": null,
+                            "table_id": 25,
+                            "type": "TEXT",
+                            "uuid": "87b0c0fd-8d07-4b47-81ca-57af9485f404",
+                            "verbose_name": null
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "changed_by_fk": null,
+                            "changed_on": {
+                                "__datetime__": "2023-12-20T04:58:46"
+                            },
+                            "column_name": "bene_hll",
+                            "created_by_fk": null,
+                            "created_on": {
+                                "__datetime__": "2023-12-20T04:58:46"
+                            },
+                            "description": null,
+                            "expression": null,
+                            "extra": "{}",
+                            "filterable": true,
+                            "groupby": true,
+                            "id": 317,
+                            "is_active": true,
+                            "is_dttm": false,
+                            "python_date_format": null,
+                            "table_id": 25,
+                            "type": "UNKNOWN",
+                            "uuid": "a358a182-02a1-425c-ad34-dd7e30794f40",
+                            "verbose_name": null
+                        }
+                    }
+                ],
+                "database_id": 3,
+                "default_endpoint": null,
+                "description": null,
+                "extra": null,
+                "fetch_values_predicate": null,
+                "filter_select_enabled": false,
+                "main_dttm_col": null,
+                "metrics": [
+                    {
+                        "__SqlMetric__": {
+                            "changed_by_fk": null,
+                            "changed_on": {
+                                "__datetime__": "2023-12-20T04:58:46"
+                            },
+                            "created_by_fk": null,
+                            "created_on": {
+                                "__datetime__": "2023-12-20T04:58:46"
+                            },
+                            "d3format": null,
+                            "description": null,
+                            "expression": "SUM(numrecords)",
+                            "extra": "{\"warning_markdown\":\"\"}",
+                            "id": 53,
+                            "metric_name": "count",
+                            "metric_type": "count",
+                            "table_id": 25,
+                            "uuid": "2b0978d5-bcff-4a7e-afe5-9858a841db11",
+                            "verbose_name": "Number of enrollment records",
+                            "warning_text": null
+                        }
+                    },
+                    {
+                        "__SqlMetric__": {
+                            "changed_by_fk": null,
+                            "changed_on": {
+                                "__datetime__": "2023-12-20T04:58:46"
+                            },
+                            "created_by_fk": null,
+                            "created_on": {
+                                "__datetime__": "2023-12-20T04:58:46"
+                            },
+                            "d3format": null,
+                            "description": null,
+                            "expression": "(#(hll_union_agg(bene_hll)))::INT",
+                            "extra": "{\"warning_markdown\":\"\"}",
+                            "id": 54,
+                            "metric_name": "bene cardinality",
+                            "metric_type": null,
+                            "table_id": 25,
+                            "uuid": "092db56f-c9a0-4ea2-a91d-d33ceb348037",
+                            "verbose_name": "Number of distinct beneficiaries",
+                            "warning_text": null
+                        }
+                    },
+                    {
+                        "__SqlMetric__": {
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2023-12-20T23:38:29"
+                            },
+                            "created_by_fk": 1,
+                            "created_on": {
+                                "__datetime__": "2023-12-20T23:38:29"
+                            },
+                            "d3format": null,
+                            "description": null,
+                            "expression": "(SUM(numrecords) FILTER (WHERE fips3_valdiated))* 100.0  / (SUM(numrecords))",
+                            "extra": "{}",
+                            "id": 93,
+                            "metric_name": "consistent zip",
+                            "metric_type": null,
+                            "table_id": 25,
+                            "uuid": "75bc9cba-6737-459b-8dcf-719584eee460",
+                            "verbose_name": "% of records where zip code is consistent with county code",
+                            "warning_text": null
+                        }
+                    },
+                    {
+                        "__SqlMetric__": {
+                            "changed_by_fk": null,
+                            "changed_on": {
+                                "__datetime__": "2023-12-21T00:30:57"
+                            },
+                            "created_by_fk": null,
+                            "created_on": {
+                                "__datetime__": "2023-12-20T04:58:46"
+                            },
+                            "d3format": null,
+                            "description": null,
+                            "expression": "(#(hll_union_agg(bene_hll) FILTER (\n        WHERE consistent_dob = 'CONSISTENT'\n        AND consistent_dod <> 'AMBIGUOUS'\n        AND consistent_race = 'CONSISTENT'\n        AND consistent_sex = 'CONSISTENT'\n        ))\n        ) * 100.0 / (#(hll_union_agg(bene_hll)))",
+                            "extra": "{\"warning_markdown\":\"\"}",
+                            "id": 52,
+                            "metric_name": "consistent beneficiaries",
+                            "metric_type": null,
+                            "table_id": 25,
+                            "uuid": "c1eccc6d-3431-492f-a2b0-a47ec6cf2d9f",
+                            "verbose_name": "% of consistent beneficiaries",
+                            "warning_text": null
+                        }
+                    },
+                    {
+                        "__SqlMetric__": {
+                            "changed_by_fk": null,
+                            "changed_on": {
+                                "__datetime__": "2023-12-21T00:30:57"
+                            },
+                            "created_by_fk": null,
+                            "created_on": {
+                                "__datetime__": "2023-12-21T00:30:57"
+                            },
+                            "d3format": null,
+                            "description": null,
+                            "expression": "(#(hll_union_agg(bene_hll) FILTER (\n        WHERE consistent_dob <> 'CONSISTENT'\n        OR consistent_dod = 'AMBIGUOUS'\n        OR consistent_race <> 'CONSISTENT'\n        OR consistent_sex <> 'CONSISTENT'\n        ))\n        ) * 100.0 / (#(hll_union_agg(bene_hll)))",
+                            "extra": "{\"warning_markdown\":\"\"}",
+                            "id": 94,
+                            "metric_name": "inconsistent_beneficiaries",
+                            "metric_type": null,
+                            "table_id": 25,
+                            "uuid": "218e015d-c11f-44ce-98fa-d98fdf06b217",
+                            "verbose_name": "% of inconsistent beneficiaries",
+                            "warning_text": null
+                        }
+                    },
+                    {
+                        "__SqlMetric__": {
+                            "changed_by_fk": null,
+                            "changed_on": {
+                                "__datetime__": "2023-12-21T00:30:57"
+                            },
+                            "created_by_fk": null,
+                            "created_on": {
+                                "__datetime__": "2023-12-21T00:30:57"
+                            },
+                            "d3format": null,
+                            "description": null,
+                            "expression": "(SUM(numrecords) FILTER (WHERE NOT fips3_valdiated))* 100.0  / (SUM(numrecords))",
+                            "extra": "{}",
+                            "id": 95,
+                            "metric_name": "inconsistent_zip",
+                            "metric_type": null,
+                            "table_id": 25,
+                            "uuid": "ac409213-d449-4633-aa9b-357101321e00",
+                            "verbose_name": "% of records where zip code is inconsistent with county code",
+                            "warning_text": null
+                        }
+                    }
+                ],
+                "offset": 0,
+                "params": "{\"remote_id\": 25, \"database_name\": \"DORIEH\"}",
+                "schema": "medicare",
+                "sql": "",
+                "table_name": "qc_enrollments",
+                "template_params": null
+            }
+        },
+        {
+            "__SqlaTable__": {
+                "cache_timeout": null,
+                "columns": [
+                    {
+                        "__TableColumn__": {
+                            "changed_by_fk": null,
+                            "changed_on": {
+                                "__datetime__": "2023-12-20T04:58:48"
+                            },
+                            "column_name": "zip",
+                            "created_by_fk": null,
+                            "created_on": {
+                                "__datetime__": "2023-12-20T04:58:48"
+                            },
+                            "description": null,
+                            "expression": null,
+                            "extra": "{}",
+                            "filterable": true,
+                            "groupby": true,
+                            "id": 417,
+                            "is_active": true,
+                            "is_dttm": false,
+                            "python_date_format": null,
+                            "table_id": 31,
+                            "type": "INTEGER",
+                            "uuid": "6f54d494-8526-4be0-bacc-5e74c09c0d90",
+                            "verbose_name": null
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "changed_by_fk": null,
+                            "changed_on": {
+                                "__datetime__": "2023-12-20T04:58:48"
+                            },
+                            "column_name": "reason",
+                            "created_by_fk": null,
+                            "created_on": {
+                                "__datetime__": "2023-12-20T04:58:48"
+                            },
+                            "description": null,
+                            "expression": null,
+                            "extra": "{}",
+                            "filterable": true,
+                            "groupby": true,
+                            "id": 412,
+                            "is_active": true,
+                            "is_dttm": false,
+                            "python_date_format": null,
+                            "table_id": 31,
+                            "type": "VARCHAR",
+                            "uuid": "160115f8-a1b4-4494-af3b-b3d7ab88face",
+                            "verbose_name": null
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "changed_by_fk": null,
+                            "changed_on": {
+                                "__datetime__": "2023-12-20T04:58:48"
+                            },
+                            "column_name": "state",
+                            "created_by_fk": null,
+                            "created_on": {
+                                "__datetime__": "2023-12-20T04:58:48"
+                            },
+                            "description": null,
+                            "expression": null,
+                            "extra": "{}",
+                            "filterable": true,
+                            "groupby": true,
+                            "id": 413,
+                            "is_active": true,
+                            "is_dttm": false,
+                            "python_date_format": null,
+                            "table_id": 31,
+                            "type": "VARCHAR",
+                            "uuid": "bcc47d2a-72b0-4f7a-8599-c14f5985bdd6",
+                            "verbose_name": null
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "changed_by_fk": null,
+                            "changed_on": {
+                                "__datetime__": "2023-12-20T04:58:48"
+                            },
+                            "column_name": "numdistinctbeneficaries",
+                            "created_by_fk": null,
+                            "created_on": {
+                                "__datetime__": "2023-12-20T04:58:48"
+                            },
+                            "description": null,
+                            "expression": null,
+                            "extra": "{}",
+                            "filterable": true,
+                            "groupby": true,
+                            "id": 414,
+                            "is_active": true,
+                            "is_dttm": false,
+                            "python_date_format": null,
+                            "table_id": 31,
+                            "type": "BIGINT",
+                            "uuid": "77172c93-89a1-45fa-93e2-3765b245829a",
+                            "verbose_name": null
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "changed_by_fk": null,
+                            "changed_on": {
+                                "__datetime__": "2023-12-20T04:58:48"
+                            },
+                            "column_name": "numrecords",
+                            "created_by_fk": null,
+                            "created_on": {
+                                "__datetime__": "2023-12-20T04:58:48"
+                            },
+                            "description": null,
+                            "expression": null,
+                            "extra": "{}",
+                            "filterable": true,
+                            "groupby": true,
+                            "id": 415,
+                            "is_active": true,
+                            "is_dttm": false,
+                            "python_date_format": null,
+                            "table_id": 31,
+                            "type": "BIGINT",
+                            "uuid": "c86e4a97-53f6-45e2-935e-597c1347a7f2",
+                            "verbose_name": null
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "changed_by_fk": null,
+                            "changed_on": {
+                                "__datetime__": "2023-12-20T04:58:48"
+                            },
+                            "column_name": "year",
+                            "created_by_fk": null,
+                            "created_on": {
+                                "__datetime__": "2023-12-20T04:58:48"
+                            },
+                            "description": null,
+                            "expression": null,
+                            "extra": "{}",
+                            "filterable": true,
+                            "groupby": true,
+                            "id": 416,
+                            "is_active": true,
+                            "is_dttm": false,
+                            "python_date_format": null,
+                            "table_id": 31,
+                            "type": "INTEGER",
+                            "uuid": "b4e80fce-f411-4d63-a196-49379dc6c1ad",
+                            "verbose_name": null
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "changed_by_fk": null,
+                            "changed_on": {
+                                "__datetime__": "2023-12-20T04:58:48"
+                            },
+                            "column_name": "state_iso",
+                            "created_by_fk": null,
+                            "created_on": {
+                                "__datetime__": "2023-12-20T04:58:48"
+                            },
+                            "description": null,
+                            "expression": null,
+                            "extra": "{}",
+                            "filterable": true,
+                            "groupby": true,
+                            "id": 418,
+                            "is_active": true,
+                            "is_dttm": false,
+                            "python_date_format": null,
+                            "table_id": 31,
+                            "type": "UNKNOWN",
+                            "uuid": "aec696de-ebcc-44a0-a95a-f093182739f6",
+                            "verbose_name": null
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "changed_by_fk": null,
+                            "changed_on": {
+                                "__datetime__": "2023-12-20T04:58:48"
+                            },
+                            "column_name": "bene_hll",
+                            "created_by_fk": null,
+                            "created_on": {
+                                "__datetime__": "2023-12-20T04:58:48"
+                            },
+                            "description": null,
+                            "expression": null,
+                            "extra": "{}",
+                            "filterable": true,
+                            "groupby": true,
+                            "id": 419,
+                            "is_active": true,
+                            "is_dttm": false,
+                            "python_date_format": null,
+                            "table_id": 31,
+                            "type": "UNKNOWN",
+                            "uuid": "13e77698-55a1-403f-8e27-b3768ce3ba25",
+                            "verbose_name": null
+                        }
+                    }
+                ],
+                "database_id": 3,
+                "default_endpoint": null,
+                "description": null,
+                "extra": null,
+                "fetch_values_predicate": null,
+                "filter_select_enabled": false,
+                "main_dttm_col": null,
+                "metrics": [
+                    {
+                        "__SqlMetric__": {
+                            "changed_by_fk": null,
+                            "changed_on": {
+                                "__datetime__": "2023-12-20T04:58:48"
+                            },
+                            "created_by_fk": null,
+                            "created_on": {
+                                "__datetime__": "2023-12-20T04:58:48"
+                            },
+                            "d3format": null,
+                            "description": null,
+                            "expression": "(SUM(numrecords) FILTER (WHERE reason = 'DUPLICATE'))*100.0/SUM(numrecords)",
+                            "extra": "{\"warning_markdown\":\"\"}",
+                            "id": 71,
+                            "metric_name": "% duplicate admission  records",
+                            "metric_type": null,
+                            "table_id": 31,
+                            "uuid": "35d9bc69-db0b-4880-b53b-8c8ebd53878f",
+                            "verbose_name": "",
+                            "warning_text": null
+                        }
+                    },
+                    {
+                        "__SqlMetric__": {
+                            "changed_by_fk": null,
+                            "changed_on": {
+                                "__datetime__": "2023-12-20T04:58:48"
+                            },
+                            "created_by_fk": null,
+                            "created_on": {
+                                "__datetime__": "2023-12-20T04:58:48"
+                            },
+                            "d3format": null,
+                            "description": null,
+                            "expression": "(SUM(numrecords) FILTER (WHERE reason = 'PRIMARY KEY'))*100.0/SUM(numrecords)",
+                            "extra": "{\"warning_markdown\":\"\"}",
+                            "id": 72,
+                            "metric_name": "% missing data",
+                            "metric_type": null,
+                            "table_id": 31,
+                            "uuid": "8de4e96b-8c10-4f2a-a1f4-449b6ae35c0b",
+                            "verbose_name": "",
+                            "warning_text": null
+                        }
+                    },
+                    {
+                        "__SqlMetric__": {
+                            "changed_by_fk": null,
+                            "changed_on": {
+                                "__datetime__": "2023-12-20T04:58:48"
+                            },
+                            "created_by_fk": null,
+                            "created_on": {
+                                "__datetime__": "2023-12-20T04:58:48"
+                            },
+                            "d3format": null,
+                            "description": null,
+                            "expression": "(SUM(numrecords) FILTER (WHERE reason = 'FOREIGN KEY'))*100.0/SUM(numrecords)",
+                            "extra": "{\"warning_markdown\":\"\"}",
+                            "id": 73,
+                            "metric_name": "% no enrollemnt",
+                            "metric_type": null,
+                            "table_id": 31,
+                            "uuid": "35b2f12c-29df-48d3-bd6e-22e8296df21f",
+                            "verbose_name": "",
+                            "warning_text": null
+                        }
+                    },
+                    {
+                        "__SqlMetric__": {
+                            "changed_by_fk": null,
+                            "changed_on": {
+                                "__datetime__": "2023-12-20T04:58:48"
+                            },
+                            "created_by_fk": null,
+                            "created_on": {
+                                "__datetime__": "2023-12-20T04:58:48"
+                            },
+                            "d3format": null,
+                            "description": null,
+                            "expression": "(SUM(numrecords) FILTER (WHERE reason = 'OK'))*100.0/SUM(numrecords)",
+                            "extra": "{\"warning_markdown\":\"\"}",
+                            "id": 74,
+                            "metric_name": "% valid records",
+                            "metric_type": null,
+                            "table_id": 31,
+                            "uuid": "3ee71836-f388-444e-9408-2f9f65d804a1",
+                            "verbose_name": "",
+                            "warning_text": null
+                        }
+                    },
+                    {
+                        "__SqlMetric__": {
+                            "changed_by_fk": null,
+                            "changed_on": {
+                                "__datetime__": "2023-12-20T04:58:48"
+                            },
+                            "created_by_fk": null,
+                            "created_on": {
+                                "__datetime__": "2023-12-20T04:58:48"
+                            },
+                            "d3format": null,
+                            "description": null,
+                            "expression": "SUM(numrecords)",
+                            "extra": "{\"warning_markdown\":\"\"}",
+                            "id": 75,
+                            "metric_name": "count",
+                            "metric_type": "count",
+                            "table_id": 31,
+                            "uuid": "d92dbfa9-ff9c-43cf-8efe-c5a0d729cf39",
+                            "verbose_name": "Number of records",
+                            "warning_text": null
+                        }
+                    },
+                    {
+                        "__SqlMetric__": {
+                            "changed_by_fk": null,
+                            "changed_on": {
+                                "__datetime__": "2023-12-20T04:58:48"
+                            },
+                            "created_by_fk": null,
+                            "created_on": {
+                                "__datetime__": "2023-12-20T04:58:48"
+                            },
+                            "d3format": null,
+                            "description": null,
+                            "expression": "(#(hll_union_agg(bene_hll)))::INT",
+                            "extra": "{}",
+                            "id": 76,
+                            "metric_name": "Bene cardinality",
+                            "metric_type": null,
+                            "table_id": 31,
+                            "uuid": "2dd4b485-5b40-4be6-8705-2c8a1dbb73a4",
+                            "verbose_name": "Number of beneficiaries",
+                            "warning_text": null
+                        }
+                    },
+                    {
+                        "__SqlMetric__": {
+                            "changed_by_fk": null,
+                            "changed_on": {
+                                "__datetime__": "2023-12-21T00:56:17"
+                            },
+                            "created_by_fk": null,
+                            "created_on": {
+                                "__datetime__": "2023-12-21T00:56:17"
+                            },
+                            "d3format": null,
+                            "description": null,
+                            "expression": "(SUM(numrecords) FILTER (WHERE reason = 'OK'))*100.0/SUM(numrecords)",
+                            "extra": "{\"warning_markdown\":\"\"}",
+                            "id": 96,
+                            "metric_name": "valid_records",
+                            "metric_type": null,
+                            "table_id": 31,
+                            "uuid": "2fc02465-d6cf-4054-95eb-dafa43cc6b04",
+                            "verbose_name": "% valid records",
+                            "warning_text": null
+                        }
+                    },
+                    {
+                        "__SqlMetric__": {
+                            "changed_by_fk": null,
+                            "changed_on": {
+                                "__datetime__": "2023-12-21T00:56:17"
+                            },
+                            "created_by_fk": null,
+                            "created_on": {
+                                "__datetime__": "2023-12-21T00:56:17"
+                            },
+                            "d3format": null,
+                            "description": null,
+                            "expression": "(SUM(numrecords) FILTER (WHERE reason <> 'OK'))*100.0/SUM(numrecords)",
+                            "extra": "{\"warning_markdown\":\"\"}",
+                            "id": 97,
+                            "metric_name": "invalid_records",
+                            "metric_type": null,
+                            "table_id": 31,
+                            "uuid": "60e0f919-ef1f-4783-9696-fdb850bfae58",
+                            "verbose_name": "% invalid records",
+                            "warning_text": null
+                        }
+                    }
+                ],
+                "offset": 0,
+                "params": "{\"remote_id\": 31, \"database_name\": \"DORIEH\", \"import_time\": 1703112362}",
+                "schema": "medicare",
+                "sql": "",
+                "table_name": "qc_admissions",
+                "template_params": null
+            }
+        },
+        {
+            "__SqlaTable__": {
+                "cache_timeout": 86400,
+                "columns": [
+                    {
+                        "__TableColumn__": {
+                            "changed_by_fk": null,
+                            "changed_on": {
+                                "__datetime__": "2023-12-20T04:58:47"
+                            },
+                            "column_name": "state_iso",
+                            "created_by_fk": null,
+                            "created_on": {
+                                "__datetime__": "2023-12-20T04:58:47"
+                            },
+                            "description": null,
+                            "expression": null,
+                            "extra": "{}",
+                            "filterable": true,
+                            "groupby": true,
+                            "id": 337,
+                            "is_active": true,
+                            "is_dttm": false,
+                            "python_date_format": null,
+                            "table_id": 26,
+                            "type": "TEXT",
+                            "uuid": "57333b67-65db-43a9-bf2e-0aa1ce9c232c",
+                            "verbose_name": null
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "changed_by_fk": null,
+                            "changed_on": {
+                                "__datetime__": "2023-12-20T04:58:47"
+                            },
+                            "column_name": "residence_counties",
+                            "created_by_fk": null,
+                            "created_on": {
+                                "__datetime__": "2023-12-20T04:58:47"
+                            },
+                            "description": null,
+                            "expression": null,
+                            "extra": "{}",
+                            "filterable": true,
+                            "groupby": true,
+                            "id": 338,
+                            "is_active": true,
+                            "is_dttm": false,
+                            "python_date_format": null,
+                            "table_id": 26,
+                            "type": "TEXT",
+                            "uuid": "61272538-cc92-4340-9700-e369a41b893d",
+                            "verbose_name": null
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "changed_by_fk": null,
+                            "changed_on": {
+                                "__datetime__": "2023-12-20T04:58:47"
+                            },
+                            "column_name": "residence_county",
+                            "created_by_fk": null,
+                            "created_on": {
+                                "__datetime__": "2023-12-20T04:58:47"
+                            },
+                            "description": null,
+                            "expression": null,
+                            "extra": "{}",
+                            "filterable": true,
+                            "groupby": true,
+                            "id": 339,
+                            "is_active": true,
+                            "is_dttm": false,
+                            "python_date_format": null,
+                            "table_id": 26,
+                            "type": "TEXT",
+                            "uuid": "ea721aa6-22ad-4385-bdbc-178e693053f0",
+                            "verbose_name": null
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "changed_by_fk": null,
+                            "changed_on": {
+                                "__datetime__": "2023-12-20T04:58:47"
+                            },
+                            "column_name": "record",
+                            "created_by_fk": null,
+                            "created_on": {
+                                "__datetime__": "2023-12-20T04:58:47"
+                            },
+                            "description": null,
+                            "expression": null,
+                            "extra": "{}",
+                            "filterable": true,
+                            "groupby": true,
+                            "id": 340,
+                            "is_active": true,
+                            "is_dttm": false,
+                            "python_date_format": null,
+                            "table_id": 26,
+                            "type": "TEXT",
+                            "uuid": "cdc2347e-e103-44c6-a5d5-909fd9b7d5c3",
+                            "verbose_name": null
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "changed_by_fk": null,
+                            "changed_on": {
+                                "__datetime__": "2023-12-20T04:58:47"
+                            },
+                            "column_name": "file",
+                            "created_by_fk": null,
+                            "created_on": {
+                                "__datetime__": "2023-12-20T04:58:47"
+                            },
+                            "description": null,
+                            "expression": null,
+                            "extra": "{}",
+                            "filterable": true,
+                            "groupby": true,
+                            "id": 341,
+                            "is_active": true,
+                            "is_dttm": false,
+                            "python_date_format": null,
+                            "table_id": 26,
+                            "type": "TEXT",
+                            "uuid": "7cc59d98-9b97-45d0-802d-c3ae6f569332",
+                            "verbose_name": null
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "changed_by_fk": null,
+                            "changed_on": {
+                                "__datetime__": "2023-12-20T04:58:47"
+                            },
+                            "column_name": "zips",
+                            "created_by_fk": null,
+                            "created_on": {
+                                "__datetime__": "2023-12-20T04:58:47"
+                            },
+                            "description": null,
+                            "expression": null,
+                            "extra": "{}",
+                            "filterable": true,
+                            "groupby": true,
+                            "id": 342,
+                            "is_active": true,
+                            "is_dttm": false,
+                            "python_date_format": null,
+                            "table_id": 26,
+                            "type": "TEXT",
+                            "uuid": "62d4af95-3910-4d99-af78-76f4c118b4fa",
+                            "verbose_name": null
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "changed_by_fk": null,
+                            "changed_on": {
+                                "__datetime__": "2023-12-20T04:58:47"
+                            },
+                            "column_name": "bene",
+                            "created_by_fk": null,
+                            "created_on": {
+                                "__datetime__": "2023-12-20T04:58:47"
+                            },
+                            "description": null,
+                            "expression": null,
+                            "extra": "{}",
+                            "filterable": true,
+                            "groupby": true,
+                            "id": 343,
+                            "is_active": true,
+                            "is_dttm": false,
+                            "python_date_format": null,
+                            "table_id": 26,
+                            "type": "UNKNOWN",
+                            "uuid": "71c49957-c529-44c9-bd46-1883e848eb94",
+                            "verbose_name": null
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "changed_by_fk": null,
+                            "changed_on": {
+                                "__datetime__": "2023-12-20T04:58:46"
+                            },
+                            "column_name": "ssa2_list",
+                            "created_by_fk": null,
+                            "created_on": {
+                                "__datetime__": "2023-12-20T04:58:46"
+                            },
+                            "description": null,
+                            "expression": null,
+                            "extra": "{}",
+                            "filterable": true,
+                            "groupby": true,
+                            "id": 318,
+                            "is_active": true,
+                            "is_dttm": false,
+                            "python_date_format": null,
+                            "table_id": 26,
+                            "type": "TEXT",
+                            "uuid": "683675d9-47d0-4710-a68b-59e88cfe1615",
+                            "verbose_name": null
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "changed_by_fk": null,
+                            "changed_on": {
+                                "__datetime__": "2023-12-20T04:58:46"
+                            },
+                            "column_name": "ssa2",
+                            "created_by_fk": null,
+                            "created_on": {
+                                "__datetime__": "2023-12-20T04:58:46"
+                            },
+                            "description": null,
+                            "expression": null,
+                            "extra": "{}",
+                            "filterable": true,
+                            "groupby": true,
+                            "id": 319,
+                            "is_active": true,
+                            "is_dttm": false,
+                            "python_date_format": null,
+                            "table_id": 26,
+                            "type": "TEXT",
+                            "uuid": "a614c034-3bfe-4b9d-a032-06e6dc826e2f",
+                            "verbose_name": null
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "changed_by_fk": null,
+                            "changed_on": {
+                                "__datetime__": "2023-12-20T04:58:46"
+                            },
+                            "column_name": "fips2",
+                            "created_by_fk": null,
+                            "created_on": {
+                                "__datetime__": "2023-12-20T04:58:46"
+                            },
+                            "description": null,
+                            "expression": null,
+                            "extra": "{}",
+                            "filterable": true,
+                            "groupby": true,
+                            "id": 320,
+                            "is_active": true,
+                            "is_dttm": false,
+                            "python_date_format": null,
+                            "table_id": 26,
+                            "type": "TEXT",
+                            "uuid": "fa89cb73-708b-4521-a593-d02687284a18",
+                            "verbose_name": null
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "changed_by_fk": null,
+                            "changed_on": {
+                                "__datetime__": "2023-12-20T04:58:46"
+                            },
+                            "column_name": "fips3_is_approximated",
+                            "created_by_fk": null,
+                            "created_on": {
+                                "__datetime__": "2023-12-20T04:58:46"
+                            },
+                            "description": null,
+                            "expression": null,
+                            "extra": "{}",
+                            "filterable": true,
+                            "groupby": true,
+                            "id": 321,
+                            "is_active": true,
+                            "is_dttm": false,
+                            "python_date_format": null,
+                            "table_id": 26,
+                            "type": "BOOLEAN",
+                            "uuid": "ac4ce05a-d345-49de-8ef1-85e1282783fc",
+                            "verbose_name": null
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "changed_by_fk": null,
+                            "changed_on": {
+                                "__datetime__": "2023-12-20T04:58:46"
+                            },
+                            "column_name": "fips3_valdiated",
+                            "created_by_fk": null,
+                            "created_on": {
+                                "__datetime__": "2023-12-20T04:58:46"
+                            },
+                            "description": null,
+                            "expression": null,
+                            "extra": "{}",
+                            "filterable": true,
+                            "groupby": true,
+                            "id": 322,
+                            "is_active": true,
+                            "is_dttm": false,
+                            "python_date_format": null,
+                            "table_id": 26,
+                            "type": "BOOLEAN",
+                            "uuid": "b7bbed3f-3c68-497f-8d68-12e7bbae66c9",
+                            "verbose_name": null
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "changed_by_fk": null,
+                            "changed_on": {
+                                "__datetime__": "2023-12-20T04:58:47"
+                            },
+                            "column_name": "ssa3_list",
+                            "created_by_fk": null,
+                            "created_on": {
+                                "__datetime__": "2023-12-20T04:58:47"
+                            },
+                            "description": null,
+                            "expression": null,
+                            "extra": "{}",
+                            "filterable": true,
+                            "groupby": true,
+                            "id": 323,
+                            "is_active": true,
+                            "is_dttm": false,
+                            "python_date_format": null,
+                            "table_id": 26,
+                            "type": "TEXT",
+                            "uuid": "f5c484c0-32bf-40eb-9fac-8b32f9c364ef",
+                            "verbose_name": null
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "changed_by_fk": null,
+                            "changed_on": {
+                                "__datetime__": "2023-12-20T04:58:47"
+                            },
+                            "column_name": "ssa3",
+                            "created_by_fk": null,
+                            "created_on": {
+                                "__datetime__": "2023-12-20T04:58:47"
+                            },
+                            "description": null,
+                            "expression": null,
+                            "extra": "{}",
+                            "filterable": true,
+                            "groupby": true,
+                            "id": 324,
+                            "is_active": true,
+                            "is_dttm": false,
+                            "python_date_format": null,
+                            "table_id": 26,
+                            "type": "TEXT",
+                            "uuid": "d5109007-ef47-46e2-82ff-23fd5a0aba2c",
+                            "verbose_name": null
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "changed_by_fk": null,
+                            "changed_on": {
+                                "__datetime__": "2023-12-20T04:58:47"
+                            },
+                            "column_name": "fips3",
+                            "created_by_fk": null,
+                            "created_on": {
+                                "__datetime__": "2023-12-20T04:58:47"
+                            },
+                            "description": null,
+                            "expression": null,
+                            "extra": "{}",
+                            "filterable": true,
+                            "groupby": true,
+                            "id": 325,
+                            "is_active": true,
+                            "is_dttm": false,
+                            "python_date_format": null,
+                            "table_id": 26,
+                            "type": "TEXT",
+                            "uuid": "18067cd2-0f9f-42c7-bc86-25ff0e205b07",
+                            "verbose_name": null
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "changed_by_fk": null,
+                            "changed_on": {
+                                "__datetime__": "2023-12-20T04:58:47"
+                            },
+                            "column_name": "fips5",
+                            "created_by_fk": null,
+                            "created_on": {
+                                "__datetime__": "2023-12-20T04:58:47"
+                            },
+                            "description": null,
+                            "expression": null,
+                            "extra": "{}",
+                            "filterable": true,
+                            "groupby": true,
+                            "id": 326,
+                            "is_active": true,
+                            "is_dttm": false,
+                            "python_date_format": null,
+                            "table_id": 26,
+                            "type": "TEXT",
+                            "uuid": "2c1efb59-5e4f-4f9b-89b7-1090939492d3",
+                            "verbose_name": null
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "changed_by_fk": null,
+                            "changed_on": {
+                                "__datetime__": "2023-12-20T04:58:47"
+                            },
+                            "column_name": "bene_id",
+                            "created_by_fk": null,
+                            "created_on": {
+                                "__datetime__": "2023-12-20T04:58:47"
+                            },
+                            "description": null,
+                            "expression": null,
+                            "extra": "{}",
+                            "filterable": true,
+                            "groupby": true,
+                            "id": 327,
+                            "is_active": true,
+                            "is_dttm": false,
+                            "python_date_format": null,
+                            "table_id": 26,
+                            "type": "VARCHAR",
+                            "uuid": "07db3ef0-374b-4deb-aaea-e8d247fb22f6",
+                            "verbose_name": null
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "changed_by_fk": null,
+                            "changed_on": {
+                                "__datetime__": "2023-12-20T04:58:47"
+                            },
+                            "column_name": "state",
+                            "created_by_fk": null,
+                            "created_on": {
+                                "__datetime__": "2023-12-20T04:58:47"
+                            },
+                            "description": null,
+                            "expression": null,
+                            "extra": "{}",
+                            "filterable": true,
+                            "groupby": true,
+                            "id": 328,
+                            "is_active": true,
+                            "is_dttm": false,
+                            "python_date_format": null,
+                            "table_id": 26,
+                            "type": "VARCHAR",
+                            "uuid": "1f825a0a-0656-4331-8a04-ac84ae716bfe",
+                            "verbose_name": null
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "changed_by_fk": null,
+                            "changed_on": {
+                                "__datetime__": "2023-12-20T04:58:47"
+                            },
+                            "column_name": "died",
+                            "created_by_fk": null,
+                            "created_on": {
+                                "__datetime__": "2023-12-20T04:58:47"
+                            },
+                            "description": null,
+                            "expression": null,
+                            "extra": "{}",
+                            "filterable": true,
+                            "groupby": true,
+                            "id": 329,
+                            "is_active": true,
+                            "is_dttm": false,
+                            "python_date_format": null,
+                            "table_id": 26,
+                            "type": "BOOLEAN",
+                            "uuid": "74934636-fbab-421d-bc7f-ca4f66c6d5d8",
+                            "verbose_name": null
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "changed_by_fk": null,
+                            "changed_on": {
+                                "__datetime__": "2023-12-20T04:58:47"
+                            },
+                            "column_name": "state_count",
+                            "created_by_fk": null,
+                            "created_on": {
+                                "__datetime__": "2023-12-20T04:58:47"
+                            },
+                            "description": null,
+                            "expression": null,
+                            "extra": "{}",
+                            "filterable": true,
+                            "groupby": true,
+                            "id": 330,
+                            "is_active": true,
+                            "is_dttm": false,
+                            "python_date_format": null,
+                            "table_id": 26,
+                            "type": "BIGINT",
+                            "uuid": "13bf344b-ea0c-458b-8f73-69e115b41d3d",
+                            "verbose_name": null
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "changed_by_fk": null,
+                            "changed_on": {
+                                "__datetime__": "2023-12-20T04:58:47"
+                            },
+                            "column_name": "age_min",
+                            "created_by_fk": null,
+                            "created_on": {
+                                "__datetime__": "2023-12-20T04:58:47"
+                            },
+                            "description": null,
+                            "expression": null,
+                            "extra": "{}",
+                            "filterable": true,
+                            "groupby": true,
+                            "id": 331,
+                            "is_active": true,
+                            "is_dttm": false,
+                            "python_date_format": null,
+                            "table_id": 26,
+                            "type": "NUMERIC",
+                            "uuid": "a69da970-f7c7-46ae-8ff0-eeaed792c350",
+                            "verbose_name": null
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "changed_by_fk": null,
+                            "changed_on": {
+                                "__datetime__": "2023-12-20T04:58:47"
+                            },
+                            "column_name": "age",
+                            "created_by_fk": null,
+                            "created_on": {
+                                "__datetime__": "2023-12-20T04:58:47"
+                            },
+                            "description": null,
+                            "expression": null,
+                            "extra": "{}",
+                            "filterable": true,
+                            "groupby": true,
+                            "id": 332,
+                            "is_active": true,
+                            "is_dttm": false,
+                            "python_date_format": null,
+                            "table_id": 26,
+                            "type": "NUMERIC",
+                            "uuid": "7067b494-62b5-4275-b45d-2cdc1f055f62",
+                            "verbose_name": null
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "changed_by_fk": null,
+                            "changed_on": {
+                                "__datetime__": "2023-12-20T04:58:47"
+                            },
+                            "column_name": "hmo_cvg_count",
+                            "created_by_fk": null,
+                            "created_on": {
+                                "__datetime__": "2023-12-20T04:58:47"
+                            },
+                            "description": null,
+                            "expression": null,
+                            "extra": "{}",
+                            "filterable": true,
+                            "groupby": true,
+                            "id": 333,
+                            "is_active": true,
+                            "is_dttm": false,
+                            "python_date_format": null,
+                            "table_id": 26,
+                            "type": "INTEGER",
+                            "uuid": "1e8f9c1e-ba78-4ac4-8d4f-7b779eb668ee",
+                            "verbose_name": null
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "changed_by_fk": null,
+                            "changed_on": {
+                                "__datetime__": "2023-12-20T04:58:47"
+                            },
+                            "column_name": "year",
+                            "created_by_fk": null,
+                            "created_on": {
+                                "__datetime__": "2023-12-20T04:58:47"
+                            },
+                            "description": null,
+                            "expression": null,
+                            "extra": "{}",
+                            "filterable": true,
+                            "groupby": true,
+                            "id": 334,
+                            "is_active": true,
+                            "is_dttm": false,
+                            "python_date_format": null,
+                            "table_id": 26,
+                            "type": "INTEGER",
+                            "uuid": "54038e2a-43bb-4047-9199-26414f0767a4",
+                            "verbose_name": null
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "changed_by_fk": null,
+                            "changed_on": {
+                                "__datetime__": "2023-12-20T04:58:47"
+                            },
+                            "column_name": "zip",
+                            "created_by_fk": null,
+                            "created_on": {
+                                "__datetime__": "2023-12-20T04:58:47"
+                            },
+                            "description": null,
+                            "expression": null,
+                            "extra": "{}",
+                            "filterable": true,
+                            "groupby": true,
+                            "id": 335,
+                            "is_active": true,
+                            "is_dttm": false,
+                            "python_date_format": null,
+                            "table_id": 26,
+                            "type": "INTEGER",
+                            "uuid": "9b7f2c7c-3a5d-4b06-89fe-9aeee3cdd680",
+                            "verbose_name": null
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "changed_by_fk": null,
+                            "changed_on": {
+                                "__datetime__": "2023-12-20T04:58:47"
+                            },
+                            "column_name": "hmo_indicators",
+                            "created_by_fk": null,
+                            "created_on": {
+                                "__datetime__": "2023-12-20T04:58:47"
+                            },
+                            "description": null,
+                            "expression": null,
+                            "extra": "{}",
+                            "filterable": true,
+                            "groupby": true,
+                            "id": 336,
+                            "is_active": true,
+                            "is_dttm": false,
+                            "python_date_format": null,
+                            "table_id": 26,
+                            "type": "TEXT[]",
+                            "uuid": "48029449-8b1f-405f-a6d8-46ad179af840",
+                            "verbose_name": null
+                        }
+                    }
+                ],
+                "database_id": 3,
+                "default_endpoint": null,
+                "description": null,
+                "extra": null,
+                "fetch_values_predicate": null,
+                "filter_select_enabled": false,
+                "main_dttm_col": null,
+                "metrics": [
+                    {
+                        "__SqlMetric__": {
+                            "changed_by_fk": null,
+                            "changed_on": {
+                                "__datetime__": "2023-12-20T04:58:46"
+                            },
+                            "created_by_fk": null,
+                            "created_on": {
+                                "__datetime__": "2023-12-20T04:58:46"
+                            },
+                            "d3format": null,
+                            "description": null,
+                            "expression": "COUNT(*)",
+                            "extra": "{\"warning_markdown\":\"\"}",
+                            "id": 55,
+                            "metric_name": "count",
+                            "metric_type": "count",
+                            "table_id": 26,
+                            "uuid": "e2e6a0c3-ff95-4d6b-8b61-534932315c8e",
+                            "verbose_name": "COUNT(*)",
+                            "warning_text": null
+                        }
+                    },
+                    {
+                        "__SqlMetric__": {
+                            "changed_by_fk": null,
+                            "changed_on": {
+                                "__datetime__": "2023-12-20T04:58:46"
+                            },
+                            "created_by_fk": null,
+                            "created_on": {
+                                "__datetime__": "2023-12-20T04:58:46"
+                            },
+                            "d3format": null,
+                            "description": null,
+                            "expression": "(#(hll_add_agg(bene)))::INT",
+                            "extra": "{}",
+                            "id": 56,
+                            "metric_name": "approximate bene count",
+                            "metric_type": null,
+                            "table_id": 26,
+                            "uuid": "46eacfcb-c87d-4a6b-9502-2a2213ebbb37",
+                            "verbose_name": "",
+                            "warning_text": null
+                        }
+                    }
+                ],
+                "offset": 0,
+                "params": "{\"remote_id\": 26, \"database_name\": \"DORIEH\"}",
+                "schema": "medicare",
+                "sql": "",
+                "table_name": "enrollments",
+                "template_params": null
+            }
+        },
+        {
+            "__SqlaTable__": {
+                "cache_timeout": 86400,
+                "columns": [
+                    {
+                        "__TableColumn__": {
+                            "changed_by_fk": null,
+                            "changed_on": {
+                                "__datetime__": "2023-12-20T04:58:46"
+                            },
+                            "column_name": "Consistency",
+                            "created_by_fk": null,
+                            "created_on": {
+                                "__datetime__": "2023-12-20T04:58:46"
+                            },
+                            "description": null,
+                            "expression": "CASE WHEN \n    dod_earliest is not NULL\n    OR dob_latest is not NULL\n    OR sex LIKE '%,%'\n    OR race LIKE '%,%'\n    THEN 'Ambiguous' \n  WHEN  dob is NULL THEN 'Missing DOB'\n  ELSE 'Consistent' END",
+                            "extra": "{}",
+                            "filterable": true,
+                            "groupby": true,
+                            "id": 278,
+                            "is_active": true,
+                            "is_dttm": false,
+                            "python_date_format": null,
+                            "table_id": 24,
+                            "type": null,
+                            "uuid": "b0be3a00-14ba-4d29-a831-28d1c879b74b",
+                            "verbose_name": null
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "changed_by_fk": null,
+                            "changed_on": {
+                                "__datetime__": "2023-12-20T04:58:46"
+                            },
+                            "column_name": "AmbiguousDOB",
+                            "created_by_fk": null,
+                            "created_on": {
+                                "__datetime__": "2023-12-20T04:58:46"
+                            },
+                            "description": null,
+                            "expression": "CASE WHEN dob_latest is not NULL THEN 'Ambiguous DOB' end ",
+                            "extra": "{}",
+                            "filterable": true,
+                            "groupby": true,
+                            "id": 279,
+                            "is_active": true,
+                            "is_dttm": false,
+                            "python_date_format": null,
+                            "table_id": 24,
+                            "type": null,
+                            "uuid": "3cd2a37b-09e7-48bb-9401-8c3151dcf2f6",
+                            "verbose_name": null
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "changed_by_fk": null,
+                            "changed_on": {
+                                "__datetime__": "2023-12-20T04:58:46"
+                            },
+                            "column_name": "AmbiguousDOD",
+                            "created_by_fk": null,
+                            "created_on": {
+                                "__datetime__": "2023-12-20T04:58:46"
+                            },
+                            "description": null,
+                            "expression": "CASE WHEN dod_earliest is not NULL THEN 'Ambiguous DOD' end ",
+                            "extra": "{}",
+                            "filterable": true,
+                            "groupby": true,
+                            "id": 280,
+                            "is_active": true,
+                            "is_dttm": false,
+                            "python_date_format": null,
+                            "table_id": 24,
+                            "type": null,
+                            "uuid": "5d2f63bc-4691-4102-9477-af7182c74419",
+                            "verbose_name": null
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "changed_by_fk": null,
+                            "changed_on": {
+                                "__datetime__": "2023-12-20T04:58:46"
+                            },
+                            "column_name": "AmbiguousSex",
+                            "created_by_fk": null,
+                            "created_on": {
+                                "__datetime__": "2023-12-20T04:58:46"
+                            },
+                            "description": null,
+                            "expression": "CASE WHEN sex LIKE '%,%' THEN 'Ambiguous Sex'  End",
+                            "extra": "{}",
+                            "filterable": true,
+                            "groupby": true,
+                            "id": 281,
+                            "is_active": true,
+                            "is_dttm": false,
+                            "python_date_format": null,
+                            "table_id": 24,
+                            "type": null,
+                            "uuid": "97967460-43fe-467a-b5ae-93bed87e7786",
+                            "verbose_name": null
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "changed_by_fk": null,
+                            "changed_on": {
+                                "__datetime__": "2023-12-20T04:58:46"
+                            },
+                            "column_name": "MissingDOB",
+                            "created_by_fk": null,
+                            "created_on": {
+                                "__datetime__": "2023-12-20T04:58:46"
+                            },
+                            "description": null,
+                            "expression": "CASE WHEN DOB is NULL THEN 'Missing DOB' end ",
+                            "extra": "{}",
+                            "filterable": true,
+                            "groupby": true,
+                            "id": 282,
+                            "is_active": true,
+                            "is_dttm": false,
+                            "python_date_format": null,
+                            "table_id": 24,
+                            "type": null,
+                            "uuid": "41df33db-517a-41f4-ae0f-88e02243ccd6",
+                            "verbose_name": null
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "changed_by_fk": null,
+                            "changed_on": {
+                                "__datetime__": "2023-12-20T04:58:46"
+                            },
+                            "column_name": "AmbiguousRace",
+                            "created_by_fk": null,
+                            "created_on": {
+                                "__datetime__": "2023-12-20T04:58:46"
+                            },
+                            "description": null,
+                            "expression": "CASE WHEN race LIKE '%,%' THEN 'Ambiguous Race' End",
+                            "extra": "{}",
+                            "filterable": true,
+                            "groupby": true,
+                            "id": 283,
+                            "is_active": true,
+                            "is_dttm": false,
+                            "python_date_format": null,
+                            "table_id": 24,
+                            "type": null,
+                            "uuid": "21d22216-ce68-41f4-b8b3-8210b9dcc5b5",
+                            "verbose_name": null
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "changed_by_fk": null,
+                            "changed_on": {
+                                "__datetime__": "2023-12-20T04:58:46"
+                            },
+                            "column_name": "enrollment_period",
+                            "created_by_fk": null,
+                            "created_on": {
+                                "__datetime__": "2023-12-20T04:58:46"
+                            },
+                            "description": null,
+                            "expression": "last_enrollment_year - first_enrollment_year + 1",
+                            "extra": "{}",
+                            "filterable": true,
+                            "groupby": true,
+                            "id": 284,
+                            "is_active": true,
+                            "is_dttm": false,
+                            "python_date_format": null,
+                            "table_id": 24,
+                            "type": null,
+                            "uuid": "34be1365-b9af-4f07-8ec2-08d17ecedddd",
+                            "verbose_name": null
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "changed_by_fk": null,
+                            "changed_on": {
+                                "__datetime__": "2023-12-20T04:58:46"
+                            },
+                            "column_name": "num_enrollment_years",
+                            "created_by_fk": null,
+                            "created_on": {
+                                "__datetime__": "2023-12-20T04:58:46"
+                            },
+                            "description": null,
+                            "expression": "CARDINALITY(ARRAY (SELECT DISTINCT UNNEST(all_enrollment_years)))",
+                            "extra": "{}",
+                            "filterable": true,
+                            "groupby": true,
+                            "id": 285,
+                            "is_active": true,
+                            "is_dttm": false,
+                            "python_date_format": null,
+                            "table_id": 24,
+                            "type": null,
+                            "uuid": "cd3bd47f-8e66-44b4-aeed-18ba5bbde27b",
+                            "verbose_name": null
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "changed_by_fk": null,
+                            "changed_on": {
+                                "__datetime__": "2023-12-20T04:58:46"
+                            },
+                            "column_name": "yob1",
+                            "created_by_fk": null,
+                            "created_on": {
+                                "__datetime__": "2023-12-20T04:58:46"
+                            },
+                            "description": null,
+                            "expression": "EXTRACT (YEAR FROM dob)",
+                            "extra": "{}",
+                            "filterable": true,
+                            "groupby": true,
+                            "id": 286,
+                            "is_active": true,
+                            "is_dttm": false,
+                            "python_date_format": null,
+                            "table_id": 24,
+                            "type": null,
+                            "uuid": "69b0fa89-bc0f-475c-8181-cb3579fc1a80",
+                            "verbose_name": null
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "changed_by_fk": null,
+                            "changed_on": {
+                                "__datetime__": "2023-12-20T04:58:46"
+                            },
+                            "column_name": "dob_latest",
+                            "created_by_fk": null,
+                            "created_on": {
+                                "__datetime__": "2023-12-20T04:58:46"
+                            },
+                            "description": null,
+                            "expression": null,
+                            "extra": "{}",
+                            "filterable": true,
+                            "groupby": true,
+                            "id": 287,
+                            "is_active": true,
+                            "is_dttm": true,
+                            "python_date_format": null,
+                            "table_id": 24,
+                            "type": "DATE",
+                            "uuid": "5d959917-cedf-44dd-8d1b-d3f570ba8a0f",
+                            "verbose_name": null
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "changed_by_fk": null,
+                            "changed_on": {
+                                "__datetime__": "2023-12-20T04:58:46"
+                            },
+                            "column_name": "dod_earliest",
+                            "created_by_fk": null,
+                            "created_on": {
+                                "__datetime__": "2023-12-20T04:58:46"
+                            },
+                            "description": null,
+                            "expression": null,
+                            "extra": "{}",
+                            "filterable": true,
+                            "groupby": true,
+                            "id": 288,
+                            "is_active": true,
+                            "is_dttm": true,
+                            "python_date_format": null,
+                            "table_id": 24,
+                            "type": "DATE",
+                            "uuid": "0512d97c-51e2-4a2e-874d-ac3b83edd20e",
+                            "verbose_name": null
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "changed_by_fk": null,
+                            "changed_on": {
+                                "__datetime__": "2023-12-20T04:58:46"
+                            },
+                            "column_name": "dob",
+                            "created_by_fk": null,
+                            "created_on": {
+                                "__datetime__": "2023-12-20T04:58:46"
+                            },
+                            "description": null,
+                            "expression": null,
+                            "extra": "{}",
+                            "filterable": true,
+                            "groupby": true,
+                            "id": 289,
+                            "is_active": true,
+                            "is_dttm": true,
+                            "python_date_format": null,
+                            "table_id": 24,
+                            "type": "DATE",
+                            "uuid": "d101ebab-f625-4340-b266-267d55caf904",
+                            "verbose_name": null
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "changed_by_fk": null,
+                            "changed_on": {
+                                "__datetime__": "2023-12-20T04:58:46"
+                            },
+                            "column_name": "dod",
+                            "created_by_fk": null,
+                            "created_on": {
+                                "__datetime__": "2023-12-20T04:58:46"
+                            },
+                            "description": null,
+                            "expression": null,
+                            "extra": "{}",
+                            "filterable": true,
+                            "groupby": true,
+                            "id": 290,
+                            "is_active": true,
+                            "is_dttm": true,
+                            "python_date_format": null,
+                            "table_id": 24,
+                            "type": "DATE",
+                            "uuid": "732434d4-75f9-4966-922f-202df3e87986",
+                            "verbose_name": null
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "changed_by_fk": null,
+                            "changed_on": {
+                                "__datetime__": "2023-12-20T04:58:46"
+                            },
+                            "column_name": "last_enrollment_year",
+                            "created_by_fk": null,
+                            "created_on": {
+                                "__datetime__": "2023-12-20T04:58:46"
+                            },
+                            "description": null,
+                            "expression": null,
+                            "extra": "{}",
+                            "filterable": true,
+                            "groupby": true,
+                            "id": 291,
+                            "is_active": true,
+                            "is_dttm": true,
+                            "python_date_format": null,
+                            "table_id": 24,
+                            "type": "INTEGER",
+                            "uuid": "c3060030-3bc4-44b1-b28e-33cec782c958",
+                            "verbose_name": null
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "changed_by_fk": null,
+                            "changed_on": {
+                                "__datetime__": "2023-12-20T04:58:46"
+                            },
+                            "column_name": "first_enrollment_year",
+                            "created_by_fk": null,
+                            "created_on": {
+                                "__datetime__": "2023-12-20T04:58:46"
+                            },
+                            "description": null,
+                            "expression": null,
+                            "extra": "{}",
+                            "filterable": true,
+                            "groupby": true,
+                            "id": 292,
+                            "is_active": true,
+                            "is_dttm": true,
+                            "python_date_format": null,
+                            "table_id": 24,
+                            "type": "INTEGER",
+                            "uuid": "23d2dd50-8c89-476f-86c7-ddc079d093f3",
+                            "verbose_name": null
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "changed_by_fk": null,
+                            "changed_on": {
+                                "__datetime__": "2023-12-20T04:58:46"
+                            },
+                            "column_name": "bene_id",
+                            "created_by_fk": null,
+                            "created_on": {
+                                "__datetime__": "2023-12-20T04:58:46"
+                            },
+                            "description": null,
+                            "expression": null,
+                            "extra": "{}",
+                            "filterable": true,
+                            "groupby": true,
+                            "id": 293,
+                            "is_active": true,
+                            "is_dttm": false,
+                            "python_date_format": null,
+                            "table_id": 24,
+                            "type": "VARCHAR",
+                            "uuid": "39138819-cbb4-4f70-8267-e14c65667196",
+                            "verbose_name": null
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "changed_by_fk": null,
+                            "changed_on": {
+                                "__datetime__": "2023-12-20T04:58:46"
+                            },
+                            "column_name": "discrepancies",
+                            "created_by_fk": null,
+                            "created_on": {
+                                "__datetime__": "2023-12-20T04:58:46"
+                            },
+                            "description": null,
+                            "expression": null,
+                            "extra": "{}",
+                            "filterable": true,
+                            "groupby": true,
+                            "id": 294,
+                            "is_active": true,
+                            "is_dttm": false,
+                            "python_date_format": null,
+                            "table_id": 24,
+                            "type": "BIGINT",
+                            "uuid": "e7525a70-ad90-40cd-a241-dd0e4b21d365",
+                            "verbose_name": null
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "changed_by_fk": null,
+                            "changed_on": {
+                                "__datetime__": "2023-12-20T04:58:46"
+                            },
+                            "column_name": "all_enrollment_years",
+                            "created_by_fk": null,
+                            "created_on": {
+                                "__datetime__": "2023-12-20T04:58:46"
+                            },
+                            "description": null,
+                            "expression": null,
+                            "extra": "{}",
+                            "filterable": true,
+                            "groupby": true,
+                            "id": 295,
+                            "is_active": true,
+                            "is_dttm": false,
+                            "python_date_format": null,
+                            "table_id": 24,
+                            "type": "INTEGER[]",
+                            "uuid": "5f5966ab-50bb-4f6f-bdb6-dac09c7fe28d",
+                            "verbose_name": null
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "changed_by_fk": null,
+                            "changed_on": {
+                                "__datetime__": "2023-12-20T04:58:46"
+                            },
+                            "column_name": "number_of_gap_years",
+                            "created_by_fk": null,
+                            "created_on": {
+                                "__datetime__": "2023-12-20T04:58:46"
+                            },
+                            "description": null,
+                            "expression": null,
+                            "extra": "{}",
+                            "filterable": true,
+                            "groupby": true,
+                            "id": 296,
+                            "is_active": true,
+                            "is_dttm": false,
+                            "python_date_format": null,
+                            "table_id": 24,
+                            "type": "INTEGER",
+                            "uuid": "79b09de6-1819-4e7a-96c9-b7ad67f8eedf",
+                            "verbose_name": null
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "changed_by_fk": null,
+                            "changed_on": {
+                                "__datetime__": "2023-12-20T04:58:46"
+                            },
+                            "column_name": "yob_latest",
+                            "created_by_fk": null,
+                            "created_on": {
+                                "__datetime__": "2023-12-20T04:58:46"
+                            },
+                            "description": null,
+                            "expression": null,
+                            "extra": "{}",
+                            "filterable": true,
+                            "groupby": true,
+                            "id": 297,
+                            "is_active": true,
+                            "is_dttm": false,
+                            "python_date_format": null,
+                            "table_id": 24,
+                            "type": "INTEGER",
+                            "uuid": "aab69790-10dc-4cb8-993e-9cbc993c5d25",
+                            "verbose_name": null
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "changed_by_fk": null,
+                            "changed_on": {
+                                "__datetime__": "2023-12-20T04:58:46"
+                            },
+                            "column_name": "yob",
+                            "created_by_fk": null,
+                            "created_on": {
+                                "__datetime__": "2023-12-20T04:58:46"
+                            },
+                            "description": null,
+                            "expression": null,
+                            "extra": "{}",
+                            "filterable": true,
+                            "groupby": true,
+                            "id": 298,
+                            "is_active": true,
+                            "is_dttm": false,
+                            "python_date_format": null,
+                            "table_id": 24,
+                            "type": "INTEGER",
+                            "uuid": "6afacabe-64d9-4e95-a471-58985ef98cf1",
+                            "verbose_name": null
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "changed_by_fk": null,
+                            "changed_on": {
+                                "__datetime__": "2023-12-20T04:58:46"
+                            },
+                            "column_name": "orec",
+                            "created_by_fk": null,
+                            "created_on": {
+                                "__datetime__": "2023-12-20T04:58:46"
+                            },
+                            "description": null,
+                            "expression": null,
+                            "extra": "{}",
+                            "filterable": true,
+                            "groupby": true,
+                            "id": 299,
+                            "is_active": true,
+                            "is_dttm": false,
+                            "python_date_format": null,
+                            "table_id": 24,
+                            "type": "INTEGER",
+                            "uuid": "bb568d0a-31fd-4938-835f-253a21157a7b",
+                            "verbose_name": null
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "changed_by_fk": null,
+                            "changed_on": {
+                                "__datetime__": "2023-12-20T04:58:46"
+                            },
+                            "column_name": "race_rti",
+                            "created_by_fk": null,
+                            "created_on": {
+                                "__datetime__": "2023-12-20T04:58:46"
+                            },
+                            "description": null,
+                            "expression": null,
+                            "extra": "{}",
+                            "filterable": true,
+                            "groupby": true,
+                            "id": 300,
+                            "is_active": true,
+                            "is_dttm": false,
+                            "python_date_format": null,
+                            "table_id": 24,
+                            "type": "TEXT",
+                            "uuid": "1152fcc9-73c7-4094-9d41-ee2cafb8b5de",
+                            "verbose_name": null
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "changed_by_fk": null,
+                            "changed_on": {
+                                "__datetime__": "2023-12-20T04:58:46"
+                            },
+                            "column_name": "race",
+                            "created_by_fk": null,
+                            "created_on": {
+                                "__datetime__": "2023-12-20T04:58:46"
+                            },
+                            "description": null,
+                            "expression": null,
+                            "extra": "{}",
+                            "filterable": true,
+                            "groupby": true,
+                            "id": 301,
+                            "is_active": true,
+                            "is_dttm": false,
+                            "python_date_format": null,
+                            "table_id": 24,
+                            "type": "TEXT",
+                            "uuid": "2d917a9e-158e-432c-94ad-448456f3d842",
+                            "verbose_name": null
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "changed_by_fk": null,
+                            "changed_on": {
+                                "__datetime__": "2023-12-20T04:58:46"
+                            },
+                            "column_name": "sex",
+                            "created_by_fk": null,
+                            "created_on": {
+                                "__datetime__": "2023-12-20T04:58:46"
+                            },
+                            "description": null,
+                            "expression": null,
+                            "extra": "{}",
+                            "filterable": true,
+                            "groupby": true,
+                            "id": 302,
+                            "is_active": true,
+                            "is_dttm": false,
+                            "python_date_format": null,
+                            "table_id": 24,
+                            "type": "TEXT",
+                            "uuid": "b7c580cc-671e-4d80-bcce-afb21f6371c6",
+                            "verbose_name": null
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "changed_by_fk": null,
+                            "changed_on": {
+                                "__datetime__": "2023-12-20T04:58:46"
+                            },
+                            "column_name": "bene",
+                            "created_by_fk": null,
+                            "created_on": {
+                                "__datetime__": "2023-12-20T04:58:46"
+                            },
+                            "description": null,
+                            "expression": null,
+                            "extra": "{}",
+                            "filterable": true,
+                            "groupby": true,
+                            "id": 303,
+                            "is_active": true,
+                            "is_dttm": false,
+                            "python_date_format": null,
+                            "table_id": 24,
+                            "type": "UNKNOWN",
+                            "uuid": "614144a5-1a0d-4582-a969-2613f96d64f7",
+                            "verbose_name": null
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2023-12-21T02:56:45"
+                            },
+                            "column_name": "DOB_diff",
+                            "created_by_fk": 1,
+                            "created_on": {
+                                "__datetime__": "2023-12-21T02:48:28"
+                            },
+                            "description": "Difference between the earliest and latest recorded DOB",
+                            "expression": "CASE WHEN dob_latest is NULL THEN NULL ELSE age(dob_latest, dob) END",
+                            "extra": "{}",
+                            "filterable": true,
+                            "groupby": true,
+                            "id": 505,
+                            "is_active": true,
+                            "is_dttm": true,
+                            "python_date_format": null,
+                            "table_id": 24,
+                            "type": null,
+                            "uuid": "08aabc77-c53f-49e4-b727-dd9f9a7f8354",
+                            "verbose_name": "diff_in_dob"
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2023-12-21T03:20:26"
+                            },
+                            "column_name": "dob_diff_days",
+                            "created_by_fk": 1,
+                            "created_on": {
+                                "__datetime__": "2023-12-21T03:20:26"
+                            },
+                            "description": null,
+                            "expression": "CASE WHEN dob_latest is NULL THEN NULL ELSE (dob_latest - dob) END",
+                            "extra": "{}",
+                            "filterable": true,
+                            "groupby": true,
+                            "id": 506,
+                            "is_active": true,
+                            "is_dttm": false,
+                            "python_date_format": null,
+                            "table_id": 24,
+                            "type": null,
+                            "uuid": "99b7baca-2314-45fc-add6-6381220447b5",
+                            "verbose_name": "dob_diff_in_days"
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2023-12-21T07:08:51"
+                            },
+                            "column_name": "dob_diff_in_decades",
+                            "created_by_fk": 1,
+                            "created_on": {
+                                "__datetime__": "2023-12-21T07:08:51"
+                            },
+                            "description": "Differences between dob records in 10 days incrememnts",
+                            "expression": "CASE WHEN dob_latest is NULL THEN NULL ELSE \n        (dob_latest - dob) / 10\n    END",
+                            "extra": "{}",
+                            "filterable": true,
+                            "groupby": true,
+                            "id": 507,
+                            "is_active": true,
+                            "is_dttm": false,
+                            "python_date_format": null,
+                            "table_id": 24,
+                            "type": null,
+                            "uuid": "b3250cc6-e183-40f0-8673-ec552e40994f",
+                            "verbose_name": null
+                        }
+                    }
+                ],
+                "database_id": 3,
+                "default_endpoint": null,
+                "description": null,
+                "extra": null,
+                "fetch_values_predicate": null,
+                "filter_select_enabled": false,
+                "main_dttm_col": "dob",
+                "metrics": [
+                    {
+                        "__SqlMetric__": {
+                            "changed_by_fk": null,
+                            "changed_on": {
+                                "__datetime__": "2023-12-20T04:58:46"
+                            },
+                            "created_by_fk": null,
+                            "created_on": {
+                                "__datetime__": "2023-12-20T04:58:46"
+                            },
+                            "d3format": null,
+                            "description": null,
+                            "expression": "COUNT(*)",
+                            "extra": "{\"warning_markdown\":\"\"}",
+                            "id": 50,
+                            "metric_name": "count",
+                            "metric_type": "count",
+                            "table_id": 24,
+                            "uuid": "45c44aef-8406-4832-bcd5-92614595d885",
+                            "verbose_name": "COUNT(*)",
+                            "warning_text": null
+                        }
+                    },
+                    {
+                        "__SqlMetric__": {
+                            "changed_by_fk": null,
+                            "changed_on": {
+                                "__datetime__": "2023-12-20T04:58:46"
+                            },
+                            "created_by_fk": null,
+                            "created_on": {
+                                "__datetime__": "2023-12-20T04:58:46"
+                            },
+                            "d3format": null,
+                            "description": null,
+                            "expression": "(#(hll_add_agg(bene)))::INT",
+                            "extra": "{\"warning_markdown\":\"\"}",
+                            "id": 51,
+                            "metric_name": "approximate_count",
+                            "metric_type": null,
+                            "table_id": 24,
+                            "uuid": "8a22e67b-ac7f-4741-a023-8561dae21f32",
+                            "verbose_name": "",
+                            "warning_text": null
+                        }
+                    }
+                ],
+                "offset": 0,
+                "params": "{\"remote_id\": 24, \"database_name\": \"DORIEH\"}",
+                "schema": "medicare",
+                "sql": "",
+                "table_name": "beneficiaries",
+                "template_params": null
+            }
+        }
+    ]
+}

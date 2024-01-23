@@ -1,0 +1,983 @@
+databases:
+- database_name: DORIEH
+  extra: '{"metadata_params":{},"engine_params":{},"schemas_allowed_for_csv_upload":[]}'
+  sqlalchemy_uri: postgresql+psycopg2://nsaph_superset:XXXXXXXXXX@172.16.238.1:5432/dorieh
+  tables:
+  - cache_timeout: 86400
+    columns:
+    - column_name: Consistency
+      expression: "CASE WHEN \n    dod_earliest is not NULL\n    OR dob_latest is\
+        \ not NULL\n    OR sex LIKE '%,%'\n    OR race LIKE '%,%'\n    THEN 'Ambiguous'\
+        \ \n  WHEN  dob is NULL THEN 'Missing DOB'\n  ELSE 'Consistent' END"
+      extra: '{}'
+    - column_name: AmbiguousDOB
+      expression: 'CASE WHEN dob_latest is not NULL THEN ''Ambiguous DOB'' end '
+      extra: '{}'
+    - column_name: AmbiguousDOD
+      expression: 'CASE WHEN dod_earliest is not NULL THEN ''Ambiguous DOD'' end '
+      extra: '{}'
+    - column_name: AmbiguousSex
+      expression: CASE WHEN sex LIKE '%,%' THEN 'Ambiguous Sex'  End
+      extra: '{}'
+    - column_name: MissingDOB
+      expression: 'CASE WHEN DOB is NULL THEN ''Missing DOB'' end '
+      extra: '{}'
+    - column_name: AmbiguousRace
+      expression: CASE WHEN race LIKE '%,%' THEN 'Ambiguous Race' End
+      extra: '{}'
+    - column_name: enrollment_period
+      expression: last_enrollment_year - first_enrollment_year + 1
+      extra: '{}'
+    - column_name: num_enrollment_years
+      expression: CARDINALITY(ARRAY (SELECT DISTINCT UNNEST(all_enrollment_years)))
+      extra: '{}'
+    - column_name: yob1
+      expression: EXTRACT (YEAR FROM dob)
+      extra: '{}'
+    - column_name: dob_latest
+      extra: '{}'
+      is_dttm: true
+      type: DATE
+    - column_name: dod_earliest
+      extra: '{}'
+      is_dttm: true
+      type: DATE
+    - column_name: dob
+      extra: '{}'
+      is_dttm: true
+      type: DATE
+    - column_name: dod
+      extra: '{}'
+      is_dttm: true
+      type: DATE
+    - column_name: last_enrollment_year
+      extra: '{}'
+      is_dttm: true
+      type: INTEGER
+    - column_name: first_enrollment_year
+      extra: '{}'
+      is_dttm: true
+      type: INTEGER
+    - column_name: bene_id
+      extra: '{}'
+      type: VARCHAR
+    - column_name: discrepancies
+      extra: '{}'
+      type: BIGINT
+    - column_name: all_enrollment_years
+      extra: '{}'
+      type: INTEGER[]
+    - column_name: number_of_gap_years
+      extra: '{}'
+      type: INTEGER
+    - column_name: yob_latest
+      extra: '{}'
+      type: INTEGER
+    - column_name: yob
+      extra: '{}'
+      type: INTEGER
+    - column_name: orec
+      extra: '{}'
+      type: INTEGER
+    - column_name: race_rti
+      extra: '{}'
+      type: TEXT
+    - column_name: race
+      extra: '{}'
+      type: TEXT
+    - column_name: sex
+      extra: '{}'
+      type: TEXT
+    - column_name: bene
+      extra: '{}'
+      type: UNKNOWN
+    main_dttm_col: dob
+    metrics:
+    - expression: COUNT(*)
+      extra: '{"warning_markdown":""}'
+      metric_name: count
+      metric_type: count
+      verbose_name: COUNT(*)
+    - expression: (#(hll_add_agg(bene)))::INT
+      extra: '{"warning_markdown":""}'
+      metric_name: approximate_count
+      verbose_name: ''
+    params: '{"remote_id": 14, "database_name": "DORIEH", "import_time": 1703112362}'
+    schema: medicare
+    sql: ''
+    table_name: beneficiaries
+  - columns:
+    - column_name: fips3_is_approximated
+      extra: '{}'
+      type: BOOLEAN
+    - column_name: fips3_valdiated
+      extra: '{}'
+      type: BOOLEAN
+    - column_name: fips3
+      extra: '{}'
+      type: TEXT
+    - column_name: state
+      extra: '{}'
+      type: VARCHAR
+    - column_name: numdistinctbeneficaries
+      extra: '{}'
+      type: BIGINT
+    - column_name: numrecords
+      extra: '{}'
+      type: BIGINT
+    - column_name: year
+      extra: '{}'
+      type: INTEGER
+    - column_name: zip
+      extra: '{}'
+      type: INTEGER
+    - column_name: consistent_race
+      extra: '{}'
+      type: TEXT
+    - column_name: state_iso
+      extra: '{}'
+      type: TEXT
+    - column_name: consistent_dob
+      extra: '{}'
+      type: TEXT
+    - column_name: consistent_dod
+      extra: '{}'
+      type: TEXT
+    - column_name: consistent_sex
+      extra: '{}'
+      type: TEXT
+    - column_name: bene_hll
+      extra: '{}'
+      type: UNKNOWN
+    metrics:
+    - expression: "(#(hll_union_agg(bene_hll) FILTER (\n        WHERE consistent_dob\
+        \ = 'CONSISTENT'\n        AND consistent_dod <> 'AMBIGUOUS'\n        AND consistent_race\
+        \ = 'CONSISTENT'\n        AND consistent_sex = 'CONSISTENT'\n        ))\n\
+        \        ) * 100.0 / (#(hll_union_agg(bene_hll)))"
+      extra: '{"warning_markdown":""}'
+      metric_name: consistent beneficiaries
+      verbose_name: '% of consistent beneficiaries'
+    - expression: "(#(hll_union_agg(bene_hll) FILTER (\n        WHERE consistent_dob\
+        \ <> 'CONSISTENT'\n        OR consistent_dod = 'AMBIGUOUS'\n        OR consistent_race\
+        \ <> 'CONSISTENT'\n        OR consistent_sex <> 'CONSISTENT'\n        ))\n\
+        \        ) * 100.0 / (#(hll_union_agg(bene_hll)))"
+      extra: '{"warning_markdown":""}'
+      metric_name: inconsistent_beneficiaries
+      verbose_name: '% of inconsistent beneficiaries'
+    - expression: (SUM(numrecords) FILTER (WHERE fips3_valdiated))* 100.0  / (SUM(numrecords))
+      extra: '{}'
+      metric_name: consistent zip
+      verbose_name: '% of records where zip code is consistent with county code'
+    - expression: (SUM(numrecords) FILTER (WHERE NOT fips3_valdiated))* 100.0  / (SUM(numrecords))
+      extra: '{}'
+      metric_name: inconsistent_zip
+      verbose_name: '% of records where zip code is inconsistent with county code'
+    - expression: SUM(numrecords)
+      extra: '{"warning_markdown":""}'
+      metric_name: count
+      metric_type: count
+      verbose_name: Number of enrollment records
+    - expression: (#(hll_union_agg(bene_hll)))::INT
+      extra: '{"warning_markdown":""}'
+      metric_name: bene cardinality
+      verbose_name: Number of distinct beneficiaries
+    schema: medicare
+    sql: ''
+    table_name: qc_enrollments
+  - cache_timeout: 86400
+    columns:
+    - column_name: ssa2_list
+      extra: '{}'
+      type: TEXT
+    - column_name: ssa2
+      extra: '{}'
+      type: TEXT
+    - column_name: fips2
+      extra: '{}'
+      type: TEXT
+    - column_name: fips3_is_approximated
+      extra: '{}'
+      type: BOOLEAN
+    - column_name: fips3_valdiated
+      extra: '{}'
+      type: BOOLEAN
+    - column_name: ssa3_list
+      extra: '{}'
+      type: TEXT
+    - column_name: ssa3
+      extra: '{}'
+      type: TEXT
+    - column_name: fips3
+      extra: '{}'
+      type: TEXT
+    - column_name: fips5
+      extra: '{}'
+      type: TEXT
+    - column_name: bene_id
+      extra: '{}'
+      type: VARCHAR
+    - column_name: state
+      extra: '{}'
+      type: VARCHAR
+    - column_name: died
+      extra: '{}'
+      type: BOOLEAN
+    - column_name: state_count
+      extra: '{}'
+      type: BIGINT
+    - column_name: age_min
+      extra: '{}'
+      type: NUMERIC
+    - column_name: age
+      extra: '{}'
+      type: NUMERIC
+    - column_name: hmo_cvg_count
+      extra: '{}'
+      type: INTEGER
+    - column_name: year
+      extra: '{}'
+      type: INTEGER
+    - column_name: zip
+      extra: '{}'
+      type: INTEGER
+    - column_name: hmo_indicators
+      extra: '{}'
+      type: TEXT[]
+    - column_name: state_iso
+      extra: '{}'
+      type: TEXT
+    - column_name: residence_counties
+      extra: '{}'
+      type: TEXT
+    - column_name: residence_county
+      extra: '{}'
+      type: TEXT
+    - column_name: record
+      extra: '{}'
+      type: TEXT
+    - column_name: file
+      extra: '{}'
+      type: TEXT
+    - column_name: zips
+      extra: '{}'
+      type: TEXT
+    - column_name: bene
+      extra: '{}'
+      type: UNKNOWN
+    metrics:
+    - expression: COUNT(*)
+      extra: '{"warning_markdown":""}'
+      metric_name: count
+      metric_type: count
+      verbose_name: COUNT(*)
+    - expression: (#(hll_add_agg(bene)))::INT
+      extra: '{}'
+      metric_name: approximate bene count
+      verbose_name: ''
+    schema: medicare
+    sql: ''
+    table_name: enrollments
+  - columns:
+    - column_name: EstimatedRecords
+      expression: (SELECT reltuples::bigint FROM pg_class WHERE oid = (table_schema
+        || '.' || table_name)::regclass)
+      extra: '{}'
+    - column_name: IndexSize
+      expression: pg_total_relation_size(table_schema || '.' || table_name) - pg_relation_size(table_schema
+        || '.' || table_name)
+      extra: '{}'
+    - column_name: DataSize
+      expression: pg_relation_size(table_schema || '.' || table_name)
+      extra: '{}'
+    - column_name: TotalSize
+      expression: pg_total_relation_size(table_schema || '.' || table_name)
+      extra: '{}'
+    - column_name: TotalRecords
+      expression: public.count_rows(table_schema::VARCHAR, table_name::VARCHAR)
+      extra: '{}'
+    - column_name: Year
+      expression: public.get_year(table_schema::VARCHAR, table_name::VARCHAR)
+      extra: '{}'
+    - column_name: user_defined_type_catalog
+      extra: '{}'
+      type: VARCHAR
+    - column_name: self_referencing_column_name
+      extra: '{}'
+      type: VARCHAR
+    - column_name: user_defined_type_schema
+      extra: '{}'
+      type: VARCHAR
+    - column_name: user_defined_type_name
+      extra: '{}'
+      type: VARCHAR
+    - column_name: is_insertable_into
+      extra: '{}'
+      type: VARCHAR
+    - column_name: table_catalog
+      extra: '{}'
+      type: VARCHAR
+    - column_name: table_schema
+      extra: '{}'
+      type: VARCHAR
+    - column_name: table_name
+      extra: '{}'
+      type: VARCHAR
+    - column_name: table_type
+      extra: '{}'
+      type: VARCHAR
+    - column_name: commit_action
+      extra: '{}'
+      type: VARCHAR
+    - column_name: reference_generation
+      extra: '{}'
+      type: VARCHAR
+    - column_name: is_typed
+      extra: '{}'
+      type: VARCHAR
+    metrics:
+    - expression: SUM(pg_relation_size(table_schema || '.' || table_name))
+      extra: '{"warning_markdown":""}'
+      metric_name: Size()
+      verbose_name: Size
+    - expression: SUM(pg_total_relation_size(table_schema || '.' || table_name))
+      extra: '{"warning_markdown":""}'
+      metric_name: TotalSize()
+      verbose_name: ''
+    - expression: COUNT(*)
+      extra: '{"warning_markdown":""}'
+      metric_name: count
+      metric_type: count
+      verbose_name: COUNT(*)
+    schema: information_schema
+    sql: ''
+    table_name: tables
+  - columns:
+    - column_name: discharge_date
+      extra: '{}'
+      is_dttm: true
+      type: DATE
+    - column_name: admission_date
+      extra: '{}'
+      is_dttm: true
+      type: DATE
+    - column_name: file
+      extra: '{}'
+      type: VARCHAR(128)
+    - column_name: ssa2
+      extra: '{}'
+      type: VARCHAR(2)
+    - column_name: fips2
+      extra: '{}'
+      type: VARCHAR
+    - column_name: zip4
+      extra: '{}'
+      type: INTEGER
+    - column_name: diagnoses
+      extra: '{}'
+      type: VARCHAR[]
+    - column_name: discharge_date_raw
+      extra: '{}'
+      type: VARCHAR
+    - column_name: admission_date_raw
+      extra: '{}'
+      type: VARCHAR
+    - column_name: primary_diagnosis
+      extra: '{}'
+      type: VARCHAR
+    - column_name: bene_id
+      extra: '{}'
+      type: VARCHAR
+    - column_name: state
+      extra: '{}'
+      type: VARCHAR
+    - column_name: record
+      extra: '{}'
+      type: BIGINT
+    - column_name: adm_day_of_week
+      extra: '{}'
+      type: INTEGER
+    - column_name: admission_year
+      extra: '{}'
+      type: INTEGER
+    - column_name: year
+      extra: '{}'
+      type: INTEGER
+    - column_name: zip
+      extra: '{}'
+      type: INTEGER
+    - column_name: pd_hll_hash
+      extra: '{}'
+      type: UNKNOWN
+    - column_name: icd_hll
+      extra: '{}'
+      type: UNKNOWN
+    - column_name: bene
+      extra: '{}'
+      type: UNKNOWN
+    description: Medicare Admissions
+    main_dttm_col: admission_date
+    metrics:
+    - expression: COUNT(*)
+      extra: '{"warning_markdown":""}'
+      metric_name: count
+      metric_type: count
+      verbose_name: COUNT(*)
+    - expression: (#(hll_union_agg(icd_hll)))::INT
+      extra: '{}'
+      metric_name: Distinct ICD codes
+      verbose_name: ''
+    - expression: (#(hll_add_agg(pd_hll_hash)))::INT
+      extra: '{}'
+      metric_name: Distinct primary diagnoses
+      verbose_name: ''
+    - expression: (#(hll_add_agg(bene)))::INT
+      extra: '{}'
+      metric_name: approximate bene count
+      verbose_name: ''
+    schema: medicare
+    sql: ''
+    table_name: admissions
+  - columns:
+    - column_name: bad_records
+      expression: duplicates + no_eligibility + missing_bene_id
+      extra: '{}'
+      verbose_name: Bad Records
+    - column_name: total_records
+      expression: good_records + bad_records
+      extra: '{}'
+      verbose_name: Total
+    - column_name: state_iso
+      extra: '{}'
+      type: VARCHAR
+    - column_name: missing_bene_id
+      extra: '{}'
+      type: BIGINT
+    - column_name: no_eligibility
+      extra: '{}'
+      type: BIGINT
+    - column_name: good_records
+      extra: '{}'
+      type: BIGINT
+    - column_name: duplicates
+      extra: '{}'
+      type: BIGINT
+    - column_name: calendar_year
+      extra: '{}'
+      type: INTEGER
+    metrics:
+    - expression: 1.0 * SUM(duplicates + no_eligibility + missing_bene_id)/(SUM(good_records
+        + duplicates + no_eligibility + missing_bene_id) + 1)
+      extra: '{"warning_markdown":""}'
+      metric_name: Bad Records
+      verbose_name: ''
+    - expression: 1.0 * SUM(duplicates)/(SUM(good_records + duplicates + no_eligibility
+        + missing_bene_id) + 1)
+      extra: '{"warning_markdown":""}'
+      metric_name: Duplicates over Total
+      verbose_name: ''
+    - expression: 1.0 * SUM(missing_bene_id)/(SUM(duplicates + no_eligibility + missing_bene_id)
+        + 1)
+      extra: '{}'
+      metric_name: Missing Bene over Bad
+      verbose_name: ''
+    - expression: 1.0 * SUM(duplicates)/(SUM(duplicates + no_eligibility + missing_bene_id)
+        + 1)
+      extra: '{"warning_markdown":""}'
+      metric_name: Duplicates over Bad
+      verbose_name: ''
+    - expression: 1.0 * SUM(no_eligibility)/(SUM(duplicates + no_eligibility + missing_bene_id)
+        + 1)
+      extra: '{}'
+      metric_name: Ineligible over Bad
+      verbose_name: ''
+    - expression: COUNT(*)
+      extra: '{"warning_markdown":""}'
+      metric_name: count
+      metric_type: count
+      verbose_name: COUNT(*)
+    schema: medicaid_audit
+    sql: ''
+    table_name: records_stat
+  - columns:
+    - column_name: recorded_at
+      extra: '{}'
+      is_dttm: true
+      type: TIMESTAMP WITHOUT TIME ZONE
+    - column_name: discharge_date
+      extra: '{}'
+      is_dttm: true
+      type: DATE
+    - column_name: admission_date
+      extra: '{}'
+      is_dttm: true
+      type: DATE
+    - column_name: diagnoses
+      extra: '{}'
+      type: VARCHAR(12)[]
+    - column_name: reason
+      extra: '{}'
+      type: VARCHAR(16)
+    - column_name: ssa2
+      extra: '{}'
+      type: VARCHAR
+    - column_name: fips2
+      extra: '{}'
+      type: VARCHAR
+    - column_name: zip4
+      extra: '{}'
+      type: INTEGER
+    - column_name: discharge_date_raw
+      extra: '{}'
+      type: VARCHAR
+    - column_name: admission_date_raw
+      extra: '{}'
+      type: VARCHAR
+    - column_name: primary_diagnosis
+      extra: '{}'
+      type: VARCHAR
+    - column_name: bene_id
+      extra: '{}'
+      type: VARCHAR
+    - column_name: year
+      extra: '{}'
+      type: VARCHAR
+    - column_name: state
+      extra: '{}'
+      type: VARCHAR
+    - column_name: record
+      extra: '{}'
+      type: VARCHAR
+    - column_name: file
+      extra: '{}'
+      type: VARCHAR
+    - column_name: adm_day_of_week
+      extra: '{}'
+      type: INTEGER
+    - column_name: admission_year
+      extra: '{}'
+      type: INTEGER
+    - column_name: zip
+      extra: '{}'
+      type: INTEGER
+    - column_name: pd_hll_hash
+      extra: '{}'
+      type: UNKNOWN
+    - column_name: icd_hll
+      extra: '{}'
+      type: UNKNOWN
+    - column_name: bene
+      extra: '{}'
+      type: UNKNOWN
+    description: 'Audit of Medicare Admissions '
+    main_dttm_col: admission_date
+    metrics:
+    - expression: COUNT(*)
+      extra: '{"warning_markdown":""}'
+      metric_name: count
+      metric_type: count
+      verbose_name: COUNT(*)
+    schema: medicare_audit
+    sql: ''
+    table_name: admissions
+  - columns:
+    - column_name: reason
+      extra: '{}'
+      type: VARCHAR
+    - column_name: state
+      extra: '{}'
+      type: VARCHAR
+    - column_name: numdistinctbeneficaries
+      extra: '{}'
+      type: BIGINT
+    - column_name: numrecords
+      extra: '{}'
+      type: BIGINT
+    - column_name: year
+      extra: '{}'
+      type: INTEGER
+    - column_name: zip
+      extra: '{}'
+      type: INTEGER
+    - column_name: state_iso
+      extra: '{}'
+      type: UNKNOWN
+    - column_name: bene_hll
+      extra: '{}'
+      type: UNKNOWN
+    metrics:
+    - expression: (SUM(numrecords) FILTER (WHERE reason = 'DUPLICATE'))*100.0/SUM(numrecords)
+      extra: '{"warning_markdown":""}'
+      metric_name: '% duplicate admission  records'
+      verbose_name: ''
+    - expression: (SUM(numrecords) FILTER (WHERE reason = 'PRIMARY KEY'))*100.0/SUM(numrecords)
+      extra: '{"warning_markdown":""}'
+      metric_name: '% missing data'
+      verbose_name: ''
+    - expression: (SUM(numrecords) FILTER (WHERE reason = 'FOREIGN KEY'))*100.0/SUM(numrecords)
+      extra: '{"warning_markdown":""}'
+      metric_name: '% no enrollemnt'
+      verbose_name: ''
+    - expression: (SUM(numrecords) FILTER (WHERE reason = 'OK'))*100.0/SUM(numrecords)
+      extra: '{"warning_markdown":""}'
+      metric_name: 'valid_records'
+      verbose_name: '% valid records'
+    - expression: (SUM(numrecords) FILTER (WHERE reason <> 'OK'))*100.0/SUM(numrecords)
+      extra: '{"warning_markdown":""}'
+      metric_name: 'invalid_records'
+      verbose_name: '% invalid records'
+    - expression: SUM(numrecords)
+      extra: '{"warning_markdown":""}'
+      metric_name: count
+      metric_type: count
+      verbose_name: Number of records
+    - expression: (#(hll_union_agg(bene_hll)))::INT
+      extra: '{}'
+      metric_name: Bene cardinality
+      verbose_name: Number of beneficiaries
+    params: '{"remote_id": 19, "database_name": "DORIEH", "import_time": 1703112362}'
+    schema: medicare
+    sql: ''
+    table_name: qc_admissions
+  - columns:
+    - column_name: reason
+      extra: '{}'
+      type: VARCHAR
+    - column_name: state
+      extra: '{}'
+      type: VARCHAR
+    - column_name: count
+      extra: '{}'
+      type: BIGINT
+    - column_name: total
+      extra: '{}'
+      type: NUMERIC
+    - column_name: year
+      extra: '{}'
+      type: INTEGER
+    - column_name: max
+      extra: '{}'
+      type: UNKNOWN
+    metrics:
+    - expression: (SUM("count") FILTER (WHERE reason = 'PRIMARY KEY'))*100.0/SUM("count")
+      extra: '{}'
+      metric_name: Percent missing data
+      verbose_name: ''
+    - expression: (SUM("count") FILTER (WHERE reason = 'FOREIGN KEY'))*100.0/SUM("count")
+      extra: '{}'
+      metric_name: Percent Invalid Enrollment
+      verbose_name: ''
+    - expression: (SUM("count") FILTER (WHERE reason = 'OK'))*100.0/SUM("count")
+      extra: '{"warning_markdown":""}'
+      metric_name: valid_records
+      verbose_name: '% valid records'
+    - expression: (SUM("count") FILTER (WHERE reason <> 'OK'))*100.0/SUM("count")
+      extra: '{"warning_markdown":""}'
+      metric_name: invalid_records
+      verbose_name: '% invalid records'
+    - expression: (SUM("count") FILTER (WHERE reason = 'DUPLICATE'))*100.0/SUM("count")
+      extra: '{}'
+      metric_name: Percent Duplicate Records
+      verbose_name: ''
+    - expression: SUM("count")
+      extra: '{"warning_markdown":""}'
+      metric_name: count
+      metric_type: count
+      verbose_name: Number of Admissions
+    schema: medicare_qc
+    sql: ''
+    table_name: admission_qc1
+  - columns:
+    - column_name: MonthYear
+      expression: to_date(year||month, 'YYYYMM')
+      extra: '{}'
+      is_dttm: true
+    - column_name: epa_pm25
+      extra: '{}'
+      type: NUMERIC
+    - column_name: rm_pm25
+      extra: '{}'
+      type: NUMERIC
+    - column_name: fips2
+      extra: '{}'
+      type: VARCHAR
+    - column_name: fips3
+      extra: '{}'
+      type: VARCHAR
+    - column_name: fips5
+      extra: '{}'
+      type: TEXT
+    - column_name: state_iso
+      extra: '{}'
+      type: VARCHAR
+    - column_name: year
+      extra: '{}'
+      type: VARCHAR
+    - column_name: state
+      extra: '{}'
+      type: VARCHAR
+    - column_name: month
+      extra: '{}'
+      type: VARCHAR
+    - column_name: state_name
+      extra: '{}'
+      type: TEXT
+    - column_name: county_name
+      extra: '{}'
+      type: TEXT
+    metrics:
+    - expression: COUNT(*)
+      extra: '{"warning_markdown":""}'
+      metric_name: count
+      metric_type: count
+      verbose_name: COUNT(*)
+    schema: pollution
+    sql: ''
+    table_name: pm25_monthly
+  - columns:
+    - column_name: dob
+      is_dttm: true
+      type: DATE
+    - column_name: dod
+      is_dttm: true
+      type: DATE
+    - column_name: bene_id
+      type: VARCHAR(15)
+    - column_name: state
+      type: VARCHAR(2)
+    - column_name: fips5
+      type: TEXT
+    - column_name: died
+      type: BOOLEAN
+    - column_name: months_dual_eligible
+      type: BIGINT
+    - column_name: state_count
+      type: BIGINT
+    - column_name: months_eligible
+      type: BIGINT
+    - column_name: duplicates
+      type: BIGINT
+    - column_name: year
+      type: INTEGER
+    - column_name: race_ethnicity_code
+      type: TEXT
+    - column_name: state_iso
+      type: TEXT
+    - column_name: residence_counties
+      type: TEXT
+    - column_name: residence_county
+      type: TEXT
+    - column_name: sex
+      type: TEXT
+    - column_name: zips
+      type: TEXT
+    - column_name: zip
+      type: TEXT
+    main_dttm_col: dob
+    metrics:
+    - expression: COUNT(*)
+      metric_name: count
+      metric_type: count
+      verbose_name: COUNT(*)
+    schema: medicaid
+    table_name: enrollments_expanded
+  - columns:
+    - column_name: MonthYear
+      expression: to_date(year||month, 'YYYYMM')
+      extra: '{}'
+      is_dttm: true
+    - column_name: pm25
+      extra: '{}'
+      type: NUMERIC
+    - column_name: fips2
+      extra: '{}'
+      type: VARCHAR
+    - column_name: fips3
+      extra: '{}'
+      type: VARCHAR
+    - column_name: fips5
+      extra: '{}'
+      type: TEXT
+    - column_name: year
+      extra: '{}'
+      type: VARCHAR
+    - column_name: state
+      extra: '{}'
+      type: VARCHAR
+    - column_name: month
+      extra: '{}'
+      type: VARCHAR
+    - column_name: count
+      extra: '{}'
+      type: BIGINT
+    - column_name: state_name
+      extra: '{}'
+      type: TEXT
+    - column_name: county_name
+      extra: '{}'
+      type: TEXT
+    metrics:
+    - expression: COUNT(*)
+      extra: '{"warning_markdown":""}'
+      metric_name: count
+      metric_type: count
+      verbose_name: COUNT(*)
+    schema: epa
+    sql: ''
+    table_name: pm25_monthly
+  - columns:
+    - column_name: population
+      type: STRING
+    - column_name: year
+      type: INT
+    - column_name: count
+      type: INT
+    metrics:
+    - expression: count(*)
+      metric_name: count
+    schema: medicare
+    sql: "-- Note: Unless you save your query, these tabs will NOT persist if you\
+      \ clear your cookies or change browsers.\nSELECT year, COUNT(bene_id), population\
+      \ FROM (\nSELECT \n  CASE WHEN age >= 18 then 'Adult (>= 18)'\n  ELSE 'Children\
+      \ (< 18)'\n  END population,\n  year,\n  bene_id \n\nfrom medicare.enrollments\
+      \ \n) AS pop\ngroup by year, pop.population"
+    table_name: children vs adults enrollment
+  - columns:
+    - column_name: population
+      type: STRING
+    - column_name: year
+      type: INT
+    - column_name: count
+      type: INT
+    metrics:
+    - expression: count(*)
+      metric_name: count
+    schema: medicare
+    sql: "-- Note: Unless you save your query, these tabs will NOT persist if you\
+      \ clear your cookies or change browsers.\nSELECT year, COUNT(bene_id), population\
+      \ FROM (\nSELECT \n  CASE WHEN age >= 18 then 'Adult (>= 18)'\n  ELSE 'Children\
+      \ (< 18)'\n  END population,\n  year,\n  bene_id \n\nfrom medicare.enrollments\
+      \ \n) AS pop\ngroup by year, pop.population"
+    table_name: qc_adult_vs_children_enroll
+  - columns:
+    - column_name: recorded_at
+      is_dttm: true
+      type: TIMESTAMP WITHOUT TIME ZONE
+    - column_name: discharge_date
+      is_dttm: true
+      type: DATE
+    - column_name: admission_date
+      is_dttm: true
+      type: DATE
+    - column_name: file
+      type: VARCHAR(128)
+    - column_name: diagnosis
+      type: VARCHAR(12)[]
+    - column_name: reason
+      type: VARCHAR(16)
+    - column_name: state
+      type: VARCHAR(2)
+    - column_name: state_iso
+      type: VARCHAR
+    - column_name: bene_id
+      type: VARCHAR
+    - column_name: year
+      type: INTEGER
+    - column_name: month
+      type: INTEGER
+    main_dttm_col: admission_date
+    metrics:
+    - expression: COUNT(*)
+      metric_name: count
+      metric_type: count
+      verbose_name: COUNT(*)
+    schema: medicaid_audit
+    table_name: qc
+  - columns:
+    - column_name: recent_bene
+      extra: '{}'
+      type: BIGINT
+    - column_name: total
+      extra: '{}'
+      type: BIGINT
+    - column_name: years
+      extra: '{}'
+      type: INTEGER
+    - column_name: cohort
+      extra: '{}'
+      type: INTEGER
+    metrics:
+    - expression: SUM (recent_bene) OVER (PARTITION BY cohort ORDER By years ROWS
+        BETWEEN 6 PRECEDING AND CURRENT ROW)
+      extra: '{}'
+      metric_name: 7 Years total
+      verbose_name: ''
+    - expression: COUNT(*)
+      extra: '{"warning_markdown":""}'
+      metric_name: count
+      metric_type: count
+      verbose_name: COUNT(*)
+    schema: medicare_qc
+    sql: ''
+    table_name: bene_7years_tracking
+  - columns:
+    - column_name: recorded_at
+      is_dttm: true
+      type: TIMESTAMP WITHOUT TIME ZONE
+    - column_name: discharge_date
+      is_dttm: true
+      type: DATE
+    - column_name: admission_date
+      is_dttm: true
+      type: DATE
+    - column_name: file
+      type: VARCHAR(128)
+    - column_name: diagnosis
+      type: VARCHAR(12)[]
+    - column_name: reason
+      type: VARCHAR(16)
+    - column_name: state
+      type: VARCHAR(2)
+    - column_name: bene_id
+      type: VARCHAR
+    - column_name: year
+      type: INTEGER
+    - column_name: month
+      type: INTEGER
+    main_dttm_col: admission_date
+    metrics:
+    - expression: COUNT(*)
+      metric_name: count
+      metric_type: count
+      verbose_name: COUNT(*)
+    schema: medicaid_audit
+    table_name: admissions
+  - columns:
+    - column_name: state
+      type: VARCHAR(2)
+    - column_name: reason
+      type: VARCHAR
+    - column_name: count
+      type: BIGINT
+    - column_name: year
+      type: INTEGER
+    - column_name: month
+      type: INTEGER
+    - column_name: state_iso
+      type: TEXT
+    metrics:
+    - expression: COUNT(*)
+      metric_name: count
+      metric_type: count
+      verbose_name: COUNT(*)
+    schema: medicaid
+    table_name: qc1
+  - columns:
+    - column_name: c1
+      type: VARCHAR
+    metrics:
+    - expression: COUNT(*)
+      metric_name: count
+      metric_type: count
+      verbose_name: COUNT(*)
+    schema: scratch
+    table_name: test
