@@ -300,6 +300,20 @@ medicare:
               - admsn_day_cd
               - admsnday
 
+        - src_admsn_cd:
+            type: CHAR(1)
+            source:
+              - src_ip_admsn_cd
+              - src_adms
+              - medpar_src_ip_admsn_cd
+
+        - dschrg_dstntn_cd:
+            type: CHAR(1)
+            source:
+              - dschrg_dstntn_cd
+              - dstntncd
+              - medpar_dschrg_dstntn_cd
+
         - dschrgcd:
             type: CHAR(1)
             source:
@@ -699,6 +713,8 @@ medicare:
                   discharge_date,
                   adm_day_of_week,
                   dschrgcd,
+                  dschrg_dstntn_cd,
+                  src_admsn_cd,
                   btrim(diag1) As primary_diagnosis,
                   array_remove(ARRAY[
                   btrim(btrim(diag1)),
