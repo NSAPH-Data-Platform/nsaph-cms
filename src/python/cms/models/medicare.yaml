@@ -64,7 +64,7 @@ medicare:
         - fips2:
             source: '(SELECT fips2 FROM public.us_states as s WHERE s.ssa2 = "state")'
             description: 2 digit state FIPS, see https://en.wikipedia.org/wiki/Federal_Information_Processing_Standard_state_code
-            reference:  https://www.census.gov/library/reference/code-lists/ansi.html#state
+            reference:  https://www.census.gov/library/reference/code-lists/ansi.html#states
         - zip:
             type: INT
             description: US Postal ZIP code, the first 5 digits of it
@@ -558,6 +558,7 @@ medicare:
             source: "MAX(buyin_cvg_count)"
         - dual_indicators:
             source: "(SELECT MAX(dual_indicators) FROM medicare.mbsf_d AS d WHERE medicare._ps.year = d.year and medicare._ps.bene_id = d.bene_id)"
+            requires: medicare.mbsf_d
         - dual_cvg_count:
             source: |
               (CASE
@@ -566,6 +567,7 @@ medicare:
                      COALESCE((SELECT MAX(dual_mo) FROM medicare.mbsf_d AS d WHERE medicare._ps.year = d.year and medicare._ps.bene_id = d.bene_id), 0)
                  ELSE NULL
               END)
+            requires: medicare.mbsf_d
         - state_count:
             source: |
               (
@@ -575,6 +577,7 @@ medicare:
                   _ps.bene_id = ps2.bene_id
                   AND _ps.year = ps2.year
               )
+            requires: medicare._ps
         - died:
             source: |
               CASE EXTRACT (YEAR from MAX(dod))
