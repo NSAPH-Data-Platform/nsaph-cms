@@ -306,13 +306,18 @@ medicare:
               - src_ip_admsn_cd
               - src_adms
               - medpar_src_ip_admsn_cd
+            cast:
+              '*': "{column_name}::VARCHAR"
 
         - dschrg_dstntn_cd:
-            type: CHAR(1)
+            type: CHAR(2)
             source:
               - dschrg_dstntn_cd
               - dstntncd
               - medpar_dschrg_dstntn_cd
+            cast:
+              numeric: "TRIM(to_char({column_name}, '99'))"
+              '*': "{column_name}::VARCHAR"
 
         - dschrgcd:
             type: CHAR(1)

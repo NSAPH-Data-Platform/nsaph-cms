@@ -73,6 +73,7 @@ class MedicareCombinedView:
         self.schema = content["medicare"]["schema"]
         self.sql = ""
         self.monitor = DBActivityMonitor(context)
+        self.exception = None
 
     def print_sql(self):
         if not self.sql:
@@ -91,10 +92,19 @@ class MedicareCombinedView:
                         self.context.connection) as cnxn:
             with cnxn.cursor() as cursor:
                 pid = Connection.get_pid(cnxn)
-                self.monitor.execute(lambda: cursor.execute(self.sql),
+                self.monitor.execute(lambda: self.execute_sql(cursor, self.sql),
                                      lambda: self.monitor.log_activity(pid))
+            if self.exception is not None:
+                raise self.exception    
             cnxn.commit()
         print("All Done")
+
+    def execute_sql(self, cursor, sql: str):
+        try:
+            cursor.execute(sql)
+        except Exception as x:
+            logging.exception("Failed to execute SQL statement")
+            self.exception = x
 
     def generate_sql(self):
         with Connection(self.context.db,
